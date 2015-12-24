@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "homepage": "https://github.com/akyadav001/bwi-resp-master.git",
   "description": "mSite for BW",
-  "main": "index.html",
+  "main": "home.html",
   "authors": [
     "yadava"
   ],

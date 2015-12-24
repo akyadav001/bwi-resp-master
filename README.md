@@ -14,7 +14,7 @@ This project utilizes node.js to manage the compilation of assets (html, javascr
 
 5. The front-end packages utilized in this project are contained within the bower.json file. Bower relies on Git to manage packages, therefore if Git is not installed, this must be installed. See: http://git-scm.com/
 
-Note: if git protocol is not supported in your n/w then run following command before running below step: git config --global url."https://".insteadOf git://
+ Note: if git protocol is not supported in your n/w then run following command before running below step: git config --global url."https://".insteadOf git://
 6. Open the git shell and set the working directory to the location containing bower.json and enter: bower install.
 
 7. Install gulp globally and locally, you may need to preface the commands with 'sudo '. If you are experiencing build issues, you may need to clear the cache (npm cache clean), delete and reinstall gulp-less (npm install gulp-less) or install an older version of gulp such as gulp@3.8.7
