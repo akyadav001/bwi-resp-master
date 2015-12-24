@@ -1,11 +1,11 @@
 {
   "name": "BWI",
   "version": "1.0.0",
-  "homepage": "https://github.com/gsubu/bwi-aem-msite",
+  "homepage": "https://github.com/akyadav001/bwi-resp-master.git",
   "description": "mSite for BW",
   "main": "index.html",
   "authors": [
-    "Sogeti"
+    "yadava"
   ],
   "license": "Proprietary",
   "private": true,
