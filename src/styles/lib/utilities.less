@@ -1,0 +1,65 @@
+.u-hidden-desktop {
+  @media (min-width: @desktopMin) {
+    .u-hidden();
+  }
+}
+.u-visible-mobile {
+  @media (min-width: @tabletMin) {
+    .u-hidden();
+  }
+}
+.u-visible-tablet {
+  .u-hidden();
+  @media (min-width: @tabletMin) {
+    display: block !important;
+    visibility: visible !important;
+  }
+  @media (min-width: @desktopMin) {
+    .u-hidden();
+  }
+}
+.u-visible-desktop {
+  .u-hidden();
+  @media (min-width: @desktopMin) {
+    display: block !important;
+    visibility: visible !important;
+  }
+}
+.u-hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+.u-text-centered {
+  text-align: center;
+}
+
+// Utility class to remove the standard browser increase/decrease controls on input fields.
+// Applies to input[type='number']. IE does not have a spinner at this time so we disable
+// chrome/ff only.
+
+.u-no-spinner {
+  -moz-appearance: textfield;
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+}
+.u-text-right {
+  text-align: right;
+}
+.u-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.u-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

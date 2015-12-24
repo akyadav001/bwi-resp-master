@@ -1,0 +1,40 @@
+/***********************************************
+z-index.less
+***********************************************/
+
+/*
+Z-index values should always be defined in z-index.less. This file
+allows us visualize relative layers of our application and prevents bugs
+resulting from arbitrary z-index values. Only add application
+scoped z-index values.
+*/
+
+@zIndex-0: 900;
+@zIndex-1: 1000;
+@zIndex-2: 1100;
+@zIndex-3: 1200;
+@zIndex-4: 1300;
+@zIndex-5: 1400;
+@zIndex-6: 1500;
+@zIndex-7: 1600;
+@zIndex-8: 1700;
+@zIndex-9: 1800;
+
+/***********************************************
+Z-Index applications
+***********************************************/
+
+@zIndex-0--bottom-bar:                @zIndex-0;
+@zIndex-0--site-header: 			  @zIndex-0;
+
+@zIndex-2--calendar:                  @zIndex-2;
+@zIndex-2--pac-container:             @zIndex-2;
+@zIndex-2--left-menu-background-blur: @zIndex-2;
+
+@zIndex-3--left-menu:                 @zIndex-3;
+@zIndex-3--loading-background:        @zIndex-3;
+@zIndex-3--login-modal:               @zIndex-3;
+
+@zIndex-4--loading-graphic:           @zIndex-4;
+
+@zIndex-5--loading-message:           @zIndex-5;

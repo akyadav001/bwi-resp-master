@@ -1,0 +1,13 @@
+//Adapted from https://github.com/imulus/retinajs
+.make-icon(@path) {
+  background-image: url(@path);
+  @icon2x-path: ~`@{path}.replace(/\.\w+$/, function(match) { return "@2x" + match; })`;
+
+   @media (min-resolution: 2dppx) {
+      background-image: url("@{icon2x-path}");
+  }
+  @icon3x-path: ~`@{path}.replace(/\.\w+$/, function(match) { return "@3x" + match; })`;
+  @media (min-resolution: 3dppx) {
+      background-image: url("@{icon3x-path}");
+  }
+}

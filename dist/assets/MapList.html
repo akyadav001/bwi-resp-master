@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html class="full-height">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Map List</title>
+    <link rel="stylesheet" href="../styles/bootstrap.css">
+    <link rel="stylesheet" href="../styles/main.css">
+  </head>
+  <body class="has-results-nav has-fixed-footer" data-view="map-view">
+    <span class="js-detector">
+    <span data-breakpoint="xs" class="visible-xs"></span>
+    <span data-breakpoint="sm" class="visible-sm"></span>
+    <span data-breakpoint="md" class="visible-md visible-lg"></span>
+    </span>
+    <header class="site-header">
+      <a href="findahotel.html" class="site-logo">
+  <span class="site-logo__logo"></span>
+</a>
+<span class="site-logo__text">Collection of Hotels</span>
+
+<a href="#" class="menu-toggle u-hidden-desktop"></a>
+<nav role="navigation"></nav>
+
+<div class="search-details">
+  <a href="#" data-toggle="modal" data-target="#bw-edit" class="search-details__edit">EDIT</a>
+  <div class="search-details__detail -locale">Columbus, OH | USA</div>
+  <div class="search-details__detail">April 9-12, 2015 <span class="search-details__room">1 Room, 2 Guests</span></div>
+</div>
+
+<ul class="search-option-controls">
+  <li>
+    <a href="#filter-overlay">
+    CURRENCY
+    </a>
+  </li>
+  <li>
+    <a href="#rates-overlay">
+    RATES
+    </a>
+  </li>
+  <li class="u-hidden-desktop">
+    <a href="#filter-overlay" class="filter-link"><span class="filter-link__label">Filters</span>
+    </a>
+  </li>
+</ul>
+    </header>
+        <div class="overlay-panels">
+      <div class="overlay-panel -rates" id="rates-overlay">
+        <div class="overlay-panel-header">
+          <h5 class="overlay-panel-header__title">Discounts</h5>
+        </div>
+        <div class="overlay-panel-content">
+          <form>
+            <fieldset>
+              <label class="ui-control -large -radio">
+              <input type="radio" name="discounts" />
+              <span class="ui-control__indicator">    
+              </span>
+              <span class="ui-control__label">AAA/CAA Rate</span>
+              </label>
+              <label class="ui-control -large -radio">
+              <input type="radio" name="discounts" />
+              <span class="ui-control__indicator">    
+              </span>
+              <span class="ui-control__label">AARP/Senior Rate
+              </span>
+              </label>
+              <label class="ui-control -large -radio">
+              <input type="radio" name="discounts" />
+              <span class="ui-control__indicator">    
+              </span>
+              <span class="ui-control__label">Best Western Rewards Points
+              </span>
+              </label>
+              <label class="ui-control -large -radio">
+              <input type="radio" name="discounts" />
+              <span class="ui-control__indicator">    
+              </span>
+              <span class="ui-control__label">Corporate Rate Code
+              </span>
+              </label>
+              <label class="ui-control -large -radio">
+              <input type="radio" name="discounts" />
+              <span class="ui-control__indicator">    
+              </span>
+              <span class="ui-control__label">Government/Military Rate
+              </span>
+              </label>
+              <label class="ui-control -large -radio">
+              <input type="radio" name="discounts" />
+              <span class="ui-control__indicator">    
+              </span>
+              <span class="ui-control__label">Promotion Code
+              </span>
+              </label>
+            </fieldset>
+            <small class="disclaimer">
+              *This rate is available to Best Western Rewards members who have earned enough points to redeem.
+            </small>
+            <button type="reset">Remove Discount</button>
+          </form>
+        </div>
+        <div class="overlay-panel-footer">
+          <button>APPLY</button>
+        </div>
+      </div>
+      <div class="overlay-panel -filter" id="filter-overlay">
+        <div class="overlay-panel-header">
+          <h5 class="overlay-panel-header__title">Sort And Filter</h5>
+          <div class="overlay-panel-header__status -has-results">Only <strong>1 search</strong> result found</div>
+        </div>
+        <div class="overlay-panel-content">
+          <div class="hotel-filter">
+            <form>
+              <div class="hotel-filter-section -no-padding u-text-centered">
+                <button type="reset" class="btn -text-button clear-filters">X Clear All Filters</button>
+              </div>
+              <div class="hotel-filter-section">
+                <label class="ui-control -large -checkbox">
+                <input type="checkbox" />
+                <span class="ui-control__indicator">    
+                </span>
+                <span class="ui-control__label">Only show available hotels</span>
+                </label>
+              </div>
+              <label class="hotel-filter-section">
+                <span class="hotel-filter-section__title">SORT BY</span>
+                <span class="ui-select">
+                  <select>
+                    <option>Distance</option>
+                    <option>Price: Low to High</option>
+                    <option>Price: High to Low</option>
+                  </select>
+                </span>
+              </label>
+              <label class="hotel-filter-section">
+                <span class="hotel-filter-section__title">Maximum Daily Rate</span>
+                <div class="input-prefix-wrap" data-prefix="$">
+                  <input class="u-text-right u-no-spinner" type="number" min="0" max="9999" step="1" placeholder="0.00" />
+                </div>
+              </label>
+              <fieldset class="hotel-filter-section">
+                <legend class="hotel-filter-section__title">Tripadvisor Rating</legend>
+                <ul class="filter-list -tripadvisor">
+                  <li>
+                    <label class="tripadvisor-rating">
+                    <input type="checkbox" />
+                    <span class="tripadvisor-rating__text">1</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="tripadvisor-rating">
+                    <input type="checkbox" />
+                    <span class="tripadvisor-rating__text">2</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="tripadvisor-rating">
+                    <input type="checkbox" />
+                    <span class="tripadvisor-rating__text">3</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="tripadvisor-rating">
+                    <input type="checkbox" />
+                    <span class="tripadvisor-rating__text">4</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="tripadvisor-rating">
+                    <input type="checkbox" />
+                    <span class="tripadvisor-rating__text">5</span>
+                    </label>
+                  </li>
+                </ul>
+              </fieldset>
+              <fieldset class="hotel-filter-section -hotel-type">
+                <legend class="hotel-filter-section__title">Hotel Type</legend>
+                <label class="ui-control -large -checkbox">
+                <input type="checkbox" name="brand" />
+                <span class="ui-control__indicator">    
+                </span>
+                <span class="ui-control__label">Best Western</span>
+                </label>
+                <label class="ui-control -large -checkbox">
+                <input type="checkbox" name="brand" />
+                <span class="ui-control__indicator">    
+                </span>
+                <span class="ui-control__label">Best Western Plus</span>
+                </label>
+                <label class="ui-control -large -checkbox">
+                <input type="checkbox" name="brand" />
+                <span class="ui-control__indicator">    
+                </span>
+                <span class="ui-control__label">Best Western Premier</span>
+                </label>
+              </fieldset>
+              <div class="hotel-filter-section">
+                <span class="hotel-filter-section__title">Amenities</span>
+                <ul class="filter-list -amenities">
+                  <li>
+                    <label class="amenity-category -business">
+                    <input type="checkbox" />
+                    <span class="amenity-category__text">High-Speed Internet</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="amenity-category -breakfast">
+                    <input type="checkbox" />
+                    <span class="amenity-category__text">Free Breakfast</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="amenity-category -dining">
+                    <input type="checkbox" />
+                    <span class="amenity-category__text">Onsite Dining</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="amenity-category -dining">
+                    <input type="checkbox" />
+                    <span class="amenity-category__text">Onsite Dining</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="amenity-category -fitness">
+                    <input type="checkbox" />
+                    <span class="amenity-category__text">Fitness Center</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="amenity-category -pet">
+                    <input type="checkbox" />
+                    <span class="amenity-category__text">Pet Friendly</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="amenity-category -non-smoking">
+                    <input type="checkbox" />
+                    <span class="amenity-category__text">Pet Friendly</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="amenity-category -oversized-parking">
+                    <input type="checkbox" />
+                    <span class="amenity-category__text">Oversized Parking</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="amenity-category -parking">
+                    <input type="checkbox" />
+                    <span class="amenity-category__text">Parking</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="amenity-category -parking">
+                    <input type="checkbox" />
+                    <span class="amenity-category__text">Pool</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="amenity-category -shuttle">
+                    <input type="checkbox" />
+                    <span class="amenity-category__text">Airport Shuttle</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <div class="hotel-filter-section">
+                <small class="little-label">&ast; Fees may apply to pet friendly rooms based on weight and number of pets</small>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="overlay-panel-footer">
+          <div class="columns">
+            <div class="column"><button class="btn">Testing</button></div>
+            <div class="column"><button class="btn">Testing</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="filter-toolbar">
+	<ul class="results-nav">
+	<li>
+		<a id="tablet-image-view-button" href="HotelImageListView.html" class="results-nav__link -image">
+		<span class="results-nav__label">Image View</span>
+		</a>
+	</li>
+	<li>
+		<a id="tablet-map-view-button" href="MapList.html" class="results-nav__link -map">
+		<span class="results-nav__label">Map View</span>
+		</a>
+	</li>
+	<li class="u-hidden-tablet">
+		<a id="mobile-phone-list-view-button" href="ListView.html" class="results-nav__link -list">
+		<span class="results-nav__label">List View</span>
+		</a>
+	</li>
+	<li class="u-visible-tablet">
+		<a id="tablet-compare-hotels-button" href="CompareHotels.html" class="results-nav__link -compare">
+		<span class="results-nav__label">Compare Hotels</span>
+		</a>
+	</li>
+	</ul>
+</div>
+    
+    <main role="main" class="search-results-panel -map">
+      <div class="slider -map" data-horizontal="true">
+        <div class="js-top slider__top">
+          <img src="../assets/icons/window_shade.png" class="js-handle slider__handle" alt="" />
+          <div id="map-canvas"></div>
+        </div>
+        <div class="js-bottom slider__bottom">
+            <ul class="search-results-list -map">
+              <li>
+                <a class="hotel-result -map">
+                  <div class="hotel-result__image card-image"></div>
+                  <div class="hotel-card -map">
+                    <h1>
+                      <div class="hotel-card__indicator -standard"></div>
+                      <div class="hotel-card__brand">BEST WESTERN PLUS</div>
+                      <div class="hotel-card__name u-ellipsis">Franklin Square Inn Troy/New Albany</div>
+                    </h1>
+                    <div class="tripadvisor-average">
+                      <span class="tripadvisor-average__logo"></span>
+                      <span class="tripadvisor-average__circle -full"></span>
+                      <span class="tripadvisor-average__circle -full"></span>
+                      <span class="tripadvisor-average__circle -full"></span>
+                      <span class="tripadvisor-average__circle -full"></span>
+                      <span class="tripadvisor-average__circle -half"></span>
+                      <span class="tripadvisor-average__total-reviews">(134)</span>
+                    </div>
+                    <div class="hotel-card__distance-wrap">
+                      <span class="hotel-card__distance">2.7mi/4.7km</span>
+                    </div>
+                    <div class="hotel-card__price-info">
+                      <div class="hotel-card__currency-type">RUB</div>
+                      <div class="hotel-card__price">руб 17,983.09</div>
+                      <div class="u-visible-desktop">Hotel Details &gt;</div>
+                    </div>
+                  </div>
+                  <div class="hotel-result__marker">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="50" viewBox="0 0 39.999998 50.000001" width="40" version="1.1" preserveAspectRatio="xMidYMid meet" class="bw-map-pin">
+                      <g transform="matrix(.97501 0 0 .98001 .70032 -981.37)">
+                        <path  d="m15.176 1048.3c-11.221-10.4-16.556-21.2-14.871-29.9 0.88867-4.5934 2.4455-7.37 5.9482-10.615 7.8463-7.2695 19.638-7.2695 27.484 0 10.821 10.025 7.4731 25.221-8.922 40.501-2.3878 2.2272-4.5569 4.0466-4.8201 4.0466-0.26324 0-2.4323-1.8194-4.8201-4.0466z"/>
+                        <circle cy="1021.4" cx="20" r="14.861"/>
+                      </g>
+                      <text  y="25" x="14" font-size="20" font-family="helvetica">7</text>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="hotel-result -map">
+                  <div class="hotel-result__image card-image"></div>
+                  <div class="hotel-card -map">
+                    <h1>
+                      <div class="hotel-card__indicator -standard"></div>
+                      <div class="hotel-card__brand">BEST WESTERN PLUS</div>
+                      <div class="hotel-card__name u-ellipsis">Franklin Square Inn Troy/New Albany</div>
+                    </h1>
+                    <div class="tripadvisor-average">
+                      <span class="tripadvisor-average__logo"></span>
+                      <span class="tripadvisor-average__circle -full"></span>
+                      <span class="tripadvisor-average__circle -full"></span>
+                      <span class="tripadvisor-average__circle -full"></span>
+                      <span class="tripadvisor-average__circle -full"></span>
+                      <span class="tripadvisor-average__circle -half"></span>
+                      <span class="tripadvisor-average__total-reviews">(134)</span>
+                    </div>
+                    <div class="hotel-card__distance-wrap">
+                      <span class="hotel-card__distance">2.7mi/4.7km</span>
+                    </div>
+                    <div class="hotel-card__price-info">
+                      <div class="hotel-card__currency-type">RUB</div>
+                      <div class="hotel-card__price">руб 17,983.09</div>
+                      <div class="u-visible-desktop">Hotel Details &gt;</div>
+                    </div>
+                  </div>
+                  <div class="hotel-result__marker">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="50" viewBox="0 0 39.999998 50.000001" width="40" version="1.1" preserveAspectRatio="xMidYMid meet" class="bw-map-pin">
+                      <g transform="matrix(.97501 0 0 .98001 .70032 -981.37)">
+                        <path  d="m15.176 1048.3c-11.221-10.4-16.556-21.2-14.871-29.9 0.88867-4.5934 2.4455-7.37 5.9482-10.615 7.8463-7.2695 19.638-7.2695 27.484 0 10.821 10.025 7.4731 25.221-8.922 40.501-2.3878 2.2272-4.5569 4.0466-4.8201 4.0466-0.26324 0-2.4323-1.8194-4.8201-4.0466z"/>
+                        <circle cy="1021.4" cx="20" r="14.861"/>
+                      </g>
+                      <text  y="25" x="14" font-size="20" font-family="helvetica">7</text>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="hotel-result -map">
+                  <div class="hotel-result__image card-image"></div>
+                  <div class="hotel-card -map">
+                    <h1>
+                      <div class="hotel-card__indicator -standard"></div>
+                      <div class="hotel-card__brand">BEST WESTERN PLUS</div>
+                      <div class="hotel-card__name u-ellipsis">Franklin Square Inn Troy/New Albany</div>
+                    </h1>
+                    <div class="tripadvisor-average">
+                      <span class="tripadvisor-average__logo"></span>
+                      <span class="tripadvisor-average__circle -full"></span>
+                      <span class="tripadvisor-average__circle -full"></span>
+                      <span class="tripadvisor-average__circle -full"></span>
+                      <span class="tripadvisor-average__circle -full"></span>
+                      <span class="tripadvisor-average__circle -half"></span>
+                      <span class="tripadvisor-average__total-reviews">(134)</span>
+                    </div>
+                    <div class="hotel-card__distance-wrap">
+                      <span class="hotel-card__distance">2.7mi/4.7km</span>
+                    </div>
+                    <div class="hotel-card__price-info">
+                      <div class="hotel-card__currency-type">RUB</div>
+                      <div class="hotel-card__price">руб 17,983.09</div>
+                      <div class="u-visible-desktop">Hotel Details &gt;</div>
+                    </div>
+                  </div>
+                  <div class="hotel-result__marker">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="50" viewBox="0 0 39.999998 50.000001" width="40" version="1.1" preserveAspectRatio="xMidYMid meet" class="bw-map-pin">
+                      <g transform="matrix(.97501 0 0 .98001 .70032 -981.37)">
+                        <path  d="m15.176 1048.3c-11.221-10.4-16.556-21.2-14.871-29.9 0.88867-4.5934 2.4455-7.37 5.9482-10.615 7.8463-7.2695 19.638-7.2695 27.484 0 10.821 10.025 7.4731 25.221-8.922 40.501-2.3878 2.2272-4.5569 4.0466-4.8201 4.0466-0.26324 0-2.4323-1.8194-4.8201-4.0466z"/>
+                        <circle cy="1021.4" cx="20" r="14.861"/>
+                      </g>
+                      <text  y="25" x="14" font-size="20" font-family="helvetica">7</text>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="hotel-result -map">
+                  <div class="hotel-result__image card-image"></div>
+                  <div class="hotel-result__details">
+                    <div class="hotel-card -map">
+                      <h1>
+                        <div class="hotel-card__indicator -standard"></div>
+                        <div class="hotel-card__brand">BEST WESTERN PLUS</div>
+                        <div class="hotel-card__name u-ellipsis">Franklin Square Inn Troy/New Albany</div>
+                      </h1>
+                      <div class="tripadvisor-average">
+                        <span class="tripadvisor-average__logo"></span>
+                        <span class="tripadvisor-average__circle -full"></span>
+                        <span class="tripadvisor-average__circle -full"></span>
+                        <span class="tripadvisor-average__circle -full"></span>
+                        <span class="tripadvisor-average__circle -full"></span>
+                        <span class="tripadvisor-average__circle -half"></span>
+                        <span class="tripadvisor-average__total-reviews">(134)</span>
+                      </div>
+                      <div class="hotel-card__distance-wrap">
+                        <span class="hotel-card__distance">2.7mi/4.7km</span>
+                      </div>
+                      <div class="hotel-card__price-info">
+                        <div class="hotel-card__currency-type">RUB</div>
+                        <div class="hotel-card__price">руб 17,983.09</div>
+                        <div class="u-visible-desktop">Hotel Details &gt;</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hotel-result__marker">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="50" viewBox="0 0 39.999998 50.000001" width="40" version="1.1" preserveAspectRatio="xMidYMid meet" class="bw-map-pin">
+                      <g transform="matrix(.97501 0 0 .98001 .70032 -981.37)">
+                        <path  d="m15.176 1048.3c-11.221-10.4-16.556-21.2-14.871-29.9 0.88867-4.5934 2.4455-7.37 5.9482-10.615 7.8463-7.2695 19.638-7.2695 27.484 0 10.821 10.025 7.4731 25.221-8.922 40.501-2.3878 2.2272-4.5569 4.0466-4.8201 4.0466-0.26324 0-2.4323-1.8194-4.8201-4.0466z"/>
+                        <circle cy="1021.4" cx="20" r="14.861"/>
+                      </g>
+                      <text  y="25" x="14" font-size="20" font-family="helvetica">7</text>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="hotel-result -map">
+                  <div class="hotel-result__image card-image"></div>
+                  <div class="hotel-result__details">
+                    <div class="hotel-card -map">
+                      <h1>
+                        <div class="hotel-card__indicator -standard"></div>
+                        <div class="hotel-card__brand">BEST WESTERN PLUS</div>
+                        <div class="hotel-card__name u-ellipsis">Franklin Square Inn Troy/New Albany</div>
+                      </h1>
+                      <div class="tripadvisor-average">
+                        <span class="tripadvisor-average__logo"></span>
+                        <span class="tripadvisor-average__circle -full"></span>
+                        <span class="tripadvisor-average__circle -full"></span>
+                        <span class="tripadvisor-average__circle -full"></span>
+                        <span class="tripadvisor-average__circle -full"></span>
+                        <span class="tripadvisor-average__circle -half"></span>
+                        <span class="tripadvisor-average__total-reviews">(134)</span>
+                      </div>
+                      <div class="hotel-card__distance-wrap">
+                        <span class="hotel-card__distance">2.7mi/4.7km</span>
+                      </div>
+                      <div class="hotel-card__price-info">
+                        <div class="hotel-card__currency-type">RUB</div>
+                        <div class="hotel-card__price">руб 17,983.09</div>
+                        <div class="u-visible-desktop">Hotel Details &gt;</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hotel-result__marker">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="50" viewBox="0 0 39.999998 50.000001" width="40" version="1.1" preserveAspectRatio="xMidYMid meet" class="bw-map-pin">
+                      <g transform="matrix(.97501 0 0 .98001 .70032 -981.37)">
+                        <path  d="m15.176 1048.3c-11.221-10.4-16.556-21.2-14.871-29.9 0.88867-4.5934 2.4455-7.37 5.9482-10.615 7.8463-7.2695 19.638-7.2695 27.484 0 10.821 10.025 7.4731 25.221-8.922 40.501-2.3878 2.2272-4.5569 4.0466-4.8201 4.0466-0.26324 0-2.4323-1.8194-4.8201-4.0466z"/>
+                        <circle cy="1021.4" cx="20" r="14.861"/>
+                      </g>
+                      <text  y="25" x="14" font-size="20" font-family="helvetica">7</text>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="hotel-result -map">
+                  <div class="hotel-result__image card-image"></div>
+                  <div class="hotel-result__details">
+                    <div class="hotel-card -map">
+                      <h1>
+                        <div class="hotel-card__indicator -standard"></div>
+                        <div class="hotel-card__brand">BEST WESTERN PLUS</div>
+                        <div class="hotel-card__name u-ellipsis">Franklin Square Inn Troy/New Albany</div>
+                      </h1>
+                      <div class="tripadvisor-average">
+                        <span class="tripadvisor-average__logo"></span>
+                        <span class="tripadvisor-average__circle -full"></span>
+                        <span class="tripadvisor-average__circle -full"></span>
+                        <span class="tripadvisor-average__circle -full"></span>
+                        <span class="tripadvisor-average__circle -full"></span>
+                        <span class="tripadvisor-average__circle -half"></span>
+                        <span class="tripadvisor-average__total-reviews">(134)</span>
+                      </div>
+                      <div class="hotel-card__distance-wrap">
+                        <span class="hotel-card__distance">2.7mi/4.7km</span>
+                      </div>
+                      <div class="hotel-card__price-info">
+                        <div class="hotel-card__currency-type">RUB</div>
+                        <div class="hotel-card__price">руб 17,983.09</div>
+                        <div class="u-visible-desktop">Hotel Details &gt;</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hotel-result__marker">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="50" viewBox="0 0 39.999998 50.000001" width="40" version="1.1" preserveAspectRatio="xMidYMid meet" class="bw-map-pin">
+                      <g transform="matrix(.97501 0 0 .98001 .70032 -981.37)">
+                        <path  d="m15.176 1048.3c-11.221-10.4-16.556-21.2-14.871-29.9 0.88867-4.5934 2.4455-7.37 5.9482-10.615 7.8463-7.2695 19.638-7.2695 27.484 0 10.821 10.025 7.4731 25.221-8.922 40.501-2.3878 2.2272-4.5569 4.0466-4.8201 4.0466-0.26324 0-2.4323-1.8194-4.8201-4.0466z"/>
+                        <circle cy="1021.4" cx="20" r="14.861"/>
+                      </g>
+                      <text  y="25" x="14" font-size="20" font-family="helvetica">7</text>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="hotel-result -map">
+                  <div class="hotel-result__image card-image"></div>
+                  <div class="hotel-result__details">
+                    <div class="hotel-card -map">
+                      <h1>
+                        <div class="hotel-card__indicator -standard"></div>
+                        <div class="hotel-card__brand">BEST WESTERN PLUS</div>
+                        <div class="hotel-card__name u-ellipsis">Franklin Square Inn Troy/New Albany</div>
+                      </h1>
+                      <div class="tripadvisor-average">
+                        <span class="tripadvisor-average__logo"></span>
+                        <span class="tripadvisor-average__circle -full"></span>
+                        <span class="tripadvisor-average__circle -full"></span>
+                        <span class="tripadvisor-average__circle -full"></span>
+                        <span class="tripadvisor-average__circle -full"></span>
+                        <span class="tripadvisor-average__circle -half"></span>
+                        <span class="tripadvisor-average__total-reviews">(134)</span>
+                      </div>
+                      <div class="hotel-card__distance-wrap">
+                        <span class="hotel-card__distance">2.7mi/4.7km</span>
+                      </div>
+                      <div class="hotel-card__price-info">
+                        <div class="hotel-card__currency-type">RUB</div>
+                        <div class="hotel-card__price">руб 17,983.09</div>
+                        <div class="u-visible-desktop">Hotel Details &gt;</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hotel-result__marker">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="50" viewBox="0 0 39.999998 50.000001" width="40" version="1.1" preserveAspectRatio="xMidYMid meet" class="bw-map-pin">
+                      <g transform="matrix(.97501 0 0 .98001 .70032 -981.37)">
+                        <path  d="m15.176 1048.3c-11.221-10.4-16.556-21.2-14.871-29.9 0.88867-4.5934 2.4455-7.37 5.9482-10.615 7.8463-7.2695 19.638-7.2695 27.484 0 10.821 10.025 7.4731 25.221-8.922 40.501-2.3878 2.2272-4.5569 4.0466-4.8201 4.0466-0.26324 0-2.4323-1.8194-4.8201-4.0466z"/>
+                        <circle cy="1021.4" cx="20" r="14.861"/>
+                      </g>
+                      <text  y="25" x="14" font-size="20" font-family="helvetica">7</text>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="hotel-result -map">
+                  <div class="hotel-result__image card-image"></div>
+                  <div class="hotel-result__details">
+                    <div class="hotel-card -map">
+                      <h1>
+                        <div class="hotel-card__indicator -standard"></div>
+                        <div class="hotel-card__brand">BEST WESTERN PLUS</div>
+                        <div class="hotel-card__name u-ellipsis">Franklin Square Inn Troy/New Albany</div>
+                      </h1>
+                      <div class="tripadvisor-average">
+                        <span class="tripadvisor-average__logo"></span>
+                        <span class="tripadvisor-average__circle -full"></span>
+                        <span class="tripadvisor-average__circle -full"></span>
+                        <span class="tripadvisor-average__circle -full"></span>
+                        <span class="tripadvisor-average__circle -full"></span>
+                        <span class="tripadvisor-average__circle -half"></span>
+                        <span class="tripadvisor-average__total-reviews">(134)</span>
+                      </div>
+                      <div class="hotel-card__distance-wrap">
+                        <span class="hotel-card__distance">2.7mi/4.7km</span>
+                      </div>
+                      <div class="hotel-card__price-info">
+                        <div class="hotel-card__currency-type">RUB</div>
+                        <div class="hotel-card__price">руб 17,983.09</div>
+                        <div class="u-visible-desktop">Hotel Details &gt;</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hotel-result__marker">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="50" viewBox="0 0 39.999998 50.000001" width="40" version="1.1" preserveAspectRatio="xMidYMid meet" class="bw-map-pin">
+                      <g transform="matrix(.97501 0 0 .98001 .70032 -981.37)">
+                        <path  d="m15.176 1048.3c-11.221-10.4-16.556-21.2-14.871-29.9 0.88867-4.5934 2.4455-7.37 5.9482-10.615 7.8463-7.2695 19.638-7.2695 27.484 0 10.821 10.025 7.4731 25.221-8.922 40.501-2.3878 2.2272-4.5569 4.0466-4.8201 4.0466-0.26324 0-2.4323-1.8194-4.8201-4.0466z"/>
+                        <circle cy="1021.4" cx="20" r="14.861"/>
+                      </g>
+                      <text  y="25" x="14" font-size="20" font-family="helvetica">7</text>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+            </ul>
+        </div>
+      </div>
+    </main>
+    <div id="footer"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyB-45CSiwx_TrwsIQ7oWY-7UpKGTgNs4xA"></script>
+    <script src="../scripts/jquery.js"></script>
+    <script src="../scripts/jquery.mobile.custom.js"></script>
+    <script src="../scripts/autocomplete.js"></script>
+    <script src="../scripts/bootstrap.js"></script>
+    <script src="../scripts/slick.min.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/module-map.js"></script>
+    <script src="../scripts/moment-with-locales.min.js"></script>
+    <script src="../scripts/module-calendar.js"></script>
+    <script src="../scripts/reserve-room.js"></script>
+    <script src="../scripts/google-map.js"></script>
+    <script src="../scripts/map-list.js"></script>
+  </body>
+</html>

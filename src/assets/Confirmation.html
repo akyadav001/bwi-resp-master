@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Confirmation</title>
+  <link rel="stylesheet" href="../styles/bootstrap.css">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body data-view="thank-you-view">
+  <!-- taxes and fees modal -->
+  <div class="modal" id="taxes-and-fees">
+    <div class="modal-dialog modal-static">
+      <div class="bw-modal-content">
+        <div class="bw-modal-header">Taxes &amp; Fees</div>
+        <div class="modal-body">
+          <section>
+            <p>BEST WESTERN INTERNATIONAL, INC.</p>
+            <h1 class="h4">HOTEL TAXES AND FEES</h1>
+            <p>Best Western International, Inc.’s website, bestwestern.com, allows you to search for and book reservations at over 4,000
+              independently owned and operated Best Western hotels worldwide. Please be advised that Best Western International, Inc. does
+              not own, operate or manage any hotels, is not the provider of the hotel rooms, is not a party to any booking contract, and
+              does not collect and/or remit any hotel occupancy or similar type taxes to any taxing authorities. Further, Best Western
+              International, Inc. is not acting as agent for any party to this transaction. Any questions regarding taxes and fees charged
+              and collected should be directed to the respective hotel.</p>
+            <p>We offer two types of bookings through our site and through our phone reservations system. The first type of booking allows
+              you to make a room reservation based on rates published by the hotel. We forward the booking details to the hotel, and you
+              pay the hotel directly at check-out. That payment will cover not only the room rate but also certain applicable taxes and
+              fees. If you have any questions about what the taxes and fees may be, please check with the hotel for details before booking.</p>
+            <p>For the second type of booking, when you agree to pre-pay for the room, we transmit your booking details to the hotel, and
+              the hotel charges for the reservation up front. For pre-paid bookings, the hotel may charge for applicable taxes and fees
+              up front, or it may charge the applicable taxes and fees at checkout. If you have any questions about taxes and fees, or
+              when they will be charged, please check with the hotel for details before booking.</p>
+            <p>The amount displayed in the “Taxes and Fees” line is an estimated total that we expect the hotel to bill for applicable
+              taxes, governmental fees, and certain other hotel charges. That amount is based on information provided by the hotel. Best
+              Western International, Inc. does not warrant the accuracy or completeness of the displayed amount. Please note that the hotel
+              may also charge for other items not included in the quoted price or Taxes and Fees, such as resort fees, marketing fees,
+              parking fees, and incidental charges (e.g. mini-bar). The amounts, if applicable, will be collected from you directly by
+              the hotel. If you have any questions about these charges, please contact the hotel for details before booking.</p>
+            <p>A valid credit card is required to check in. If you do not have a valid credit card or you do not wish to use a credit card,
+              please contact the hotel to find out what the check-in policies are before booking.</p>
+          </section>
+        </div>
+        <div class="modal-footer bw-modal-footer">
+          <div class="row">
+            <div class="col-xs-12">
+              <button class="bw-btn-primary" data-dismiss="modal">CLOSE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- confirm cancellation modal -->
+  <div class="modal" id="confirm-cancellation-modal">
+    <div class="modal-dialog">
+      <div class="bw-modal-content">
+        <div class="modal-body">
+          <div style="padding: 50px">
+            <h1 class="h4" style="margin-bottom: 30px; text-align: center">ARE YOU SURE YOU WANT TO CANCEL THIS RESERVATION?</h1>
+            <div class="row">
+              <div class="col-xs-6">
+                <button class="bw-btn bw-btn-default" data-dismiss="modal">CANCEL</button>
+              </div>
+              <div class="col-xs-6">
+                <button class="bw-btn bw-btn-primary" data-dismiss="modal">CONFIRM</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <header class="site-header">
+    @@include('./BaseHeader.html')
+  </header>
+  <div id="content" class="container-fluid">
+    <!-- thank you -->
+    <div id="thank-you" class="row ribbon">
+      <div class="col-xs-12">
+        <h1>Thank You</h1>
+        <h3>for staying with Best Western</h3>
+        <div class="btn-container row">
+          <div class="col-xs-12 col-sm-6">
+            <a class="bw-btn-primary" href="HotelDetails.html">Stay at this hotel again</a>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <a class="bw-btn-default" href="FindAHotel.html">Book another hotel</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- confirmation box -->
+    <div id="confirmation-box" class="row ribbon">
+      <div class="col-xs-12">
+        <div id="confirmation-number">Confirmation #123456789</div>
+        <div class="reservation-actions">
+          <a href="#" class="cancel-link svg">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="11" height="11" viewBox="0 0 22 22">
+              <path d="M11.000,9.059 C11.000,9.059 1.941,-0.000 1.941,-0.000 C1.941,-0.000 -0.000,1.941 -0.000,1.941 C-0.000,1.941 9.059,11.000 9.059,11.000 C9.059,11.000 -0.000,20.059 -0.000,20.059 C-0.000,20.059 1.941,22.000 1.941,22.000 C1.941,22.000 11.000,12.941 11.000,12.941 C11.000,12.941 20.059,22.000 20.059,22.000 C20.059,22.000 22.000,20.059 22.000,20.059 C22.000,20.059 12.941,11.000 12.941,11.000 C12.941,11.000 22.000,1.941 22.000,1.941 C22.000,1.941 20.059,-0.000 20.059,-0.000 C20.059,-0.000 11.000,9.059 11.000,9.059 Z" id="close-icon" fill-rule="evenodd"/>
+            </svg>
+            &nbsp;CANCEL RESERVATION
+          </a>
+          <span class="print-email">
+            <a href="#" class="svg">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="30" height="30" viewBox="0 0 43 33">
+                <path d="M0.009,31.893 C0.009,31.893 0.009,0.004 0.009,0.004 C0.009,0.004 41.950,0.004 41.950,0.004 C41.950,0.004 41.950,31.893 41.950,31.893 C41.950,31.893 0.009,31.893 0.009,31.893 ZM34.703,27.782 C34.703,27.782 25.562,17.743 25.562,17.743 C25.562,17.743 21.066,21.793 21.066,21.793 C21.066,21.793 16.518,17.731 16.518,17.731 C16.518,17.731 7.288,27.782 7.288,27.782 C7.288,27.782 34.703,27.782 34.703,27.782 ZM4.068,25.250 C4.068,25.250 13.472,15.011 13.472,15.011 C13.472,15.011 4.068,6.612 4.068,6.612 C4.068,6.612 4.068,25.250 4.068,25.250 ZM7.408,4.116 C7.408,4.116 21.054,16.302 21.054,16.302 C21.054,16.302 34.585,4.116 34.585,4.116 C34.585,4.116 7.408,4.116 7.408,4.116 ZM37.891,6.638 C37.891,6.638 28.596,15.011 28.596,15.011 C28.596,15.011 37.891,25.217 37.891,25.217 C37.891,25.217 37.891,6.638 37.891,6.638 Z" id="email-icon" fill-rule="evenodd"/>
+              </svg>
+            </a>
+            <a href="#" class="svg">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="30" height="30" viewBox="0 0 44 44">
+                <path d="M37.166,40.353 C37.166,40.353 37.166,43.976 37.166,43.976 C37.166,43.976 7.166,43.976 7.166,43.976 C7.166,43.976 7.166,40.353 7.166,40.353 C7.166,40.353 0.000,40.353 0.000,40.353 C0.000,40.353 0.000,16.261 0.000,16.261 C0.000,16.261 7.166,16.261 7.166,16.261 C7.166,16.261 7.166,-0.009 7.166,-0.009 C7.166,-0.009 37.166,-0.009 37.166,-0.009 C37.166,-0.009 37.166,16.261 37.166,16.261 C37.166,16.261 44.000,16.261 44.000,16.261 C44.000,16.261 44.000,40.353 44.000,40.353 C44.000,40.353 37.166,40.353 37.166,40.353 ZM11.166,39.961 C11.166,39.961 33.166,39.961 33.166,39.961 C33.166,39.961 33.166,32.113 33.166,32.113 C33.166,32.113 11.166,32.113 11.166,32.113 C11.166,32.113 11.166,39.961 11.166,39.961 ZM33.166,4.007 C33.166,4.007 11.166,4.007 11.166,4.007 C11.166,4.007 11.166,16.261 11.166,16.261 C11.166,16.261 33.166,16.261 33.166,16.261 C33.166,16.261 33.166,4.007 33.166,4.007 ZM40.000,20.276 C40.000,20.276 4.000,20.276 4.000,20.276 C4.000,20.276 4.000,36.337 4.000,36.337 C4.000,36.337 7.166,36.337 7.166,36.337 C7.166,36.337 7.166,28.098 7.166,28.098 C7.166,28.098 37.166,28.098 37.166,28.098 C37.166,28.098 37.166,36.337 37.166,36.337 C37.166,36.337 40.000,36.337 40.000,36.337 C40.000,36.337 40.000,20.276 40.000,20.276 Z" id="print-icon" fill-rule="evenodd"/>
+              </svg>
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+    <!-- end confirmation box -->
+    <!-- cancelled reservation -->
+    <div id="canceled-reservation" class="row ribbon">
+      <div class="col-xs-12">
+        <p>
+          <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 0 16 16" width="32" preserveAspectRatio="xMidYMid">
+            <path d="m8 16c-4.4113 0-8-3.589-8-8 0-4.4113 3.5887-8 8-8s8 3.5887 8 8-3.5887 8-8 8zm0-15.296c-4.023 0-7.2961 3.2731-7.2961 7.2961 0.00003 4.023 3.2731 7.296 7.2961 7.296s7.296-3.273 7.296-7.296-3.273-7.2961-7.296-7.2961zm0 10.275c-0.26456 0-0.48513-0.22879-0.48513-0.48402 0-0.26389 0.22057-0.48402 0.48513-0.48402s0.48513 0.22013 0.48513 0.48402c0 0.25523-0.22057 0.48402-0.48513 0.48402zm-0.2734-1.7337l-0.14127-4.224h0.82921l-0.14105 4.224h-0.54688z"
+            fill="#FFF" fill-rule="evenodd" />
+          </svg>
+          <span>Canceled Reservation</span>
+        </p>
+      </div>
+    </div>
+    <!-- hotel info and phone number -->
+    <div id="hotel-name" class="row card--large ribbon">
+      <div class="col-xs-12 card-body">
+        <div class="card-indicator card-indicator--premier"></div>
+        <p class="card-name">BEST WESTERN PREMIER
+          <br />
+          <span class="card-location--large">Executive Suites Columbus East</span>
+        </p>
+        <div class="bw-list-item-phone-price">
+          <span class="card-currency">USD</span>
+          <a href="tel:" class="call-hotel">
+          <object type="image/svg+xml" data="icons/svg/icn-call-blue.svg"></object>
+          <span class="phone-number">(614) 860-9804</span>
+          </a>
+          <span class="card-price">$99.99*</span>
+        </div>
+      </div>
+    </div>
+    <!-- hotel address and directions link -->
+    <div id="address-directions" class="row ribbon">
+      <div class="col-xs-12">
+        <span class="address">1899 Winderley Lane
+          <br>Pickering, OH 43147</span>
+        <a href="http://maps.google.com" class="pull-right distance svg">
+        <object type="image/svg+xml" data="icons/svg/icn-directions-white.svg"></object><br>
+        35.2mi/42.6km
+        </a>
+      </div>
+    </div>
+    <!-- Reservation Amount -->
+    <div id="reservation-amount" class="row ribbon">
+      <div class="col-xs-12">
+        <h2 class="section-title text-primary">Reservation Amount</h2>
+        <div id="totals-and-taxes">
+          <div>Room 1 Subtotal
+            <span class="amount">361.63</span>
+          </div>
+          <div>Room 2 Subtotal
+            <span class="amount">361.63</span>
+          </div>
+          <div class="hidden">Room 3 Subtotal
+            <span class="amount">361.63</span>
+          </div>
+          <div>Taxes
+            <span class="amount">37.88</span>
+          </div>
+        </div>
+        <div id="final-totals">
+          <span class="currency">TOTAL USD</span>
+          <span class="amount">$761.14</span>
+          <a href="#" data-toggle="modal" data-target="#taxes-and-fees">Taxes &amp; Fees</a>
+        </div>
+      </div>
+    </div>
+    <!-- check-in-out -->
+    <div id="check-in-out" class="row ribbon">
+      <div class="col-xs-12">
+        <h2 class="section-title">Check-In &amp; Check-Out</h2>
+        <table id="check-in-out-boxes">
+          <tr>
+            <td id="check-in-box" class="col-xs-9">
+              <label>Check-In</label>March 24, 2015 at 12:00PM</td>
+            <td id="nights-box" class="col-xs-3" rowspan="2">
+              <span id="nights-number">3</span>
+              <br>Nights</td>
+          </tr>
+          <tr>
+            <td id="check-out-box" class="col-xs-9">
+              <label>Check-Out</label>March 27, 2015 at 11:59AM</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <!-- rooms -->
+    <div id="rooms" class="row ribbon">
+      <div class="col-xs-12">
+        <h2 class="section-title">Rooms</h2>
+        <span id="rooms-guests">2 Rooms, 5 Guests</span>
+        <div id="room-1" class="room-box">
+          <div class="canceled-room">
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 16 16" width="20" version="1.1" preserveAspectRatio="xMidYMid">
+                <path fill="#FFF" fill-rule="evenodd" d="m8 16c-4.4113 0-8-3.589-8-8 0-4.4113 3.5887-8 8-8s8 3.5887 8 8-3.5887 8-8 8zm0-15.296c-4.023 0-7.2961 3.2731-7.2961 7.2961 0.00003 4.023 3.2731 7.296 7.2961 7.296s7.296-3.273 7.296-7.296-3.273-7.2961-7.296-7.2961zm0 10.275c-0.26456 0-0.48513-0.22879-0.48513-0.48402 0-0.26389 0.22057-0.48402 0.48513-0.48402s0.48513 0.22013 0.48513 0.48402c0 0.25523-0.22057 0.48402-0.48513 0.48402zm-0.2734-1.7337l-0.14127-4.224h0.82921l-0.14105 4.224h-0.54688z"
+                />
+              </svg>
+              <span>Canceled Room</span>
+            </p>
+          </div>
+          <div class="room-box-header">
+            <a href="#" class="svg" data-toggle="modal" data-target="#confirm-cancellation-modal">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="14" height="14" viewBox="0 0 22 22">
+                <path d="M11.000,9.059 C11.000,9.059 1.941,-0.000 1.941,-0.000 C1.941,-0.000 -0.000,1.941 -0.000,1.941 C-0.000,1.941 9.059,11.000 9.059,11.000 C9.059,11.000 -0.000,20.059 -0.000,20.059 C-0.000,20.059 1.941,22.000 1.941,22.000 C1.941,22.000 11.000,12.941 11.000,12.941 C11.000,12.941 20.059,22.000 20.059,22.000 C20.059,22.000 22.000,20.059 22.000,20.059 C22.000,20.059 12.941,11.000 12.941,11.000 C12.941,11.000 22.000,1.941 22.000,1.941 C22.000,1.941 20.059,-0.000 20.059,-0.000 C20.059,-0.000 11.000,9.059 11.000,9.059 Z" fill="#FFF" fill-rule="evenodd"/>
+              </svg>
+            </a>
+            <div class="room-box-number">Room 1</div>
+            <div class="room-box-type">King Suite
+              <span class="room-box-guests">- 3 Guests</span>
+            </div>
+          </div>
+          <div class="room-box-body">
+            <p class="cancellation-policy">
+              <span class="cancel-label">Cancellation Policy:</span>Cancel before 6PM hotel time on April 19, 2015 to avoid a charge.</p>
+            <div class="room-details subtotal">
+              <div class="room-icon-bar">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="54"
+                height="54" viewBox="0 0 54 54">
+                  <path d="M28.248,27.427 C28.248,27.427 31.665,27.427 31.665,27.427 C31.665,27.427 31.665,24.107 31.665,24.107 C31.665,24.107 33.733,24.107 33.733,24.107 C33.733,24.107 33.733,21.099 33.733,21.099 C33.733,21.099 31.665,21.099 31.665,21.099 C31.665,21.099 31.665,11.379 31.665,11.379 C31.665,11.379 26.949,11.379 26.949,11.379 C26.949,11.379 20.572,21.412 20.572,21.412 C20.572,21.412 20.572,24.107 20.572,24.107 C20.572,24.107 28.248,24.107 28.248,24.107 C28.248,24.107 28.248,27.427 28.248,27.427 ZM23.917,21.099 C23.917,21.099 28.248,14.411 28.248,14.411 C28.248,14.411 28.248,21.099 28.248,21.099 C28.248,21.099 23.917,21.099 23.917,21.099 ZM16.962,35.812 C16.962,35.812 38.917,35.812 38.917,35.812 C38.917,35.812 38.917,40.297 38.917,40.297 C38.917,40.297 42.929,40.297 42.929,40.297 C42.929,40.297 42.929,21.543 42.929,21.543 C42.929,21.543 38.917,21.543 38.917,21.543 C38.917,21.543 38.917,31.800 38.917,31.800 C38.917,31.800 16.962,31.800 16.962,31.800 C16.962,31.800 16.962,27.314 16.962,27.314 C16.962,27.314 12.949,27.314 12.949,27.314 C12.949,27.314 12.949,40.297 12.949,40.297 C12.949,40.297 16.962,40.297 16.962,40.297 C16.962,40.297 16.962,35.812 16.962,35.812 ZM0.000,0.000 C0.000,0.000 0.000,54.000 0.000,54.000 C0.000,54.000 54.000,54.000 54.000,54.000 C54.000,54.000 54.000,0.000 54.000,0.000 C54.000,0.000 0.000,0.000 0.000,0.000 ZM49.988,49.988 C49.988,49.988 4.012,49.988 4.012,49.988 C4.012,49.988 4.012,4.012 4.012,4.012 C4.012,4.012 49.988,4.012 49.988,4.012 C49.988,4.012 49.988,49.988 49.988,49.988 Z"
+                  fill="#031054" fill-rule="evenodd" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="54"
+                height="54" viewBox="0 0 54 54">
+                  <path d="M25.670,43.697 C29.396,43.697 32.619,41.639 34.359,38.621 C34.359,38.621 36.108,42.016 36.108,42.016 C36.108,42.016 40.904,40.377 40.904,40.377 C40.904,40.377 39.607,36.580 39.607,36.580 C39.607,36.580 38.086,37.099 38.086,37.099 C38.086,37.099 35.152,31.401 35.152,31.401 C35.152,31.401 27.037,31.401 27.037,31.401 C27.037,31.401 27.037,27.654 27.037,27.654 C27.037,27.654 35.144,27.654 35.144,27.654 C35.144,27.654 35.144,23.642 35.144,23.642 C35.144,23.642 27.037,23.642 27.037,23.642 C27.037,23.642 27.037,21.920 27.037,21.920 C29.510,21.223 31.339,18.971 31.339,16.277 C31.339,13.032 28.699,10.391 25.454,10.391 C22.208,10.391 19.567,13.032 19.567,16.277 C19.567,18.655 20.991,20.696 23.025,21.625 C23.025,21.625 23.025,23.961 23.025,23.961 C18.761,25.131 15.602,29.001 15.602,33.631 C15.602,39.182 20.118,43.697 25.670,43.697 ZM25.454,14.403 C26.487,14.403 27.327,15.244 27.327,16.277 C27.327,17.310 26.487,18.152 25.454,18.152 C24.420,18.152 23.579,17.310 23.579,16.277 C23.579,15.244 24.420,14.403 25.454,14.403 ZM23.025,28.210 C23.025,28.210 23.025,35.413 23.025,35.413 C23.025,35.413 31.425,35.413 31.425,35.413 C30.658,37.878 28.384,39.685 25.670,39.685 C22.331,39.685 19.614,36.969 19.614,33.631 C19.614,31.245 21.014,29.196 23.025,28.210 ZM0.000,0.000 C0.000,0.000 0.000,54.000 0.000,54.000 C0.000,54.000 54.000,54.000 54.000,54.000 C54.000,54.000 54.000,0.000 54.000,0.000 C54.000,0.000 0.000,0.000 0.000,0.000 ZM49.988,49.988 C49.988,49.988 4.012,49.988 4.012,49.988 C4.012,49.988 4.012,4.012 4.012,4.012 C4.012,4.012 49.988,4.012 49.988,4.012 C49.988,4.012 49.988,49.988 49.988,49.988 Z"
+                  fill="#031054" fill-rule="evenodd" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="54"
+                height="54" viewBox="0 0 54 54">
+                  <path d="M42.890,30.157 C42.890,30.157 10.761,30.157 10.761,30.157 C10.761,30.157 10.761,40.911 10.761,40.911 C10.761,40.911 42.890,40.911 42.890,40.911 C42.890,40.911 42.890,30.157 42.890,30.157 ZM32.754,36.899 C32.754,36.899 14.773,36.899 14.773,36.899 C14.773,36.899 14.773,34.169 14.773,34.169 C14.773,34.169 32.754,34.169 32.754,34.169 C32.754,34.169 32.754,36.899 32.754,36.899 ZM38.878,36.899 C38.878,36.899 36.766,36.899 36.766,36.899 C36.766,36.899 36.766,34.169 36.766,34.169 C36.766,34.169 38.878,34.169 38.878,34.169 C38.878,34.169 38.878,36.899 38.878,36.899 ZM-0.000,0.000 C-0.000,0.000 -0.000,54.000 -0.000,54.000 C-0.000,54.000 54.000,54.000 54.000,54.000 C54.000,54.000 54.000,0.000 54.000,0.000 C54.000,0.000 -0.000,0.000 -0.000,0.000 ZM49.988,49.988 C49.988,49.988 4.012,49.988 4.012,49.988 C4.012,49.988 4.012,4.012 4.012,4.012 C4.012,4.012 49.988,4.012 49.988,4.012 C49.988,4.012 49.988,49.988 49.988,49.988 ZM37.342,19.983 C37.908,20.469 38.185,20.721 38.318,21.117 C38.441,21.489 38.419,22.106 38.079,22.581 C37.777,23.000 37.264,23.212 36.554,23.212 C36.554,23.212 36.554,27.224 36.554,27.224 C38.568,27.224 40.267,26.408 41.335,24.926 C42.381,23.472 42.684,21.525 42.122,19.846 C41.636,18.386 40.666,17.551 39.961,16.943 C39.425,16.482 39.113,16.201 38.911,15.781 C38.729,15.400 38.758,14.975 38.990,14.698 C39.342,14.272 40.030,14.387 40.404,14.487 C40.404,14.487 41.462,10.616 41.462,10.616 C39.264,10.018 37.193,10.585 35.908,12.130 C34.674,13.610 34.433,15.724 35.295,17.518 C35.869,18.714 36.686,19.417 37.342,19.983 ZM28.740,19.984 C29.306,20.470 29.584,20.722 29.713,21.115 C29.839,21.488 29.817,22.106 29.474,22.581 C29.173,23.000 28.659,23.212 27.950,23.212 C27.950,23.212 27.950,27.224 27.950,27.224 C29.964,27.224 31.661,26.408 32.728,24.927 C33.777,23.474 34.080,21.527 33.520,19.846 C33.034,18.385 32.064,17.551 31.357,16.942 C30.820,16.482 30.509,16.201 30.307,15.781 C30.125,15.400 30.154,14.975 30.385,14.699 C30.736,14.275 31.424,14.383 31.802,14.487 C31.802,14.487 32.860,10.616 32.860,10.616 C30.664,10.018 28.589,10.586 27.302,12.131 C26.069,13.610 25.829,15.725 26.690,17.518 C27.265,18.714 28.081,19.418 28.740,19.984 Z"
+                  fill="#031054" fill-rule="evenodd" />
+                </svg>
+                </span>
+              </div>
+              <div class="details-dropdown bw-accordion collapsed" data-toggle="collapse" data-target="#room-1-amenities">
+                <span class="accordion-label--collapsed">SHOW DETAILS</span>
+                <span class="accordion-label--expanded">HIDE DETAILS</span>
+                <span class="glyphicon glyphicon-chevron-up"></span>
+              </div>
+              <div id="room-1-amenities" class="room-amenities collapse row">
+                <div class="col-xs-12">
+                  <p class="description">Kitten Ipsum dolor sit amet sleep on your face nisi eros love dui Mauris long legs tail together curls sollicitudin, libero
+                    zzz quis fringilla! Claw, mollis fight quis augue dui his hearts. Slept vulputate eget quis nunc climb the curtains paw honey
+                    ragdoll face outside family.</p>
+                  <h3 class="h4">This Room Includes</h3>
+                  <ul>
+                    <li>Accessable Bathroom</li>
+                    <li>Coffee/tea maker</li>
+                    <li>Refrigerator</li>
+                    <li>Iron, ironing board</li>
+                  </ul>
+                  <h3 class="h4">All Rooms Include</h3>
+                  <ul>
+                    <li>Cable or satellite television</li>
+                    <li>In-room movies</li>
+                    <li>AM/FM alarm clock</li>
+                    <li>Coffee/tea maker</li>
+                    <li>Microfridge</li>
+                    <li>Hairdryer</li>
+                    <li>Iron, ironing board</li>
+                    <li>Desk/work area</li>
+                    <li>Dataports</li>
+                    <li>High-speed Internet access</li>
+                    <li>Speaker phone</li>
+                    <li>Two line phone</li>
+                    <li>Voice mail</li>
+                    <li>Free local calls under 30 minutes</li>
+                    <li>In-room safe</li>
+                    <li>Microwave</li>
+                    <li>Wake-up calls</li>
+                    <li>Refrigerator</li>
+                    <li>Air-conditioning, every room</li>
+                  </ul>
+                  <div class="visible-xs close-details" data-toggle="collapse" data-target="#room-1-amenities">HIDE DETAILS &amp; PHOTOS</div>
+                </div>
+              </div>
+            </div>
+            <div class="best-value row">
+              <div class="col-xs-12">Best Value Rate
+                <a class="best-value-info" tabindex="0" role="button" data-placement="auto" data-toggle="popover" data-trigger="focus"
+                data-content="Best Western Rewards&reg; members save 10% or more. Membership number will be required upon check-in.">                                  
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="32"
+                height="32" viewBox="0 0 32 32">
+               <path d="M16.000,0.000 C7.178,0.000 0.000,7.178 0.000,16.000 C0.000,24.822 7.178,32.000 16.000,32.000 C24.822,32.000 32.000,24.822 32.000,16.000 C32.000,7.178 24.822,0.000 16.000,0.000 ZM16.000,28.822 C8.930,28.822 3.178,23.070 3.178,16.000 C3.178,8.930 8.930,3.178 16.000,3.178 C23.070,3.178 28.822,8.930 28.822,16.000 C28.822,23.070 23.070,28.822 16.000,28.822 ZM14.412,23.607 C14.412,23.607 17.590,23.607 17.590,23.607 C17.590,23.607 17.590,14.302 17.590,14.302 C17.590,14.302 14.412,14.302 14.412,14.302 C14.412,14.302 14.412,23.607 14.412,23.607 ZM17.589,8.873 C17.589,8.873 14.411,8.873 14.411,8.873 C14.411,8.873 14.411,11.124 14.411,11.124 C14.411,11.124 17.589,11.124 17.589,11.124 C17.589,11.124 17.589,8.873 17.589,8.873 Z"
+              fill="#031054" fill-rule="evenodd" />
+              </svg></a>
+              </div>
+            </div>
+            <div class="rates">
+              <div class="rates-header">Daily Rates</div>
+              <div class="rates-row row">
+                <div class="rates-date col-xs-7">Tue 3/3/15 - Wed 3/4/15</div>
+                <div class="daily-rate col-xs-5">
+                  <span class="rates-x">2x</span>110.99</div>
+              </div>
+              <div class="rates-row row">
+                <div class="rates-date col-xs-7">Thu 3/5/15</div>
+                <div class="daily-rate col-xs-5">
+                  <span class="rates-x">1x</span>115.99</div>
+              </div>
+              <div class="rates-row row">
+                <div class="rates-date col-xs-7">Taxes</div>
+                <div class="daily-rate col-xs-5">23.66</div>
+              </div>
+            </div>
+            <div class="subtotal">
+              <div class="empty-div">
+                <span class="subtotal-currency">Subtotal USD</span>
+                <span class="subtotal-price">361.63</span>
+              </div>
+            </div>
+          </div>
+          <div class="room-box-taxes">
+            <div data-toggle="collapse" data-target="#taxes-expandable" class="taxes-header">Taxes, Fees, &amp; Policies
+              <span class="bw-icon bw-icon-arrow"></span>
+              <span class="bw-icon bw-icon-arrow-up hidden"></span>
+            </div>
+            <div id="taxes-expandable" class="taxes-expandables collapse">
+              <h4>Other Taxes &amp; Fees</h4>
+              <p>(Additional charges may apply): Tax 8% = $65.60 USD</p>
+              <h4>Deposit Policy</h4>
+              <p>Guaranteed to your credit card for late arrival. A valid credit card must be presented at check-in.</p>
+              <h4>Cancellation Policy</h4>
+              <p>Cancel before 6PM hotel time on April 19, 2015 to avoid a change</p>
+              <h4>Child Policy</h4>
+              <p>Children 12 and Under are free in room with one paying adult</p>
+            </div>
+          </div>
+        </div>
+        <!-- end room 1 -->
+        <div id="room-2" class="room-box">
+          <div class="room-box-header">
+            <a href="#" class="svg" data-toggle="modal" data-target="#confirm-cancellation-modal">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="11" height="11" viewBox="0 0 22 22">
+                <path d="M11.000,9.059 C11.000,9.059 1.941,-0.000 1.941,-0.000 C1.941,-0.000 -0.000,1.941 -0.000,1.941 C-0.000,1.941 9.059,11.000 9.059,11.000 C9.059,11.000 -0.000,20.059 -0.000,20.059 C-0.000,20.059 1.941,22.000 1.941,22.000 C1.941,22.000 11.000,12.941 11.000,12.941 C11.000,12.941 20.059,22.000 20.059,22.000 C20.059,22.000 22.000,20.059 22.000,20.059 C22.000,20.059 12.941,11.000 12.941,11.000 C12.941,11.000 22.000,1.941 22.000,1.941 C22.000,1.941 20.059,-0.000 20.059,-0.000 C20.059,-0.000 11.000,9.059 11.000,9.059 Z" fill="#FFF" fill-rule="evenodd"/>
+              </svg>
+            </a>
+            <div class="room-box-number">Room 2</div>
+            <div class="room-box-type">King Suite
+              <span class="room-box-guests">- 2 Guests</span>
+            </div>
+          </div>
+          <div class="room-box-body">
+            <p class="cancellation-policy">
+              <span class="cancel-label">Cancellation Policy:</span>Cancel before 6PM hotel time on April 19, 2015 to avoid a charge.</p>
+            <div class="room-details subtotal">
+              <div class="room-icon-bar">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="54"
+                height="54" viewBox="0 0 54 54">
+                  <path d="M28.248,27.427 C28.248,27.427 31.665,27.427 31.665,27.427 C31.665,27.427 31.665,24.107 31.665,24.107 C31.665,24.107 33.733,24.107 33.733,24.107 C33.733,24.107 33.733,21.099 33.733,21.099 C33.733,21.099 31.665,21.099 31.665,21.099 C31.665,21.099 31.665,11.379 31.665,11.379 C31.665,11.379 26.949,11.379 26.949,11.379 C26.949,11.379 20.572,21.412 20.572,21.412 C20.572,21.412 20.572,24.107 20.572,24.107 C20.572,24.107 28.248,24.107 28.248,24.107 C28.248,24.107 28.248,27.427 28.248,27.427 ZM23.917,21.099 C23.917,21.099 28.248,14.411 28.248,14.411 C28.248,14.411 28.248,21.099 28.248,21.099 C28.248,21.099 23.917,21.099 23.917,21.099 ZM16.962,35.812 C16.962,35.812 38.917,35.812 38.917,35.812 C38.917,35.812 38.917,40.297 38.917,40.297 C38.917,40.297 42.929,40.297 42.929,40.297 C42.929,40.297 42.929,21.543 42.929,21.543 C42.929,21.543 38.917,21.543 38.917,21.543 C38.917,21.543 38.917,31.800 38.917,31.800 C38.917,31.800 16.962,31.800 16.962,31.800 C16.962,31.800 16.962,27.314 16.962,27.314 C16.962,27.314 12.949,27.314 12.949,27.314 C12.949,27.314 12.949,40.297 12.949,40.297 C12.949,40.297 16.962,40.297 16.962,40.297 C16.962,40.297 16.962,35.812 16.962,35.812 ZM0.000,0.000 C0.000,0.000 0.000,54.000 0.000,54.000 C0.000,54.000 54.000,54.000 54.000,54.000 C54.000,54.000 54.000,0.000 54.000,0.000 C54.000,0.000 0.000,0.000 0.000,0.000 ZM49.988,49.988 C49.988,49.988 4.012,49.988 4.012,49.988 C4.012,49.988 4.012,4.012 4.012,4.012 C4.012,4.012 49.988,4.012 49.988,4.012 C49.988,4.012 49.988,49.988 49.988,49.988 Z"
+                  fill="#031054" fill-rule="evenodd" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="54"
+                height="54" viewBox="0 0 54 54">
+                  <path d="M25.670,43.697 C29.396,43.697 32.619,41.639 34.359,38.621 C34.359,38.621 36.108,42.016 36.108,42.016 C36.108,42.016 40.904,40.377 40.904,40.377 C40.904,40.377 39.607,36.580 39.607,36.580 C39.607,36.580 38.086,37.099 38.086,37.099 C38.086,37.099 35.152,31.401 35.152,31.401 C35.152,31.401 27.037,31.401 27.037,31.401 C27.037,31.401 27.037,27.654 27.037,27.654 C27.037,27.654 35.144,27.654 35.144,27.654 C35.144,27.654 35.144,23.642 35.144,23.642 C35.144,23.642 27.037,23.642 27.037,23.642 C27.037,23.642 27.037,21.920 27.037,21.920 C29.510,21.223 31.339,18.971 31.339,16.277 C31.339,13.032 28.699,10.391 25.454,10.391 C22.208,10.391 19.567,13.032 19.567,16.277 C19.567,18.655 20.991,20.696 23.025,21.625 C23.025,21.625 23.025,23.961 23.025,23.961 C18.761,25.131 15.602,29.001 15.602,33.631 C15.602,39.182 20.118,43.697 25.670,43.697 ZM25.454,14.403 C26.487,14.403 27.327,15.244 27.327,16.277 C27.327,17.310 26.487,18.152 25.454,18.152 C24.420,18.152 23.579,17.310 23.579,16.277 C23.579,15.244 24.420,14.403 25.454,14.403 ZM23.025,28.210 C23.025,28.210 23.025,35.413 23.025,35.413 C23.025,35.413 31.425,35.413 31.425,35.413 C30.658,37.878 28.384,39.685 25.670,39.685 C22.331,39.685 19.614,36.969 19.614,33.631 C19.614,31.245 21.014,29.196 23.025,28.210 ZM0.000,0.000 C0.000,0.000 0.000,54.000 0.000,54.000 C0.000,54.000 54.000,54.000 54.000,54.000 C54.000,54.000 54.000,0.000 54.000,0.000 C54.000,0.000 0.000,0.000 0.000,0.000 ZM49.988,49.988 C49.988,49.988 4.012,49.988 4.012,49.988 C4.012,49.988 4.012,4.012 4.012,4.012 C4.012,4.012 49.988,4.012 49.988,4.012 C49.988,4.012 49.988,49.988 49.988,49.988 Z"
+                  fill="#031054" fill-rule="evenodd" />
+                </svg>
+              </div>
+              <div class="details-dropdown bw-accordion collapsed" data-toggle="collapse" data-target="#room-2-amenities">
+                <span class="accordion-label--collapsed">SHOW DETAILS</span>
+                <span class="accordion-label--expanded">HIDE DETAILS</span>
+                <span class="glyphicon glyphicon-chevron-up"></span>
+              </div>
+              <div id="room-2-amenities" class="room-amenities collapse row">
+                <div class="col-xs-12">
+                  <p class="description">Kitten Ipsum dolor sit amet sleep on your face nisi eros love dui Mauris long legs tail together curls sollicitudin, libero
+                    zzz quis fringilla! Claw, mollis fight quis augue dui his hearts. Slept vulputate eget quis nunc climb the curtains paw honey
+                    ragdoll face outside family.</p>
+                  <h3 class="h4">This Room Includes</h3>
+                  <ul>
+                    <li>Accessable Bathroom</li>
+                    <li>Coffee/tea maker</li>
+                    <li>Refrigerator</li>
+                    <li>Iron, ironing board</li>
+                  </ul>
+                  <h3 class="h4">All Rooms Include</h3>
+                  <ul>
+                    <li>Cable or satellite television</li>
+                    <li>In-room movies</li>
+                    <li>AM/FM alarm clock</li>
+                    <li>Coffee/tea maker</li>
+                    <li>Microfridge</li>
+                    <li>Hairdryer</li>
+                    <li>Iron, ironing board</li>
+                    <li>Desk/work area</li>
+                    <li>Dataports</li>
+                    <li>High-speed Internet access</li>
+                    <li>Speaker phone</li>
+                    <li>Two line phone</li>
+                    <li>Voice mail</li>
+                    <li>Free local calls under 30 minutes</li>
+                    <li>In-room safe</li>
+                    <li>Microwave</li>
+                    <li>Wake-up calls</li>
+                    <li>Refrigerator</li>
+                    <li>Air-conditioning, every room</li>
+                  </ul>
+                  <div class="visible-xs close-details" data-toggle="collapse" data-target="#room-2-amenities">HIDE DETAILS &amp; PHOTOS</div>
+                </div>
+              </div>
+            </div>
+            <div class="best-value row">
+              <div class="col-xs-12">Best Value Rate
+                <a class="best-value-info" tabindex="0" role="button" data-placement="auto" data-toggle="popover" data-trigger="focus"
+                data-content="Best Western Rewards&reg; members save 10% or more. Membership number will be required upon check-in.">                                  
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="32"
+                  height="32" viewBox="0 0 32 32">
+                      <path d="M16.000,0.000 C7.178,0.000 0.000,7.178 0.000,16.000 C0.000,24.822 7.178,32.000 16.000,32.000 C24.822,32.000 32.000,24.822 32.000,16.000 C32.000,7.178 24.822,0.000 16.000,0.000 ZM16.000,28.822 C8.930,28.822 3.178,23.070 3.178,16.000 C3.178,8.930 8.930,3.178 16.000,3.178 C23.070,3.178 28.822,8.930 28.822,16.000 C28.822,23.070 23.070,28.822 16.000,28.822 ZM14.412,23.607 C14.412,23.607 17.590,23.607 17.590,23.607 C17.590,23.607 17.590,14.302 17.590,14.302 C17.590,14.302 14.412,14.302 14.412,14.302 C14.412,14.302 14.412,23.607 14.412,23.607 ZM17.589,8.873 C17.589,8.873 14.411,8.873 14.411,8.873 C14.411,8.873 14.411,11.124 14.411,11.124 C14.411,11.124 17.589,11.124 17.589,11.124 C17.589,11.124 17.589,8.873 17.589,8.873 Z"
+                      fill="#031054" fill-rule="evenodd" />
+                </svg></a>
+              </div>
+            </div>
+            <div class="rates">
+              <div class="rates-header">Daily Rates</div>
+              <div class="rates-row row">
+                <div class="rates-date col-xs-7">Tue 3/3/15 - Wed 3/4/15</div>
+                <div class="daily-rate col-xs-5">
+                  <span class="rates-x">2x</span>110.99</div>
+              </div>
+              <div class="rates-row row">
+                <div class="rates-date col-xs-7">Thu 3/5/15</div>
+                <div class="daily-rate col-xs-5">
+                  <span class="rates-x">1x</span>115.99</div>
+              </div>
+              <div class="rates-row row">
+                <div class="rates-date col-xs-7">Taxes</div>
+                <div class="daily-rate col-xs-5">23.66</div>
+              </div>
+            </div>
+            <div class="subtotal">
+              <div class="empty-div">
+                <span class="subtotal-currency">Subtotal USD</span>
+                <span class="subtotal-price">361.63</span>
+              </div>
+            </div>
+          </div>
+          <div class="room-box-taxes">
+            <div data-toggle="collapse" data-target="#taxes-expandable2" class="taxes-header">Taxes, Fees, &amp; Policies
+              <span class="bw-icon bw-icon-arrow"></span>
+              <span class="bw-icon bw-icon-arrow-up hidden"></span>
+            </div>
+            <div id="taxes-expandable2" class="taxes-expandables collapse">
+              <h4>Other Taxes &amp; Fees</h4>
+              <p>(Additional charges may apply): Tax 8% = $65.60 USD</p>
+              <h4>Deposit Policy</h4>
+              <p>Guaranteed to your credit card for late arrival. A valid credit card must be presented at check-in.</p>
+              <h4>Cancellation Policy</h4>
+              <p>Cancel before 6PM hotel time on April 19, 2015 to avoid a change</p>
+              <h4>Child Policy</h4>
+              <p>Children 12 and Under are free in room with one paying adult</p>
+            </div>
+          </div>
+        </div>
+        <!-- end room 2 -->
+        <div id="room-3" class="room-box hidden">
+          <div class="room-box-header">
+            <a href="#" class="svg" data-toggle="modal" data-target="#confirm-cancellation-modal">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="22" height="22" viewBox="0 0 22 22">
+                <path d="M11.000,9.059 C11.000,9.059 1.941,-0.000 1.941,-0.000 C1.941,-0.000 -0.000,1.941 -0.000,1.941 C-0.000,1.941 9.059,11.000 9.059,11.000 C9.059,11.000 -0.000,20.059 -0.000,20.059 C-0.000,20.059 1.941,22.000 1.941,22.000 C1.941,22.000 11.000,12.941 11.000,12.941 C11.000,12.941 20.059,22.000 20.059,22.000 C20.059,22.000 22.000,20.059 22.000,20.059 C22.000,20.059 12.941,11.000 12.941,11.000 C12.941,11.000 22.000,1.941 22.000,1.941 C22.000,1.941 20.059,-0.000 20.059,-0.000 C20.059,-0.000 11.000,9.059 11.000,9.059 Z" fill="#FFF" fill-rule="evenodd"/>
+              </svg>
+            </a>
+            <div class="room-box-number">Room 3</div>
+            <div class="room-box-type">King Suite
+              <span class="room-box-guests">- 2 Guests</span>
+            </div>
+          </div>
+          <div class="room-box-body">
+            <p class="cancellation-policy">
+              <span class="cancel-label">Cancellation Policy:</span>Cancel before 6PM hotel time on April 19, 2015 to avoid a charge.</p>
+            <div class="room-details subtotal">
+              <div class="room-icon-bar">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="54"
+                height="54" viewBox="0 0 54 54">
+                  <path d="M28.248,27.427 C28.248,27.427 31.665,27.427 31.665,27.427 C31.665,27.427 31.665,24.107 31.665,24.107 C31.665,24.107 33.733,24.107 33.733,24.107 C33.733,24.107 33.733,21.099 33.733,21.099 C33.733,21.099 31.665,21.099 31.665,21.099 C31.665,21.099 31.665,11.379 31.665,11.379 C31.665,11.379 26.949,11.379 26.949,11.379 C26.949,11.379 20.572,21.412 20.572,21.412 C20.572,21.412 20.572,24.107 20.572,24.107 C20.572,24.107 28.248,24.107 28.248,24.107 C28.248,24.107 28.248,27.427 28.248,27.427 ZM23.917,21.099 C23.917,21.099 28.248,14.411 28.248,14.411 C28.248,14.411 28.248,21.099 28.248,21.099 C28.248,21.099 23.917,21.099 23.917,21.099 ZM16.962,35.812 C16.962,35.812 38.917,35.812 38.917,35.812 C38.917,35.812 38.917,40.297 38.917,40.297 C38.917,40.297 42.929,40.297 42.929,40.297 C42.929,40.297 42.929,21.543 42.929,21.543 C42.929,21.543 38.917,21.543 38.917,21.543 C38.917,21.543 38.917,31.800 38.917,31.800 C38.917,31.800 16.962,31.800 16.962,31.800 C16.962,31.800 16.962,27.314 16.962,27.314 C16.962,27.314 12.949,27.314 12.949,27.314 C12.949,27.314 12.949,40.297 12.949,40.297 C12.949,40.297 16.962,40.297 16.962,40.297 C16.962,40.297 16.962,35.812 16.962,35.812 ZM0.000,0.000 C0.000,0.000 0.000,54.000 0.000,54.000 C0.000,54.000 54.000,54.000 54.000,54.000 C54.000,54.000 54.000,0.000 54.000,0.000 C54.000,0.000 0.000,0.000 0.000,0.000 ZM49.988,49.988 C49.988,49.988 4.012,49.988 4.012,49.988 C4.012,49.988 4.012,4.012 4.012,4.012 C4.012,4.012 49.988,4.012 49.988,4.012 C49.988,4.012 49.988,49.988 49.988,49.988 Z"
+                  fill="#031054" fill-rule="evenodd" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="54"
+                height="54" viewBox="0 0 54 54">
+                  <path d="M25.670,43.697 C29.396,43.697 32.619,41.639 34.359,38.621 C34.359,38.621 36.108,42.016 36.108,42.016 C36.108,42.016 40.904,40.377 40.904,40.377 C40.904,40.377 39.607,36.580 39.607,36.580 C39.607,36.580 38.086,37.099 38.086,37.099 C38.086,37.099 35.152,31.401 35.152,31.401 C35.152,31.401 27.037,31.401 27.037,31.401 C27.037,31.401 27.037,27.654 27.037,27.654 C27.037,27.654 35.144,27.654 35.144,27.654 C35.144,27.654 35.144,23.642 35.144,23.642 C35.144,23.642 27.037,23.642 27.037,23.642 C27.037,23.642 27.037,21.920 27.037,21.920 C29.510,21.223 31.339,18.971 31.339,16.277 C31.339,13.032 28.699,10.391 25.454,10.391 C22.208,10.391 19.567,13.032 19.567,16.277 C19.567,18.655 20.991,20.696 23.025,21.625 C23.025,21.625 23.025,23.961 23.025,23.961 C18.761,25.131 15.602,29.001 15.602,33.631 C15.602,39.182 20.118,43.697 25.670,43.697 ZM25.454,14.403 C26.487,14.403 27.327,15.244 27.327,16.277 C27.327,17.310 26.487,18.152 25.454,18.152 C24.420,18.152 23.579,17.310 23.579,16.277 C23.579,15.244 24.420,14.403 25.454,14.403 ZM23.025,28.210 C23.025,28.210 23.025,35.413 23.025,35.413 C23.025,35.413 31.425,35.413 31.425,35.413 C30.658,37.878 28.384,39.685 25.670,39.685 C22.331,39.685 19.614,36.969 19.614,33.631 C19.614,31.245 21.014,29.196 23.025,28.210 ZM0.000,0.000 C0.000,0.000 0.000,54.000 0.000,54.000 C0.000,54.000 54.000,54.000 54.000,54.000 C54.000,54.000 54.000,0.000 54.000,0.000 C54.000,0.000 0.000,0.000 0.000,0.000 ZM49.988,49.988 C49.988,49.988 4.012,49.988 4.012,49.988 C4.012,49.988 4.012,4.012 4.012,4.012 C4.012,4.012 49.988,4.012 49.988,4.012 C49.988,4.012 49.988,49.988 49.988,49.988 Z"
+                  fill="#031054" fill-rule="evenodd" />
+                </svg>
+              </div>
+              <div class="details-dropdown bw-accordion collapsed" data-toggle="collapse" data-target="#room-3-amenities">
+                <span class="accordion-label--collapsed">SHOW DETAILS</span>
+                <span class="accordion-label--expanded">HIDE DETAILS</span>
+                <span class="glyphicon glyphicon-chevron-up"></span>
+              </div>
+              <div id="room-3-amenities" class="room-amenities collapse row">
+                <div class="col-xs-12">
+                  <p class="description">Kitten Ipsum dolor sit amet sleep on your face nisi eros love dui Mauris long legs tail together curls sollicitudin, libero
+                    zzz quis fringilla! Claw, mollis fight quis augue dui his hearts. Slept vulputate eget quis nunc climb the curtains paw honey
+                    ragdoll face outside family.</p>
+                  <h3 class="h4">This Room Includes</h3>
+                  <ul>
+                    <li>Accessable Bathroom</li>
+                    <li>Coffee/tea maker</li>
+                    <li>Refrigerator</li>
+                    <li>Iron, ironing board</li>
+                  </ul>
+                  <h3 class="h4">All Rooms Include</h3>
+                  <ul>
+                    <li>Cable or satellite television</li>
+                    <li>In-room movies</li>
+                    <li>AM/FM alarm clock</li>
+                    <li>Coffee/tea maker</li>
+                    <li>Microfridge</li>
+                    <li>Hairdryer</li>
+                    <li>Iron, ironing board</li>
+                    <li>Desk/work area</li>
+                    <li>Dataports</li>
+                    <li>High-speed Internet access</li>
+                    <li>Speaker phone</li>
+                    <li>Two line phone</li>
+                    <li>Voice mail</li>
+                    <li>Free local calls under 30 minutes</li>
+                    <li>In-room safe</li>
+                    <li>Microwave</li>
+                    <li>Wake-up calls</li>
+                    <li>Refrigerator</li>
+                    <li>Air-conditioning, every room</li>
+                  </ul>
+                  <div class="visible-xs close-details" data-toggle="collapse" data-target="#room-3-amenities">HIDE DETAILS &amp; PHOTOS</div>
+                </div>
+              </div>
+            </div>
+            <div class="best-value row">
+              <div class="col-xs-12">Best Value Rate
+                <a class="best-value-info" tabindex="0" role="button" data-placement="auto" data-toggle="popover" data-trigger="focus"
+                data-content="Best Western Rewards&reg; members save 10% or more. Membership number will be required upon check-in.">                                  
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="32"
+                  height="32" viewBox="0 0 32 32">
+                <path d="M16.000,0.000 C7.178,0.000 0.000,7.178 0.000,16.000 C0.000,24.822 7.178,32.000 16.000,32.000 C24.822,32.000 32.000,24.822 32.000,16.000 C32.000,7.178 24.822,0.000 16.000,0.000 ZM16.000,28.822 C8.930,28.822 3.178,23.070 3.178,16.000 C3.178,8.930 8.930,3.178 16.000,3.178 C23.070,3.178 28.822,8.930 28.822,16.000 C28.822,23.070 23.070,28.822 16.000,28.822 ZM14.412,23.607 C14.412,23.607 17.590,23.607 17.590,23.607 C17.590,23.607 17.590,14.302 17.590,14.302 C17.590,14.302 14.412,14.302 14.412,14.302 C14.412,14.302 14.412,23.607 14.412,23.607 ZM17.589,8.873 C17.589,8.873 14.411,8.873 14.411,8.873 C14.411,8.873 14.411,11.124 14.411,11.124 C14.411,11.124 17.589,11.124 17.589,11.124 C17.589,11.124 17.589,8.873 17.589,8.873 Z"
+                  fill="#031054" fill-rule="evenodd" />
+                </svg></a>
+              </div>
+            </div>
+            <div class="rates">
+              <div class="rates-header">Daily Rates</div>
+              <div class="rates-row row">
+                <div class="rates-date col-xs-7">Tue 3/3/15 - Wed 3/4/15</div>
+                <div class="daily-rate col-xs-5">
+                  <span class="rates-x">2x</span>110.99</div>
+              </div>
+              <div class="rates-row row">
+                <div class="rates-date col-xs-7">Thu 3/5/15</div>
+                <div class="daily-rate col-xs-5">
+                  <span class="rates-x">1x</span>115.99</div>
+              </div>
+              <div class="rates-row row">
+                <div class="rates-date col-xs-7">Taxes</div>
+                <div class="daily-rate col-xs-5">23.66</div>
+              </div>
+            </div>
+            <div class="subtotal">
+              <div class="empty-div">
+                <span class="subtotal-currency">Subtotal USD</span>
+                <span class="subtotal-price">361.63</span>
+              </div>
+            </div>
+          </div>
+          <div class="room-box-taxes">
+            <div data-toggle="collapse" data-target="#taxes-expandable3" class="taxes-header">Taxes, Fees, &amp; Policies
+              <span class="bw-icon bw-icon-arrow"></span>
+              <span class="bw-icon bw-icon-arrow-up hidden"></span>
+            </div>
+            <div id="taxes-expandable3" class="taxes-expandables collapse">
+              <h4>Other Taxes &amp; Fees</h4>
+              <p>(Additional charges may apply): Tax 8% = $65.60 USD</p>
+              <h4>Deposit Policy</h4>
+              <p>Guaranteed to your credit card for late arrival. A valid credit card must be presented at check-in.</p>
+              <h4>Cancellation Policy</h4>
+              <p>Cancel before 6PM hotel time on April 19, 2015 to avoid a change</p>
+              <h4>Child Policy</h4>
+              <p>Children 12 and Under are free in room with one paying adult</p>
+            </div>
+          </div>
+        </div>
+        <!-- end room 3 -->
+      </div>
+    </div>
+    <!-- end rooms -->
+    <!-- modification warning -->
+    <div class="row ribbon">
+      <div class="col-xs-12">
+        <div class="modification-warning">
+          <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 16 16" width="30" version="1.1" preserveAspectRatio="xMidYMid">
+            <path fill-rule="evenodd" d="m8 16c-4.4113 0-8-3.589-8-8 0-4.4113 3.5887-8 8-8s8 3.5887 8 8-3.5887 8-8 8zm0-15.296c-4.023 0-7.2961 3.2731-7.2961 7.2961 0.00003 4.023 3.2731 7.296 7.2961 7.296s7.296-3.273 7.296-7.296-3.273-7.2961-7.296-7.2961zm0 10.275c-0.26456 0-0.48513-0.22879-0.48513-0.48402 0-0.26389 0.22057-0.48402 0.48513-0.48402s0.48513 0.22013 0.48513 0.48402c0 0.25523-0.22057 0.48402-0.48513 0.48402zm-0.2734-1.7337l-0.14127-4.224h0.82921l-0.14105 4.224h-0.54688z"
+            />
+          </svg>
+          <p>Any modifications to this reservation could result in a change of your deposit. Please contact the hotel for details.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row ribbon">
+      <div class="col-xs-12">
+        <a href="#" class="bw-btn-default">Cancel Reservation</a>
+      </div>
+    </div>
+  </div>
+  <!-- end container-fluid -->
+  <script src="../scripts/jquery.js"></script>
+  <script src="../scripts/bootstrap.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/navigation.js"></script>
+  <script src="../scripts/make-reservation.js"></script>
+</body>
+
+</html>

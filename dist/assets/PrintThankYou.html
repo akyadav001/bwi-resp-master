@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Print Thank You</title>
+  <link rel="stylesheet" href="../styles/bootstrap.css">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body data-view="thank-you-view">
+  <header class="site-header">
+    <nav class="bw-navbar navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="nav-left">
+      <a href="findahotel.html"><span class="bw-icon bw-icon-logo"></span></a>
+    </div>
+    <div class="nav-left">
+      <button type="button" class="burger" id="menu-burger">
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      </button>
+    </div>
+    <div class="nav-right icon hidden" data-toggle="modal" data-target="#bw-login">
+      <a href="#" class="svg">
+        <object type="image/svg+xml" data="icons/svg/global-fav-inactive.svg"></object>
+      </a>
+    </div>
+    <div class="nav-right icon hidden">
+      <a href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4b3318882e3274bf" class="svg">
+      <object type="image/svg+xml" data="icons/svg/global-share.svg"></object>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div id="left-menu" class="hide-me">
+  <div id="menu-overlay">
+    <button type="button" id="menu-close-button">&times;</button>
+  </div>
+  <div id="menu-list">
+    <div id="menu-user" class="menu-logged-in hidden">
+      <div id="menu-user-profile" class="user-profile">
+        <img src="icons/profile.png">
+        <h1>Hello, Catherine!</h1>
+        <p>#600563-1234-456-892</p>
+      </div>
+      <a href="#" id="upcoming-reservation">
+        <h2>View Upcoming Reservation</h2>
+        <p>Columbus, OH</p>
+      </a>
+    </div>
+    <div id="login-button">
+      <!-- <button type="button">REWARDS LOGIN</button> -->
+      <a href="Login.html" class="bw-btn">REWARDS LOGIN</a>
+    </div>
+    <div id="main-menu" class="menu-items">
+      <a href="#" class="account-menu-forward hidden">My Account<span class="glyphicon glyphicon-chevron-right"></span></a>
+      <a href="Home.html">Home</a>
+      <a href="FindAHotel.html">Find a Hotel</a>
+      <a href="CheckReservation.html">Check Reservations</a>
+      <a href="#" class="rewards-menu-forward">Rewards<span class="glyphicon glyphicon-chevron-right"></span></a>
+      <a href="#" >Customer Care</a>
+      <a href="#" class="settings-menu-forward">Settings<span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+    <div id="rewards-menu" class="menu-items hide-me">
+      <a href="#" class="main-menu-back"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Main Menu</a>
+      <h4>Rewards</h4>
+      <a href="RewardsLandingPage.html" >Learn About Rewards</a>
+      <a href="JoinRewards.html" >Join</a>
+      <a href="EarnRewards.html" >Earn</a>
+      <a href="Redeem.html" >Redeem</a>
+    </div>
+    <div id="settings-menu" class="menu-items hide-me">
+      <a href="#" class="main-menu-back"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Main Menu</a>
+      <h4>Settings</h4>
+      <a href="#" class="opens-modal" data-toggle="modal" data-target="#bw-language-modal">Language</a>
+      <a href="#" class="opens-modal" data-toggle="modal" data-target="#bw-currency-modal">Currency</a>
+    </div>
+    <div id="account-menu" class="menu-items hide-me hidden">
+      <a href="#" class="main-menu-back"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Main Menu</a>
+      <h4>My Account</h4>
+      <a href="Dashboard.html" >Dashboard</a>
+      <a href="Preferences.html" >Profile &amp; Preferences</a>
+      <a href="MyRewards.html" >Rewards Activity</a>
+      <a href="Favorites.html" >Favorites</a>
+      <a href="#" >Rewards Service Center</a>
+      <a id="logout" href="#" >Logout</a>
+    </div>
+  </div>
+
+</div>
+<div id="blur" class="invisible"></div>
+<div class="modal" id="bw-currency-modal">
+  <div class="modal-dialog modal-static">
+    <div class="bw-modal-content">
+      <div class="bw-modal-header">
+        CURRENCY
+      </div>
+      <div class="modal-body">
+        <div class="bw-currency">
+          <div class="row">
+            <div class="col-xs-12 currency-item currency-search">
+              <span class="bw-icon bw-icon-search"></span>
+              <input type="text"/>
+            </div>
+            <div class="col-xs-12 currency-item">
+              US Dollars
+            </div>
+            <div class="col-xs-12 currency-item">
+              Euro
+            </div>
+            <div class="col-xs-12 bw-currency-header">
+              OTHER CURRENCIES
+            </div>
+            <div class="col-xs-12 currency-item">
+              Albanian Yek
+            </div>
+            <div class="col-xs-12 currency-item">
+              Algerian Dinar
+            </div>
+            <div class="col-xs-12 currency-item">
+              Argentinian Pesos
+            </div>
+            <div class="col-xs-12 currency-item">
+              Armenian Dram
+            </div>
+            <div class="col-xs-12 currency-item">
+              Arubin Florin
+            </div>
+            <div class="col-xs-12 currency-item">
+              Australia Dollars
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer bw-modal-footer">
+        <div class="row">
+          <div class="col-xs-6">
+            <button class="btn bw-btn-cancel closes-modal-from-nav" data-dismiss="modal">CANCEL</button>
+          </div>
+          <div class="col-xs-6">
+            <button class="btn bw-btn-accept closes-modal-from-nav">DONE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="bw-language-modal">
+  <div class="modal-dialog modal-static">
+    <div class="bw-modal-content">
+      <div class="bw-modal-header">
+        LANGUAGE
+      </div>
+      <div class="modal-body">
+        <div class="bw-language">
+          <div class="row">
+            <div class="col-xs-12 language-item">
+              English
+            </div>
+            <div class="col-xs-12 language-item">
+              Spanish
+            </div>
+            <div class="col-xs-12 language-item">
+              French
+            </div>
+            <div class="col-xs-12 language-item">
+              Italian
+            </div>
+            <div class="col-xs-12 language-item">
+              German
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer bw-modal-footer"  tabindex="0">
+        <div class="row">
+          <div class="col-xs-6">
+            <button class="btn bw-btn-cancel closes-modal-from-nav" data-dismiss="modal">CANCEL</button>
+          </div>
+          <div class="col-xs-6">
+            <button class="btn bw-btn-accept closes-modal-from-nav">DONE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4b3318882e3274bf" tabindex="1000"></script>
+  </header>
+  <div id="content" class="container-fluid">
+    <div id="thank-you" class="row ribbon">
+      <div class="col-xs-12">
+        <h1>Thank You</h1>
+        <h3>for your order</h3>
+        <div class="btn-container row full-width-buttons">
+          <div class="col-xs-12">
+            <a class="btn bw-btn-accept" href="PrintVoucher.html">Print Voucher</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row ribbon">
+      <div class="col-xs-12 text-faded--dark">
+        <p>The following Global Free Room Night Vouchers have been ordered. A confirmation e-mail summerizing this transaction has been sent to your resgistered e-mail address.</p>
+        <table class="table chart">
+          <tr>
+            <td>Voucher No</td>
+            <td>7478930993</td>
+          </tr>
+          <tr>
+            <td>Sequence No</td>
+            <td>0001</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 text-center ribbon ribbon--light-blue">
+        You have <span class="tile-title--bold">952,000</span> Points remaining
+      </div>
+    </div>
+    <div class="row ribbon">
+      <div class="col-xs-12">
+        <div class="alert alert-note">
+          <h2 class="alert-title">
+            <svg class="bw-icon" id="svg2" xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 16 16" width="30" version="1.1" preserveAspectRatio="xMidYMid">
+              <path fill-rule="evenodd" d="m8 16c-4.4113 0-8-3.589-8-8 0-4.4113 3.5887-8 8-8s8 3.5887 8 8-3.5887 8-8 8zm0-15.296c-4.023 0-7.2961 3.2731-7.2961 7.2961 0.00003 4.023 3.2731 7.296 7.2961 7.296s7.296-3.273 7.296-7.296-3.273-7.2961-7.296-7.2961zm0 10.275c-0.26456 0-0.48513-0.22879-0.48513-0.48402 0-0.26389 0.22057-0.48402 0.48513-0.48402s0.48513 0.22013 0.48513 0.48402c0 0.25523-0.22057 0.48402-0.48513 0.48402zm-0.2734-1.7337l-0.14127-4.224h0.82921l-0.14105 4.224h-0.54688z"></path>
+            </svg>
+            <span class="body-text">PLEASE NOTE</span>
+          </h2>
+          <p>Please print this page or make note of your voucher and sequence numbers, as well as the issue date (the date you ordered the certificates). Both numbers and the issue date are required upon check-in.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../scripts/jquery.js"></script>
+  <script src="../scripts/bootstrap.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/navigation.js"></script>
+</body>
+</html>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="../styles/bootstrap.css">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body data-view="dashboard-view">
+  <header class="site-header">
+    <nav class="bw-navbar navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="nav-left">
+      <a href="findahotel.html"><span class="bw-icon bw-icon-logo"></span></a>
+    </div>
+    <div class="nav-left">
+      <button type="button" class="burger" id="menu-burger">
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      </button>
+    </div>
+    <div class="nav-right icon hidden" data-toggle="modal" data-target="#bw-login">
+      <a href="#" class="svg">
+        <object type="image/svg+xml" data="icons/svg/global-fav-inactive.svg"></object>
+      </a>
+    </div>
+    <div class="nav-right icon hidden">
+      <a href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4b3318882e3274bf" class="svg">
+      <object type="image/svg+xml" data="icons/svg/global-share.svg"></object>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div id="left-menu" class="hide-me">
+  <div id="menu-overlay">
+    <button type="button" id="menu-close-button">&times;</button>
+  </div>
+  <div id="menu-list">
+    <div id="menu-user" class="menu-logged-in hidden">
+      <div id="menu-user-profile" class="user-profile">
+        <img src="icons/profile.png">
+        <h1>Hello, Catherine!</h1>
+        <p>#600563-1234-456-892</p>
+      </div>
+      <a href="#" id="upcoming-reservation">
+        <h2>View Upcoming Reservation</h2>
+        <p>Columbus, OH</p>
+      </a>
+    </div>
+    <div id="login-button">
+      <!-- <button type="button">REWARDS LOGIN</button> -->
+      <a href="Login.html" class="bw-btn">REWARDS LOGIN</a>
+    </div>
+    <div id="main-menu" class="menu-items">
+      <a href="#" class="account-menu-forward hidden">My Account<span class="glyphicon glyphicon-chevron-right"></span></a>
+      <a href="Home.html">Home</a>
+      <a href="FindAHotel.html">Find a Hotel</a>
+      <a href="CheckReservation.html">Check Reservations</a>
+      <a href="#" class="rewards-menu-forward">Rewards<span class="glyphicon glyphicon-chevron-right"></span></a>
+      <a href="#" >Customer Care</a>
+      <a href="#" class="settings-menu-forward">Settings<span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+    <div id="rewards-menu" class="menu-items hide-me">
+      <a href="#" class="main-menu-back"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Main Menu</a>
+      <h4>Rewards</h4>
+      <a href="RewardsLandingPage.html" >Learn About Rewards</a>
+      <a href="JoinRewards.html" >Join</a>
+      <a href="EarnRewards.html" >Earn</a>
+      <a href="Redeem.html" >Redeem</a>
+    </div>
+    <div id="settings-menu" class="menu-items hide-me">
+      <a href="#" class="main-menu-back"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Main Menu</a>
+      <h4>Settings</h4>
+      <a href="#" class="opens-modal" data-toggle="modal" data-target="#bw-language-modal">Language</a>
+      <a href="#" class="opens-modal" data-toggle="modal" data-target="#bw-currency-modal">Currency</a>
+    </div>
+    <div id="account-menu" class="menu-items hide-me hidden">
+      <a href="#" class="main-menu-back"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Main Menu</a>
+      <h4>My Account</h4>
+      <a href="Dashboard.html" >Dashboard</a>
+      <a href="Preferences.html" >Profile &amp; Preferences</a>
+      <a href="MyRewards.html" >Rewards Activity</a>
+      <a href="Favorites.html" >Favorites</a>
+      <a href="#" >Rewards Service Center</a>
+      <a id="logout" href="#" >Logout</a>
+    </div>
+  </div>
+
+</div>
+<div id="blur" class="invisible"></div>
+<div class="modal" id="bw-currency-modal">
+  <div class="modal-dialog modal-static">
+    <div class="bw-modal-content">
+      <div class="bw-modal-header">
+        CURRENCY
+      </div>
+      <div class="modal-body">
+        <div class="bw-currency">
+          <div class="row">
+            <div class="col-xs-12 currency-item currency-search">
+              <span class="bw-icon bw-icon-search"></span>
+              <input type="text"/>
+            </div>
+            <div class="col-xs-12 currency-item">
+              US Dollars
+            </div>
+            <div class="col-xs-12 currency-item">
+              Euro
+            </div>
+            <div class="col-xs-12 bw-currency-header">
+              OTHER CURRENCIES
+            </div>
+            <div class="col-xs-12 currency-item">
+              Albanian Yek
+            </div>
+            <div class="col-xs-12 currency-item">
+              Algerian Dinar
+            </div>
+            <div class="col-xs-12 currency-item">
+              Argentinian Pesos
+            </div>
+            <div class="col-xs-12 currency-item">
+              Armenian Dram
+            </div>
+            <div class="col-xs-12 currency-item">
+              Arubin Florin
+            </div>
+            <div class="col-xs-12 currency-item">
+              Australia Dollars
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer bw-modal-footer">
+        <div class="row">
+          <div class="col-xs-6">
+            <button class="btn bw-btn-cancel closes-modal-from-nav" data-dismiss="modal">CANCEL</button>
+          </div>
+          <div class="col-xs-6">
+            <button class="btn bw-btn-accept closes-modal-from-nav">DONE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="bw-language-modal">
+  <div class="modal-dialog modal-static">
+    <div class="bw-modal-content">
+      <div class="bw-modal-header">
+        LANGUAGE
+      </div>
+      <div class="modal-body">
+        <div class="bw-language">
+          <div class="row">
+            <div class="col-xs-12 language-item">
+              English
+            </div>
+            <div class="col-xs-12 language-item">
+              Spanish
+            </div>
+            <div class="col-xs-12 language-item">
+              French
+            </div>
+            <div class="col-xs-12 language-item">
+              Italian
+            </div>
+            <div class="col-xs-12 language-item">
+              German
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer bw-modal-footer"  tabindex="0">
+        <div class="row">
+          <div class="col-xs-6">
+            <button class="btn bw-btn-cancel closes-modal-from-nav" data-dismiss="modal">CANCEL</button>
+          </div>
+          <div class="col-xs-6">
+            <button class="btn bw-btn-accept closes-modal-from-nav">DONE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4b3318882e3274bf" tabindex="1000"></script>
+  </header>
+  <div class="container-fluid container--with-space dashboard-view">
+    <div class="row">
+      <div class="col-xs-12 ribbon">
+        <div class="user-profile dashboard-user-profile">
+          <img src="icons/profile.png" alt="profile image">
+          <h1 class="big-title">Hello, Catherine!</h1>
+          <a href="Preferences.html">EDIT PROFILE &amp; PREFERENCES</a>
+        </div>
+      </div>
+    </div>
+    <div class="row dashboard-rewards-status">
+      <div class="col-xs-12">
+        <div class="ribbon ribbon--dark-brown">
+          <div class="row">
+            <div class="col-sm-6 dashboard-points-earned">
+              <div class="hero-title">
+                18,000
+              </div>
+              <div>POINTS EARNED</div>
+            </div>
+            <div class="col-sm-6">
+              <div class="body-subtitle dashboard-membership-status">
+                Gold Elite Member
+              </div>
+              <div class="dashboard-account-number">
+                Account# 600 663 123 456 7891
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="Redeem.html" class="bw-btn-primary">REDEEM POINTS</a>
+      </div>
+    </div>
+    <div class="row ribbon ribbon--white platinum-benefits">
+      <div class="col-xs-12">
+        <p>Upgrade to the best available room upon arrival with Platinum Elite Status!</p>
+        <a href="MembershipBenefits.html" class="bw-btn-default">VIEW PLATINUM BENEFITS</a>
+      </div>
+    </div>
+    <div class="row points-until-list">
+      <div class="col-xs-12">
+        <div class="ribbon ribbon--white">
+          <ul class="row list--no-bullets">
+            <li class="col-sm-4">
+              <div class="hero-title">12,000</div>
+              <div class="points-type">Points until Platinum Elite Status</div>
+              <div class="points-fraction">18,000 / 30,000</div>
+            </li>
+            <li class="col-sm-4">
+              <div class="hero-title">12</div>
+              <div class="points-type">Nights until Platinum Elite Status</div>
+              <div class="points-fraction">18 / 30</div>
+            </li>
+            <li class="col-sm-4">
+              <div class="hero-title">8</div>
+              <div class="points-type">Stays until Platinum Elite Status</div>
+              <div class="points-fraction">22 / 30</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <a href="EarnRewards.html" class="bw-btn-primary">EARN POINTS</a>
+      </div>
+    </div>
+    <div class="row ribbon--light-gray rewards-activity">
+      <div class="col-xs-12 ribbon">
+        <h1 class="big-title">Rewards Activity</h1>
+        <ul class="list--no-bullets list--with-separators">
+          <li class="rewards-activity-box row">
+            <div class="col-sm-6">
+              <h2 class="section-title">1,500 Facebook BWR Points</h2>
+              <div><span class="body-subtitle">Check In:</span> February 13, 2015</div>
+              <div><span class="body-subtitle">Transaction Date:</span> January 15, 2015</div>
+            </div>
+            <div class="col-sm-6">
+              <ul class="row list--no-bullets">
+                <li class="col-xs-4">
+                  <div class="big-title">3</div>
+                  <div>Nights/Awards</div>
+                </li>
+                <li class="col-xs-4">
+                  <div class="big-title">2,000</div>
+                  <div>Rewards Points</div>
+                </li>
+                <li class="col-xs-4">
+                  <div class="big-title">1,000</div>
+                  <div>Bonus Points</div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="rewards-activity-box row">
+            <div class="col-sm-6">
+              <h2 class="section-title">3,000 Hotel Stay BWR Points</h2>
+              <div><span class="body-subtitle">Check In:</span> February 13, 2015</div>
+              <div><span class="body-subtitle">Transaction Date:</span> January 15, 2015</div>
+            </div>
+            <div class="col-sm-6">
+              <ul class="row list--no-bullets">
+                <li class="col-xs-4">
+                  <div class="big-title">3</div>
+                  <div>Nights/Awards</div>
+                </li>
+                <li class="col-xs-4">
+                  <div class="big-title">2,000</div>
+                  <div>Rewards Points</div>
+                </li>
+                <li class="col-xs-4">
+                  <div class="big-title">1,000</div>
+                  <div>Bonus Points</div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="rewards-activity-box row">
+            <div class="col-sm-6">
+              <h2 class="section-title">1,500 Facebook BWR Points</h2>
+              <div><span class="body-subtitle">Check In:</span> February 13, 2015</div>
+              <div><span class="body-subtitle">Transaction Date:</span> January 15, 2015</div>
+            </div>
+            <div class="col-sm-6">
+              <ul class="row list--no-bullets">
+                <li class="col-xs-4">
+                  <div class="big-title">3</div>
+                  <div>Nights/Awards</div>
+                </li>
+                <li class="col-xs-4">
+                  <div class="big-title">2,000</div>
+                  <div>Rewards Points</div>
+                </li>
+                <li class="col-xs-4">
+                  <div class="big-title">1,000</div>
+                  <div>Bonus Points</div>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <a href="MyRewards.html" class="bw-btn-primary">VIEW ALL REWARDS ACTIVITY</a>
+      </div>
+    </div>
+    <div class="missing-points row">
+      <div class="col-sm-6">
+        <p><span class="body-subtitle">Missing points?</span> Please allow 7 days after your stay for your account to be updated.</p>
+      </div>
+      <div class="col-sm-6">
+        <a href="MissingPoints.html" class="bw-btn bw-btn-default">REPORT MISSING POINTS AND REWARDS</a>
+      </div>
+    </div>
+    <div class="row ribbon--white box-card upcoming-reservations">
+      <div class="col-xs-12 ribbon">
+        <h2 class="section-title">Upcoming Reservations</h2>
+        <ul class="row list--no-bullets">
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <a href="#" class="cancel-link svg">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 22 22">
+                        <path d="M11.000,9.059 C11.000,9.059 1.941,-0.000 1.941,-0.000 C1.941,-0.000 -0.000,1.941 -0.000,1.941 C-0.000,1.941 9.059,11.000 9.059,11.000 C9.059,11.000 -0.000,20.059 -0.000,20.059 C-0.000,20.059 1.941,22.000 1.941,22.000 C1.941,22.000 11.000,12.941 11.000,12.941 C11.000,12.941 20.059,22.000 20.059,22.000 C20.059,22.000 22.000,20.059 22.000,20.059 C22.000,20.059 12.941,11.000 12.941,11.000 C12.941,11.000 22.000,1.941 22.000,1.941 C22.000,1.941 20.059,-0.000 20.059,-0.000 C20.059,-0.000 11.000,9.059 11.000,9.059 Z" fill-rule="evenodd"/>
+                      </svg>
+                    </a>
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098675</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <a href="https://www.google.com/maps" class="svg" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="35" height="35" viewBox="0 0 54 54">
+                          <path d="M31.893,19.455 C31.893,19.455 29.652,21.697 29.652,21.697 C29.652,21.697 32.015,24.060 32.015,24.060 C32.015,24.060 20.076,24.060 20.076,24.060 C20.076,24.060 20.076,34.084 20.076,34.084 C20.076,34.084 23.246,34.084 23.246,34.084 C23.246,34.084 23.246,27.230 23.246,27.230 C23.246,27.230 32.014,27.230 32.014,27.230 C32.014,27.230 29.652,29.592 29.652,29.592 C29.652,29.592 31.893,31.834 31.893,31.834 C31.893,31.834 38.083,25.645 38.083,25.645 C38.083,25.645 31.893,19.455 31.893,19.455 ZM27.000,-0.000 C27.000,-0.000 0.000,27.000 0.000,27.000 C0.000,27.000 27.000,54.000 27.000,54.000 C27.000,54.000 54.000,27.000 54.000,27.000 C54.000,27.000 27.000,-0.000 27.000,-0.000 ZM4.483,27.000 C4.483,27.000 27.000,4.483 27.000,4.483 C27.000,4.483 49.517,27.000 49.517,27.000 C49.517,27.000 27.000,49.517 27.000,49.517 C27.000,49.517 4.483,27.000 4.483,27.000 Z" fill="#031054" fill-rule="evenodd"/>
+                        </svg>
+                      </a>
+                      <div class="section-title">Columbus, OH</div>
+                      <div>35.2mi/42.6km</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In: </span><br>12/31/15 at 3:00 PM
+                    </div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <a href="#" class="cancel-link svg">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 22 22">
+                        <path d="M11.000,9.059 C11.000,9.059 1.941,-0.000 1.941,-0.000 C1.941,-0.000 -0.000,1.941 -0.000,1.941 C-0.000,1.941 9.059,11.000 9.059,11.000 C9.059,11.000 -0.000,20.059 -0.000,20.059 C-0.000,20.059 1.941,22.000 1.941,22.000 C1.941,22.000 11.000,12.941 11.000,12.941 C11.000,12.941 20.059,22.000 20.059,22.000 C20.059,22.000 22.000,20.059 22.000,20.059 C22.000,20.059 12.941,11.000 12.941,11.000 C12.941,11.000 22.000,1.941 22.000,1.941 C22.000,1.941 20.059,-0.000 20.059,-0.000 C20.059,-0.000 11.000,9.059 11.000,9.059 Z" fill-rule="evenodd"/>
+                      </svg>
+                    </a>
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098675</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <a href="https://www.google.com/maps" class="svg" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="35" height="35" viewBox="0 0 54 54">
+                          <path d="M31.893,19.455 C31.893,19.455 29.652,21.697 29.652,21.697 C29.652,21.697 32.015,24.060 32.015,24.060 C32.015,24.060 20.076,24.060 20.076,24.060 C20.076,24.060 20.076,34.084 20.076,34.084 C20.076,34.084 23.246,34.084 23.246,34.084 C23.246,34.084 23.246,27.230 23.246,27.230 C23.246,27.230 32.014,27.230 32.014,27.230 C32.014,27.230 29.652,29.592 29.652,29.592 C29.652,29.592 31.893,31.834 31.893,31.834 C31.893,31.834 38.083,25.645 38.083,25.645 C38.083,25.645 31.893,19.455 31.893,19.455 ZM27.000,-0.000 C27.000,-0.000 0.000,27.000 0.000,27.000 C0.000,27.000 27.000,54.000 27.000,54.000 C27.000,54.000 54.000,27.000 54.000,27.000 C54.000,27.000 27.000,-0.000 27.000,-0.000 ZM4.483,27.000 C4.483,27.000 27.000,4.483 27.000,4.483 C27.000,4.483 49.517,27.000 49.517,27.000 C49.517,27.000 27.000,49.517 27.000,49.517 C27.000,49.517 4.483,27.000 4.483,27.000 Z" fill="#031054" fill-rule="evenodd"/>
+                        </svg>
+                      </a>
+                      <div class="section-title">Atlanta, GA</div>
+                      <div>35.2mi/42.6km</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In: </span><br>12/31/15 at 3:00 PM
+                    </div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <a href="#" class="cancel-link svg">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 22 22">
+                        <path d="M11.000,9.059 C11.000,9.059 1.941,-0.000 1.941,-0.000 C1.941,-0.000 -0.000,1.941 -0.000,1.941 C-0.000,1.941 9.059,11.000 9.059,11.000 C9.059,11.000 -0.000,20.059 -0.000,20.059 C-0.000,20.059 1.941,22.000 1.941,22.000 C1.941,22.000 11.000,12.941 11.000,12.941 C11.000,12.941 20.059,22.000 20.059,22.000 C20.059,22.000 22.000,20.059 22.000,20.059 C22.000,20.059 12.941,11.000 12.941,11.000 C12.941,11.000 22.000,1.941 22.000,1.941 C22.000,1.941 20.059,-0.000 20.059,-0.000 C20.059,-0.000 11.000,9.059 11.000,9.059 Z" fill-rule="evenodd"/>
+                      </svg>
+                    </a>
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098675</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <a href="https://www.google.com/maps" class="svg" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="35" height="35" viewBox="0 0 54 54">
+                          <path d="M31.893,19.455 C31.893,19.455 29.652,21.697 29.652,21.697 C29.652,21.697 32.015,24.060 32.015,24.060 C32.015,24.060 20.076,24.060 20.076,24.060 C20.076,24.060 20.076,34.084 20.076,34.084 C20.076,34.084 23.246,34.084 23.246,34.084 C23.246,34.084 23.246,27.230 23.246,27.230 C23.246,27.230 32.014,27.230 32.014,27.230 C32.014,27.230 29.652,29.592 29.652,29.592 C29.652,29.592 31.893,31.834 31.893,31.834 C31.893,31.834 38.083,25.645 38.083,25.645 C38.083,25.645 31.893,19.455 31.893,19.455 ZM27.000,-0.000 C27.000,-0.000 0.000,27.000 0.000,27.000 C0.000,27.000 27.000,54.000 27.000,54.000 C27.000,54.000 54.000,27.000 54.000,27.000 C54.000,27.000 27.000,-0.000 27.000,-0.000 ZM4.483,27.000 C4.483,27.000 27.000,4.483 27.000,4.483 C27.000,4.483 49.517,27.000 49.517,27.000 C49.517,27.000 27.000,49.517 27.000,49.517 C27.000,49.517 4.483,27.000 4.483,27.000 Z" fill="#031054" fill-rule="evenodd"/>
+                        </svg>
+                      </a>
+                      <div class="section-title">Phoenix, AZ</div>
+                      <div>35.2mi/42.6km</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In: </span><br>12/31/15 at 3:00 PM
+                    </div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+            </ul>
+        <a href="MyReservations.html" class="bw-btn bw-btn-primary">VIEW ALL RESERVATIONS</a>
+      </div>
+    </div>
+    <div class="row ribbon--light-gray box-card favorites">
+      <div class="col-xs-12 ribbon">
+        <h2 class="section-title">Favorites</h2>
+        <ul class="row list--no-bullets">
+          <li class="col-sm-6 col-md-4">
+            <div class="box" style="background-image:url('../images/bw1.jpg')">
+              <div class="box-content">
+                <a href="#" class="cancel-link svg">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 22 22">
+                    <path d="M11.000,9.059 C11.000,9.059 1.941,-0.000 1.941,-0.000 C1.941,-0.000 -0.000,1.941 -0.000,1.941 C-0.000,1.941 9.059,11.000 9.059,11.000 C9.059,11.000 -0.000,20.059 -0.000,20.059 C-0.000,20.059 1.941,22.000 1.941,22.000 C1.941,22.000 11.000,12.941 11.000,12.941 C11.000,12.941 20.059,22.000 20.059,22.000 C20.059,22.000 22.000,20.059 22.000,20.059 C22.000,20.059 12.941,11.000 12.941,11.000 C12.941,11.000 22.000,1.941 22.000,1.941 C22.000,1.941 20.059,-0.000 20.059,-0.000 C20.059,-0.000 11.000,9.059 11.000,9.059 Z" id="close-icon" fill-rule="evenodd"/>
+                  </svg>
+                </a>
+                <div class="card">
+                  <div class="card-body">
+                    <div class="card-indicator card-indicator--standard"></div>
+                    <p class="card-name u-ellipsis">BEST WESTERN <br />
+                      <span class="card-location--large">Summer Garden Suites</span>
+                    </p>
+                    <div>
+                      1030 Higgins Rd. Atlanta, GA
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+              BOOK MY STAY HERE
+              </a>
+            </div>
+          </li>
+          <li class="col-sm-6 col-md-4">
+            <div class="box" style="background-image:url('../images/bw3.jpg')">
+              <div class="box-content">
+                <a href="#" class="cancel-link svg">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 22 22">
+                    <path d="M11.000,9.059 C11.000,9.059 1.941,-0.000 1.941,-0.000 C1.941,-0.000 -0.000,1.941 -0.000,1.941 C-0.000,1.941 9.059,11.000 9.059,11.000 C9.059,11.000 -0.000,20.059 -0.000,20.059 C-0.000,20.059 1.941,22.000 1.941,22.000 C1.941,22.000 11.000,12.941 11.000,12.941 C11.000,12.941 20.059,22.000 20.059,22.000 C20.059,22.000 22.000,20.059 22.000,20.059 C22.000,20.059 12.941,11.000 12.941,11.000 C12.941,11.000 22.000,1.941 22.000,1.941 C22.000,1.941 20.059,-0.000 20.059,-0.000 C20.059,-0.000 11.000,9.059 11.000,9.059 Z" id="close-icon" fill-rule="evenodd"/>
+                  </svg>
+                </a>
+                <div class="card">
+                  <div class="card-body">
+                    <div class="card-indicator card-indicator--premier"></div>
+                    <p class="card-name u-ellipsis">BEST WESTERN PREMIER<br />
+                      <span class="card-location--large">Columbus Southeast</span>
+                    </p>
+                    <div>
+                      983 Watkins Rd. Columbus, OH
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+              BOOK MY STAY HERE
+              </a>
+            </div>
+          </li>
+          <li class="col-sm-6 col-md-4">
+            <div class="box" style="background-image:url('../images/bw4.jpg')">
+              <div class="box-content">
+                <a href="#" class="cancel-link svg">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 22 22">
+                    <path d="M11.000,9.059 C11.000,9.059 1.941,-0.000 1.941,-0.000 C1.941,-0.000 -0.000,1.941 -0.000,1.941 C-0.000,1.941 9.059,11.000 9.059,11.000 C9.059,11.000 -0.000,20.059 -0.000,20.059 C-0.000,20.059 1.941,22.000 1.941,22.000 C1.941,22.000 11.000,12.941 11.000,12.941 C11.000,12.941 20.059,22.000 20.059,22.000 C20.059,22.000 22.000,20.059 22.000,20.059 C22.000,20.059 12.941,11.000 12.941,11.000 C12.941,11.000 22.000,1.941 22.000,1.941 C22.000,1.941 20.059,-0.000 20.059,-0.000 C20.059,-0.000 11.000,9.059 11.000,9.059 Z" id="close-icon" fill-rule="evenodd"/>
+                  </svg>
+                </a>
+                <div class="card">
+                  <div class="card-body">
+                    <div class="card-indicator card-indicator--plus"></div>
+                    <p class="card-name u-ellipsis">BEST WESTERN PLUS<br />
+                      <span class="card-location--large">Bowery Hanabee Hotel</span>
+                    </p>
+                    <div>
+                      1234 Cheseny Ave. New York, NY
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+              BOOK MY STAY HERE
+              </a>
+            </div>
+          </li>
+        </ul>
+        <a href="Favorites.html" class="bw-btn-primary">VIEW ALL FAVORITES</a>
+      </div>
+    </div>
+    <div class="row copyright-disclaimer">
+      <div class="col-xs-12">
+        <p>Each Best Western&reg; branded hotel is independently owned and operated.<br>
+          &copy; 2002-2015 Best Western International, Inc. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- end container-fluid -->
+  <script src="../scripts/jquery.js"></script>
+  <script src="../scripts/bootstrap.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/navigation.js"></script>
+</body>
+</html>

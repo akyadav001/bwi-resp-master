@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Review Reward Order</title>
+  <link rel="stylesheet" href="../styles/bootstrap.css">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+  <header class="site-header">
+    @@include('./BaseHeader.html')
+  </header>
+  <!-- Content -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="page-label">Rewards Order</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <h2 class="special-offers-heading">Reward Details</h2>
+        <p class="offer-item-desc">FREE NIGHT VOUCHER 12,000 POINTS</p>
+        <p>12,000 points <span class="pull-right">x1</span></p>
+        <p class="offer-item-total">Total <span class="pull-right">12,000 points</span></p>
+      </div>
+    </div>
+    <form class="with-float-labels">
+      <div class="form-group">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2 class="special-offers-heading">Delivery</h2>
+            <p>Delivery method:<span class="pull-right">Email</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-6">
+            <input class="radio-img" type="radio" id="points" name="shipType" value="member">
+            <label for="points">Best Western Rewards® Member <br> <span class="legal">Vouchers will be sent to the email address on your <a href="Preferences.html">Profile</a></span></label>
+          </div>
+          <div class="col-sm-6">
+            <input class="radio-img" type="radio" id="other" name="shipType" data-target="#otherDetails" value="other">
+            <label for="other" >Other Recipient</label>
+          </div>
+        </div>
+      </div>
+      <div class="collapse" id="otherDetails">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-6">
+              <label class="float" id="firstName">First Name</label>
+              <input class="form-control" name="firstName" type="text" placeholder="First Name">
+            </div>
+            <div class="col-sm-6">
+              <label class="float" id="lastName">Last Name</label>
+              <input class="form-control" name="lastName" type="text" placeholder="Last Name">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-6">
+              <label class="float" id="email">Email</label>
+              <input class="form-control" name="email" type="email" placeholder="Email">
+            </div>
+            <div class="col-sm-6">
+              <label class="float" id="confirm">Confirm Email</label>
+              <input class="form-control" name="confirm" type="email" placeholder="Confirm Email">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-12">
+              <label class="float show" for="comments">Comments</label>
+              <textarea class="form-control" id="comments" rows="4" maxlength="250"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-12">
+              <input type="checkbox" class="check_box" id="copy"><label for="copy">Send me a copy</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-12">
+            <input type="checkbox" class="check_box" id="terms"><label for="terms">I agree to the <a href="#">terms and conditions.</a></label>
+          </div>
+        </div>
+      </div>
+      <div class="row full-width-buttons">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <button class="btn bw-btn-accept" type="button">GET REWARD</button>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <button class="btn bw-btn-cancel" type="button">CANCEL</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row copyright-disclaimer">
+    <div class="col-xs-12">
+      <p>Each Best Western&reg; branded hotel is independently owned and operated.<br>
+        &copy; 2002-2015 Best Western International, Inc. All rights reserved.
+      </p>
+      <p>&copy; 2015 TripAdvisor LLC. All rights reserved</p>
+      <p><sup>&dagger;</sup>Numbers are approximate and can fluctuate.</p>
+    </div>
+  </div>
+  <script src="../scripts/jquery.js"></script>
+  <script src="../scripts/bootstrap.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/navigation.js"></script>
+  <script src="../scripts/make-reservation.js"></script>
+</body>
+</html>

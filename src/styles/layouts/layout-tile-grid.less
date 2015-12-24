@@ -1,0 +1,81 @@
+//Since the dropdown source order must change for content to display appropriately between mobile/tablet. We
+//reorder the columns via css to achieve the look and feel per designs.
+.grid-row {
+  & > div:nth-child(1) {
+    order: 1;
+  }
+  & > div:nth-child(2) {
+    order: 2;
+  }
+  & > div:nth-child(3) {
+    order: 3;
+  }
+  & > div:nth-child(4) {
+    order: 4;
+  }
+  display: flex;
+  flex-flow: column wrap;
+
+  @media screen and (min-width: @screen-sm) {
+  & > div:nth-child(1) {
+    order: 1;
+  }
+  & > div:nth-child(2) {
+    order: 3;
+  }
+  & > div:nth-child(3) {
+    order: 2;
+  }
+  & > div:nth-child(4) {
+    order: 4;
+  }
+  flex-direction: row;
+  flex-wrap: wrap;
+  }
+}
+
+//Since we are swapping between a full-width layout to having gutters on tablet, we tap into bootstraps grid to add
+//the gutters instead of overwriting a .col class.
+
+.grid {
+  @media screen and (min-width: @screen-sm) {
+    padding-left:  (@grid-gutter-width / 2);
+    padding-right: (@grid-gutter-width / 2);
+  }
+}
+
+//Min width resolves firefox issue. Max width resolve iOS safari issue.
+.grid-tile {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 1px;
+  max-width: 100%;
+  padding: 10px 15px;
+  flex: 1;
+  flex-basis: auto;
+  border-top: 1px solid @bw-lighter-blue;
+  @media screen and (min-width: @screen-sm) {
+    flex-basis: 0%;
+  }
+}
+//TODO: override for the bottom border uses !important here...remove when the room-rates is refactored to use this format.
+.grid-tile.active {
+  background-color: @bw-light-gray;
+  border-bottom: 0 !important;
+}
+.grid-row:last-child .grid-tile {
+  border-bottom: 1px solid @bw-lighter-blue;
+}
+
+@media screen and (min-width: @screen-sm) {
+  .grid-tile {
+    border-left: 1px solid @bw-lighter-blue;
+  }
+  .grid-tile ~ .grid-tile {
+    border-right: 1px solid @bw-lighter-blue;
+  }
+}
+
+.grid-tile .graphic {
+  margin-right: 10px;
+}

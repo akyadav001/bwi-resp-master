@@ -1,0 +1,80 @@
+.bw-accordion {
+  transition-duration: .2s;
+  &.collapsed > .glyphicon {
+    transform: rotate(180deg);
+  }
+  &.bw-accordion-primary {
+    background-color: @filter-background-color;
+    padding: 5px;
+  }
+}
+
+.bw-accordion--with-active:not(.collapsed),
+.accordion-item-body {
+  background-color: @bw-light-gray;
+}
+
+.u-hide-trigger:not(.collapsed) {
+  display: none;
+}
+.collapsed .accordion-label--expanded {
+  display: none;
+}
+
+.bw-accordion:not(.collapsed) .accordion-label--collapsed {
+  display: none;
+}
+
+.accordion-body {
+  min-width: 1px;
+  color: @bw-dark-blue;
+  display: flex;
+  width: 100%;
+}
+.accordion-body-content {
+  width: 100%;
+  min-width: 1px;
+  position: relative;
+}
+.accordion-body .graphic {
+  flex: 0 0 auto;
+  align-self: flex-start;
+}
+.accordion-body > * {
+  flex: 0 1 auto;
+}
+.accordion-footer {
+  margin-top: 10px;
+  position: relative;
+  flex: 100%;
+  align-self: flex-end;
+}
+
+.accordion-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.accordion-list .active {
+  background-color: @bw-light-gray;
+}
+.accordion-item .section-title {
+  margin: 0;
+}
+.accordion-item .glyphicon {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.accordion-item + .collapsing,
+.accordion-item + .collapse {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: @bw-dark-gray;
+}
+
+.accordion-item .accordion-item-image {
+  margin-right: 20px;
+  width: 150px;
+  flex-shrink: 0;
+}

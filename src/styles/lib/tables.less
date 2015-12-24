@@ -1,0 +1,15 @@
+
+//Per GUI KIT, modify the styling to remove table cell borders.
+.chart > tbody > tr > td {
+  border-top: none;
+  padding-left: 0;
+
+  &:last-child {
+    text-align: right;
+  }
+}
+
+.chart--with-separators {
+  border-top: 1px solid @bw-lighter-blue;
+  border-bottom: 1px solid @bw-lighter-blue;
+}

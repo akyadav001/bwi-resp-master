@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Address - Home</title>
+  <link rel="stylesheet" href="../styles/bootstrap.css">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+  <header class="site-header">
+    @@include('./BaseHeader.html')
+  </header>
+  <!-- Content -->
+  <div class="container-fluid address-home-view">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="page-label">Home Address</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <form class="with-float-labels">
+          <fieldset>
+            <legend class="form-group-header sr-only">Address</legend>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  <label for="addr-type" class="float show">Address Type</label>
+                  <select id="addr-type" class="select form-control">
+                    <option selected>Home</option>
+                    <option>Business</option>
+                  </select>
+                </div>
+                <div class="col-sm-6">
+                  <label for="country" class="float show">Country</label>
+                  <select id="country" class="select form-control">
+                    <option>Afghanistan</option>
+                    <option>Albania</option>
+                    <option>Bahrain</option>
+                    <option>Bangladesh</option>
+                    <option>Barbados</option>
+                    <option>Brazil</option>
+                    <option>Cameroon</option>
+                    <option>Chile</option>
+                    <option>China</option>
+                    <option selected>United States</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                    <label class="float" for="addressLine1">Address Line 1</label>
+                    <input required type="text" id="addressLine1" placeholder="Address Line 1" class="form-control"/>
+                </div>
+                <div class="col-sm-6">
+                    <label class="float" for="addressLine2">Address Line 2</label>
+                    <input type="text" id="addressLine2" placeholder="Address Line 2 (optional)" class="form-control"/>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-4">
+                    <label class="float" for="city">City</label>
+                    <input required type="text" id="city" placeholder="City" class="form-control"/>
+                </div>
+                <div class="col-sm-5">
+                  <label for="state" class="float show">State</label>
+                  <select class="select form-control" id="state">
+                    <option>Alabama</option>
+                    <option>Alaska</option>
+                    <option selected>Arizona</option>
+                    <option>Arkansas</option>
+                    <option>California</option>
+                    <option>Colorado</option>
+                    <option>Connecticut</option>
+                    <option>Delaware</option>
+                    <option>District Of Columbia</option>
+                    <option>Florida</option>
+                    <option>Georgia</option>
+                    <option>Hawaii</option>
+                    <option>Idaho</option>
+                    <option>Illinois</option>
+                    <option>Indiana</option>
+                    <option>Iowa</option>
+                    <option>Kansas</option>
+                    <option>Kentucky</option>
+                  </select>
+                </div>
+                <div class="col-sm-3">
+                    <label class="float" for="zip">ZIP/Postal Code</label>
+                      <input required type="text" id="zip" placeholder="ZIP/Postal Code" class="form-control"/>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="checkbox" id="default-address" class="check_box"/><label for="default-address">Make this my Default Address</label>
+            </div>
+          </fieldset>
+        </form>
+        <button type="submit" class="bw-btn bw-btn-primary">Save Address</button>
+        <button type="button" class="bw-btn bw-btn-default">Cancel</button>
+        <div class="row copyright-disclaimer">
+          <div class="col-xs-12">
+            <p>Each Best Western&reg; branded hotel is independently owned and operated.<br>
+              &copy; 2002-2015 Best Western International, Inc. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end container-fluid -->
+
+  <script src="../scripts/jquery.js"></script>
+  <script src="../scripts/bootstrap.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/navigation.js"></script>
+  <script src="../scripts/make-reservation.js"></script>
+</body>
+</html>

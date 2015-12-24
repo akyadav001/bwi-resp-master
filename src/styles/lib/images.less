@@ -1,0 +1,34 @@
+//Images.less
+
+//Create a block formatting context in order for the element to stretch to contain the height of the
+//pseudo element's margin. Position relative is provided so that text can be overlayed on the element
+//with an absolutely positioned child container.
+
+//NOTE: If the container that has the ratio class also contains padding, the calculations for the aspect
+//ratio will be off.  
+.ratio {
+  position: relative;
+  overflow: hidden;
+}
+
+//Create the pseudo block that will give the ratio container its' height. The default sizing is 1:1 of the
+//total width of the block. 
+.ratio:before {
+	content: "";
+	display: block;
+	margin-top: 100%;
+}
+
+//Override the default ratio to give the block a 16:9 aspect ratio. 
+.ratio--16-9:before {
+	margin-top: percentage(9/16);
+}
+
+//Add this class to create a container that will occupy all of the space created by the margin.
+.ratio-content--full {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

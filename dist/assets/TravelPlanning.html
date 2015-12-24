@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Travel Planning</title>
+    <link rel="stylesheet" href="../styles/bootstrap.css">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="bw-navbar navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="nav-left">
+      <a href="findahotel.html"><span class="bw-icon bw-icon-logo"></span></a>
+    </div>
+    <div class="nav-left">
+      <button type="button" class="burger" id="menu-burger">
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      </button>
+    </div>
+    <div class="nav-right icon hidden" data-toggle="modal" data-target="#bw-login">
+      <a href="#" class="svg">
+        <object type="image/svg+xml" data="icons/svg/global-fav-inactive.svg"></object>
+      </a>
+    </div>
+    <div class="nav-right icon hidden">
+      <a href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4b3318882e3274bf" class="svg">
+      <object type="image/svg+xml" data="icons/svg/global-share.svg"></object>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div id="left-menu" class="hide-me">
+  <div id="menu-overlay">
+    <button type="button" id="menu-close-button">&times;</button>
+  </div>
+  <div id="menu-list">
+    <div id="menu-user" class="menu-logged-in hidden">
+      <div id="menu-user-profile" class="user-profile">
+        <img src="icons/profile.png">
+        <h1>Hello, Catherine!</h1>
+        <p>#600563-1234-456-892</p>
+      </div>
+      <a href="#" id="upcoming-reservation">
+        <h2>View Upcoming Reservation</h2>
+        <p>Columbus, OH</p>
+      </a>
+    </div>
+    <div id="login-button">
+      <!-- <button type="button">REWARDS LOGIN</button> -->
+      <a href="Login.html" class="bw-btn">REWARDS LOGIN</a>
+    </div>
+    <div id="main-menu" class="menu-items">
+      <a href="#" class="account-menu-forward hidden">My Account<span class="glyphicon glyphicon-chevron-right"></span></a>
+      <a href="Home.html">Home</a>
+      <a href="FindAHotel.html">Find a Hotel</a>
+      <a href="CheckReservation.html">Check Reservations</a>
+      <a href="#" class="rewards-menu-forward">Rewards<span class="glyphicon glyphicon-chevron-right"></span></a>
+      <a href="#" >Customer Care</a>
+      <a href="#" class="settings-menu-forward">Settings<span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+    <div id="rewards-menu" class="menu-items hide-me">
+      <a href="#" class="main-menu-back"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Main Menu</a>
+      <h4>Rewards</h4>
+      <a href="RewardsLandingPage.html" >Learn About Rewards</a>
+      <a href="JoinRewards.html" >Join</a>
+      <a href="EarnRewards.html" >Earn</a>
+      <a href="Redeem.html" >Redeem</a>
+    </div>
+    <div id="settings-menu" class="menu-items hide-me">
+      <a href="#" class="main-menu-back"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Main Menu</a>
+      <h4>Settings</h4>
+      <a href="#" class="opens-modal" data-toggle="modal" data-target="#bw-language-modal">Language</a>
+      <a href="#" class="opens-modal" data-toggle="modal" data-target="#bw-currency-modal">Currency</a>
+    </div>
+    <div id="account-menu" class="menu-items hide-me hidden">
+      <a href="#" class="main-menu-back"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Main Menu</a>
+      <h4>My Account</h4>
+      <a href="Dashboard.html" >Dashboard</a>
+      <a href="Preferences.html" >Profile &amp; Preferences</a>
+      <a href="MyRewards.html" >Rewards Activity</a>
+      <a href="Favorites.html" >Favorites</a>
+      <a href="#" >Rewards Service Center</a>
+      <a id="logout" href="#" >Logout</a>
+    </div>
+  </div>
+
+</div>
+<div id="blur" class="invisible"></div>
+<div class="modal" id="bw-currency-modal">
+  <div class="modal-dialog modal-static">
+    <div class="bw-modal-content">
+      <div class="bw-modal-header">
+        CURRENCY
+      </div>
+      <div class="modal-body">
+        <div class="bw-currency">
+          <div class="row">
+            <div class="col-xs-12 currency-item currency-search">
+              <span class="bw-icon bw-icon-search"></span>
+              <input type="text"/>
+            </div>
+            <div class="col-xs-12 currency-item">
+              US Dollars
+            </div>
+            <div class="col-xs-12 currency-item">
+              Euro
+            </div>
+            <div class="col-xs-12 bw-currency-header">
+              OTHER CURRENCIES
+            </div>
+            <div class="col-xs-12 currency-item">
+              Albanian Yek
+            </div>
+            <div class="col-xs-12 currency-item">
+              Algerian Dinar
+            </div>
+            <div class="col-xs-12 currency-item">
+              Argentinian Pesos
+            </div>
+            <div class="col-xs-12 currency-item">
+              Armenian Dram
+            </div>
+            <div class="col-xs-12 currency-item">
+              Arubin Florin
+            </div>
+            <div class="col-xs-12 currency-item">
+              Australia Dollars
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer bw-modal-footer">
+        <div class="row">
+          <div class="col-xs-6">
+            <button class="btn bw-btn-cancel closes-modal-from-nav" data-dismiss="modal">CANCEL</button>
+          </div>
+          <div class="col-xs-6">
+            <button class="btn bw-btn-accept closes-modal-from-nav">DONE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="bw-language-modal">
+  <div class="modal-dialog modal-static">
+    <div class="bw-modal-content">
+      <div class="bw-modal-header">
+        LANGUAGE
+      </div>
+      <div class="modal-body">
+        <div class="bw-language">
+          <div class="row">
+            <div class="col-xs-12 language-item">
+              English
+            </div>
+            <div class="col-xs-12 language-item">
+              Spanish
+            </div>
+            <div class="col-xs-12 language-item">
+              French
+            </div>
+            <div class="col-xs-12 language-item">
+              Italian
+            </div>
+            <div class="col-xs-12 language-item">
+              German
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer bw-modal-footer"  tabindex="0">
+        <div class="row">
+          <div class="col-xs-6">
+            <button class="btn bw-btn-cancel closes-modal-from-nav" data-dismiss="modal">CANCEL</button>
+          </div>
+          <div class="col-xs-6">
+            <button class="btn bw-btn-accept closes-modal-from-nav">DONE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4b3318882e3274bf" tabindex="1000"></script>
+  </header>
+
+    <div class="container-fluid travel-planning-view">
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h1 class="page-label">Travel Planning</h1>
+          <p class="text-center">Sometimes half the fun of a trip is the anticipation and planning that goes into it beforehand! Plus, when you're better prepared, you always have a smoother, more enjoyable experience.</p>
+          <h2 class="big-title ribbon--header">Travel Tips</h2>
+        </div>
+      </div>
+
+      <div class="row ribbon ribbon--light-gray ribbon--border-bottom-medium-gray ribbon--border-top-medium-gray">
+        <div class="col-sm-4">
+          <img class="img-responsive center-block" src="http://placehold.it/300x250">
+        </div>
+        <div class="col-sm-8">
+          <h2 class="tile-title--bold">Traveling with Kids</h2>
+          <p>Are we there yet? Keep kids entertained while on the road!</p>
+          <a href="TravelTips.html">TRAVEL TIPS WITH KIDS</a>
+
+          <h2 class="tile-title--bold">Traveling with Pets</h2>
+          <p>Why leave your best friend behind? Bring your pet along for the ride.</p>
+          <a href="TravelTips.html">TRAVEL TIPS WITH PETS</a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h2 class="big-title ribbon--header">Groups &amp; Meetings</h2>
+        </div>
+      </div>
+
+      <div class="row ribbon ribbon--light-gray ribbon--border-bottom-medium-gray ribbon--border-top-medium-gray">
+        <div class="col-sm-4">
+          <img class="img-responsive center-block" src="http://placehold.it/300x250">
+        </div>
+        <div class="col-sm-8">
+          <h2 class="tile-title--bold">Meetings Made Simple</h2>
+          <p>Whether you are planning a business meeting at our unique meeting and conference facilities or a family reunion, Best Western makes planning group trips easy!</p>
+          <a href="GroupsFAQ.html">GET STARTED</a>
+        </div>
+      </div>
+
+      <div class="row ribbon">
+        <div class="col-xs-12">
+          <h2 class="big-title">U.S. Destinations</h2>
+          <ul class="list-unstyled">
+            <li>Anaheim, California</li>
+            <li>Atlanta, Georgia</li>
+            <li>Boston, Massachusetts</li>
+            <li>New York, New York</li>
+            <li>Orlando, Florida</li>
+            <li>Philadelphia, Pennsylvania</li>
+          </ul>
+          <a href="#">MORE DESTINATIONS</a>
+        </div>
+      </div>
+
+      <div class="row copyright-disclaimer">
+        <div class="col-xs-12">
+          <p>Each Best Western&reg; branded hotel is independently owned and operated.<br>
+            &copy; 2002-2015 Best Western International, Inc. All rights reserved.
+          </p>
+        </div>
+      </div>
+
+    </div><!-- end container-fluid -->
+
+    <script src="../scripts/jquery.js"></script>
+    <script src="../scripts/bootstrap.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/navigation.js"></script>
+</body>
+</html>

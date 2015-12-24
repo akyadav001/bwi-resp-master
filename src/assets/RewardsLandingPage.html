@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Rewards Landing Page</title>
+  <link rel="stylesheet" href="../styles/bootstrap.css">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+  <header class="site-header">
+    @@include('./BaseHeader.html')
+  </header>
+  <!-- Content -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="page-label">Rewards</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 promo">
+        <h2 class="promo-heading">Summer Promotion</h2>
+        <p>Book 3 or more nights in advance and you'll receive 1 night free</p>
+      </div>
+      <div class="promo-image promo-image--summer col-xs-12">
+        <div class="promo-gradient gradient-light--top row">
+          <button class="btn bw-btn-clear" type="button">Learn More</button>
+        </div>
+      </div>
+    </div>
+    <!-- The class poc-button is for testing only and will NOT be compiled into the final assets. There is an issue here with the amount of text and the buttons
+      on small screens that needs to be resolved. Until a decision is made on this, this will remain in poc status. -->
+    <div class="row ribbon ribbon--large full-width-buttons poc-button">
+      <div class="col-xs-6">
+        <a class="btn bw-btn-clear" href="EarnRewards.html">EARN REWARDS</a>
+      </div>
+      <div class="col-xs-6">
+        <a class="btn bw-btn-clear" href="redeem.html">REDEEM REWARDS</a>
+      </div>
+    </div>
+    <div class="row ribbon--huge ribbon--dark-blue">
+      <div class="col-xs-12 full-width-buttons text-center">
+        <img src="../images/rewards-usnews.png" alt="US News Award"/>
+        <p>Best Western Rewards has been named one of the top hotel loyalty programs for 2014!</p>
+        <p>
+          <a class="link--accent link--light" href="#">Explore Membership Benefits</a>
+        </p>
+        <a href="JoinRewards.html" class="btn bw-btn-accept">JOIN NOW</a>
+      </div>
+    </div>
+    <div class="row copyright-disclaimer">
+      <div class="col-xs-12">
+        <p>Each Best Western&reg; branded hotel is independently owned and operated.<br>
+          &copy; 2002-2015 Best Western International, Inc. All rights reserved.
+        </p>
+        <p>&copy; 2015 TripAdvisor LLC. All rights reserved</p>
+        <p><sup>&dagger;</sup>Numbers are approximate and can fluctuate.</p>
+      </div>
+    </div>
+  </div>
+  <!-- end container-fluid -->
+  <script src="../scripts/jquery.js"></script>
+  <script src="../scripts/bootstrap.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/navigation.js"></script>
+</body>
+</html>

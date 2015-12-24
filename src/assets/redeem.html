@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Redeem</title>
+  <link rel="stylesheet" href="../styles/bootstrap.css">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+  <header class="site-header">
+    @@include('./BaseHeader.html')
+  </header>
+  <!-- Content -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="page-label">Redeem</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 promo">
+        <h2 class="promo-heading">Enjoy Rich Rewards</h2>
+        <p>Best Western Rewards Points can be used almost any way you like. Use yours for hotel stays, dining out,
+          shopping and more
+        </p>
+      </div>
+      <div class="col-xs-12 promo-image promo-image--summer">
+        <div class="promo-gradient gradient-light--top row">
+          <button class="btn bw-btn-clear" type="button">Learn More</button>
+        </div>
+      </div>
+    </div>
+    <div class="row ribbon">
+      <div class="col-xs-12">
+        <p>Some of the many ways to redeem points:</p>
+        <div class="row">
+          <div class="col-sm-2 col-xs-4">
+            <a class="thumbnail" href="#">
+            <img class="img-responsive" src="../images/Target.png" alt="Target">
+            </a>
+          </div>
+          <div class="col-sm-2 col-xs-4">
+            <a class="thumbnail" href="#">
+            <img class="img-responsive" src="../images/Starbucks.png" alt="cat">
+            </a>
+          </div>
+          <div class="col-sm-2 col-xs-4">
+            <a class="thumbnail" href="#">
+            <img class="img-responsive" src="../images/iTunes.png" alt="cat">
+            </a>
+          </div>
+          <div class="col-sm-2 col-xs-4">
+            <a class="thumbnail" href="#">
+            <img class="img-responsive" src="../images/BarnesNoble.png" alt="cat">
+            </a>
+          </div>
+          <div class="col-sm-2 col-xs-4">
+            <a class="thumbnail" href="#">
+            <img class="img-responsive" src="../images/Amazon.png" alt="cat">
+            </a>
+          </div>
+          <div class="col-sm-2 col-xs-4">
+            <a class="thumbnail" href="#">
+            <img class="img-responsive" src="../images/Carnival.png" alt="cat">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row ribbon ribbon--dark-blue">
+      <h1 class="section-title text-center">Browse Rewards</h1>
+      <div class="col-xs-12">
+        <p class="ribbon ribbon--lighter-blue text-center">You have <span class="tile-title--bold">18,000</span> points.</p>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-4">
+          <select class="select select--light form-control">
+            <option>Airline/Partner Rewards</option>
+            <option>Travel</option>
+            <option>Charitable Donations</option>
+            <option>Dining</option>
+            <option>Entertainment</option>
+            <option>Hotel</option>
+            <option>Gas &amp; Auto Rewards</option>
+            <option>Memberships</option>
+            <option>Merchandise Rewards</option>
+            <option>Retail Gift Cards</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-4">
+          <select class="select select--light form-control">
+            <option>View All</option>
+            <option>0 to 15,000 points</option>
+            <option>15,000 to 30,000 points</option>
+            <option>30,000 to 45,000 points</option>
+            <option>45,000 points and above</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-4">
+          <select class="select select--light form-control">
+            <option>Title</option>
+            <option>Points - Low to High</option>
+            <option>Points - High to Low</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row grid">
+      <div class="grid-row">
+        <div class="grid-tile redeem-tile js-grid-tile">
+          <div class="accordion-body">
+            <img class="graphic graphic--small" src="../images/Budget.png" alt="cat">
+            <div>
+              <p>$50 USD Best Western Travel Card</p>
+            </div>
+          </div>
+          <div class="accordion-footer">
+            <span class="link js-expand">SHOW DETAILS <span class="glyphicon glyphicon glyphicon-menu-down"></span> </span>
+            <span class="pull-right body-subtitle">6,000 points</span>
+          </div>
+        </div>
+        <div class="room-amenities">
+          <div>
+            <p>Budget Dollar Value Rental Certificate. Whether you're on the road for business or pleasure, Budget has the car to fit your needs. Simply present your dollar value certificate at the Budget counter and the certificate will be honored up to the value shown. For information and reservations, contact your travel consultant, reserve online at <a class="body-link" href="http://www.budget.com">www.budget.com</a> or call Budget at <a class="body-link" href="tel:1-800-527-0700">1-800-527-0700</a>. Be sure to use your Budget Customer Discount (BCD) number U187000.</p>
+            <div class="form-group redeem-input-row">
+              <div>
+                <label class="little-label">Quantity</label>
+                <input type="text" class="redeem-quantity" />
+                x 6,000 points
+              </div>
+              <div>
+                <input class="radio-img" type="radio" id="print1" name="rewardType" />
+                <label for="print1" >Print Now</label>
+              </div>
+              <div>            <input class="radio-img" type="radio"  id="email1" name="rewardType" />
+                <label for="email1">Email Me</label>
+              </div>
+            </div>
+            <p class="full-width-buttons"><button class="btn bw-btn-accept">SELECT</button></p>
+            <small class="legal text-faded">Terms &amp; Conditions: Valid at participating Budget locations worldwide. This certificate is non-refundable, cannot be redeemed for cash, and only original certificates will be accepted. Lost or stolen certificates will not be replaced. Any charges exceeding the value of the certificate are the responsibility of the renter. Other terms and conditions are stated on the back of the certificate.</small>
+          </div>
+        </div>
+        <div class="grid-tile redeem-tile js-grid-tile">
+          <div class="accordion-body">
+            <img class="graphic graphic--small" src="../images/asianalogo.png" alt="cat">
+            <div>
+              <p>$25 USD Best Western Travel Card</p>
+            </div>
+          </div>
+          <div class="accordion-footer">
+            <span class="link js-expand">SHOW DETAILS <span class="glyphicon glyphicon-menu-down"></span> </span>
+            <span class="pull-right body-subtitle">6,000 points</span>
+          </div>
+        </div>
+        <div class="room-amenities">
+          <div>
+            <p>Budget Dollar Value Rental Certificate. Whether you're on the road for business or pleasure, Budget has the car to fit your needs. Simply present your dollar value certificate at the Budget counter and the certificate will be honored up to the value shown. For information and reservations, contact your travel consultant, reserve online at <a class="body-link" href="http://www.budget.com">www.budget.com</a> or call Budget at <a class="body-link" href="tel:1-800-527-0700">1-800-527-0700</a>. Be sure to use your Budget Customer Discount (BCD) number U187000.</p>
+            <div class="form-group redeem-input-row">
+              <div>
+                <label class="little-label">Quantity</label>
+                <input type="text" class="redeem-quantity" />
+                x 6,000 points
+              </div>
+              <div>
+                <input class="radio-img" type="radio"  id="print2" name="rewardType" />
+                <label for="print2">Print Now</label>
+              </div>
+              <div>            <input class="radio-img" type="radio" id="email2" name="rewardType" />
+                <label for="email2">Email Me</label>
+              </div>
+            </div>
+            <p class="full-width-buttons"><button class="btn bw-btn-accept">SELECT</button></p>
+            <small class="legal text-faded">Terms &amp; Conditions: Valid at participating Budget locations worldwide. This certificate is non-refundable, cannot be redeemed for cash, and only original certificates will be accepted. Lost or stolen certificates will not be replaced. Any charges exceeding the value of the certificate are the responsibility of the renter. Other terms and conditions are stated on the back of the certificate.</small>
+          </div>
+        </div>
+      </div>
+      <div class="grid-row">
+        <div class="grid-tile redeem-tile js-grid-tile">
+          <div class="accordion-body">
+            <img class="graphic graphic--small" src="../images/travel-card.png" alt="cat">
+            <div>
+              <p>$50 USD Best Western Travel Card</p>
+            </div>
+          </div>
+          <div class="accordion-footer">
+            <span class="link js-expand">SHOW DETAILS <span class="glyphicon glyphicon-menu-down"></span> </span>
+            <span class="pull-right body-subtitle">12,000 points</span>
+          </div>
+        </div>
+        <div class="room-amenities">
+          <div>
+            <p>Budget Dollar Value Rental Certificate. Whether you're on the road for business or pleasure, Budget has the car to fit your needs. Simply present your dollar value certificate at the Budget counter and the certificate will be honored up to the value shown. For information and reservations, contact your travel consultant, reserve online at <a class="body-link" href="http://www.budget.com">www.budget.com</a> or call Budget at <a class="body-link" href="tel:1-800-527-0700">1-800-527-0700</a>. Be sure to use your Budget Customer Discount (BCD) number U187000.</p>
+            <div class="form-group redeem-input-row">
+              <div>
+                <label class="little-label">Quantity</label>
+                <input type="text" class="redeem-quantity" />
+                x 6,000 points
+              </div>
+              <div>
+                <input class="radio-img" type="radio"  id="print3" name="rewardType" />
+                <label for="print3">Print Now</label>
+              </div>
+              <div>            <input class="radio-img" type="radio" id="email3" name="rewardType" />
+                <label for="email3">Email Me</label>
+              </div>
+            </div>
+            <p class="full-width-buttons"><button class="btn bw-btn-accept">SELECT</button></p>
+            <small class="legal text-faded">Terms &amp; Conditions: Valid at participating Budget locations worldwide. This certificate is non-refundable, cannot be redeemed for cash, and only original certificates will be accepted. Lost or stolen certificates will not be replaced. Any charges exceeding the value of the certificate are the responsibility of the renter. Other terms and conditions are stated on the back of the certificate.</small>
+          </div>
+        </div>
+        <div class="grid-tile redeem-tile js-grid-tile">
+          <div class="accordion-body">
+            <img class="graphic graphic--small" src="../images/aircanada.png" alt="cat">
+            <div>
+              <p>$25 USD Best Western Travel Card</p>
+            </div>
+          </div>
+          <div class="accordion-footer">
+            <span class="link js-expand">SHOW DETAILS <span class="glyphicon glyphicon-menu-down"></span> </span>
+            <span class="pull-right body-subtitle">6,000 points</span>
+          </div>
+        </div>
+        <div class="room-amenities">
+          <div>
+            <p>Budget Dollar Value Rental Certificate. Whether you're on the road for business or pleasure, Budget has the car to fit your needs. Simply present your dollar value certificate at the Budget counter and the certificate will be honored up to the value shown. For information and reservations, contact your travel consultant, reserve online at <a class="body-link" href="http://www.budget.com">www.budget.com</a> or call Budget at <a class="body-link" href="tel:1-800-527-0700">1-800-527-0700</a>. Be sure to use your Budget Customer Discount (BCD) number U187000.</p>
+            <div class="form-group redeem-input-row">
+              <div>
+                <label class="little-label">Quantity</label>
+                <input type="text" class="redeem-quantity" />
+                x 6,000 points
+              </div>
+              <div>
+                <input class="radio-img" type="radio" id="print4" name="rewardType" />
+                <label for="print4">Print Now</label>
+              </div>
+              <div>            <input class="radio-img" type="radio" id="email4" name="rewardType" />
+                <label for="email4">Email Me</label>
+              </div>
+            </div>
+            <p class="full-width-buttons"><button class="btn bw-btn-accept">SELECT</button></p>
+            <small class="legal text-faded">Terms &amp; Conditions: Valid at participating Budget locations worldwide. This certificate is non-refundable, cannot be redeemed for cash, and only original certificates will be accepted. Lost or stolen certificates will not be replaced. Any charges exceeding the value of the certificate are the responsibility of the renter. Other terms and conditions are stated on the back of the certificate.</small>
+          </div>
+        </div>
+      </div>
+      <div class="grid-row">
+        <div class="grid-tile redeem-tile js-grid-tile">
+          <div class="accordion-body">
+            <img class="graphic graphic--small" src="../images/usairways.png" alt="cat">
+            <div>
+              <p>1000 Alaskan Airlines Milage Plan Miles</p>
+            </div>
+          </div>
+          <div class="accordion-footer">
+            <span class="link js-expand">SHOW DETAILS <span class="glyphicon glyphicon-menu-down"></span> </span>
+            <span class="pull-right body-subtitle">6,000 points</span>
+          </div>
+        </div>
+        <div class="room-amenities">
+          <div>
+            <p>Budget Dollar Value Rental Certificate. Whether you're on the road for business or pleasure, Budget has the car to fit your needs. Simply present your dollar value certificate at the Budget counter and the certificate will be honored up to the value shown. For information and reservations, contact your travel consultant, reserve online at <a class="body-link" href="http://www.budget.com">www.budget.com</a> or call Budget at <a class="body-link" href="tel:1-800-527-0700">1-800-527-0700</a>. Be sure to use your Budget Customer Discount (BCD) number U187000.</p>
+            <div class="form-group redeem-input-row">
+              <div>
+                <label class="little-label">Quantity</label>
+                <input type="text" class="redeem-quantity" />
+                x 6,000 points
+              </div>
+              <div>
+                <input class="radio-img" type="radio" id="print5" name="rewardType" />
+                <label for="print5">Print Now</label>
+              </div>
+              <div>            <input class="radio-img" type="radio" id="email5" name="rewardType" />
+                <label for="email5">Email Me</label>
+              </div>
+            </div>
+            <p class="full-width-buttons"><button class="btn bw-btn-accept">SELECT</button></p>
+            <small class="legal text-faded">Terms &amp; Conditions: Valid at participating Budget locations worldwide. This certificate is non-refundable, cannot be redeemed for cash, and only original certificates will be accepted. Lost or stolen certificates will not be replaced. Any charges exceeding the value of the certificate are the responsibility of the renter. Other terms and conditions are stated on the back of the certificate.</small>
+          </div>
+        </div>
+        <div class="grid-tile redeem-tile js-grid-tile">
+          <div class="accordion-body">
+            <img class="graphic graphic--small" src="../images/southwest.png" alt="cat">
+            <div>
+              <p>$25 USD Best Western Travel Card</p>
+            </div>
+          </div>
+          <div class="accordion-footer">
+            <span class="link js-expand">SHOW DETAILS <span class="glyphicon glyphicon-menu-down"></span> </span>
+            <span class="pull-right body-subtitle">11,000 points</span>
+          </div>
+        </div>
+        <div class="room-amenities">
+          <div>
+            <p>Budget Dollar Value Rental Certificate. Whether you're on the road for business or pleasure, Budget has the car to fit your needs. Simply present your dollar value certificate at the Budget counter and the certificate will be honored up to the value shown. For information and reservations, contact your travel consultant, reserve online at <a class="body-link" href="http://www.budget.com">www.budget.com</a> or call Budget at <a class="body-link" href="tel:1-800-527-0700">1-800-527-0700</a>. Be sure to use your Budget Customer Discount (BCD) number U187000.</p>
+            <div class="form-group redeem-input-row">
+              <div>
+                <label class="little-label">Quantity</label>
+                <input type="text" class="redeem-quantity" />
+                x 6,000 points
+              </div>
+              <div>
+                <input class="radio-img" type="radio" id="print6" name="rewardType" />
+                <label for="print6">Print Now</label>
+              </div>
+              <div>            <input class="radio-img" type="radio" id="other" name="rewardType" />
+                <label for="other">Email Me</label>
+              </div>
+            </div>
+            <p class="full-width-buttons"><button class="btn bw-btn-accept">SELECT</button></p>
+            <small class="legal text-faded">Terms &amp; Conditions: Valid at participating Budget locations worldwide. This certificate is non-refundable, cannot be redeemed for cash, and only original certificates will be accepted. Lost or stolen certificates will not be replaced. Any charges exceeding the value of the certificate are the responsibility of the renter. Other terms and conditions are stated on the back of the certificate.</small>
+          </div>
+        </div>
+      </div>
+      <div class="grid-row">
+        <div class="grid-tile redeem-tile js-grid-tile">
+          <div class="accordion-body">
+            <img class="graphic graphic--small" src="../images/alaskan.png" alt="cat">
+            <div>
+              <p>$25 USD Best Western Travel Card</p>
+            </div>
+          </div>
+          <div class="accordion-footer">
+            <span class="link js-expand">SHOW DETAILS <span class="glyphicon glyphicon-menu-down"></span> </span>
+            <span class="pull-right body-subtitle">50,000 points</span>
+          </div>
+        </div>
+        <div class="room-amenities">
+          <div>
+            <p>Budget Dollar Value Rental Certificate. Whether you're on the road for business or pleasure, Budget has the car to fit your needs. Simply present your dollar value certificate at the Budget counter and the certificate will be honored up to the value shown. For information and reservations, contact your travel consultant, reserve online at <a class="body-link" href="http://www.budget.com">www.budget.com</a> or call Budget at <a class="body-link" href="tel:1-800-527-0700">1-800-527-0700</a>. Be sure to use your Budget Customer Discount (BCD) number U187000.</p>
+            <div class="form-group redeem-input-row">
+              <div>
+                <label class="little-label">Quantity</label>
+                <input type="text" class="redeem-quantity" />
+                x 6,000 points
+              </div>
+              <div>
+                <input class="radio-img" type="radio"  id="print7" name="rewards" />
+                <label for="print7">Print Now</label>
+              </div>
+              <div>            <input class="radio-img" type="radio"  id="email7" name="rewards" />
+                <label for="email7">Email Me</label>
+              </div>
+            </div>
+            <p class="full-width-buttons"><button class="btn bw-btn-accept">SELECT</button></p>
+            <small class="legal text-faded">Terms &amp; Conditions: Valid at participating Budget locations worldwide. This certificate is non-refundable, cannot be redeemed for cash, and only original certificates will be accepted. Lost or stolen certificates will not be replaced. Any charges exceeding the value of the certificate are the responsibility of the renter. Other terms and conditions are stated on the back of the certificate.</small>
+          </div>
+        </div>
+        <div class="grid-tile no-detail hidden-xs">
+        </div>
+        <div class="room-amenities">
+        </div>
+      </div>
+    </div>
+    <div class="row no-pad">
+      <div class="col-xs-12 text-center">
+        <div class="ribbon--large ribbon--dark-blue">
+          <div class="pagination-container">
+            <a class="pagination-control pagination-control--left"><span class="glyphicon glyphicon-chevron-left"></span></a>
+            <ul class="pagination pagination--blue">
+              <li class="active"><a href="#cancelled-1" data-toggle="tab">1</a></li>
+              <li><a href="#cancelled-2" data-toggle="tab">2</a></li>
+              <li><a href="#cancelled-3" data-toggle="tab">3</a></li>
+            </ul>
+            <a class="pagination-control pagination-control--right"><span class="glyphicon glyphicon-chevron-right"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row copyright-disclaimer">
+      <div class="col-xs-12">
+        <p>Each Best Western&reg; branded hotel is independently owned and operated.<br>
+          &copy; 2002-2015 Best Western International, Inc. All rights reserved.
+        </p>
+        <p>&copy; 2015 TripAdvisor LLC. All rights reserved</p>
+        <p><sup>&dagger;</sup>Numbers are approximate and can fluctuate.</p>
+      </div>
+    </div>
+  </div>
+  <!-- end container-fluid -->
+  <script src="../scripts/jquery.js"></script>
+  <script src="../scripts/bootstrap.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/navigation.js"></script>
+  <script src="../scripts/room-rates.js"></script>
+</body>
+</html>

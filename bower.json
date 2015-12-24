@@ -1,0 +1,25 @@
+{
+  "name": "BWI",
+  "version": "1.0.0",
+  "homepage": "https://github.com/gsubu/bwi-aem-msite",
+  "description": "mSite for BW",
+  "main": "index.html",
+  "authors": [
+    "Sogeti"
+  ],
+  "license": "Proprietary",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "3.3.2",
+    "jquery": "~2.1.3",
+    "moment": "~2.9.0",
+    "slick-carousel": "~1.5.8"
+  }
+}

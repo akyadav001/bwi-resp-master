@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="76" height="76" viewBox="0 0 76 76">
+  <defs>
+    <style>
+
+      .cls-3 {
+        fill: #ffffff;
+        stroke: #16a850;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+
+      .cls-4 {
+        font-size: 83.237px;
+      }
+
+      .cls-5 {
+        fill: #16a850;
+        text-anchor: middle;
+        font-size: 83.237px;
+        font-family: "Proxima Nova";
+      }
+    </style>
+  </defs>
+  <g id="rating2-unselectedsvg">
+    <path d="M37.724,1.000 C58.007,1.000 74.450,17.361 74.450,37.544 C74.450,57.726 58.007,74.087 37.724,74.087 C17.440,74.087 0.997,57.726 0.997,37.544 C0.997,17.361 17.440,1.000 37.724,1.000 Z" id="path-1" class="cls-3" fill-rule="evenodd"/>
+    <text class="cls-4" transform="translate(18 50) scale(0.5 0.5)"><tspan x="37px" class="cls-5">2</tspan></text>
+  </g>
+</svg>

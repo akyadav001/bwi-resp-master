@@ -1,0 +1,169 @@
+@import (reference) "lib/variables";
+
+//Layout-slide.less
+
+//This view is built with a sliding mechanism in which the user can increase/decrease the viewing area of 
+//a particular section by dragging the handle. This view is broken down into two main content areas (top and bottom).
+
+//Local Variables
+@slideHandleWidth: 70px;
+@cardHeight: 100px;
+
+
+//In the horizontal sliding view, give make each section full height since the user is sliding left and right.
+.slider {
+  position: absolute;
+}
+
+.slider {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
+  &.-map {
+    .slider__top {
+      height: ~"calc(100% - 150px)";
+      @media (min-width: @tabletMin) {
+        position: relative;
+        height: 50%;
+        border-bottom: 6px solid @bw-orange;
+      }
+      @media (min-width: @tabletXlMin) {
+        width: 50%;
+        height: 100%;
+        float: left;
+        border-bottom: none;
+        border-right: 6px solid @bw-orange;
+      }
+      @media (min-width: @desktopMin) {
+        float: none;
+        width: 100%;
+        height: ~"calc(100% - 130px)";
+        border: none;
+      }
+    }
+    .slider__bottom {
+      height: @cardHeight;
+      
+      @media (min-width: @tabletMin) {
+        height: 50%;
+      }
+      @media (min-width: @tabletXlMin) {
+        height: 100%;
+        width: 50%;
+        overflow-y: auto;
+        float: right;
+      }
+      @media (min-width: @desktopMin) {
+        float: none;
+        height: 130px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+//Give the handle a z-index to overlay on the container.
+.slider__handle {
+  width: @slideHandleWidth;
+  position: absolute;
+  z-index: 1;
+  @media (min-width: @tabletMin) {
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @media (min-width: @tabletXlMin) {
+    left: auto;
+    right: 2px;
+    transform: rotate(-90deg) translateY(100%) translateX(50%);
+    top: 50%;
+  }
+}
+
+//Position the handle to be in the center of the two sections vertically.
+.slider-handle--vertical {
+  left: ~"calc(50% -" @slideHandleWidth / 2 ~")";
+  top: ~"calc(100% - 22px)";
+}
+
+//Position the handle to be in the center of the two sections horizontally.
+.slider-handle--horizontal {
+  transform: rotate(-90deg);
+  top: ~"calc(50% -"  @slideHandleWidth / 2 ~")";
+  left:~"calc(100% - 43px)";
+}
+
+//This is used to rotate the handle to appear to be in the opposite section that is positioned to be in.
+.slider-handle--under {
+  transform: rotate(180deg);
+  top: 100%;
+}
+
+//MAP SPECIFIC STYLES
+
+//In the map view, the user should only see one hotel card at a time in the bottom section.
+//Resize the map to take up all of the space minus the space used to display the hotel card.
+.slider-top-section--with-map {
+  @media screen and (max-width: @screen-xs-max) {
+    border: none;
+    height: ~"calc(100% -"  @cardHeight ~")";
+  }
+}
+
+//By default, the bottom section is scrollable. In the mobile view, the bottom section is only to display
+//one hotel card at a time. Set the height of the bottom equal to one card and hide the remaining cards.
+.slider-bottom-section--with-map {
+  overflow-y: auto;
+  @media screen and (max-width: @screen-xs-max) {
+    height: @cardHeight;
+    overflow: hidden;
+    position: relative;
+    
+    .card {
+      position: absolute;
+      display: none;
+      width: 100%;
+      .transition(.6s ease-in-out left);
+    }
+    .next,
+    .prev {
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+    .active {
+      left: 0;
+    }
+    .prev {
+    left: -100%;
+    }
+    .next {
+      left: 100%;
+    }
+    .active,
+    .next,
+    .prev {
+      display: block;
+    }
+    .next.left,
+    .prev.right {
+      left: 0;
+    }
+
+    .active.left {
+      left: -100%;
+    }
+    .active.right {
+      left: 100%;
+    }
+  }
+}
+
+//COMPARE HOTELS SPECIFIC STYLES
+
+//The list of hotel images in the compare hotels should be scrollable. 
+.slider-bottom-section--with-compare {
+  overflow-y: auto;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Rewards Login</title>
+  <link rel="stylesheet" href="../styles/bootstrap.css">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body class="has-fixed-footer" data-view="rewards-login-view">
+  <header class="site-header">
+    @@include('./BaseHeader.html')
+  </header>
+  <div id="content" class="container-fluid">
+    <!-- check reservation -->
+    <div id="rewards-member" class="row ribbon">
+      <div class="col-xs-12">
+        <h4>Are you a Best Western Rewards Member?</h4>
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="form-group pull-right">
+              <input type="radio" class="radio_button" name="rewardsLoginRadios" value="yes" id="rewards-login-yes" checked>
+              <label for="rewards-login-yes">
+                <div class="radio-label-text">Yes</div>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="82" height="82" viewBox="0 0 82 82">
+                  <g>
+                    <circle  class="outer-circle" cx="41" cy="41" r="39"/>
+                    <circle  class="inner-circle" cx="41" cy="41" r="29"/>
+                  </g>
+                </svg>
+              </label>
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <div class="form-group">
+              <input type="radio" class="radio_button" name="rewardsLoginRadios" value="no" id="rewards-login-no">
+              <label for="rewards-login-no">
+                <div class="radio-label-text">No</div>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="82" height="82" viewBox="0 0 82 82">
+                  <g>
+                    <circle  class="outer-circle" cx="41" cy="41" r="39"/>
+                    <circle  class="inner-circle" cx="41" cy="41" r="29"/>
+                  </g>
+                </svg>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="rewards-login" class="row ribbon">
+      <div class="col-xs-12">
+        <h4>Welcome Back, Rewards Member!</h4>
+        <form class="with-float-labels">
+          <div class="form-group">
+            <label class="float" for="rewards-username">Username</label>
+            <input type="text" class="form-control" id="rewards-username" placeholder="Username">
+          </div>
+          <div class="form-group">
+            <label class="float" for="rewards-password">Password</label>
+            <input type="password" class="form-control" id="rewards-password" placeholder="Password">
+            <a class="forgot-password pull-right" href="PasswordHelp.html">I forgot my password</a>
+          </div>
+          <div class="g-recaptcha" data-sitekey="6LfoKgUTAAAAAG4BFkI4asJDWuWWVIvnpKwBPHuF"></div>
+        </form>
+      </div>
+    </div>
+    <div id="guest-login" class="row ribbon hidden">
+      <div class="col-xs-12">
+        <h4>Earn up to 3660 points for this stay to use towards a free night, airline rewards, gift cards and more!</h4>
+        <form class="with-float-labels">
+          <div class="form-group">
+            <input type="radio" class="radio_button" name="confirmationRadios" value="rewards-confirmation" id="rewards-radio">
+            <label for="rewards-radio">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="82" height="82" viewBox="0 0 82 82">
+                <g>
+                  <circle  class="outer-circle" cx="41" cy="41" r="39"/>
+                  <circle  class="inner-circle" cx="41" cy="41" r="29"/>
+                </g>
+              </svg>
+              <span class="radio-label-text">Yes, sign me up for AAA Preferred Best Western Rewards program as part of my reservation so I can start earning rewards today.</span>
+            </label>
+          </div>
+          <div class="form-group">
+            <input type="radio" class="radio_button" name="confirmationRadios" value="number-confirmation" checked id="confirmation-radio">
+            <label for="confirmation-radio">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="82" height="82" viewBox="0 0 82 82">
+                <g>
+                  <circle  class="outer-circle" cx="41" cy="41" r="39"/>
+                  <circle  class="inner-circle" cx="41" cy="41" r="29"/>
+                </g>
+              </svg>
+              <span class="radio-label-text">No thanks, I'll book without joining.</span>
+            </label>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- end container-fluid -->
+  <nav class="bw-bottom-bar">
+    <a href="MakeReservation.html" class="col-xs-12 login">
+      Log In
+    </a>
+    <a href="MakeReservation.html" class="col-xs-12 continue hidden">
+      Continue
+    </a>
+  </nav>
+  <script src="../scripts/jquery.js"></script>
+  <script src="../scripts/bootstrap.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/navigation.js"></script>
+  <script src="../scripts/make-reservation.js"></script>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+@import "bootstrap/less/variables";
+@import (reference) "z-index";
+
+@tabletMin: 48em;
+@tabletXlMin: 64em;
+@desktopMin: 75em;
+@desktopXlMin: 100em;
+
+
+@base-font-size: 16;
+
+//Build
+@icon-file-location: "../assets/icons";
+@image-file-location: "../images";
+@font-file-location: "../fonts";
+
+//Grid 
+
+@container-gutter-size: unit(15 / @base-font-size, em);
+
+//Bootstrap overrides
+@font-family-base: 'proxima-nova', 'Lucida Sans Unicode', 'Lucida Grande';
+@input-border-radius: 0;
+@brand-primary: @primary-color;
+@navbar-height: @navbar-height-mobile;
+@navbar-default-bg: #FFF;
+@btn-font-weight: @font-bold;
+@font-size-base: 16px;
+@text-color: @bw-dark-blue;
+@alert-border-radius: 0;
+
+
+@primary-color: @bw-dark-blue;
+@secondary-color: @bw-gold;
+
+@bw-darker-blue:    rgb(14,20,54);
+@bw-dark-blue:      rgb(3,16,84);
+@bw-lighter-blue:   rgb(193,212,254);
+@bw-light-blue:     rgb(2,63,136);
+@bw-pale-gray: 		rgb(241,241,241);
+@bw-light-gray:     rgb(228,228,228);
+@bw-medium-gray:    rgb(149,149,149);
+@bw-dark-gray:      rgb(102,102,102);
+@bw-light-brown:    rgb(187,177,168);
+@bw-silver: 		rgb(172,160,149);
+@bw-gold:           rgb(168,153,110);
+@bw-yellow:         rgb(255, 210, 0);
+@bw-orange:         rgb(223,158,2);
+@bw-red:		    rgb(220,41,30);
+@bw-silver:			rgb(181,185,202);
+@bw-white:          rgb(255,255,255);
+@tripadvisor-color: rgb(0,128,0);
+
+//Membership Badge color
+@gold-elite-badge-color: rgb(83,77,59);
+@diamond-select-badge-color: rgb(103,113,166);
+@diamond-elite-badge-color: rgb(117,121,153);
+@platinum-elite-badge-color: rgb(87,82,77);
+
+//Body
+@body-margin-top-tablet: @navbar-height-tablet;
+@body-padding-bottom-tablet: @footer-height;
+
+//Navbar
+
+@navbar-height-tablet: 60px;
+@navbar-height-mobile: 50px;
+@footer-height: 86px;
+
+//Calendar
+@calendar-primary-color: @primary-color;
+@calendar-selected-background-color: #E99E02;
+@calendar-selected-indicator-color: #6F4F02;
+@calendar-past-date-background-color: #ECECEC;
+@calendar-instructions-background-color: @bw-light-blue;
+
+//Modal
+@modal-header-background-color: @bw-light-blue;
+@modal-success-background-color: @bw-lighter-blue;
+@modal-success-color: @primary-color;
+@modal-footer-border-color: @secondary-color;
+
+//Popover
+@popover-header-background-color: @bw-light-blue;
+@popover-footer-border-color: @secondary-color;
+
+//Maplist
+
+@maplist-hotel-indicator-premier: #A7986D;
+@maplist-hotel-indicator-plus: #999795;
+@maplist-hotel-indicator-standard: #033F88;
+@maplist-bottom-navbar-separator-color: #DD9E01;
+@maplist-bottom-navbar-active-color: @bw-orange;
+@maplist-bottom-navbar-text-color: @primary-color;
+@maplist-bottom-navbar-height: 50px;
+
+//Find a hotel
+@room-light-label-color: @bw-medium-gray;
+@room-header-background-border-color: @bw-light-gray;
+@room-color-white: #FFFFFF;
+@room-color-yellow: @secondary-color;
+
+//Filter
+@filter-background-color: @bw-light-gray;
+
+//Hotel Results
+@room-selection-background: @bw-darker-blue;
+@bottom-bar-selected: @bw-orange;
+
+@font-light : 300;
+@font-regular : 400;
+@font-bold : 700;
+
+//Site Header
+@header-mobile-height: 0;
+@header-desktop-height: unit(120 / @base-font-size, em);
+
+//Site Header - With Results
+@header-desktop-results-height: unit(170 / @base-font-size, em);
+@header-mobile-results-height: unit(125 / @base-font-size, em);
+
+@results-navbar-height: 38px;
+//Buttons
+@button-accept-background-color: @secondary-color;
+@button-accept-border-color: @secondary-color;
+@button-accept-color: @primary-color;
+
+
+@button-cancel-background-color: #FFF;
+@button-cancel-border-color: @secondary-color;
+@button-cancel-color: @primary-color;

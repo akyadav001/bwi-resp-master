@@ -1,0 +1,209 @@
+input,
+select {
+  width: 100%;
+  display: block;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.form-control {
+  position: relative; 
+  display: block;
+  
+  
+  &.-floating&.-is-empty {
+    .form-control__text {
+      opacity: 0;
+      transform: translateY(0);
+    }
+  }
+  
+  &.-error .form-control__input {
+    color: @bw-red;
+    border-color: @bw-red;
+    background-color: fade(@bw-red, 10);
+    
+    & ~.form-control__text {
+      color: @bw-red;
+    }
+  }
+}
+
+.form-control__text:extend(.little-label) {
+  color: @bw-medium-gray;
+  transform: translateY(-125%);
+  transition: all .25s ease;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+}
+.form-control__input {
+  background-color: #FFF;
+  color: @bw-dark-gray;
+
+
+  &:focus {
+    color: @bw-dark-blue;
+    border-color: @bw-dark-blue;
+    
+    & ~ .form-control__text {
+      color: @bw-light-blue;
+    }
+  }
+}
+
+
+.select--light {
+  border-color: @bw-white;
+  color: @bw-white;
+  background: url(~'@{icon-file-location}/whiteCarrot.png') 97% 50% no-repeat;
+}
+
+//TODO: Should we remove the border altogether from legends or abstract that out?
+.form-group-header {
+  margin-top: 20px;
+  border: 0;
+  font-size: 20px;
+  color: @bw-dark-blue;
+}
+.form-group-subheader {
+  border: 0;
+  font-size: 11px;
+  font-weight: @font-bold;
+  color: @bw-light-blue;
+}
+
+.ui-select {
+  position: relative;
+  display: block;
+}
+
+.ui-select:after {
+  font-size: .5em;
+  color: @bw-dark-gray;
+  position: absolute;
+  content: "\e63f";
+  right: 10/8em;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+
+input[type="text"],
+input[type="number"],
+select {
+  font-size: 1em;
+  padding: unit(8 / @base-font-size, em) unit(10 / @base-font-size, em);
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  transition: .25s ease;
+  border: 1px solid @bw-light-gray;
+}
+
+.form.-gray,
+.hotel-filter {
+  input[type="number"],
+  input[type="text"],
+  select {
+    color: @bw-dark-gray;
+    background-color: @bw-light-gray;
+    &:focus {
+      color: @bw-dark-blue;
+      border-color: @bw-dark-blue;
+    }
+  }
+}
+
+
+
+.ui-control {
+  display: block;
+  position: relative;
+  padding-left: 1.5em;
+  
+  &.-large {
+    font-size: 1.5em;
+  }
+}
+
+.ui-control input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  width: 1px;
+}
+
+.ui-control__indicator {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  border: 1px solid @bw-medium-gray;
+  display: inline-block;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+}
+.ui-control__label {
+  vertical-align: middle;
+}
+.ui-control__indicator:before {
+  background-color: @bw-orange;
+  transform: scale(.01);
+  transition: transform .25s ease;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: ' ';
+  display: block;
+  border-radius: 50%;
+}
+
+.ui-control.-radio .ui-control__indicator:before {
+  top: 10%;
+  bottom: 10%;
+  left: 10%;
+  right: 10%;
+}
+
+.ui-control.-large .ui-control__label {
+  font-size: unit(16/(@base-font-size * 1.5), em);
+}
+
+.ui-control input:checked ~ .ui-control__indicator {
+  border-color: @bw-orange;
+}
+
+.ui-control input:checked ~ .ui-control__indicator:before {
+  transform: scale(1);
+}
+
+.ui-control.-checkbox input:checked ~ .ui-control__indicator:after {
+  position: absolute;
+  content: "\e63e";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  color: #FFF;
+}
+
+.input-prefix-wrap {
+  position: relative;
+  
+  &:before {
+    content: attr(data-prefix);
+    position: absolute;
+    top: unit(8 / @base-font-size, em);
+    left: unit(10 / @base-font-size, em);
+  }
+}

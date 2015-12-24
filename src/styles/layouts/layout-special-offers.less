@@ -1,0 +1,226 @@
+.bonus-offer-heading {
+  position: relative;
+}
+
+.bonus-offer-heading-scroll {
+  position: absolute;
+  left: ~'calc(100% - 105px)';
+  width: 100px;
+}
+
+//Add a border to the top of each list and add padding to give the content some space away from it.
+.bonus-offers-zone .list {
+  padding-top: 10px;
+  border-top: 1px solid @bw-lighter-blue;
+
+}
+
+.bonus-offer-container {
+  border-top: 1px solid @bw-dark-blue;
+  border-bottom: 1px solid @bw-lighter-blue;
+}
+
+.bonus-offer-container ~ .bonus-offer-container {
+  border-top: none
+}
+
+//Make the list of offers in the container flush with the left side of the container per design.
+.bonus-offer-container .list {
+  padding-left: 0;
+  list-style: none;
+}
+
+//The design uses special bullet styles. We inject a dash and space to give the list items the proper 
+//look.
+.bonus-offer-container .list li:before {
+  content: "\002D \00A0";
+}
+
+@media screen and (min-width: @screen-sm) {
+  .membership-levels .ribbon {
+    background-clip: content-box;
+  }
+}
+
+.special-offers-footer {
+  padding-top: 15px;
+  border-top: 1px solid @bw-lighter-blue;
+  margin-bottom: 0;
+}
+
+.offer-item-desc {
+  font-weight: @font-bold;
+}
+
+.offer-item-total {
+  border-top: 1px solid @bw-lighter-blue;
+}
+.special-offers-details {
+  border-top: 1px solid @bw-lighter-blue;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: @bw-dark-gray
+}
+
+.special-offers-list > li {
+  border-bottom: 1px solid @bw-lighter-blue;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.special-offers-list > li:nth-child(odd) {
+  border-top: 1px solid @bw-lighter-blue;
+}
+
+.special-offers-image {
+  max-width: 75%;
+}
+.partner-image-grid {
+  padding: 0;
+}
+.partner-image-grid-caption {
+  position: absolute;
+  bottom: 0;
+}
+
+.thumbnail--partners {
+  border: none;
+  background-color: transparent;
+}
+
+.thumbnail-img {
+  background-color: @bw-white;
+  border: 1px solid @bw-medium-gray;
+}
+
+.membership-badge {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  display: inline-block;
+  border-radius: 100%;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: @font-bold;
+}
+
+.membership--standard,
+.membership--gold-elite,
+.membership--platinum-elite {
+  .membership-badge {
+    background-color: rgba(00, 00, 00, .5);
+  }
+  .membership-footer {
+    border-color: rgba(00, 00 ,00, .5);
+  }
+}
+.membership--diamond-elite,
+.membership--diamond-select {
+  .membership-badge {
+    background-color: fade(@bw-darker-blue, 50);
+    color: @bw-white;
+  }
+  .membership-footer {
+    border-color: fade(@bw-darker-blue, 50);
+  }
+}
+.membership-badge--small {
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+}
+.membership-badge--standard {
+  background-color: @bw-dark-blue;
+}
+.membership-badge--gold-elite {
+  background-color: @bw-gold;
+}
+.membership-badge--platinum-elite {
+  background-color: @gold-elite-badge-color;
+}
+.membership-badge--diamond-elite {
+  background-color: @bw-light-gray;
+}
+.membership-badge--diamond-select {
+  background-color: @bw-lighter-blue;
+}
+
+.membership-body {
+  padding: 10px;
+}
+.membership-footer {
+  margin-top: 10px;
+  border-top: 1px solid;
+  padding-top: 10px;
+}
+
+//Match the font-size of the surrounding text to appear "inline".
+.membership-legal-key svg {
+  width: 13px;
+  height: 13px;
+}
+.membership-benefits svg {
+  width: 15px;
+  height: 15px;
+}
+  
+@media screen and (min-width: @screen-sm) {
+  .benefits-list-container {
+    border-top: 1px solid @bw-lighter-blue;
+  }
+}
+
+@media screen and (max-width: @screen-xs-max) {
+  .membership-benefits > li {
+    border-top: 1px solid @bw-lighter-blue;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: @bw-medium-gray;
+
+    &:last-child {
+      border-bottom: 1px solid @bw-lighter-blue;
+    }
+  }
+}
+
+.tile {
+  display: flex;
+  //http://stackoverflow.com/questions/27472595/firefox-34-ignoring-max-width-for-flexbox
+  min-width: 1px;
+  flex-shrink: 1;
+
+  @media screen and (max-width: @screen-xs-max) {
+    flex-wrap: wrap;
+  }
+
+  .tile-top {
+    @media screen and (max-width: @screen-xs-max) {
+      display: flex;
+      align-items: center;
+      min-width: 1px;
+
+      .graphic-container {
+        width: 40%;
+        flex: 1 1 auto;
+      }
+
+      .graphic-container + .graphic-caption {
+        width: 60%;
+      }
+    }
+  }
+
+  .tile-bottom {
+    align-self: center;
+  	color: @bw-dark-gray;
+    @media screen and (max-width: @screen-xs-max) {
+      margin-top: 10px;
+    }
+  }
+
+  @media screen and (max-width: @screen-xs-max) {
+    .graphic-container + .graphic-caption {
+      margin-left: 20px;
+    }
+  }
+}

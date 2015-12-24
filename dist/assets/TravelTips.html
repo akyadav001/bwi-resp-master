@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Travel Tips</title>
+  <link rel="stylesheet" href="../styles/bootstrap.css">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="bw-navbar navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="nav-left">
+      <a href="findahotel.html"><span class="bw-icon bw-icon-logo"></span></a>
+    </div>
+    <div class="nav-left">
+      <button type="button" class="burger" id="menu-burger">
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      </button>
+    </div>
+    <div class="nav-right icon hidden" data-toggle="modal" data-target="#bw-login">
+      <a href="#" class="svg">
+        <object type="image/svg+xml" data="icons/svg/global-fav-inactive.svg"></object>
+      </a>
+    </div>
+    <div class="nav-right icon hidden">
+      <a href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4b3318882e3274bf" class="svg">
+      <object type="image/svg+xml" data="icons/svg/global-share.svg"></object>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div id="left-menu" class="hide-me">
+  <div id="menu-overlay">
+    <button type="button" id="menu-close-button">&times;</button>
+  </div>
+  <div id="menu-list">
+    <div id="menu-user" class="menu-logged-in hidden">
+      <div id="menu-user-profile" class="user-profile">
+        <img src="icons/profile.png">
+        <h1>Hello, Catherine!</h1>
+        <p>#600563-1234-456-892</p>
+      </div>
+      <a href="#" id="upcoming-reservation">
+        <h2>View Upcoming Reservation</h2>
+        <p>Columbus, OH</p>
+      </a>
+    </div>
+    <div id="login-button">
+      <!-- <button type="button">REWARDS LOGIN</button> -->
+      <a href="Login.html" class="bw-btn">REWARDS LOGIN</a>
+    </div>
+    <div id="main-menu" class="menu-items">
+      <a href="#" class="account-menu-forward hidden">My Account<span class="glyphicon glyphicon-chevron-right"></span></a>
+      <a href="Home.html">Home</a>
+      <a href="FindAHotel.html">Find a Hotel</a>
+      <a href="CheckReservation.html">Check Reservations</a>
+      <a href="#" class="rewards-menu-forward">Rewards<span class="glyphicon glyphicon-chevron-right"></span></a>
+      <a href="#" >Customer Care</a>
+      <a href="#" class="settings-menu-forward">Settings<span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+    <div id="rewards-menu" class="menu-items hide-me">
+      <a href="#" class="main-menu-back"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Main Menu</a>
+      <h4>Rewards</h4>
+      <a href="RewardsLandingPage.html" >Learn About Rewards</a>
+      <a href="JoinRewards.html" >Join</a>
+      <a href="EarnRewards.html" >Earn</a>
+      <a href="Redeem.html" >Redeem</a>
+    </div>
+    <div id="settings-menu" class="menu-items hide-me">
+      <a href="#" class="main-menu-back"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Main Menu</a>
+      <h4>Settings</h4>
+      <a href="#" class="opens-modal" data-toggle="modal" data-target="#bw-language-modal">Language</a>
+      <a href="#" class="opens-modal" data-toggle="modal" data-target="#bw-currency-modal">Currency</a>
+    </div>
+    <div id="account-menu" class="menu-items hide-me hidden">
+      <a href="#" class="main-menu-back"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Main Menu</a>
+      <h4>My Account</h4>
+      <a href="Dashboard.html" >Dashboard</a>
+      <a href="Preferences.html" >Profile &amp; Preferences</a>
+      <a href="MyRewards.html" >Rewards Activity</a>
+      <a href="Favorites.html" >Favorites</a>
+      <a href="#" >Rewards Service Center</a>
+      <a id="logout" href="#" >Logout</a>
+    </div>
+  </div>
+
+</div>
+<div id="blur" class="invisible"></div>
+<div class="modal" id="bw-currency-modal">
+  <div class="modal-dialog modal-static">
+    <div class="bw-modal-content">
+      <div class="bw-modal-header">
+        CURRENCY
+      </div>
+      <div class="modal-body">
+        <div class="bw-currency">
+          <div class="row">
+            <div class="col-xs-12 currency-item currency-search">
+              <span class="bw-icon bw-icon-search"></span>
+              <input type="text"/>
+            </div>
+            <div class="col-xs-12 currency-item">
+              US Dollars
+            </div>
+            <div class="col-xs-12 currency-item">
+              Euro
+            </div>
+            <div class="col-xs-12 bw-currency-header">
+              OTHER CURRENCIES
+            </div>
+            <div class="col-xs-12 currency-item">
+              Albanian Yek
+            </div>
+            <div class="col-xs-12 currency-item">
+              Algerian Dinar
+            </div>
+            <div class="col-xs-12 currency-item">
+              Argentinian Pesos
+            </div>
+            <div class="col-xs-12 currency-item">
+              Armenian Dram
+            </div>
+            <div class="col-xs-12 currency-item">
+              Arubin Florin
+            </div>
+            <div class="col-xs-12 currency-item">
+              Australia Dollars
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer bw-modal-footer">
+        <div class="row">
+          <div class="col-xs-6">
+            <button class="btn bw-btn-cancel closes-modal-from-nav" data-dismiss="modal">CANCEL</button>
+          </div>
+          <div class="col-xs-6">
+            <button class="btn bw-btn-accept closes-modal-from-nav">DONE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="bw-language-modal">
+  <div class="modal-dialog modal-static">
+    <div class="bw-modal-content">
+      <div class="bw-modal-header">
+        LANGUAGE
+      </div>
+      <div class="modal-body">
+        <div class="bw-language">
+          <div class="row">
+            <div class="col-xs-12 language-item">
+              English
+            </div>
+            <div class="col-xs-12 language-item">
+              Spanish
+            </div>
+            <div class="col-xs-12 language-item">
+              French
+            </div>
+            <div class="col-xs-12 language-item">
+              Italian
+            </div>
+            <div class="col-xs-12 language-item">
+              German
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer bw-modal-footer"  tabindex="0">
+        <div class="row">
+          <div class="col-xs-6">
+            <button class="btn bw-btn-cancel closes-modal-from-nav" data-dismiss="modal">CANCEL</button>
+          </div>
+          <div class="col-xs-6">
+            <button class="btn bw-btn-accept closes-modal-from-nav">DONE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4b3318882e3274bf" tabindex="1000"></script>
+  </header>
+  <!-- Content -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="page-label">Travel Tips</h1>
+        <p>With three types of hotels that offer amenities and services to meet your travel needs, finding the right hotel is now easier than ever!</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <h2 class="section-title">
+          At Best Western, we want you to have an enjoyable trip so we have put together some top tips for easy travel.
+        </h2>
+        <ul class="list--no-bullets list--with-separators accordion-list">
+          <li class="row" id="topic-1-container">
+            <div class="col-xs-12">
+              <div class="accordion-item bw-accordion collapsed" data-toggle="collapse" data-target="#topic-1" data-active="#topic-1-container">
+                <h3 class="section-title">
+                  Planning Trips
+                </h3>
+                <span class="glyphicon glyphicon-menu-up"></span>
+              </div>
+              <div class="collapse" id="topic-1">
+                <h4 class="body-subtitle">Preparation</h4>
+                <ul class="list--numbered list--no-indent list--with-spacing">
+                  <li>
+                    <span class="body-subtitle">Research your destination:</span> Get copies of maps of your destination to locate routes, attractions, and essential services. Your library, travel agent, and the Internet are some good places to get information.
+                  </li>
+                  <li>
+                    <span class="body-subtitle">Talk to fellow travelers:</span> If you know people who have been to the place you plan to visit, ask them about what they liked about their trip and what they would do differently next time.
+                  </li>
+                  <li>
+                    <span class="body-subtitle">Make a list and check it twice:</span> Make a list of essentials that you need to pack. Also, make a list of things you want to see and do on your trip.
+                  </li>
+                  <li>
+                    <span class="body-subtitle">Are you covered:</span> If you are traveling outside of the U.S., your health and accident insurance may not cover you. Also, look into travel insurance for cancellations or other travel mishaps.
+                  </li>
+                </ul>
+                <h4 class="body-subtitle">Packing</h4>
+                <ul class="list--numbered list--no-indent list--with-spacing">
+                  <li>
+                    <span class="body-subtitle">Take advantage of those "hidden" spaces:</span>. For example, place small items inside your shoes or the pockets of shirts or jackets you pack.
+                  </li>
+                  <li>
+                    <span class="body-subtitle">Pack extra bags in your bag:</span> Packing a duffle bag in your luggage gives you extra space to bring things home with you. It's also a good idea to bring plastic sandwich or grocery bags for laundry or other items.
+                  </li>
+                  <li>
+                    <span class="body-subtitle">Tag those bags:</span> Tag your luggage with a distinctive luggage tag with your contact information to help you find your bag if you lose it. A distinctive tag makes it easier to spot your bag at baggage claim.
+                  </li>
+                  <li>
+                    <span class="body-subtitle">Don't pack what you can get at your destination:</span> Our hotels have a hair dryer in every room, along with many toiletry items, so you don't need to pack them.
+                  </li>
+                  <li>
+                    <span class="body-subtitle">Avoid checking baggage if you can:</span> Limiting your baggage to carry-ons saves you time and aggravation checking your bags, plus you don't have to worry about losing your baggage.
+                  </li>
+                  <li>
+                    <span class="body-subtitle">Get on a roll:</span> You can save space by rolling clothes instead of folding them.
+                  </li>
+                  <li>
+                    <span class="body-subtitle">Watch your back (pack):</span> Pack heavier items in the bottom of your backpack and distribute items evenly from left to right. Use both straps to carry it, too.
+                  </li>
+                </ul>
+                <h4 class="body-subtitle">International Travel</h4>
+                <ul class="list--numbered list--no-indent">
+                  <li>
+                    <span class="body-subtitle">Get your passport:</span> Did you know that you need a current, valid passport if you are traveling anywhere outside of the U.S., including Canada and Mexico? If you don't have a current, valid passport, visit the U.S. State Department's Web site to apply for or renew your passport.
+                  </li>
+                  <li>
+                    <span class="body-subtitle">Do you need a visa:</span> In addition to a passport, you may also need a visa to visit some countries. Check with either the <a href="http://travel.state.gov/travel" title="Check on travel requirements and international travel security alerts">U.S. State Department's Web site</a> or your host country or countries' tourism or foreign affairs Web sites.
+                  </li>
+                  <li>
+                    <span class="body-subtitle">Know before you go:</span>  Get any travel advisories or warnings about any countries you plan to visit at the <a href="http://travel.state.gov/travel/travel_1744.html" title="Check on international travel advisories and warnings">U.S. State Department's Office of American Citizens Services and Crisis Management site</a>.
+                  </li>
+                  <li>
+                    <span class="body-subtitle">Know before you go:</span> Learning just a few basic phrases in the local language makes getting around easier.
+                  </li>
+                  <li>
+                    <span class="body-subtitle">Make change count:</span> You may be able to get a better exchange rate by changing currency at home.  Also, change money only at banks and authorized exchanges.
+                  </li>
+                  <li>
+                    <span class="body-subtitle">Make sure your cell phone works:</span> Ask your cell phone provider if your phone will work outside the U.S.
+                  </li>
+                </ul>
+                <h4 class="body-subtitle">Saving Money</h4>
+                <ul class="list--numbered list--no-indent list--with-spacing">
+                  <li>
+                    <span class="body-subtitle">Buy essentials at home:</span> Many travel essentials, such as film, may cost less at home.
+                  </li>
+                  <li>
+                    <span class="body-subtitle">Pick a hotel with perks:</span> Choosing a hotel with many free amenities, such as Internet access, parking, and local calls, can save you money.
+                  </li>
+                  <li>
+                    <span class="body-subtitle">Hit the Internet:</span> Many travel deals can only be found online.
+                  </li>
+                  <li>
+                    <span class="body-subtitle">Go far from the crowd:</span> Traveling off-peak, whether it means flying or visiting a destination during a less popular time of year, means saving money and hassle.
+                  </li>
+                  <li>
+                    <span class="body-subtitle">Take advantage of discounts:</span> If you belong to AAA or AARP, you can get discounts, freebies, and other deals on just about everything related to travel. Also, check into special deals for students, seniors, and families.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="row" id="topic-2-container">
+            <div class="col-xs-12">
+              <div id="travel-with-kids" class="accordion-item bw-accordion collapsed" data-toggle="collapse" data-target="#topic-2" data-active="#topic-2-container">
+                <h3 class="section-title">
+                  Travel with Kids
+                </h3>
+                <span class="glyphicon glyphicon-menu-up"></span>
+              </div>
+              <div class="collapse" id="topic-2">
+                <h4 class="body-subtitle">Tips and Ideas</h4>
+                <ul class="list--numbered list--no-indent list--with-spacing">
+                  <li>
+                    <span class="body-subtitle">Have patience:</span> Try to relax and make the travel a fun part of your trip. Take the long ride as an opportunity to spend quality time with your little ones. Give them lots of attention, play games, tell them stories and by the time you're ready to come home they'll be talking about the "best trip ever!"
+                  </li>
+                  <li>
+                    <span class="body-subtitle">Capture the memories:</span> Buy each child an inexpensive disposable camera so they can take pictures. Your kids will really feel special when they can snap their own photos. They'll also love the resulting photos they can later use in a memory book of the trip.
+                  </li>
+                  <li>
+                    <span class="body-subtitle">Bag-O-Fun:</span> Prepare individual bags filled goodies, but don't let your kids look inside until you're on the road. They'll enjoy having their own personal items and will gladly spend hours with their snacks, games and crafts. Here's a quick list of items you can include in the bag, but get creative and consider each child's personality and hobbies. <br>
+                    Favorite snacks, Books, Pad of paper, Coloring supplies, Pipe cleaners, Stickers, Games, Deck of cards, Puzzles, Brochures about your destination
+                  </li>
+                  <li>
+                    <span class="body-subtitle">Don't forget to play:</span> Take the time to plan fun and creative games that can be played while you are traveling. Your children will have a blast and the time will fly by.
+                  </li>
+                  <li>
+                    <span class="body-subtitle">Vacation scrapbook:</span> Buy an inexpensive journal or notebook and encourage the kids to create a vacation scrapbook. Show them how to attach photos, tickets stubs, brochures, etc. from the places they visit. By the time the trip is over they'll have a great book of memories to go with the ones they'll always remember.
+                  </li>
+                  <li>
+                    <span class="body-subtitle">Never enough snacks:</span> Snacks are a good way to get children through times when they need to sit still or just aren't behaving (boarding a plane, for example). Snacks also help break up the monotony of a long road trip. The trick here is to be sure you don't give them out too fast. Pack snacks that are convenient and interesting to your children. Gummi Bears or fruit snacks top the list of quick and handy snacks for small children. For road trips, pack pretzels, potato chips or fruit. For younger children bring along sippy cups and don't forget wipes, napkins and small trash bags.
+                  </li>
+                  <li>
+                    <span class="body-subtitle">Games and crafts:</span> If you plan properly, you can add a number of games and crafts that will be interesting to your children. Bring a small serving tray or box with low sides. Your child can use this as his or her own personal workspace to make simple crafts such as pictures, puzzles or even Play-Doh. An excellent game for young children is MagnaDoodle. It's simple magnet drawings can be easily erased and small children have no problem scrawling pictures on it. You can even take turns drawing interesting little pictures with your child and each trying to guess what the other one is drawing.
+                  </li>
+                  <li>
+                    <span class="body-subtitle">Be the DJ:</span> One of the most common things to pass the time on trips is listening to music. Be sure to bring selections your children will enjoy. You can also bring along CDs with children's stories or other educational material that your child may be interested in, just to mix it up a bit.
+                  </li>
+                  <li>
+                    <span class="body-subtitle">Potty time:</span> It may sound obvious, but make sure you always have your children go to the bathroom before you leave--even if they tell you they don't have to. Also, when taking long road trips with younger children, have them wear pull-ups while riding in the car.
+                  </li>
+                  <li>
+                    <span class="body-subtitle">Dollar store bonanza:</span> Make sure you visit the dollar store before your trip. You'll be able to find a bunch of cheap toys, supplies and many things that are fun as you travel with kids. You can even make a grab bag and reward your children for their good behavior. Let them draw for a prize every 50 miles or so on long road trips. This will add variety to the trip and give them something new to do in the meantime.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="row" id="topic-3-container">
+            <div class="col-xs-12">
+              <div class="accordion-item bw-accordion collapsed" data-toggle="collapse" data-target="#topic-3" data-active="#topic-3-container">
+                <h3 class="section-title">
+                  Travel with Pets
+                </h3>
+                <span class="glyphicon glyphicon-menu-up"></span>
+              </div>
+              <div class="collapse" id="topic-3">
+                <h4 class="body-subtitle">Pets at Best Western</h4>
+                <ul class="list--numbered list--no-indent list--with-spacing">
+                  <li>
+                    Best Western recognizes the ever growing needs for pet friendly accommodations. We strive to offer our guests and their furry friends a comfortable stay and have done our best to ensure consistency at all of our pet friendly properties.
+                  </li>
+                  <li>
+                    Best Western pet friendly properties will allow up to two domestic dogs in a rented room, with a maximum size of 80 lbs per animal. Other pet types such as cats, birds, monkeys, snakes, or other animals are allowed at the discretion of each property and require prior approval from the property.
+                  </li>
+                  <li>
+                    There may be a maximum $20 per day charge for each room with a pet or multiple pets or a maximum per week charge of $100. A refundable damage deposit of up to $50 per stay may be required of all guests with a pet.
+                  </li>
+                  <li>
+                    When making your reservation at a pet friendly hotel, it is recommended that you call the hotel directly if you have specific pet related questions and to guarantee availability of a pet friendly room.
+                  </li>
+                  <li>
+                    Planning a vacation with your pet? Use the <a href="FindAHotel.html">FIND A HOTEL</a> search to locate one of our pet friendly hotels and make a reservation.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="row" id="topic-4-container">
+            <div class="col-xs-12">
+              <div class="accordion-item bw-accordion collapsed" data-toggle="collapse" data-target="#topic-4" data-active="#topic-4-container">
+                <h3 class="section-title">
+                  Family Travel Tips
+                </h3>
+                <span class="glyphicon glyphicon-menu-up"></span>
+              </div>
+              <div class="collapse" id="topic-4">
+                <h4 class="body-subtitle">Before You Go</h4>
+                <ul class="list--numbered list--no-indent list--with-spacing">
+                  <li>
+                    Research basic information about your destination
+                  </li>
+                  <li>
+                    Leave a copy of your itinerary with a trusted family member or friend
+                  </li>
+                  <li>
+                    Make a list of important emergency information
+                  </li>
+                  <li>
+                    Go over basic safety information, rules, and procedures, such as what to do if you get lost or sick
+                  </li>
+                </ul>
+                <h4 class="body-subtitle">On the Road</h4>
+                <ul class="list--numbered list--no-indent list--with-spacing">
+                  <li>
+                    Make sure that your children are in approved child safety seats as required by the National Highway Traffic Safety Administration:
+                    <ul>
+                      <li>
+                        Infants (under 20 lbs.) should be in rear-facing convertible seats with harness straps at or below shoulder level
+                      </li>
+                      <li>
+                        Toddlers (20-40 lbs.) should be in forward-facing convertible seats with harness straps at or above shoulders
+                      </li>
+                      <li>
+                        Young children (more than 40 lbs.) should use a forward-facing, belt positioning. Booster seat with the lap belt fitting low and tight across the lap/upper thigh area and shoulder belt snug across the chest and shoulder.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    If your children are old enough not to need a child safety seat, make sure they wear their seat belts
+                  </li>
+                  <li>
+                    Never leave your children alone in your car
+                  </li>
+                </ul>
+                <h4 class="body-subtitle">At the Airport and in the Air</h4>
+                <ul class="list--numbered list--no-indent list--with-spacing">
+                  <li>
+                    Explain safety and security procedures, rules and instructions
+                  </li>
+                  <li>
+                    Instruct your children to cooperate with airport security officials
+                  </li>
+                  <li>
+                    Tell your children not to make jokes or false threats about security issues
+                  </li>
+                  <li>
+                    Your children should be in approved child safety seats if they require them. The requirements for child safety seats in cars also apply to airplanes.
+                  </li>
+                  <li>
+                    Check on requirements for strollers, diaper bags, and other baby and child equipment
+                  </li>
+                </ul>
+                <h4 class="body-subtitle">In Your Hotel</h4>
+                <ul class="list--numbered list--no-indent list--with-spacing">
+                  <li>
+                    Check your hotel room for potential hazards, such as electrical outlets and furniture with sharp corners
+                  </li>
+                  <li>
+                    Find the nearest fire exits, fire alarm, fire extinguisher/hose to your room
+                  </li>
+                  <li>
+                    Teach your children basic emergency procedures, such as what to do in case of a fire
+                  </li>
+                  <li>
+                    Keep potentially hazardous items, such as toiletries, out of kids' reach
+                  </li>
+                  <li>
+                    Supervise your kids at all times
+                  </li>
+                </ul>
+                <h4 class="body-subtitle">Out and About</h4>
+                <ul class="list--numbered list--no-indent list--with-spacing">
+                  <li>
+                    Supervise your children closely, particularly in public restrooms, large crowds, and near swimming pools or bodies of water
+                  </li>
+                  <li>
+                    Set ground rules for curfews and safety issues
+                  </li>
+                  <li>
+                    Make sure your children cross streets with your supervision
+                  </li>
+                  <li>
+                    If lost, instruct your kids to go to an agreed upon safe place and stay there
+                  </li>
+                  <li>
+                    Dress your kids in distinctive or brightly colored clothes to make them more visible
+                  </li>
+                  <li>
+                    Write down your contact information on an index card and place it in your kids' pockets to make contacting you easier
+                  </li>
+                  <li>
+                    Tell your children not to take anything from a stranger or go anywhere with a stranger
+                  </li>
+                  <li>
+                    Check play areas for potential hazards, such as sharp edges or openings where your children could get stuck
+                  </li>
+                  <li>
+                    Make sure your kids have and use proper safety equipment, such as helmets and life vests, for any activities that require them
+                  </li>
+                </ul>
+                <h4 class="body-subtitle">International Travel</h4>
+                <ul class="list--numbered list--no-indent list--with-spacing">
+                  <li>
+                    Did you know that children of all ages need a current, valid passport if traveling anywhere outside of the U.S., including Canada and Mexico? If your kids don't have a current, valid passport, visit the <a href="http://travel.state.gov/passport/" title="Apply for or renew your children's passports">U.S. State Department's Web site</a> to apply for or renew their passports. There are also <a href="http://travel.state.gov/passport/get/minors/minors_834.html" title="Check on special passport requirements for minors" >special requirements for minors</a> that apply to passports
+                  </li>
+                  <li>
+                    In addition to a passport, your kids may also need a visa to visit some countries. Check with either the <a href="http://travel.state.gov/travel" title="Check on travel requirements and international travel security alerts">U.S. State Department's Web site</a> or your host country or countries' tourism or foreign affairs Web sites
+                  </li>
+                  <li>
+                    In case of emergencies, contact the nearest U.S. consulate or embassy
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="row" id="topic-5-container">
+            <div class="col-xs-12">
+              <div class="accordion-item bw-accordion collapsed" data-toggle="collapse" data-target="#topic-5" data-active="#topic-5-container">
+                <h3 class="section-title">
+                  Budget Travel Tips
+                </h3>
+                <span class="glyphicon glyphicon-menu-up"></span>
+              </div>
+              <div class="collapse" id="topic-5">
+                <h4 class="body-subtitle">Ten Tips to Save on Travel</h4>
+                <ul class="list--numbered list--no-indent list--with-spacing">
+                  <li>Make a travel budget and stick to it. Decide how much you want to spend overall and how much you want to spend for each component of your trip, such as airfare, hotel accommodations, entertainment, and meals. </li>
+                  <li>Don't forget about those unexpected expenses. Set aside money in your travel budget to cover those costs you might not anticipate, like a perfect souvenir or a forgotten travel essential.</li>
+                  <li>Pick a hotel with free extras. Choosing a hotel with many free amenities, such as Internet access, parking, and local calls, can save money.  Best Western hotels offer other freebies, like basic toiletries and continental breakfasts. </li>
+                  <li>Book early and online. The earlier you book, the more you may be able to save. Going online to book your trip also lets you take advantage of Internet only travel deals.</li>
+                  <li>Go far from the crowd. Traveling off-peak, whether it means flying during a slower time of day or day of the week, or visiting a destination during a less popular time of year, means saving money and hassle.</li>
+                  <li>Go farther from the crowd. Less well-known destinations or attractions offer you the same experiences as the "big names" for less money. Also, flying to a smaller city close to your destination can save you money and time.</li>
+                  <li>Take advantage of discounts. If you belong to AAA or AARP, you can get discounts, freebies, and other deals on just about everything related to travel. Also, check into special deals for students, seniors, and families. Check out our <a href="SpecialOffers.html" title="Save on travel with Best Western's hotel discount programs">Hotel Discounts</a> to find out what discounts you may be eligible for.</li>
+                  <li>Ask hotel staff about special deals. The staff and management at your hotel often has the inside track on economical attractions and activities in your destination, where to find cheap eats, and other deals you may not otherwise know about.</li>
+                  <li>Take advantage of rewards programs. If you travel on a regular basis, consider signing up for rewards programs, such as credit cards, that offer you frequent flier miles or other reward points. Our <a href="RewardsLandingPage.html" title="Join Best Western's Rewards Program to save on travel">Rewards Program</a> lets you save on hotel stays, flights, restaurant meals, shopping, and entertainment.</li>
+                  <li>Look into a package deal. Booking your hotel, flight, and rental car as a package saves you time and money. Best Western offers several discount hotel and travel packages to help you save money on your next trip. </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="row" id="topic-6-container">
+            <div class="col-xs-12">
+              <div class="accordion-item bw-accordion collapsed" data-toggle="collapse" data-target="#topic-6" data-active="#topic-6-container">
+                <h3 class="section-title">
+                  Health Tips
+                </h3>
+                <span class="glyphicon glyphicon-menu-up"></span>
+              </div>
+              <div class="collapse" id="topic-6">
+                <h4 class="body-subtitle">Before You Go</h4>
+                <ul class="list--numbered list--no-indent list--with-spacing">
+                  <li> Research basic health information about your destination</li>
+                  <li>If you have any chronic health condition or special health needs, such as diabetes, allergies, asthma, or heart disease, ask your doctor for any travel health advice about your condition, and if you should avoid or limit certain activities</li>
+                  <li>If you are not feeling well, talk to your doctor before you travel </li>
+                  <li>Make sure routine immunizations are up to date for you and your kids </li>
+                  <li>Make a brief medical history form that includes your doctor's contact information, your blood type, any allergies, health conditions, prescription medications, immunizations, and other important health information.</li>
+                </ul>
+                <h4 class="body-subtitle">International Travel Health Tips</h4>
+                <ul class="list--numbered list--no-indent list--with-spacing">
+                  <li>Be sure to check on any travel health requirements for the countries you plan to visit, such as necessary immunizations or tests. Check the <a href="http://wwwn.cdc.gov/travel/" title="Centers for Disease Control Travelers' Health" >Centers for Disease Control Travelers' Health page</a> for specific details. </li>
+                  <li>If you need any special immunizations, get them at least 4-6 weeks before you leave </li>
+                  <li>Your health and accident insurance may not be valid outside of the U.S. Check with your insurance provider to see if you need additional travel health/accident insurance. </li>
+                  <li>To find recommended doctors, clinics, and hospitals for travelers, check with a travel medicine clinic. Also, check with your host your host country or countries' tourism or foreign affairs offices.  </li>
+                  <li>When purchasing additional travel health/accident insurance, consider medical evacuation insurance to cover the cost of transporting you out of the country for medical care </li>
+                  <li>Some doctors, clinics, and hospitals outside of the U.S. may require you to pay them before you are treated, even though you have insurance </li>
+                  <li>
+                    In some countries, you may need to be especially careful about what you eat and drink
+                    <ul>
+                      <li> The safest foods are those that are well-cooked and factory-packaged, as well as those served in major hotels and restaurants </li>
+                      <li> The safest drinks are factory-sealed beverages, such as bottled water or soda, or hot beverages such as tea and coffee </li>
+                    </ul>
+                  </li>
+                  <li> If you get sick in another country, contact the nearest U.S. embassy or consulate for assistance. Also, contact your travel health insurance provider </li>
+                  <li> Some medications available overseas may be different than similar medications in the U.S. Also, some medications may not be available outside of the U.S. Ask your doctor if you have any questions or concerns </li>
+                  <li> Bring proof of any required immunizations </li>
+                </ul>
+                <h4 class="body-subtitle">Getting Packed</h4>
+                <ul class="list--numbered list--no-indent list--with-spacing">
+                  <li> If you need any prescription medication, bring enough to last you the duration of your trip. Also, if you wear glasses, bring an extra pair. Keep any essential medications in your carry-on luggage. </li>
+                  <li>Keep medicines in their original containers. You may also need a letter from your doctor explaining why you need certain medicines.  </li>
+                  <li>If you have any chronic health condition or special needs, wear a medical alert bracelet or necklace </li>
+                  <li>
+                    Here are a few essential travel health supplies to bring with you:
+                    <ul>
+                      <li>Sunscreen </li>
+                      <li>Insect repellant </li>
+                      <li>Antibiotic ointment </li>
+                      <li>Diarrhea/upset stomach medication </li>
+                      <li>Pain relievers, such as aspirin, acetaminophen, or ibuprofen </li>
+                      <li>Hand sanitizer </li>
+                      <li>Allergy medication </li>
+                      <li>Cold/flu remedies </li>
+                      <li>Antacids </li>
+                      <li>Motion sickness medication </li>
+                    </ul>
+                  </li>
+                </ul>
+                <h4 class="body-subtitle">En Route</h4>
+                <ul class="list--numbered list--no-indent list--with-spacing">
+                  <li>To reduce jet lag symptoms, drink plenty of water, avoid eating too much, and readjust your schedule to the local time as soon as possible </li>
+                  <li>During long plane, train, bus and car rides, your risk of deep vein thrombosis, or blood clots in your legs from sitting too long, increases. To reduce your risk, move about and stretch as frequently as possible, drink plenty of water, and ask your doctor if you have any special concerns.</li>
+                  <li>If you get earaches when you fly, chew gum or take a decongestant </li>
+                  <li>Feeling seasick, airsick, or carsick? Motion sickness medication may help.  </li>
+                  <li>If you suddenly feel sick on a plane or cruise ship, tell a crew member </li>
+                </ul>
+                <h4 class="body-subtitle">Out and About</h4>
+                <ul class="list--numbered list--no-indent list--with-spacing">
+                  <li>Wash your hands frequently, especially before eating and after coughing, sneezing, or using the restroom. Use a hand sanitizer if you are far away from soap and running water.</li>
+                  <li>Wear sunscreen with UVA and UVB protection. Re-apply it after swimming or if you've been sweating a lot.</li>
+                  <li>Use insect repellant to keep harmful insects away. Repellents containing DEET work best.</li>
+                  <li>Avoid any strange animals </li>
+                  <li>If you are traveling to high-elevation areas, such as mountainous areas, you may be at risk of altitude sickness </li>
+                  <li>Don't have too much alcohol to drink </li>
+                  <li>If you feel sick after coming back from your trip, tell your doctor.</li>
+                </ul>
+                <h4 class="body-subtitle">Maintain Healthy Habits When You Travel</h4>
+                <ul class="list--numbered list--no-indent list--with-spacing">
+                  <li> Traveling can make it harder to eat right, get regular exercise, manage stress, and get enough sleep. Don't take a vacation from healthy habits! </li>
+                  <li> Some Best Western locations offer access to an on-site or nearby fitness center, so you can stick to your exercise regimen, or just release stress </li>
+                  <li> Don't skip breakfast! Some Best Western locations, such as our Business Plus hotels, offer a complimentary breakfast.  </li>
+                  <li> Make regular "downtime" part of your travel plans </li>
+                  <li> Whenever possible, walk instead of drive </li>
+                  <li> Choose whole grains, lean meats, and fruits and vegetables when eating out </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="row" id="topic-7-container">
+            <div class="col-xs-12">
+              <div class="accordion-item bw-accordion collapsed" data-toggle="collapse" data-target="#topic-7" data-active="#topic-7-container">
+                <h3 class="section-title">
+                  Best Western to Go!
+                </h3>
+                <span class="glyphicon glyphicon-menu-up"></span>
+              </div>
+              <div class="collapse" id="topic-7">
+                <ul class="list--numbered list--no-indent list--with-spacing">
+                  <li>Search and book reservations for any Best Western hotel worldwide</li>
+                  <li>Find nearby restaurants, attractions, transportation and more</li>
+                  <li>Access your Best Western Rewards® account</li>
+                  <li>Check existing reservations</li>
+                  <li>Manage and store your travel plans using your TripIt® account</li>
+                  <li>Save your favorite locations before, during and after your trip</li>
+                  <li>Share your favorite places via email</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row copyright-disclaimer">
+      <div class="col-xs-12">
+        <p>Each Best Western   branded hotel is independently owned and operated.<br>
+          © 2002-2015 Best Western International, Inc. All rights reserved.
+        </p>
+        <p>© 2015 TripAdvisor LLC. All rights reserved</p>
+        <p><sup>&dagger;</sup>Numbers are approximate and can fluctuate.</p>
+      </div>
+    </div>
+  </div>
+  <!-- end container-fluid -->
+  <script src="../scripts/jquery.js"></script>
+  <script src="../scripts/bootstrap.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/navigation.js"></script>
+</body>
+</html>

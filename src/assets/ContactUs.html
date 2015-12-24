@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="../styles/bootstrap.css">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body class="has-fixed-footer">
+  <header class="site-header">
+    @@include('./BaseHeader.html')
+  </header>
+  <div id="content" class="container-fluid">
+    <form id="emailus" name="emailus" method="POST" action="https://kanaformsqa.bestwestern.com/Forms/FRH" class="with-float-labels">
+      <!-- guest information -->
+      <div id="guest-information" class="row ribbon">
+        <div class="col-xs-12">
+          <fieldset>
+            <input type="hidden" name="frh.form" value="Customer Service">
+            <input type="hidden" name="subject" value="BW Web Customer Care E-mail">
+            <input type="hidden" name="arrivaldate" value="">
+          </fieldset>
+          <fieldset>
+            <legend class="form-group-header">Personal Information</legend>
+            <fieldset>
+              <legend class="form-group-subheader">NAME</legend>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="float" for="firstName">First Name</label>
+                    <input name="fname" maxlength="40" type="text" id="firstName" placeholder="First Name" class="form-control" required />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="float" for="lastName">Last Name</label>
+                    <input name="lname" maxlength="40" type="text" id="lastName" placeholder="Last Name" class="bg-danger form-control" required />
+                  </div>
+                </div>
+              </div>
+              <div class="break"></div>
+            </fieldset>
+            <fieldset>
+              <legend class="form-group-subheader">ADDRESS</legend>
+              <div class="form-group">
+                <label class="float" for="address">Address</label>
+                <input name="address" maxlength="40" type="text" id="address" placeholder="Address" class="form-control" required />
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label for="country" class="float show">Country</label>
+                    <select name="country" id="country" class="select form-control">
+                      <option>Afghanistan</option>
+                      <option>Albania</option>
+                      <option>Bahrain</option>
+                      <option>Bangladesh</option>
+                      <option>Barbados</option>
+                      <option>Brazil</option>
+                      <option>Cameroon</option>
+                      <option>Chile</option>
+                      <option>China</option>
+                      <option selected>United States</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="state" class="float show">State</label>
+                    <select name="state" class="select form-control" id="state">
+                      <option>Alabama</option>
+                      <option>Alaska</option>
+                      <option selected>Arizona</option>
+                      <option>Arkansas</option>
+                      <option>California</option>
+                      <option>Colorado</option>
+                      <option>Connecticut</option>
+                      <option>Delaware</option>
+                      <option>District Of Columbia</option>
+                      <option>Florida</option>
+                      <option>Georgia</option>
+                      <option>Hawaii</option>
+                      <option>Idaho</option>
+                      <option>Illinois</option>
+                      <option>Indiana</option>
+                      <option>Iowa</option>
+                      <option>Kansas</option>
+                      <option>Kentucky</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="float" for="city">City</label>
+                    <input name="city" maxlength="40" type="text" id="city" placeholder="City" class="form-control" required />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="float" for="zip">ZIP/Postal Code</label>
+                    <input name="zip" maxlength="9" type="text" id="zip" placeholder="ZIP/Postal Code" class="form-control" required />
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <div class="break"></div>
+            <fieldset>
+              <legend class="form-group-subheader">CONTACT</legend>
+              <div class="form-group">
+                <label class="float" for="phoneNumber">Phone Number</label>
+                <input name="phone" maxlength="40" type="tel" id="phoneNumber" placeholder="Phone Number" class="form-control" required />
+              </div>
+              <div class="form-group">
+                <label class="float" for="email">Email Address</label>
+                <input name="email" maxlength="40" type="email" id="email" placeholder="Email Address" class="form-control" required />
+              </div>
+            </fieldset>
+          </fieldset>
+          <div class="break"></div>
+          <fieldset>
+            <legend class="form-group-header">Stay Information</legend>
+            <div class="form-group">
+              <label class="float" for="hotel-address">Hotel Name</label>
+              <input name="hotelname" maxlength="60" type="text" id="hotel-name" placeholder="Hotel Name" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label class="float" for="hotel-address">Hotel Address</label>
+              <input name="hoteladdress" maxlength="40" type="text" id="hotel-address" placeholder="Hotel Address" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  <label for="billing-country" class="float show">Country</label>
+                  <select name="hotelcountry" id="billing-country" class="select form-control">
+                    <option>Afghanistan</option>
+                    <option>Albania</option>
+                    <option>Bahrain</option>
+                    <option>Bangladesh</option>
+                    <option>Barbados</option>
+                    <option>Brazil</option>
+                    <option>Cameroon</option>
+                    <option>Chile</option>
+                    <option>China</option>
+                    <option selected>United States</option>
+                  </select>
+                </div>
+                <div class="col-sm-6">
+                  <label for="billing-state" class="float show">State</label>
+                  <select name="hotelstate" class="select form-control" id="billing-state">
+                    <option>Alabama</option>
+                    <option>Alaska</option>
+                    <option selected>Arizona</option>
+                    <option>Arkansas</option>
+                    <option>California</option>
+                    <option>Colorado</option>
+                    <option>Connecticut</option>
+                    <option>Delaware</option>
+                    <option>District Of Columbia</option>
+                    <option>Florida</option>
+                    <option>Georgia</option>
+                    <option>Hawaii</option>
+                    <option>Idaho</option>
+                    <option>Illinois</option>
+                    <option>Indiana</option>
+                    <option>Iowa</option>
+                    <option>Kansas</option>
+                    <option>Kentucky</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-6">
+                <div class="form-group">
+                  <label class="float" for="hotel-city">Hotel City</label>
+                  <input name="hotelcity" maxlength="40" type="text" id="hotel-city" placeholder="Hotel City" class="form-control" required />
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6">
+                <div class="form-group">
+                  <label class="float show" for="stay-date">Date of Stay</label>
+                  <input type="date" id="stay-date" class="form-control" required />
+                  <input type="hidden" name="arrivalyear" id="arrivalyear" value="">
+                  <input type="hidden" name="arrivalmonth" id="arrivalmonth" value="">
+                  <input type="hidden" name="arrivalday" id="arrivalday" value="">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="float" for="reservation-number">Reservation Number</label>
+              <input name="confirmation" maxlength="9" type="text" id="reservation-number" placeholder="Reservation Number" class="form-control"
+              required />
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-12">Did you attempt to contact the hotel management directly to share your comments or concerns?</div>
+                <div class="col-sm-6">
+                  <input class="radio-img" type="radio" id="attempttocontactyes" name="attempttocontact" value="yes" />
+                  <label for="attempttocontactyes">Yes</label>
+                </div>
+                <div class="col-sm-6">
+                  <input class="radio-img" type="radio" id="attempttocontactno" name="attempttocontact" value="no" />
+                  <label for="attempttocontactno">No</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="float show" for="comments">Comments</label>
+              <textarea name="comments" id="comments" class="form-control" rows="4" cols="10" maxlength="160"></textarea>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+      <!-- agreement -->
+      <div id="acknowledgement" class="row ribbon ribbon--dark-blue">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <input type="checkbox" name="certify" id="policy-agreement" class="svg_check_box" />
+            <label for="policy-agreement">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="16"
+              height="16" viewBox="0 0 82 82" class="unchecked-svg">
+                <g>
+                  <circle class="outer-circle" cx="41" cy="41" r="39" />
+                  <circle class="inner-circle" cx="41" cy="41" r="29" />
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="16"
+              height="16" viewBox="0 0 38 38" class="checked-svg">
+                <path d="M19.000,0.000 C8.524,0.000 -0.000,8.524 -0.000,19.001 C-0.000,29.476 8.524,38.000 19.000,38.000 C29.476,38.000 38.000,29.476 38.000,19.001 C38.000,8.524 29.476,0.000 19.000,0.000 ZM16.863,27.816 C16.863,27.816 9.123,20.108 9.123,20.108 C9.123,20.108 12.048,17.170 12.048,17.170 C12.048,17.170 16.576,21.676 16.576,21.676 C16.576,21.676 24.679,11.930 24.679,11.930 C24.679,11.930 27.866,14.581 27.866,14.581 C27.866,14.581 16.863,27.816 16.863,27.816 Z"
+                id="path-1" fill="#df9e02" fill-rule="evenodd" />
+              </svg>
+              <span class="svg_check_box_text">I certify that I am 18 years of age or older</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- end container-fluid -->
+  <nav class="bw-bottom-bar single-button">
+    <button class="bw-btn bw-btn-primary" id="submit-button" type="button">
+      SUBMIT
+    </button>
+  </nav>
+  <script src="../scripts/jquery.js"></script>
+  <script src="../scripts/bootstrap.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/navigation.js"></script>
+  <script src="../scripts/make-reservation.js"></script>
+  <script>
+    $(window).on("DOMContentLoaded", function () {
+      var form = $("#emailus");
+
+      $("#submit-button").click(function() {
+          var staydate = $('#stay-date').val();
+          // console.log(staydate);
+          $('#arrivalyear').val(staydate.substr(0,4));
+          $('#arrivalmonth').val(staydate.substr(5,2));
+          $('#arrivalday').val(staydate.substr(8,2));
+          // console.log("year: " + $('#arrivalyear').val());
+          // console.log("month: " + $('#arrivalmonth').val());
+          // console.log("day: " + $('#arrivalday').val());
+          form.submit();
+          window.location.replace("EmailThankYou.html");
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+.compare-row {
+  height: ~"calc(100% - 50px)";
+  overflow-y: auto;
+  margin-top: 5px;
+}
+
+.compare-row > div {
+  height: 100%;
+
+  &:not(:last-child) {
+    border-right: 5px solid @bw-light-gray;
+  }
+}
+
+.compare-control-bar {
+  margin-top: 5px;
+  padding-right: 10px;
+  & > div {
+    padding-bottom: 5px;
+    border-bottom: 1px solid @bw-light-gray;
+  }
+}
+
+.compare-tripadvisor {
+  padding-bottom: 10px;
+  font-weight: @font-light;
+  color: @tripadvisor-color;
+  border-top: 3px solid @tripadvisor-color;
+  padding-top: 5px;
+  margin-top: 10px;
+}
+
+.instructions {
+  color: @bw-medium-gray;
+  font-size: 18px;
+  font-weight: @font-light;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.instructions--large {
+  font-size: 60px;
+  display: block;
+}
+
+.instructions.active {
+  color: @bw-gold;
+}
+
+.box-number {
+  display: block;
+  font-size: 60px;
+  font-weight: inherit;
+}
+
+.tripadvisor-rating {
+  border-top: 5px solid @tripadvisor-color;
+}
+
+.bw-trip-advisor {
+  position: static;
+}
+
+.is-selected {
+  opacity: .2;
+}
+.full-height-carousel {
+  height: 200px;
+  .carousel-inner, & div {
+    height: 100%;
+  }
+}

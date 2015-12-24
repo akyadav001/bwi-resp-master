@@ -1,0 +1,42 @@
+//gradients.less
+
+
+//Define gradients to be utilized throughout the site here. Gradients are generated using bootstrap
+//mixins.
+//
+//
+// .gradient provides a base styling used throughout the site. It has two main usages:
+//
+//1: To provide a space to overlay text on top of an image with a bit of contrast.
+//2: To provide a visual cue that there is more content below the visible area (ie: the Amenities section of hotel-details).
+
+
+
+.gradient {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50px;
+}
+
+
+//Gradient style rules
+
+
+.gradient-primary--bottom {
+  #gradient.vertical(fade(@bw-dark-blue, 0), fade(@bw-dark-blue, 100));
+}
+.gradient-light--top {
+  #gradient.vertical(rgba(255, 255, 255, 1), rgba(255,255,255,0));
+}
+.gradient-light--top-half {
+  #gradient.vertical(rgba(255, 255, 255, 1), rgba(255,255,255,.5));
+}
+.gradient-light--bottom {
+   #gradient.vertical(rgba(255,255,255,0), rgba(255, 255, 255, 1));
+}
+//Converted opacity from rgba to rgb to lighten the look
+.gradient-dark--bottom {
+  #gradient.vertical(rgba(31,40,45,0), rgba(31, 40, 45, 1));
+}

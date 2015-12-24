@@ -1,0 +1,85 @@
+// ribbons.less
+
+// This file contains all of the theming and styles for the ribbon element for the site.
+
+
+
+// We look through the pairs of colors to create a theming style effect to the ribbon.
+// The structure below is set up in color pairs.
+// <background-color> <color>
+//
+// The colors reference the colors contained within variables.less by prepending the 'bw-' prefix in the
+// style rule.
+
+@colors:
+  light-blue    white,
+  lighter-blue  dark-blue,
+  dark-blue     white,
+  darker-blue   white,
+  light-gray    dark-blue,
+  medium-gray   dark-blue,
+  dark-gray     dark-blue,
+  light-brown   white,
+  silver      white,
+  gold          white,
+  orange        white,
+  red           white;
+
+.generate-ribbons(@colors);
+
+.generate-ribbons(@list, @i: 1) when (length(@list) >= @i ) {
+  @background: extract(extract(@list, @i), 1);
+  @text: extract(extract(@list, @i), 2);
+  .ribbon--@{background} {
+    background-color: ~'@{bw-@{background}}';
+    color: ~'@{bw-@{text}}';
+  }
+  .generate-ribbons(@list, (@i + 1));
+}
+
+.ribbon {
+  position: relative;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.ribbon--small {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.ribbon--large {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.ribbon--huge {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.ribbon--white {
+  background-color: #FFF;
+  color: @primary-color;
+}
+.ribbon--with-image {
+   background:
+    linear-gradient(
+      fade(@bw-dark-blue, 70),
+      fade(@bw-dark-blue, 70)
+    ),
+    url('../images/bw7.png');
+    background-position: center;
+    background-size: cover;
+}
+.ribbon--border-bottom-medium-gray {
+    border-bottom: 1px solid @bw-medium-gray;
+}
+
+.ribbon--border-top-medium-gray {
+    border-top: 1px solid @bw-medium-gray;
+}
+
+.ribbon--header {
+  margin-top: 50px;
+}

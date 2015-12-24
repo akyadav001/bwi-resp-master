@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Check Reservation</title>
+  <link rel="stylesheet" href="../styles/bootstrap.css">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body class="has-fixed-footer" data-view="check-reservation-view">
+  <header class="site-header">
+    @@include('./BaseHeader.html')
+  </header>
+  <div id="content" class="container-fluid">
+    <!-- check reservation -->
+    <div id="check-reservation" class="row ribbon">
+      <div class="col-xs-12">
+        <h3>Check Reservations</h3>
+        <h4>Check, change, or cancel an upcoming stay.</h4>
+        <div class="form-group">
+          <input type="radio" class="radio_button" name="confirmationRadios" value="rewards-confirmation" id="rewards-radio">
+          <label for="rewards-radio">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="82" height="82" viewBox="0 0 82 82">
+              <g>
+                <circle class="outer-circle" cx="41" cy="41" r="39"/>
+                <circle class="inner-circle" cx="41" cy="41" r="29"/>
+              </g>
+            </svg>
+            Check reservations as a rewards member
+          </label>
+        </div>
+        <div class="form-group">
+          <input type="radio" class="radio_button" name="confirmationRadios" value="number-confirmation" checked id="confirmation-radio">
+          <label for="confirmation-radio">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="82" height="82" viewBox="0 0 82 82">
+              <g>
+                <circle  class="outer-circle" cx="41" cy="41" r="39"/>
+                <circle  class="inner-circle" cx="41" cy="41" r="29"/>
+              </g>
+            </svg>
+            Check reservations using confirmation #
+          </label>
+        </div>
+      </div>
+    </div>
+    <!-- login with rewards account -->
+    <div id="rewards-info" class="hidden row ribbon">
+      <div class="col-xs-12">
+        <form class="with-float-labels">
+          <div class="form-group">
+            <label class="float" for="rewards-username">Username</label>
+            <input type="text" class="form-control" id="rewards-username" placeholder="Username">
+          </div>
+          <div class="form-group">
+            <label class="float" for="rewards-password">Password</label>
+            <input type="password" class="form-control" id="rewards-password" placeholder="Password">
+            <a class="forgot-password pull-right" href="#">I forgot my password</a>
+          </div>
+          <div class="g-recaptcha" data-sitekey="6LfoKgUTAAAAAG4BFkI4asJDWuWWVIvnpKwBPHuF"></div>
+        </form>
+      </div>
+    </div>
+    <!-- check using confirmation # -->
+    <div id="confirmation-info" class="row ribbon">
+      <div class="col-xs-12">
+        <form class="with-float-labels">
+          <div class="form-group">
+            <label class="float" for="confirmation-firstname">First Name</label>
+            <input type="text" class="form-control" id="confirmation-firstname" placeholder="First Name">
+          </div>
+          <div class="form-group">
+            <label class="float" for="confirmation-lastname">Last Name</label>
+            <input type="text" class="form-control" id="confirmation-lastname" placeholder="Last Name">
+          </div>
+          <div class="form-group">
+            <label class="float" for="confirmation-number">Confirmation #</label>
+            <input type="text" class="form-control" id="confirmation-number" placeholder="Confirmation #">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- end container-fluid -->
+  <nav class="bw-bottom-bar">
+    <a href="Confirmation.html" class="col-xs-12">
+      CHECK RESERVATION
+    </a>
+  </nav>
+  <script src="../scripts/jquery.js"></script>
+  <script src="../scripts/bootstrap.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/navigation.js"></script>
+  <script src="../scripts/make-reservation.js"></script>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+</body>
+</html>

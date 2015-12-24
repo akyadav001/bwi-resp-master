@@ -1,0 +1,292 @@
+@import (reference) "lib/variables";
+
+.hotel-card {
+  position: relative;
+  padding: unit(15 / @base-font-size, em);
+  height: unit(150 / @base-font-size, em);
+  &.-list {
+    height: auto;
+    padding: unit(7.5 / @base-font-size, em) unit(15 / @base-font-size, em) unit(10 / @base-font-size, em) unit(15 / @base-font-size, em);
+    
+    @media (min-width: @desktopMin) {
+      padding: unit(15 / @base-font-size, em);
+    }
+  }
+}
+
+.hotel-card__indicator {
+  margin-bottom: unit(10 / @base-font-size, em);
+  width: unit(40 / @base-font-size, em);
+  height: unit(5 / @base-font-size, em);
+  
+  &.-standard {
+    background-color: @bw-dark-blue;
+  }
+  &.-plus {
+    background-color: @bw-silver;
+  }
+  &.-premier {
+    background-color: @bw-gold;
+  }
+}
+
+.hotel-card__brand:extend(.eyebrow-header) {
+  text-transform: uppercase;
+}
+
+.hotel-card__price:extend(.large-tile-title) {
+  
+}
+.hotel-card__currency-type:extend(.little-label) {
+  
+}
+.hotel-card__name:extend(.subsection-title) {
+    
+}
+
+.hotel-card__distance-wrap {
+  position: absolute;
+  bottom: unit(5 / @base-font-size, em);
+  @media (min-width: @desktopMin) {
+    bottom: unit(95 / @base-font-size, em);
+  }
+}
+.hotel-card__distance:extend(.legal) {
+  
+}
+
+
+.hotel-card__price-info {
+  position: absolute;
+  bottom: unit(5 / @base-font-size, em);
+  right: unit(15 / @base-font-size, em);
+  text-align: right;
+}
+
+.hotel-card.-list .hotel-card__price-info {
+  @media (min-width: @tabletMin) {
+    bottom: unit(10 / @base-font-size, em);
+  }
+  @media (min-width: @desktopMin) {
+    background-color: @bw-yellow;
+    right: unit(-10 / @base-font-size, em);
+    bottom: unit(15 / @base-font-size, em);
+    padding: unit(20 / @base-font-size, em) unit(20 / @base-font-size, em) unit(20 / @base-font-size, em) unit(30 / @base-font-size, em);
+  }
+}
+
+.card, .card-image {
+  height: 100px;
+  @media screen and (min-width: @screen-sm) {
+    height: 130px;
+  }
+}
+
+.card {
+  color: @bw-dark-blue;
+  border: 1px solid @bw-light-gray;
+  cursor: pointer;
+}
+
+.card--small {
+  height: 100px;
+}
+
+.card--large {
+  height: 130px;
+  @media screen and (min-width: @screen-sm) {
+    height: 150px;
+  }
+}
+
+.card-body {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: @font-bold;
+  height: 100%;
+}
+
+
+.card-indicator--standard {
+  background-color: @maplist-hotel-indicator-standard;
+}
+
+.card-indicator--plus {
+  background-color: @maplist-hotel-indicator-plus;
+}
+
+.card-indicator--premier {
+  background-color: @maplist-hotel-indicator-premier;
+}
+
+.card-name {
+  font-weight: @font-bold;
+  font-size: 11px;
+  margin-bottom: 0;
+  @media screen and (min-width: @screen-sm) {
+    font-size: 13px;
+  }
+}
+
+.card-location--large {
+  font-size: 20px;
+  @media screen and (min-width: @screen-sm) {
+    font-size: 25px;
+  }
+}
+
+.card-location {
+  display: block;
+  font-weight: @font-light;
+  font-size: 18px;
+  overflow: hidden;
+  @media screen and (min-width: @screen-sm) {
+    font-size: 25px;
+  }
+}
+
+.card-distance {
+  position: absolute;
+  left: 15px;
+  bottom: 3px;
+  @media screen and (min-width: @screen-sm-min) {
+    bottom: 5px;
+  }
+}
+
+.card-rating {
+  display: block;
+  width: 100%;
+}
+
+.card-rating-number {
+  font-size: 13px;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: -3px;
+  @media screen and (min-width: @screen-sm-min) {
+    margin-top: 2px;
+  }
+}
+.card-currency {
+  position: absolute;
+  right: 15px;
+  bottom: 22px;
+  font-size: 11px;
+  @media screen and (min-width: @screen-sm-min) {
+    font-size: 13px;
+    bottom: 27px;
+  }
+}
+.card-currency--compare {
+  float: right;
+  line-height: 1;
+  font-weight: @font-bold;
+  font-size: 25px;
+}
+.card-price {
+  position:absolute;
+  right: 15px;
+  bottom: 0px;
+  font-weight: @font-bold;
+  font-size: 20px;
+  @media screen and (min-width: @screen-sm-min) {
+    font-size: 25px;
+  }
+}
+
+.tripadvisor-average {
+  position: absolute;
+  left: unit(15 / @base-font-size, em);
+  bottom: unit(23 / @base-font-size, em);
+
+  @media (min-width: @desktopMin) {
+    bottom: unit(30 / @base-font-size, em);
+  }
+}
+
+.tripadvisor-average__logo {
+  display: inline-block;
+  width: unit(24 / @base-font-size, em);
+  height: unit(15 / @base-font-size, em);
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  .make-icon("@{icon-file-location}/tripadvisor-logo.png");
+  
+  @media screen and (min-width: @tabletMin) {
+    width: unit(30 / @base-font-size, em);
+    height: unit(18 / @base-font-size, em);
+  }
+}
+
+.tripadvisor-average__circle {
+  vertical-align: middle;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: unit(12 / @base-font-size, em);
+  height: unit(12 / @base-font-size, em);
+  
+  @media screen and (min-width: @tabletMin) {
+    width: unit(15 / @base-font-size, em);
+    height: unit(15 / @base-font-size, em);
+  }
+  
+  &.-half {
+    background-image: url("@{icon-file-location}/tripadvisor-rating-half.png");
+  }
+  &.-full {
+    background-image: url("@{icon-file-location}/tripadvisor-rating-full.png");   
+  }
+}
+.tripadvisor-average__total-reviews:extend(.little-label) {
+  vertical-align: middle;
+  color: @tripadvisor-color;
+}
+.card-icon-marker {
+  text-align: center;
+  line-height: 100px;
+  @media screen and (min-width: @screen-sm) {
+    line-height: 130px;
+  }
+}
+
+.hotel-result {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  &:hover {
+    text-decoration: none;
+  }
+  
+  & > * {
+    display: table-cell;
+    vertical-align: top;
+  }
+}
+
+.hotel-result.-list {
+  height: unit(100 / @base-font-size, em);
+  
+  @media (min-width: @tabletMin) {
+    height: unit(130 / @base-font-size, em);
+  }
+  
+  @media (min-width: @desktopMin) {
+    height: unit(190 / @base-font-size, em);
+  }
+}
+.hotel-result__image {
+  width: 25%;
+  background-image: url(../images/bw1.jpg);
+  background-size: cover;
+  overflow: hidden;
+}
+
+.hotel-result__marker {
+  vertical-align: middle;
+  width: 15%;
+  text-align: center;
+}
+

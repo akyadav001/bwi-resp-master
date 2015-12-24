@@ -1,0 +1,10 @@
+
+.vertical-with-image(@image) {
+  background-color: #0B286A; // fallback
+  background-image: url(@image); // fallback
+}
+
+.background-with-color-filter(@image, @color, @opacity) {
+  background: linear-gradient( fade(@color, @opacity),  fade(@color, @opacity) ), url(@image) no-repeat center center fixed;
+  background-size: cover;
+}

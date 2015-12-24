@@ -1,0 +1,384 @@
+@import (reference) "lib/variables";
+@import (reference) "lib/icons";
+
+.box-card {
+  .box {
+    border: 1px solid @bw-lighter-blue;
+    margin-bottom: 20px;
+  }
+  .box-content {
+    background-color: @bw-light-gray;
+    padding: 20px;
+    .box-content--section-with-padding {
+      padding-top: 20px;
+    }
+    a.svg, .glyphicon.spinning {
+      position: relative;
+      float: right;
+      clear: both;
+    }
+    a.svg:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+    }
+    .glyphicon.spinning {
+      color: @bw-medium-gray;
+    }
+    svg {
+      fill: @bw-medium-gray;
+    }
+    .break-blue {
+      margin: 15px 0;
+    }
+  }
+  .bw-btn {
+    margin-bottom: 0;
+  }
+}
+
+.upcoming-reservations {
+  .box-content {
+    background-color: @bw-light-gray;
+    svg {
+      fill: @bw-medium-gray;
+    }
+  }
+}
+
+.rewards-activity {
+  .rewards-activity-box {
+    > div:last-child {
+      text-align: center;
+      padding-top: 30px;
+    }
+  }
+}
+
+.dashboard-membership-status {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid currentColor;
+  @media screen and (min-width: @screen-sm) {
+    border: none;
+  }
+}
+.dashboard-points-earned {
+  @media screen and (min-width: @screen-sm) {
+    border-right: 1px solid #FFF;
+  }
+}
+
+.dashboard-rewards-status {
+  text-align: center;
+}
+
+.dashboard-account-number {
+  font-weight: @font-light;
+}
+
+.dashboard-view {
+  .dashboard-user-profile {
+    .big-title {
+      margin: 0;
+    }
+    a {
+      color: @bw-medium-gray;
+      text-decoration: underline;
+    }
+  }
+
+  .platinum-benefits {
+    text-align: center;
+    p {
+      margin: 10px 0 20px 0;
+    }
+  }
+  .points-until-list {
+    margin-bottom: 15px;
+
+    .points-fraction {
+      color: @bw-medium-gray;
+    }
+  }
+
+  .points-until-list li {
+    text-align: center;
+
+    @media screen and (max-width: @screen-xs-max) {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      &:nth-last-child(n + 2) {
+      border-bottom: 1px solid @bw-lighter-blue;
+    }
+    }
+    &:nth-last-child(n + 2) {
+      @media screen and (min-width: @screen-sm) {
+      border-right: 1px solid @bw-lighter-blue;
+    }
+    }
+  }
+
+  .missing-points {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    p {
+      color: @bw-medium-gray;
+      margin: 10px 0 20px 0;
+    }
+    .bw-btn {
+      margin-top: 10px;
+    }
+  }
+
+  .favorites {
+    .box {
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      .box-content {
+        background-color: rgba(3, 16, 84, 0.8);
+        .card {
+          color: #FFF;
+          border: none;
+          .card-location--large {
+            font-weight: @font-light;
+          }
+        }
+        svg {
+          fill: @bw-light-gray;
+        }
+      }
+    }
+  }
+}
+
+.preferences-view {
+  a {
+    display: block;
+    padding: 10px 0;
+    .bw-icon {
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+    &:hover, &:focus {
+      text-decoration: none;
+      outline: none;
+    }
+  }
+  button.add-a {
+    display: block;
+    padding: 10px 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    .bw-icon {
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+    &:hover, &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+  .box-card .box-content {
+    color: @bw-dark-gray;
+    a {
+      padding: 0;
+    }
+    .address-title {
+      font-weight: @font-bold;
+    }
+    svg {
+      fill: @bw-dark-gray;
+    }
+  }
+}
+
+.my-reservations-view {
+  .nav-tabs.nav-justified > li {
+    display: table-cell;
+    width: 1%;
+    > a {
+      color: @bw-dark-blue;
+      background-color: @bw-light-gray;
+      border-top: 3px solid @bw-light-gray;
+      border-radius: 0 !important;
+      margin-bottom: 0 !important;
+    }
+    &.active {
+      > a {
+        background-color: #FFF;
+        border-top: 3px solid @bw-dark-blue;
+      }
+    }
+  }
+}
+
+.favorites-view {
+  .favorites {
+    .box {
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      .box-content {
+        background-color: rgba(3, 16, 84, 0.8);
+        .card {
+          color: #FFF;
+          border: none;
+          .card-location--large {
+            font-weight: @font-light;
+          }
+        }
+        svg {
+          fill: @bw-light-gray;
+        }
+      }
+    }
+  }
+}
+
+.password-help-view {
+  .bold-underline {
+    &:hover {
+      color: @primary-color;
+    }
+    text-decoration: underline;
+  }
+  p {
+    margin-bottom: 30px;
+  }
+}
+
+.award-winning-hotels-view {
+  .gradient {
+    height: 50%;
+    top: 0;
+  }
+  button.svg {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    &:hover {
+      border: none;
+      outline: none;
+    }
+  }
+  svg {
+    vertical-align: middle;
+  }
+  .award {
+    position: relative;
+    button.svg {
+      position: absolute;
+      right: 0;
+    }
+  }
+  .awarded-hotel {
+    color: #FFF;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .hotel-awards {
+    padding: 15px;
+  }
+  .hotel-award {
+    color: @primary-color;
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.best-western-view, .hotel-types-view, .hotel-directory-view, .newest-hotels-view {
+  .break-blue {
+    margin-top: 0;
+  }
+  .promo-image {
+    background-image: url('../images/2015.03.20.1500_BWI_Promotion Image.jpeg');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    p {
+      position: relative;
+      z-index: @zIndex-2;
+    }
+  }
+  .gradient {
+    height: 100%;
+    top: 0;
+    z-index: @zIndex-1;
+  }
+  .video {
+    position: relative;
+    z-index: @zIndex-2;
+    padding: 50px 0 15px;
+    .video-player {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      padding-top: 25px;
+      height: 0;
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.hotel-types-view, .hotel-directory-view, .newest-hotels-view {
+  .promo-image {
+    margin-top: 15px;
+    min-height: 300px;
+  }
+  .body-subtitle {
+    text-transform: uppercase;
+    text-decoration: underline;
+  }
+}
+
+.hotel-directory-view, .newest-hotels-view {
+
+  a.body-subtitle {
+    text-decoration: none;
+    &:hover {
+      color: @primary-color;
+    }
+  }
+
+  .col-img {
+    position: relative;
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+  }
+}
+
+.newest-hotels-view {
+  a.body-subtitle {
+    float: right;
+    padding: 10px 0;
+  }
+}
+
+.glyphicon.spinning {
+    animation: spin 1s infinite linear;
+    -webkit-animation: spin2 1s infinite linear;
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}

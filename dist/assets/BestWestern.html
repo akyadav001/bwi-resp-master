@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Best Western</title>
+    <link rel="stylesheet" href="../styles/bootstrap.css">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body data-view="best-western-view">
+
+  <header class="site-header">
+    <nav class="bw-navbar navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="nav-left">
+      <a href="findahotel.html"><span class="bw-icon bw-icon-logo"></span></a>
+    </div>
+    <div class="nav-left">
+      <button type="button" class="burger" id="menu-burger">
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      </button>
+    </div>
+    <div class="nav-right icon hidden" data-toggle="modal" data-target="#bw-login">
+      <a href="#" class="svg">
+        <object type="image/svg+xml" data="icons/svg/global-fav-inactive.svg"></object>
+      </a>
+    </div>
+    <div class="nav-right icon hidden">
+      <a href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4b3318882e3274bf" class="svg">
+      <object type="image/svg+xml" data="icons/svg/global-share.svg"></object>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div id="left-menu" class="hide-me">
+  <div id="menu-overlay">
+    <button type="button" id="menu-close-button">&times;</button>
+  </div>
+  <div id="menu-list">
+    <div id="menu-user" class="menu-logged-in hidden">
+      <div id="menu-user-profile" class="user-profile">
+        <img src="icons/profile.png">
+        <h1>Hello, Catherine!</h1>
+        <p>#600563-1234-456-892</p>
+      </div>
+      <a href="#" id="upcoming-reservation">
+        <h2>View Upcoming Reservation</h2>
+        <p>Columbus, OH</p>
+      </a>
+    </div>
+    <div id="login-button">
+      <!-- <button type="button">REWARDS LOGIN</button> -->
+      <a href="Login.html" class="bw-btn">REWARDS LOGIN</a>
+    </div>
+    <div id="main-menu" class="menu-items">
+      <a href="#" class="account-menu-forward hidden">My Account<span class="glyphicon glyphicon-chevron-right"></span></a>
+      <a href="Home.html">Home</a>
+      <a href="FindAHotel.html">Find a Hotel</a>
+      <a href="CheckReservation.html">Check Reservations</a>
+      <a href="#" class="rewards-menu-forward">Rewards<span class="glyphicon glyphicon-chevron-right"></span></a>
+      <a href="#" >Customer Care</a>
+      <a href="#" class="settings-menu-forward">Settings<span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+    <div id="rewards-menu" class="menu-items hide-me">
+      <a href="#" class="main-menu-back"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Main Menu</a>
+      <h4>Rewards</h4>
+      <a href="RewardsLandingPage.html" >Learn About Rewards</a>
+      <a href="JoinRewards.html" >Join</a>
+      <a href="EarnRewards.html" >Earn</a>
+      <a href="Redeem.html" >Redeem</a>
+    </div>
+    <div id="settings-menu" class="menu-items hide-me">
+      <a href="#" class="main-menu-back"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Main Menu</a>
+      <h4>Settings</h4>
+      <a href="#" class="opens-modal" data-toggle="modal" data-target="#bw-language-modal">Language</a>
+      <a href="#" class="opens-modal" data-toggle="modal" data-target="#bw-currency-modal">Currency</a>
+    </div>
+    <div id="account-menu" class="menu-items hide-me hidden">
+      <a href="#" class="main-menu-back"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Main Menu</a>
+      <h4>My Account</h4>
+      <a href="Dashboard.html" >Dashboard</a>
+      <a href="Preferences.html" >Profile &amp; Preferences</a>
+      <a href="MyRewards.html" >Rewards Activity</a>
+      <a href="Favorites.html" >Favorites</a>
+      <a href="#" >Rewards Service Center</a>
+      <a id="logout" href="#" >Logout</a>
+    </div>
+  </div>
+
+</div>
+<div id="blur" class="invisible"></div>
+<div class="modal" id="bw-currency-modal">
+  <div class="modal-dialog modal-static">
+    <div class="bw-modal-content">
+      <div class="bw-modal-header">
+        CURRENCY
+      </div>
+      <div class="modal-body">
+        <div class="bw-currency">
+          <div class="row">
+            <div class="col-xs-12 currency-item currency-search">
+              <span class="bw-icon bw-icon-search"></span>
+              <input type="text"/>
+            </div>
+            <div class="col-xs-12 currency-item">
+              US Dollars
+            </div>
+            <div class="col-xs-12 currency-item">
+              Euro
+            </div>
+            <div class="col-xs-12 bw-currency-header">
+              OTHER CURRENCIES
+            </div>
+            <div class="col-xs-12 currency-item">
+              Albanian Yek
+            </div>
+            <div class="col-xs-12 currency-item">
+              Algerian Dinar
+            </div>
+            <div class="col-xs-12 currency-item">
+              Argentinian Pesos
+            </div>
+            <div class="col-xs-12 currency-item">
+              Armenian Dram
+            </div>
+            <div class="col-xs-12 currency-item">
+              Arubin Florin
+            </div>
+            <div class="col-xs-12 currency-item">
+              Australia Dollars
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer bw-modal-footer">
+        <div class="row">
+          <div class="col-xs-6">
+            <button class="btn bw-btn-cancel closes-modal-from-nav" data-dismiss="modal">CANCEL</button>
+          </div>
+          <div class="col-xs-6">
+            <button class="btn bw-btn-accept closes-modal-from-nav">DONE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="bw-language-modal">
+  <div class="modal-dialog modal-static">
+    <div class="bw-modal-content">
+      <div class="bw-modal-header">
+        LANGUAGE
+      </div>
+      <div class="modal-body">
+        <div class="bw-language">
+          <div class="row">
+            <div class="col-xs-12 language-item">
+              English
+            </div>
+            <div class="col-xs-12 language-item">
+              Spanish
+            </div>
+            <div class="col-xs-12 language-item">
+              French
+            </div>
+            <div class="col-xs-12 language-item">
+              Italian
+            </div>
+            <div class="col-xs-12 language-item">
+              German
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer bw-modal-footer"  tabindex="0">
+        <div class="row">
+          <div class="col-xs-6">
+            <button class="btn bw-btn-cancel closes-modal-from-nav" data-dismiss="modal">CANCEL</button>
+          </div>
+          <div class="col-xs-6">
+            <button class="btn bw-btn-accept closes-modal-from-nav">DONE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4b3318882e3274bf" tabindex="1000"></script>
+  </header>
+
+    <div class="container-fluid best-western-view">
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h1 class="page-label">Best Western&reg;</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 promo-image">
+          <div class="gradient gradient-light--top-half"></div>
+          <p>Best Western hotels offer a welcoming experience among clean and comfortable surroundings, with all the amenities to ensure a restful and productive stay at an exceptional value.</p>
+          <div class="video row">
+            <div class="col-xs-12">
+              <div class="body-subtitle text-center">WHAT TO EXPECT AT A BEST WESTERN HOTEL</div>
+            </div>
+            <div class="col-xs-12">
+              <div class="video-player">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/prehojhTKIM?rel=0" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h2 class="big-title">Our Standards</h2>
+        </div>
+      </div>
+
+      <div class="break-blue"></div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <img src="http://placehold.it/400x250" class="center-block img-responsive" alt="placeholder image">
+          <h3 class="body-subtitle">Preferred Hotel Ratings</h3>
+          <p class="text-faded">Every Best Western meets the high-standard requirements of AAA/CAA: meeting a minimum Two-Diamond or Three-Diamond rating.</p>
+        </div>
+      </div>
+
+      <div class="break-blue"></div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h2 class="big-title">Our Standard Services &amp; Amenities at Best Western*</h2>
+          <ul class="text-faded">
+            <li>Breakfast available to help you get a good start on your day</li>
+            <li>FREE high-speed Internet helps you stay connected to work, friends, and family</li>
+            <li>FREE local calls</li>
+            <li>FREE long distance access</li>
+            <li>Copy &amp; fax services to take care of business even while you're out of the office</li>
+            <li>In-room coffee &amp; tea maker</li>
+            <li>Convenient lobby-computer to print airline boarding passes, maps &amp; more</li>
+          </ul>
+          <p class="text-faded">Best Western is committed to making sure every stay is comfortable to meet your travel needs.</p>
+          <p class="text-faded little-label">*Amenitites may vary at each BEST WESTERN hotel.</p>
+          <a href="FindaHotel.html" class="bw-btn bw-btn-primary">FIND A BEST WESTERN HOTEL</a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h2 class="big-title">Featured Hotels</h2>
+        </div>
+      </div>
+
+    </div><!--/container-fluid-->
+
+    <div class="container-fluid">
+      <div id="image-list" class="row no-pad">
+        <div  class="col-sm-6 col-md-4 bw-image-bg image-list-img image-list-img-bw3 ratio ratio--16-9">
+          <div class="bw-image-text">
+            <div class="bw-hotel-type">
+              BEST WESTERN
+            </div>
+            <div class="bw-name-currency">
+              <p class="bw-hotel-name">
+                Albany Airport Inn and Suites is the best Inn and Suites
+              </p>
+              <span class="bw-hotel-currency">USD</span>
+            </div>
+            <div class="bw-miles-price">
+              <span class= "bw-hotel-miles">
+              5.1mi / 9.4km
+              </span>
+              <span class="bw-hotel-price">$98.99</span>
+            </div>
+          </div>
+        </div>
+        <div  class="col-sm-6 col-md-4 bw-image-bg image-list-img image-list-img-bw1 ratio ratio--16-9">
+          <div class="bw-image-text">
+            <div class="bw-hotel-type">
+              BEST WESTERN
+            </div>
+            <div class="bw-name-currency">
+              <p class="bw-hotel-name">
+                Franklin Square Inn
+              </p>
+              <span class="bw-hotel-currency">USD</span>
+            </div>
+            <div class="bw-miles-price">
+              <span class= "bw-hotel-miles">
+              5.1mi / 9.4km
+              </span>
+              <span class="bw-hotel-price">$107.99</span>
+            </div>
+          </div>
+        </div>
+        <div  class="col-sm-6 col-md-4 bw-image-bg image-list-img image-list-img-bw4 ratio ratio--16-9">
+          <div class="bw-image-text">
+            <div class="bw-hotel-type">
+              BEST WESTERN PLUS
+            </div>
+            <div class="bw-name-currency">
+              <p class="bw-hotel-name">
+                Clifton Park
+              </p>
+              <span class="bw-hotel-currency">USD</span>
+            </div>
+            <div class="bw-miles-price">
+              <span class= "bw-hotel-miles">
+              7.4mi / 13.4km
+              </span>
+              <span class="bw-hotel-price">$101.99</span>
+            </div>
+          </div>
+        </div>
+        <div  class="col-sm-6 col-md-4 bw-image-bg image-list-img image-list-img-bw5 ratio ratio--16-9">
+          <div class="bw-image-text">
+            <div class="bw-hotel-type">
+              BEST WESTERN
+            </div>
+            <div class="bw-name-currency">
+              <p class="bw-hotel-name">
+                Park Inn
+              </p>
+              <span class="bw-hotel-currency">USD</span>
+            </div>
+            <div class="bw-miles-price">
+              <span class= "bw-hotel-miles">
+              6.3mi / 11.5km
+              </span>
+              <span class="bw-hotel-price">$89.99</span>
+            </div>
+          </div>
+        </div>
+        <div  class="col-sm-6 col-md-4 bw-image-bg image-list-img image-list-img-bw6 ratio ratio--16-9">
+          <div class="bw-image-text">
+            <div class="bw-hotel-type">
+              BEST WESTERN PREMIER
+            </div>
+            <div class="bw-name-currency">
+              <p class="bw-hotel-name">
+                Hariston Square
+              </p>
+              <span class="bw-hotel-currency">USD</span>
+            </div>
+            <div class="bw-miles-price">
+              <span class= "bw-hotel-miles">
+              9.1mi / 11.4km
+              </span>
+              <span class="bw-hotel-price">$94.99</span>
+            </div>
+          </div>
+        </div>
+        <div  class="col-sm-6 col-md-4 bw-image-bg image-list-img image-list-img-bw1 ratio ratio--16-9">
+          <div class="bw-image-text">
+            <div class="bw-hotel-type">
+              BEST WESTERN
+            </div>
+            <div class="bw-name-currency">
+              <p class="bw-hotel-name">
+                Best Western Suites
+              </p>
+              <span class="bw-hotel-currency">USD</span>
+            </div>
+            <div class="bw-miles-price">
+              <span class= "bw-hotel-miles">
+              5.1mi / 9.4km
+              </span>
+              <span class="bw-hotel-price">$98.99</span>
+            </div>
+          </div>
+        </div>
+        <div  class="col-sm-6 col-md-4 bw-image-bg image-list-img image-list-img-bw3 ratio ratio--16-9">
+          <div class="bw-image-text">
+            <div class="bw-hotel-type">
+              BEST WESTERN
+            </div>
+            <div class="bw-name-currency">
+              <p class="bw-hotel-name">
+                Albany Airport Inn
+              </p>
+              <span class="bw-hotel-currency">USD</span>
+            </div>
+            <div class="bw-miles-price">
+              <span class= "bw-hotel-miles">
+              5.1mi / 9.4km
+              </span>
+              <span class="bw-hotel-price">$98.99</span>
+            </div>
+          </div>
+        </div>
+        <div  class="col-sm-6 col-md-4 bw-image-bg image-list-img image-list-img-bw4 ratio ratio--16-9">
+          <div class="bw-image-text">
+            <div class="bw-hotel-type">
+              BEST WESTERN
+            </div>
+            <div class="bw-name-currency">
+              <p class="bw-hotel-name">
+                Franklin Square Inn
+              </p>
+              <span class="bw-hotel-currency">USD</span>
+            </div>
+            <div class="bw-miles-price">
+              <span class= "bw-hotel-miles">
+              5.1mi / 9.4km
+              </span>
+              <span class="bw-hotel-price">$107.99</span>
+            </div>
+          </div>
+        </div>
+        <div  class="col-sm-6 col-md-4 bw-image-bg image-list-img image-list-img-bw5 ratio ratio--16-9">
+          <div class="bw-image-text">
+            <div class="bw-hotel-type">
+              BEST WESTERN PLUS
+            </div>
+            <div class="bw-name-currency">
+              <p class="bw-hotel-name">
+                Clifton Park
+              </p>
+              <span class="bw-hotel-currency">USD</span>
+            </div>
+            <div class="bw-miles-price">
+              <span class= "bw-hotel-miles">
+              7.4mi / 13.4km
+              </span>
+              <span class="bw-hotel-price">$101.99</span>
+            </div>
+          </div>
+        </div>
+        <div  class="col-sm-6 col-md-4 bw-image-bg image-list-img image-list-img-bw6 ratio ratio--16-9">
+          <div class="bw-image-text">
+            <div class="bw-hotel-type">
+              BEST WESTERN
+            </div>
+            <div class="bw-name-currency">
+              <p class="bw-hotel-name">
+                Park Inn
+              </p>
+              <span class="bw-hotel-currency">USD</span>
+            </div>
+            <div class="bw-miles-price">
+              <span class= "bw-hotel-miles">
+              6.3mi / 11.5km
+              </span>
+              <span class="bw-hotel-price">$89.99</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row copyright-disclaimer">
+        <div class="col-xs-12">
+          <p>Each Best Western&reg; branded hotel is independently owned and operated.<br>
+            &copy; 2002-2015 Best Western International, Inc. All rights reserved.
+          </p>
+        </div>
+      </div>
+
+    </div><!-- end container-fluid -->
+
+    <script src="../scripts/jquery.js"></script>
+    <script src="../scripts/bootstrap.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/navigation.js"></script>
+</body>
+</html>

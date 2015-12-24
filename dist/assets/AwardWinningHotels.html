@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Award Winning Hotels</title>
+  <link rel="stylesheet" href="../styles/bootstrap.css">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body data-view="award-winning-hotels-view">
+  <header class="site-header">
+    <nav class="bw-navbar navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="nav-left">
+      <a href="findahotel.html"><span class="bw-icon bw-icon-logo"></span></a>
+    </div>
+    <div class="nav-left">
+      <button type="button" class="burger" id="menu-burger">
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      </button>
+    </div>
+    <div class="nav-right icon hidden" data-toggle="modal" data-target="#bw-login">
+      <a href="#" class="svg">
+        <object type="image/svg+xml" data="icons/svg/global-fav-inactive.svg"></object>
+      </a>
+    </div>
+    <div class="nav-right icon hidden">
+      <a href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4b3318882e3274bf" class="svg">
+      <object type="image/svg+xml" data="icons/svg/global-share.svg"></object>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div id="left-menu" class="hide-me">
+  <div id="menu-overlay">
+    <button type="button" id="menu-close-button">&times;</button>
+  </div>
+  <div id="menu-list">
+    <div id="menu-user" class="menu-logged-in hidden">
+      <div id="menu-user-profile" class="user-profile">
+        <img src="icons/profile.png">
+        <h1>Hello, Catherine!</h1>
+        <p>#600563-1234-456-892</p>
+      </div>
+      <a href="#" id="upcoming-reservation">
+        <h2>View Upcoming Reservation</h2>
+        <p>Columbus, OH</p>
+      </a>
+    </div>
+    <div id="login-button">
+      <!-- <button type="button">REWARDS LOGIN</button> -->
+      <a href="Login.html" class="bw-btn">REWARDS LOGIN</a>
+    </div>
+    <div id="main-menu" class="menu-items">
+      <a href="#" class="account-menu-forward hidden">My Account<span class="glyphicon glyphicon-chevron-right"></span></a>
+      <a href="Home.html">Home</a>
+      <a href="FindAHotel.html">Find a Hotel</a>
+      <a href="CheckReservation.html">Check Reservations</a>
+      <a href="#" class="rewards-menu-forward">Rewards<span class="glyphicon glyphicon-chevron-right"></span></a>
+      <a href="#" >Customer Care</a>
+      <a href="#" class="settings-menu-forward">Settings<span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+    <div id="rewards-menu" class="menu-items hide-me">
+      <a href="#" class="main-menu-back"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Main Menu</a>
+      <h4>Rewards</h4>
+      <a href="RewardsLandingPage.html" >Learn About Rewards</a>
+      <a href="JoinRewards.html" >Join</a>
+      <a href="EarnRewards.html" >Earn</a>
+      <a href="Redeem.html" >Redeem</a>
+    </div>
+    <div id="settings-menu" class="menu-items hide-me">
+      <a href="#" class="main-menu-back"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Main Menu</a>
+      <h4>Settings</h4>
+      <a href="#" class="opens-modal" data-toggle="modal" data-target="#bw-language-modal">Language</a>
+      <a href="#" class="opens-modal" data-toggle="modal" data-target="#bw-currency-modal">Currency</a>
+    </div>
+    <div id="account-menu" class="menu-items hide-me hidden">
+      <a href="#" class="main-menu-back"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Main Menu</a>
+      <h4>My Account</h4>
+      <a href="Dashboard.html" >Dashboard</a>
+      <a href="Preferences.html" >Profile &amp; Preferences</a>
+      <a href="MyRewards.html" >Rewards Activity</a>
+      <a href="Favorites.html" >Favorites</a>
+      <a href="#" >Rewards Service Center</a>
+      <a id="logout" href="#" >Logout</a>
+    </div>
+  </div>
+
+</div>
+<div id="blur" class="invisible"></div>
+<div class="modal" id="bw-currency-modal">
+  <div class="modal-dialog modal-static">
+    <div class="bw-modal-content">
+      <div class="bw-modal-header">
+        CURRENCY
+      </div>
+      <div class="modal-body">
+        <div class="bw-currency">
+          <div class="row">
+            <div class="col-xs-12 currency-item currency-search">
+              <span class="bw-icon bw-icon-search"></span>
+              <input type="text"/>
+            </div>
+            <div class="col-xs-12 currency-item">
+              US Dollars
+            </div>
+            <div class="col-xs-12 currency-item">
+              Euro
+            </div>
+            <div class="col-xs-12 bw-currency-header">
+              OTHER CURRENCIES
+            </div>
+            <div class="col-xs-12 currency-item">
+              Albanian Yek
+            </div>
+            <div class="col-xs-12 currency-item">
+              Algerian Dinar
+            </div>
+            <div class="col-xs-12 currency-item">
+              Argentinian Pesos
+            </div>
+            <div class="col-xs-12 currency-item">
+              Armenian Dram
+            </div>
+            <div class="col-xs-12 currency-item">
+              Arubin Florin
+            </div>
+            <div class="col-xs-12 currency-item">
+              Australia Dollars
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer bw-modal-footer">
+        <div class="row">
+          <div class="col-xs-6">
+            <button class="btn bw-btn-cancel closes-modal-from-nav" data-dismiss="modal">CANCEL</button>
+          </div>
+          <div class="col-xs-6">
+            <button class="btn bw-btn-accept closes-modal-from-nav">DONE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="bw-language-modal">
+  <div class="modal-dialog modal-static">
+    <div class="bw-modal-content">
+      <div class="bw-modal-header">
+        LANGUAGE
+      </div>
+      <div class="modal-body">
+        <div class="bw-language">
+          <div class="row">
+            <div class="col-xs-12 language-item">
+              English
+            </div>
+            <div class="col-xs-12 language-item">
+              Spanish
+            </div>
+            <div class="col-xs-12 language-item">
+              French
+            </div>
+            <div class="col-xs-12 language-item">
+              Italian
+            </div>
+            <div class="col-xs-12 language-item">
+              German
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer bw-modal-footer"  tabindex="0">
+        <div class="row">
+          <div class="col-xs-6">
+            <button class="btn bw-btn-cancel closes-modal-from-nav" data-dismiss="modal">CANCEL</button>
+          </div>
+          <div class="col-xs-6">
+            <button class="btn bw-btn-accept closes-modal-from-nav">DONE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4b3318882e3274bf" tabindex="1000"></script>
+  </header>
+  <div class="container-fluid award-winning-hotels-view">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="page-label">Award Winning Hotels</h1>
+        <p>Best Western is committed to making every guest experience special and memorable. Each year, awards are given to properties that represent the highest levels of service, quality, value and commitment to our brand.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 promo-image promo-image--summer">
+        <div class="gradient gradient-light--top row">
+        </div>
+      </div>
+    </div>
+    <div class="row ribbon ribbon--dark-blue">
+      <h1 class="section-title text-center">Browse Award Winners</h1>
+      <div class="col-sm-6 form-group">
+        <select class="select select--light form-control">
+          <option>2010</option>
+          <option>2011</option>
+          <option>2012</option>
+          <option>2013</option>
+          <option>2014</option>
+          <option>2015</option>
+        </select>
+      </div>
+      <div class="col-sm-6 form-group">
+        <select class="select select--light form-control">
+          <option>All Regions</option>
+          <option>East</option>
+          <option>Southeast</option>
+          <option>Midwest</option>
+          <option>Southwest</option>
+          <option>Northwest</option>
+        </select>
+      </div>
+      <div class="col-xs-12 form-group">
+        <div class="award">
+          <input type="checkbox" id="mkguertin" class="check_box light"/><label for="mkguertin">M.K. Guertin Award</label>
+          <button type="button" class="svg" data-container="body" data-toggle="popover" data-placement="left" data-content="Here's some info about this award">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="22" height="22" viewBox="0 0 32 32">
+              <path d="M16.000,0.000 C7.178,0.000 0.000,7.178 0.000,16.000 C0.000,24.822 7.178,32.000 16.000,32.000 C24.822,32.000 32.000,24.822 32.000,16.000 C32.000,7.178 24.822,0.000 16.000,0.000 ZM16.000,28.822 C8.930,28.822 3.178,23.070 3.178,16.000 C3.178,8.930 8.930,3.178 16.000,3.178 C23.070,3.178 28.822,8.930 28.822,16.000 C28.822,23.070 23.070,28.822 16.000,28.822 ZM14.412,23.607 C14.412,23.607 17.590,23.607 17.590,23.607 C17.590,23.607 17.590,14.302 17.590,14.302 C17.590,14.302 14.412,14.302 14.412,14.302 C14.412,14.302 14.412,23.607 14.412,23.607 ZM17.589,8.873 C17.589,8.873 14.411,8.873 14.411,8.873 C14.411,8.873 14.411,11.124 14.411,11.124 C14.411,11.124 17.589,11.124 17.589,11.124 C17.589,11.124 17.589,8.873 17.589,8.873 Z" fill="#FFFFFF" fill-rule="evenodd"/>
+            </svg>
+          </button>
+        </div>
+        <div class="award">
+          <input type="checkbox" id="champda" class="check_box light"/><label for="champda">Champion Design Award</label>
+          <button type="button" class="svg" data-container="body" data-toggle="popover" data-placement="left" data-content="Here's some info about this award">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="22" height="22" viewBox="0 0 32 32">
+              <path d="M16.000,0.000 C7.178,0.000 0.000,7.178 0.000,16.000 C0.000,24.822 7.178,32.000 16.000,32.000 C24.822,32.000 32.000,24.822 32.000,16.000 C32.000,7.178 24.822,0.000 16.000,0.000 ZM16.000,28.822 C8.930,28.822 3.178,23.070 3.178,16.000 C3.178,8.930 8.930,3.178 16.000,3.178 C23.070,3.178 28.822,8.930 28.822,16.000 C28.822,23.070 23.070,28.822 16.000,28.822 ZM14.412,23.607 C14.412,23.607 17.590,23.607 17.590,23.607 C17.590,23.607 17.590,14.302 17.590,14.302 C17.590,14.302 14.412,14.302 14.412,14.302 C14.412,14.302 14.412,23.607 14.412,23.607 ZM17.589,8.873 C17.589,8.873 14.411,8.873 14.411,8.873 C14.411,8.873 14.411,11.124 14.411,11.124 C14.411,11.124 17.589,11.124 17.589,11.124 C17.589,11.124 17.589,8.873 17.589,8.873 Z" fill="#FFFFFF" fill-rule="evenodd"/>
+            </svg>
+          </button>
+        </div>
+        <div class="award">
+          <input type="checkbox" id="champcc" class="check_box light"/><label for="champcc">Champion Customer Care Award</label>
+          <button type="button" class="svg" data-container="body" data-toggle="popover" data-placement="left" data-content="Here's some info about this award">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="22" height="22" viewBox="0 0 32 32">
+              <path d="M16.000,0.000 C7.178,0.000 0.000,7.178 0.000,16.000 C0.000,24.822 7.178,32.000 16.000,32.000 C24.822,32.000 32.000,24.822 32.000,16.000 C32.000,7.178 24.822,0.000 16.000,0.000 ZM16.000,28.822 C8.930,28.822 3.178,23.070 3.178,16.000 C3.178,8.930 8.930,3.178 16.000,3.178 C23.070,3.178 28.822,8.930 28.822,16.000 C28.822,23.070 23.070,28.822 16.000,28.822 ZM14.412,23.607 C14.412,23.607 17.590,23.607 17.590,23.607 C17.590,23.607 17.590,14.302 17.590,14.302 C17.590,14.302 14.412,14.302 14.412,14.302 C14.412,14.302 14.412,23.607 14.412,23.607 ZM17.589,8.873 C17.589,8.873 14.411,8.873 14.411,8.873 C14.411,8.873 14.411,11.124 14.411,11.124 C14.411,11.124 17.589,11.124 17.589,11.124 C17.589,11.124 17.589,8.873 17.589,8.873 Z" fill="#FFFFFF" fill-rule="evenodd"/>
+            </svg>
+          </button>
+        </div>
+        <div class="award">
+          <input type="checkbox" id="iqaa" class="check_box light"/><label for="iqaa">International Quality Assurance Award</label>
+          <button type="button" class="svg" data-container="body" data-toggle="popover" data-placement="left" data-content="Here's some info about this award">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="22" height="22" viewBox="0 0 32 32">
+              <path d="M16.000,0.000 C7.178,0.000 0.000,7.178 0.000,16.000 C0.000,24.822 7.178,32.000 16.000,32.000 C24.822,32.000 32.000,24.822 32.000,16.000 C32.000,7.178 24.822,0.000 16.000,0.000 ZM16.000,28.822 C8.930,28.822 3.178,23.070 3.178,16.000 C3.178,8.930 8.930,3.178 16.000,3.178 C23.070,3.178 28.822,8.930 28.822,16.000 C28.822,23.070 23.070,28.822 16.000,28.822 ZM14.412,23.607 C14.412,23.607 17.590,23.607 17.590,23.607 C17.590,23.607 17.590,14.302 17.590,14.302 C17.590,14.302 14.412,14.302 14.412,14.302 C14.412,14.302 14.412,23.607 14.412,23.607 ZM17.589,8.873 C17.589,8.873 14.411,8.873 14.411,8.873 C14.411,8.873 14.411,11.124 14.411,11.124 C14.411,11.124 17.589,11.124 17.589,11.124 C17.589,11.124 17.589,8.873 17.589,8.873 Z" fill="#FFFFFF" fill-rule="evenodd"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="break-white"></div>
+        <button class="svg clear-filters" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="12" height="12" viewBox="0 0 22 22">
+            <path d="M11.000,9.059 C11.000,9.059 1.941,-0.000 1.941,-0.000 C1.941,-0.000 -0.000,1.941 -0.000,1.941 C-0.000,1.941 9.059,11.000 9.059,11.000 C9.059,11.000 -0.000,20.059 -0.000,20.059 C-0.000,20.059 1.941,22.000 1.941,22.000 C1.941,22.000 11.000,12.941 11.000,12.941 C11.000,12.941 20.059,22.000 20.059,22.000 C20.059,22.000 22.000,20.059 22.000,20.059 C22.000,20.059 12.941,11.000 12.941,11.000 C12.941,11.000 22.000,1.941 22.000,1.941 C22.000,1.941 20.059,-0.000 20.059,-0.000 C20.059,-0.000 11.000,9.059 11.000,9.059 Z" fill="#FFFFFF" fill-rule="evenodd"/>
+          </svg>
+          &nbsp;&nbsp;CLEAR FILTERS
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-sm-6 awarded-hotel">
+        <div  class="bw-image-bg image-list-img image-list-img-bw6 ratio ratio--16-9">
+          <div class="bw-image-text">
+            <div class="bw-hotel-type">
+              BEST WESTERN PLUS
+            </div>
+            <div class="bw-name-currency">
+              <p class="bw-hotel-name">
+                Hotel Dolce Vita
+              </p>
+            </div>
+            <div class="location">
+              Ajaccio, France
+            </div>
+          </div>
+        </div>
+        <div class="hotel-awards">
+          <div class="hotel-award">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="20" height="27" viewBox="0 0 27 34">
+              <path d="M24.757,13.943 C24.757,13.943 24.485,14.219 24.485,14.219 C23.842,14.869 23.542,15.772 23.672,16.668 C23.672,16.668 23.727,17.048 23.727,17.048 C23.953,18.614 22.870,20.072 21.280,20.345 C21.280,20.345 21.228,20.354 21.228,20.354 C21.228,20.354 25.908,29.192 25.908,29.192 C25.908,29.192 20.398,29.331 20.398,29.331 C20.398,29.331 17.294,33.585 17.294,33.585 C17.294,33.585 12.787,25.067 12.787,25.067 C12.787,25.067 8.614,33.585 8.614,33.585 C8.614,33.585 5.510,29.331 5.510,29.331 C5.510,29.331 0.001,29.192 0.001,29.192 C0.001,29.192 4.680,20.354 4.680,20.354 C4.680,20.354 4.628,20.345 4.628,20.345 C3.038,20.072 1.955,18.614 2.181,17.048 C2.181,17.048 2.236,16.668 2.236,16.668 C2.366,15.772 2.066,14.869 1.423,14.219 C1.423,14.219 1.151,13.943 1.151,13.943 C0.028,12.806 0.028,11.003 1.151,9.867 C1.151,9.867 1.423,9.591 1.423,9.591 C2.066,8.941 2.366,8.037 2.236,7.142 C2.236,7.142 2.181,6.762 2.181,6.762 C1.955,5.196 3.038,3.737 4.628,3.464 C4.628,3.464 5.015,3.398 5.015,3.398 C5.925,3.242 6.710,2.683 7.143,1.885 C7.143,1.885 7.327,1.545 7.327,1.545 C8.084,0.148 9.835,-0.409 11.286,0.286 C11.286,0.286 11.639,0.454 11.639,0.454 C12.469,0.851 13.439,0.851 14.269,0.454 C14.269,0.454 14.622,0.286 14.622,0.286 C16.072,-0.409 17.824,0.148 18.581,1.545 C18.581,1.545 18.765,1.885 18.765,1.885 C19.198,2.683 19.983,3.242 20.893,3.398 C20.893,3.398 21.280,3.464 21.280,3.464 C22.870,3.737 23.953,5.196 23.727,6.762 C23.727,6.762 23.672,7.142 23.672,7.142 C23.542,8.037 23.842,8.941 24.485,9.591 C24.485,9.591 24.757,9.867 24.757,9.867 C25.880,11.003 25.880,12.806 24.757,13.943 ZM12.954,4.771 C8.929,4.771 5.667,7.965 5.667,11.905 C5.667,15.845 8.929,19.039 12.954,19.039 C16.979,19.039 20.242,15.845 20.242,11.905 C20.242,7.965 16.979,4.771 12.954,4.771 Z" fill="#031054" fill-rule="evenodd"/>
+            </svg>
+            2015 M.K. Guertin Award Winner
+          </div>
+          <div class="hotel-award">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="20" height="27" viewBox="0 0 27 34">
+              <path d="M24.757,13.943 C24.757,13.943 24.485,14.219 24.485,14.219 C23.842,14.869 23.542,15.772 23.672,16.668 C23.672,16.668 23.727,17.048 23.727,17.048 C23.953,18.614 22.870,20.072 21.280,20.345 C21.280,20.345 21.228,20.354 21.228,20.354 C21.228,20.354 25.908,29.192 25.908,29.192 C25.908,29.192 20.398,29.331 20.398,29.331 C20.398,29.331 17.294,33.585 17.294,33.585 C17.294,33.585 12.787,25.067 12.787,25.067 C12.787,25.067 8.614,33.585 8.614,33.585 C8.614,33.585 5.510,29.331 5.510,29.331 C5.510,29.331 0.001,29.192 0.001,29.192 C0.001,29.192 4.680,20.354 4.680,20.354 C4.680,20.354 4.628,20.345 4.628,20.345 C3.038,20.072 1.955,18.614 2.181,17.048 C2.181,17.048 2.236,16.668 2.236,16.668 C2.366,15.772 2.066,14.869 1.423,14.219 C1.423,14.219 1.151,13.943 1.151,13.943 C0.028,12.806 0.028,11.003 1.151,9.867 C1.151,9.867 1.423,9.591 1.423,9.591 C2.066,8.941 2.366,8.037 2.236,7.142 C2.236,7.142 2.181,6.762 2.181,6.762 C1.955,5.196 3.038,3.737 4.628,3.464 C4.628,3.464 5.015,3.398 5.015,3.398 C5.925,3.242 6.710,2.683 7.143,1.885 C7.143,1.885 7.327,1.545 7.327,1.545 C8.084,0.148 9.835,-0.409 11.286,0.286 C11.286,0.286 11.639,0.454 11.639,0.454 C12.469,0.851 13.439,0.851 14.269,0.454 C14.269,0.454 14.622,0.286 14.622,0.286 C16.072,-0.409 17.824,0.148 18.581,1.545 C18.581,1.545 18.765,1.885 18.765,1.885 C19.198,2.683 19.983,3.242 20.893,3.398 C20.893,3.398 21.280,3.464 21.280,3.464 C22.870,3.737 23.953,5.196 23.727,6.762 C23.727,6.762 23.672,7.142 23.672,7.142 C23.542,8.037 23.842,8.941 24.485,9.591 C24.485,9.591 24.757,9.867 24.757,9.867 C25.880,11.003 25.880,12.806 24.757,13.943 ZM12.954,4.771 C8.929,4.771 5.667,7.965 5.667,11.905 C5.667,15.845 8.929,19.039 12.954,19.039 C16.979,19.039 20.242,15.845 20.242,11.905 C20.242,7.965 16.979,4.771 12.954,4.771 Z" fill="#031054" fill-rule="evenodd"/>
+            </svg>
+            2014 M.K. Guertin Award Winner
+          </div>
+          <div class="hotel-award">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="20" height="27" viewBox="0 0 27 34">
+              <path d="M24.757,13.943 C24.757,13.943 24.485,14.219 24.485,14.219 C23.842,14.869 23.542,15.772 23.672,16.668 C23.672,16.668 23.727,17.048 23.727,17.048 C23.953,18.614 22.870,20.072 21.280,20.345 C21.280,20.345 21.228,20.354 21.228,20.354 C21.228,20.354 25.908,29.192 25.908,29.192 C25.908,29.192 20.398,29.331 20.398,29.331 C20.398,29.331 17.294,33.585 17.294,33.585 C17.294,33.585 12.787,25.067 12.787,25.067 C12.787,25.067 8.614,33.585 8.614,33.585 C8.614,33.585 5.510,29.331 5.510,29.331 C5.510,29.331 0.001,29.192 0.001,29.192 C0.001,29.192 4.680,20.354 4.680,20.354 C4.680,20.354 4.628,20.345 4.628,20.345 C3.038,20.072 1.955,18.614 2.181,17.048 C2.181,17.048 2.236,16.668 2.236,16.668 C2.366,15.772 2.066,14.869 1.423,14.219 C1.423,14.219 1.151,13.943 1.151,13.943 C0.028,12.806 0.028,11.003 1.151,9.867 C1.151,9.867 1.423,9.591 1.423,9.591 C2.066,8.941 2.366,8.037 2.236,7.142 C2.236,7.142 2.181,6.762 2.181,6.762 C1.955,5.196 3.038,3.737 4.628,3.464 C4.628,3.464 5.015,3.398 5.015,3.398 C5.925,3.242 6.710,2.683 7.143,1.885 C7.143,1.885 7.327,1.545 7.327,1.545 C8.084,0.148 9.835,-0.409 11.286,0.286 C11.286,0.286 11.639,0.454 11.639,0.454 C12.469,0.851 13.439,0.851 14.269,0.454 C14.269,0.454 14.622,0.286 14.622,0.286 C16.072,-0.409 17.824,0.148 18.581,1.545 C18.581,1.545 18.765,1.885 18.765,1.885 C19.198,2.683 19.983,3.242 20.893,3.398 C20.893,3.398 21.280,3.464 21.280,3.464 C22.870,3.737 23.953,5.196 23.727,6.762 C23.727,6.762 23.672,7.142 23.672,7.142 C23.542,8.037 23.842,8.941 24.485,9.591 C24.485,9.591 24.757,9.867 24.757,9.867 C25.880,11.003 25.880,12.806 24.757,13.943 ZM12.954,4.771 C8.929,4.771 5.667,7.965 5.667,11.905 C5.667,15.845 8.929,19.039 12.954,19.039 C16.979,19.039 20.242,15.845 20.242,11.905 C20.242,7.965 16.979,4.771 12.954,4.771 Z" fill="#031054" fill-rule="evenodd"/>
+            </svg>
+            2014 International Quality Insurance Award
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 awarded-hotel">
+        <div class="bw-image-bg image-list-img image-list-img-bw4 ratio ratio--16-9">
+          <div class="bw-image-text">
+            <div class="bw-hotel-type">
+              BEST WESTERN PLUS
+            </div>
+            <div class="bw-name-currency">
+              <p class="bw-hotel-name">
+                Hotel Dolce Vita
+              </p>
+            </div>
+            <div class="location">
+              Ajaccio, France
+            </div>
+          </div>
+        </div>
+        <div class="hotel-awards">
+          <div class="hotel-award">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="20" height="27" viewBox="0 0 27 34">
+              <path d="M24.757,13.943 C24.757,13.943 24.485,14.219 24.485,14.219 C23.842,14.869 23.542,15.772 23.672,16.668 C23.672,16.668 23.727,17.048 23.727,17.048 C23.953,18.614 22.870,20.072 21.280,20.345 C21.280,20.345 21.228,20.354 21.228,20.354 C21.228,20.354 25.908,29.192 25.908,29.192 C25.908,29.192 20.398,29.331 20.398,29.331 C20.398,29.331 17.294,33.585 17.294,33.585 C17.294,33.585 12.787,25.067 12.787,25.067 C12.787,25.067 8.614,33.585 8.614,33.585 C8.614,33.585 5.510,29.331 5.510,29.331 C5.510,29.331 0.001,29.192 0.001,29.192 C0.001,29.192 4.680,20.354 4.680,20.354 C4.680,20.354 4.628,20.345 4.628,20.345 C3.038,20.072 1.955,18.614 2.181,17.048 C2.181,17.048 2.236,16.668 2.236,16.668 C2.366,15.772 2.066,14.869 1.423,14.219 C1.423,14.219 1.151,13.943 1.151,13.943 C0.028,12.806 0.028,11.003 1.151,9.867 C1.151,9.867 1.423,9.591 1.423,9.591 C2.066,8.941 2.366,8.037 2.236,7.142 C2.236,7.142 2.181,6.762 2.181,6.762 C1.955,5.196 3.038,3.737 4.628,3.464 C4.628,3.464 5.015,3.398 5.015,3.398 C5.925,3.242 6.710,2.683 7.143,1.885 C7.143,1.885 7.327,1.545 7.327,1.545 C8.084,0.148 9.835,-0.409 11.286,0.286 C11.286,0.286 11.639,0.454 11.639,0.454 C12.469,0.851 13.439,0.851 14.269,0.454 C14.269,0.454 14.622,0.286 14.622,0.286 C16.072,-0.409 17.824,0.148 18.581,1.545 C18.581,1.545 18.765,1.885 18.765,1.885 C19.198,2.683 19.983,3.242 20.893,3.398 C20.893,3.398 21.280,3.464 21.280,3.464 C22.870,3.737 23.953,5.196 23.727,6.762 C23.727,6.762 23.672,7.142 23.672,7.142 C23.542,8.037 23.842,8.941 24.485,9.591 C24.485,9.591 24.757,9.867 24.757,9.867 C25.880,11.003 25.880,12.806 24.757,13.943 ZM12.954,4.771 C8.929,4.771 5.667,7.965 5.667,11.905 C5.667,15.845 8.929,19.039 12.954,19.039 C16.979,19.039 20.242,15.845 20.242,11.905 C20.242,7.965 16.979,4.771 12.954,4.771 Z" fill="#031054" fill-rule="evenodd"/>
+            </svg>
+            2015 M.K. Guertin Award Winner
+          </div>
+          <div class="hotel-award">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="20" height="27" viewBox="0 0 27 34">
+              <path d="M24.757,13.943 C24.757,13.943 24.485,14.219 24.485,14.219 C23.842,14.869 23.542,15.772 23.672,16.668 C23.672,16.668 23.727,17.048 23.727,17.048 C23.953,18.614 22.870,20.072 21.280,20.345 C21.280,20.345 21.228,20.354 21.228,20.354 C21.228,20.354 25.908,29.192 25.908,29.192 C25.908,29.192 20.398,29.331 20.398,29.331 C20.398,29.331 17.294,33.585 17.294,33.585 C17.294,33.585 12.787,25.067 12.787,25.067 C12.787,25.067 8.614,33.585 8.614,33.585 C8.614,33.585 5.510,29.331 5.510,29.331 C5.510,29.331 0.001,29.192 0.001,29.192 C0.001,29.192 4.680,20.354 4.680,20.354 C4.680,20.354 4.628,20.345 4.628,20.345 C3.038,20.072 1.955,18.614 2.181,17.048 C2.181,17.048 2.236,16.668 2.236,16.668 C2.366,15.772 2.066,14.869 1.423,14.219 C1.423,14.219 1.151,13.943 1.151,13.943 C0.028,12.806 0.028,11.003 1.151,9.867 C1.151,9.867 1.423,9.591 1.423,9.591 C2.066,8.941 2.366,8.037 2.236,7.142 C2.236,7.142 2.181,6.762 2.181,6.762 C1.955,5.196 3.038,3.737 4.628,3.464 C4.628,3.464 5.015,3.398 5.015,3.398 C5.925,3.242 6.710,2.683 7.143,1.885 C7.143,1.885 7.327,1.545 7.327,1.545 C8.084,0.148 9.835,-0.409 11.286,0.286 C11.286,0.286 11.639,0.454 11.639,0.454 C12.469,0.851 13.439,0.851 14.269,0.454 C14.269,0.454 14.622,0.286 14.622,0.286 C16.072,-0.409 17.824,0.148 18.581,1.545 C18.581,1.545 18.765,1.885 18.765,1.885 C19.198,2.683 19.983,3.242 20.893,3.398 C20.893,3.398 21.280,3.464 21.280,3.464 C22.870,3.737 23.953,5.196 23.727,6.762 C23.727,6.762 23.672,7.142 23.672,7.142 C23.542,8.037 23.842,8.941 24.485,9.591 C24.485,9.591 24.757,9.867 24.757,9.867 C25.880,11.003 25.880,12.806 24.757,13.943 ZM12.954,4.771 C8.929,4.771 5.667,7.965 5.667,11.905 C5.667,15.845 8.929,19.039 12.954,19.039 C16.979,19.039 20.242,15.845 20.242,11.905 C20.242,7.965 16.979,4.771 12.954,4.771 Z" fill="#031054" fill-rule="evenodd"/>
+            </svg>
+            2014 M.K. Guertin Award Winner
+          </div>
+          <div class="hotel-award">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="20" height="27" viewBox="0 0 27 34">
+              <path d="M24.757,13.943 C24.757,13.943 24.485,14.219 24.485,14.219 C23.842,14.869 23.542,15.772 23.672,16.668 C23.672,16.668 23.727,17.048 23.727,17.048 C23.953,18.614 22.870,20.072 21.280,20.345 C21.280,20.345 21.228,20.354 21.228,20.354 C21.228,20.354 25.908,29.192 25.908,29.192 C25.908,29.192 20.398,29.331 20.398,29.331 C20.398,29.331 17.294,33.585 17.294,33.585 C17.294,33.585 12.787,25.067 12.787,25.067 C12.787,25.067 8.614,33.585 8.614,33.585 C8.614,33.585 5.510,29.331 5.510,29.331 C5.510,29.331 0.001,29.192 0.001,29.192 C0.001,29.192 4.680,20.354 4.680,20.354 C4.680,20.354 4.628,20.345 4.628,20.345 C3.038,20.072 1.955,18.614 2.181,17.048 C2.181,17.048 2.236,16.668 2.236,16.668 C2.366,15.772 2.066,14.869 1.423,14.219 C1.423,14.219 1.151,13.943 1.151,13.943 C0.028,12.806 0.028,11.003 1.151,9.867 C1.151,9.867 1.423,9.591 1.423,9.591 C2.066,8.941 2.366,8.037 2.236,7.142 C2.236,7.142 2.181,6.762 2.181,6.762 C1.955,5.196 3.038,3.737 4.628,3.464 C4.628,3.464 5.015,3.398 5.015,3.398 C5.925,3.242 6.710,2.683 7.143,1.885 C7.143,1.885 7.327,1.545 7.327,1.545 C8.084,0.148 9.835,-0.409 11.286,0.286 C11.286,0.286 11.639,0.454 11.639,0.454 C12.469,0.851 13.439,0.851 14.269,0.454 C14.269,0.454 14.622,0.286 14.622,0.286 C16.072,-0.409 17.824,0.148 18.581,1.545 C18.581,1.545 18.765,1.885 18.765,1.885 C19.198,2.683 19.983,3.242 20.893,3.398 C20.893,3.398 21.280,3.464 21.280,3.464 C22.870,3.737 23.953,5.196 23.727,6.762 C23.727,6.762 23.672,7.142 23.672,7.142 C23.542,8.037 23.842,8.941 24.485,9.591 C24.485,9.591 24.757,9.867 24.757,9.867 C25.880,11.003 25.880,12.806 24.757,13.943 ZM12.954,4.771 C8.929,4.771 5.667,7.965 5.667,11.905 C5.667,15.845 8.929,19.039 12.954,19.039 C16.979,19.039 20.242,15.845 20.242,11.905 C20.242,7.965 16.979,4.771 12.954,4.771 Z" fill="#031054" fill-rule="evenodd"/>
+            </svg>
+            2014 International Quality Insurance Award
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 awarded-hotel">
+        <div class="bw-image-bg image-list-img image-list-img-bw1 ratio ratio--16-9">
+          <div class="bw-image-text">
+            <div class="bw-hotel-type">
+              BEST WESTERN PLUS
+            </div>
+            <div class="bw-name-currency">
+              <p class="bw-hotel-name">
+                Hotel Dolce Vita
+              </p>
+            </div>
+            <div class="location">
+              Ajaccio, France
+            </div>
+          </div>
+        </div>
+        <div class="hotel-awards">
+          <div class="hotel-award">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="20" height="27" viewBox="0 0 27 34">
+              <path d="M24.757,13.943 C24.757,13.943 24.485,14.219 24.485,14.219 C23.842,14.869 23.542,15.772 23.672,16.668 C23.672,16.668 23.727,17.048 23.727,17.048 C23.953,18.614 22.870,20.072 21.280,20.345 C21.280,20.345 21.228,20.354 21.228,20.354 C21.228,20.354 25.908,29.192 25.908,29.192 C25.908,29.192 20.398,29.331 20.398,29.331 C20.398,29.331 17.294,33.585 17.294,33.585 C17.294,33.585 12.787,25.067 12.787,25.067 C12.787,25.067 8.614,33.585 8.614,33.585 C8.614,33.585 5.510,29.331 5.510,29.331 C5.510,29.331 0.001,29.192 0.001,29.192 C0.001,29.192 4.680,20.354 4.680,20.354 C4.680,20.354 4.628,20.345 4.628,20.345 C3.038,20.072 1.955,18.614 2.181,17.048 C2.181,17.048 2.236,16.668 2.236,16.668 C2.366,15.772 2.066,14.869 1.423,14.219 C1.423,14.219 1.151,13.943 1.151,13.943 C0.028,12.806 0.028,11.003 1.151,9.867 C1.151,9.867 1.423,9.591 1.423,9.591 C2.066,8.941 2.366,8.037 2.236,7.142 C2.236,7.142 2.181,6.762 2.181,6.762 C1.955,5.196 3.038,3.737 4.628,3.464 C4.628,3.464 5.015,3.398 5.015,3.398 C5.925,3.242 6.710,2.683 7.143,1.885 C7.143,1.885 7.327,1.545 7.327,1.545 C8.084,0.148 9.835,-0.409 11.286,0.286 C11.286,0.286 11.639,0.454 11.639,0.454 C12.469,0.851 13.439,0.851 14.269,0.454 C14.269,0.454 14.622,0.286 14.622,0.286 C16.072,-0.409 17.824,0.148 18.581,1.545 C18.581,1.545 18.765,1.885 18.765,1.885 C19.198,2.683 19.983,3.242 20.893,3.398 C20.893,3.398 21.280,3.464 21.280,3.464 C22.870,3.737 23.953,5.196 23.727,6.762 C23.727,6.762 23.672,7.142 23.672,7.142 C23.542,8.037 23.842,8.941 24.485,9.591 C24.485,9.591 24.757,9.867 24.757,9.867 C25.880,11.003 25.880,12.806 24.757,13.943 ZM12.954,4.771 C8.929,4.771 5.667,7.965 5.667,11.905 C5.667,15.845 8.929,19.039 12.954,19.039 C16.979,19.039 20.242,15.845 20.242,11.905 C20.242,7.965 16.979,4.771 12.954,4.771 Z" fill="#031054" fill-rule="evenodd"/>
+            </svg>
+            2015 M.K. Guertin Award Winner
+          </div>
+          <div class="hotel-award">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="20" height="27" viewBox="0 0 27 34">
+              <path d="M24.757,13.943 C24.757,13.943 24.485,14.219 24.485,14.219 C23.842,14.869 23.542,15.772 23.672,16.668 C23.672,16.668 23.727,17.048 23.727,17.048 C23.953,18.614 22.870,20.072 21.280,20.345 C21.280,20.345 21.228,20.354 21.228,20.354 C21.228,20.354 25.908,29.192 25.908,29.192 C25.908,29.192 20.398,29.331 20.398,29.331 C20.398,29.331 17.294,33.585 17.294,33.585 C17.294,33.585 12.787,25.067 12.787,25.067 C12.787,25.067 8.614,33.585 8.614,33.585 C8.614,33.585 5.510,29.331 5.510,29.331 C5.510,29.331 0.001,29.192 0.001,29.192 C0.001,29.192 4.680,20.354 4.680,20.354 C4.680,20.354 4.628,20.345 4.628,20.345 C3.038,20.072 1.955,18.614 2.181,17.048 C2.181,17.048 2.236,16.668 2.236,16.668 C2.366,15.772 2.066,14.869 1.423,14.219 C1.423,14.219 1.151,13.943 1.151,13.943 C0.028,12.806 0.028,11.003 1.151,9.867 C1.151,9.867 1.423,9.591 1.423,9.591 C2.066,8.941 2.366,8.037 2.236,7.142 C2.236,7.142 2.181,6.762 2.181,6.762 C1.955,5.196 3.038,3.737 4.628,3.464 C4.628,3.464 5.015,3.398 5.015,3.398 C5.925,3.242 6.710,2.683 7.143,1.885 C7.143,1.885 7.327,1.545 7.327,1.545 C8.084,0.148 9.835,-0.409 11.286,0.286 C11.286,0.286 11.639,0.454 11.639,0.454 C12.469,0.851 13.439,0.851 14.269,0.454 C14.269,0.454 14.622,0.286 14.622,0.286 C16.072,-0.409 17.824,0.148 18.581,1.545 C18.581,1.545 18.765,1.885 18.765,1.885 C19.198,2.683 19.983,3.242 20.893,3.398 C20.893,3.398 21.280,3.464 21.280,3.464 C22.870,3.737 23.953,5.196 23.727,6.762 C23.727,6.762 23.672,7.142 23.672,7.142 C23.542,8.037 23.842,8.941 24.485,9.591 C24.485,9.591 24.757,9.867 24.757,9.867 C25.880,11.003 25.880,12.806 24.757,13.943 ZM12.954,4.771 C8.929,4.771 5.667,7.965 5.667,11.905 C5.667,15.845 8.929,19.039 12.954,19.039 C16.979,19.039 20.242,15.845 20.242,11.905 C20.242,7.965 16.979,4.771 12.954,4.771 Z" fill="#031054" fill-rule="evenodd"/>
+            </svg>
+            2014 M.K. Guertin Award Winner
+          </div>
+          <div class="hotel-award">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="20" height="27" viewBox="0 0 27 34">
+              <path d="M24.757,13.943 C24.757,13.943 24.485,14.219 24.485,14.219 C23.842,14.869 23.542,15.772 23.672,16.668 C23.672,16.668 23.727,17.048 23.727,17.048 C23.953,18.614 22.870,20.072 21.280,20.345 C21.280,20.345 21.228,20.354 21.228,20.354 C21.228,20.354 25.908,29.192 25.908,29.192 C25.908,29.192 20.398,29.331 20.398,29.331 C20.398,29.331 17.294,33.585 17.294,33.585 C17.294,33.585 12.787,25.067 12.787,25.067 C12.787,25.067 8.614,33.585 8.614,33.585 C8.614,33.585 5.510,29.331 5.510,29.331 C5.510,29.331 0.001,29.192 0.001,29.192 C0.001,29.192 4.680,20.354 4.680,20.354 C4.680,20.354 4.628,20.345 4.628,20.345 C3.038,20.072 1.955,18.614 2.181,17.048 C2.181,17.048 2.236,16.668 2.236,16.668 C2.366,15.772 2.066,14.869 1.423,14.219 C1.423,14.219 1.151,13.943 1.151,13.943 C0.028,12.806 0.028,11.003 1.151,9.867 C1.151,9.867 1.423,9.591 1.423,9.591 C2.066,8.941 2.366,8.037 2.236,7.142 C2.236,7.142 2.181,6.762 2.181,6.762 C1.955,5.196 3.038,3.737 4.628,3.464 C4.628,3.464 5.015,3.398 5.015,3.398 C5.925,3.242 6.710,2.683 7.143,1.885 C7.143,1.885 7.327,1.545 7.327,1.545 C8.084,0.148 9.835,-0.409 11.286,0.286 C11.286,0.286 11.639,0.454 11.639,0.454 C12.469,0.851 13.439,0.851 14.269,0.454 C14.269,0.454 14.622,0.286 14.622,0.286 C16.072,-0.409 17.824,0.148 18.581,1.545 C18.581,1.545 18.765,1.885 18.765,1.885 C19.198,2.683 19.983,3.242 20.893,3.398 C20.893,3.398 21.280,3.464 21.280,3.464 C22.870,3.737 23.953,5.196 23.727,6.762 C23.727,6.762 23.672,7.142 23.672,7.142 C23.542,8.037 23.842,8.941 24.485,9.591 C24.485,9.591 24.757,9.867 24.757,9.867 C25.880,11.003 25.880,12.806 24.757,13.943 ZM12.954,4.771 C8.929,4.771 5.667,7.965 5.667,11.905 C5.667,15.845 8.929,19.039 12.954,19.039 C16.979,19.039 20.242,15.845 20.242,11.905 C20.242,7.965 16.979,4.771 12.954,4.771 Z" fill="#031054" fill-rule="evenodd"/>
+            </svg>
+            2014 International Quality Insurance Award
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row ribbon ribbon--dark-blue">
+      <div class="col-xs-12">
+        <div class="text-center">
+          <ul class="pagination pagination--blue">
+            <li>
+              <a href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="active"><a href="#cancelled-1" data-toggle="tab">1</a></li>
+            <li><a href="#cancelled-2" data-toggle="tab">2</a></li>
+            <li><a href="#cancelled-3" data-toggle="tab">3</a></li>
+            <li>
+              <a href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row copyright-disclaimer">
+      <div class="col-xs-12">
+        <p>Each Best Western&reg; branded hotel is independently owned and operated.<br>
+          &copy; 2002-2015 Best Western International, Inc. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- end container-fluid -->
+  <script src="../scripts/jquery.js"></script>
+  <script src="../scripts/bootstrap.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/navigation.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+        $('[data-toggle="popover"]').popover();
+    });
+  </script>
+</body>
+</html>

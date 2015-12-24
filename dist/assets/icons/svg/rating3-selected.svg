@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="77" height="77" viewBox="0 0 77 77">
+  <defs>
+    <style>
+
+      .cls-3 {
+        fill: #ffffff;
+        stroke: #16a850;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+
+      .cls-4 {
+        fill: #ffffff;
+        filter: url(#color-overlay-1);
+      }
+
+      .cls-5 {
+        font-size: 83.237px;
+      }
+
+      .cls-6 {
+        fill: #ffffff;
+        text-anchor: middle;
+        font-size: 83.237px;
+        font-family: "Proxima Nova";
+      }
+    </style>
+
+    <filter id="color-overlay-1" filterUnits="userSpaceOnUse">
+      <feFlood flood-color="#16a850" flood-opacity="1"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+      <feBlend mode="normal" in2="SourceGraphic" result="colorOverlay"/>
+    </filter>
+  </defs>
+  <g id="rating3-selectedsvg">
+    <circle id="circle-1" class="cls-3" cx="38" cy="38" r="37"/>
+    <circle id="circle-2" class="cls-4" cx="38" cy="38" r="24"/>
+    <text class="cls-5" transform="translate(18 50) scale(0.5 0.5)"><tspan x="38px" class="cls-6">3</tspan></text>
+  </g>
+</svg>

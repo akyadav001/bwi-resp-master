@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Hotels - Book Direct and Save on over 4,000 Best Western Hotels</title>
+  <meta name="description" content="Best Western International is the The World's Biggest Hotel Family(R) with more than 4,000 hotels in over 100 countries and territories worldwide. Book your hotel reservation online today at BestWestern.com">
+  <meta name="keywords" content="Best Western, Best Western hotel, online hotel reservation, hotel accommodation, hotel listings, affordable rates">
+  <link rel="stylesheet" href="../styles/bootstrap.css">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body data-view="loading">
+  <!-- <div id="header"></div> -->
+  <nav class="bw-navbar navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="nav-left">
+        <a href="findahotel.html"><span class="bw-icon bw-icon-logo"></span></a>
+      </div>
+      <div class="nav-left">
+        <button type="button" class="burger" data-toggle="collapse" data-target="">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        </button>
+      </div>
+      <div class="nav-right">
+        <a href="#" class="visible-xs" data-toggle="modal" data-target="#bw-filter"><span class="bw-icon bw-icon-filter"></span></a>
+        <a href="#" class="hidden-xs" data-toggle="popover-x" data-target="#bw-filter-popover" data-placement="bottom bottom-right"><span class="bw-icon bw-icon-filter"></span></a>
+      </div>
+      <div class="nav-right">
+        <a href="#" class="visible-xs" data-toggle="modal" data-target="#bw-discounts-modal">
+        DISCOUNTS&nbsp;<span class="bw-icon bw-icon-arrow"></span></a>
+        <a href="#" class="hidden-xs" data-toggle="popover-x" data-target="#bw-discounts-popover" data-placement="bottom bottom-right">
+        DISCOUNTS&nbsp;<span class="bw-icon bw-icon-arrow"></span></a>
+      </div>
+      <div class="nav-right">
+        <a href="#" class="visible-xs" data-toggle="modal" data-target="#bw-currency-modal">
+        CURRENCY&nbsp;<span class="bw-icon bw-icon-arrow"></span></a>
+        <a href="#" class="hidden-xs" data-toggle="popover-x" data-target="#bw-currency-popover" data-placement="bottom bottom-right">
+        CURRENCY&nbsp;<span class="bw-icon bw-icon-arrow"></span></a>
+      </div>
+    </div>
+    <div class="bw-city-tab">
+      <div class="col-xs-9">Columbus, OH<br><span class="room-guest">April 9-12, 2015&nbsp; &nbsp;1 Room, 2 Guests</span></div>
+      <div class= "col-xs-3"><span data-toggle="modal" data-target="#bw-edit" class="bw-edit-font">EDIT</span></div>
+    </div>
+  </nav>
+  <div class="popover popover-md popover-static popover-primary" id="bw-filter-popover">
+    <div class="arrow"></div>
+    <div class="popover-title"><span class="close" data-dismiss="popover-x">&times;</span>SORT &amp; FILTER</div>
+    <div class="bw-popover-subheader success">You have <strong>16 results</strong> available</div>
+    <div class="popover-content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="bw-separator">
+            <label> Only show available hotels</label>
+            <span class="image-checkbox" data-bw-category="available-hotels">
+            <input type="checkbox" id="popover-available-hotels" name="popover-available-hotels" />
+            <label for="popover-available-hotels" class="bw-icon pull-right"></label>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="row top-buffer">
+        <div class="col-xs-12">
+          <div class="form-group">
+            SORT BY
+            <select class="form-control">
+              <option>Distance</option>
+              <option>Price: Low to High</option>
+              <option>Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            MAXIMUM DAILY RATE
+            <input type="text" class="form-control" />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label>TRIPADVISOR RATING</label>
+            <div class="row no-pad full-width">
+              <div class="col-xs-2-5">
+                <div class="image-checkbox" data-bw-category="tripadvisor-1">
+                  <input type="checkbox" id="tripadvisor-1" name="tripadvisor-1" />
+                  <label for="tripadvisor-1" class="bw-icon"></label>
+                </div>
+              </div>
+              <div class="col-xs-2-5">
+                <div class="image-checkbox" data-bw-category="tripadvisor-2">
+                  <input type="checkbox" id="tripadvisor-2" name="tripadvisor-2" />
+                  <label for="tripadvisor-2" class="bw-icon"></label>
+                </div>
+              </div>
+              <div class="col-xs-2-5">
+                <div class="image-checkbox" data-bw-category="tripadvisor-3">
+                  <input type="checkbox" id="tripadvisor-3" name="tripadvisor-3" />
+                  <label for="tripadvisor-3" class="bw-icon"></label>
+                </div>
+              </div>
+              <div class="col-xs-2-5">
+                <div class="image-checkbox" data-bw-category="tripadvisor-4">
+                  <input type="checkbox" id="tripadvisor-4" name="tripadvisor-4" />
+                  <label for="tripadvisor-4" class="bw-icon"></label>
+                </div>
+              </div>
+              <div class="col-xs-2-5">
+                <div class="image-checkbox" data-bw-category="tripadvisor-5">
+                  <input type="checkbox" id="tripadvisor-5" name="tripadvisor-5" />
+                  <label for="tripadvisor-5" class="bw-icon"></label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="bw-accordion bw-accordion-primary" data-toggle="collapse" data-target="#bw-hotel-type">
+            HOTEL TYPE
+            <span class="glyphicon glyphicon-menu-up pull-right"></span>
+          </div>
+        </div>
+      </div>
+      <div class="row collapse in" id="bw-hotel-type">
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-4">
+              <img id="bw-standard-hotel-popover-img" class="bw-icon-logo-blue" src="icons/Best Western@3x.png" alt="Best Western Logo Blue"/>
+            </div>
+            <div class="col-xs-4">
+              <img id="bw-plus-hotel-popover-img" class="bw-icon-plus-logo-brown" src="icons/Plus Brown@3x.png" alt="Best Western Plus Logo"/>
+            </div>
+            <div class="col-xs-4">
+              <img id="bw-premier-hotel-popover-img" class="bw-icon-premier-logo-brown" src="icons/Premier Brown@3x.png" alt="Best Western Premier Logo"/>
+            </div>
+          </div>
+          <div class="row text-center">
+            <div class="col-xs-4">
+              <span class="image-checkbox" data-bw-category="hotel-type-standard">
+              <input type="checkbox" id="hotel-type-standard" name="hotel-type-standard" />
+              <label for="hotel-type-standard" class="bw-icon"></label>
+              </span>
+            </div>
+            <div class="col-xs-4">
+              <span class="image-checkbox" data-bw-category="hotel-type-plus">
+              <input type="checkbox" id="hotel-type-plus" name="hotel-type-plus" />
+              <label for="hotel-type-plus" class="bw-icon"></label>
+              </span>
+            </div>
+            <div class="col-xs-4">
+              <span class="image-checkbox" data-bw-category="hotel-type-premier">
+              <input type="checkbox" id="hotel-type-premier" name="hotel-type-premier" />
+              <label for="hotel-type-premier" class="bw-icon"></label>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row top-buffer">
+        <div class="col-xs-12">
+          <div class="bw-accordion bw-accordion-primary" data-toggle="collapse" data-target="#bw-amenities">
+            AMENITIES
+            <span class="glyphicon glyphicon-menu-up pull-right"></span>
+          </div>
+        </div>
+      </div>
+      <div class="collapse in bw-amenities-container" id="bw-amenities">
+        <div class="bw-amenity-item">
+          <p class="image-checkbox" data-bw-category="amenity-breakfast">
+            <input type="checkbox" id="amenity-breakfast" name="amenity-breakfast" />
+            <label for="amenity-breakfast" class="bw-icon"></label>
+          </p>
+          <p class="description">Breakfast</p>
+        </div>
+        <div class="bw-amenity-item">
+          <p class="image-checkbox" data-bw-category="amenity-business">
+            <input type="checkbox" id="amenity-business" name="amenity-business" />
+            <label for="amenity-business" class="bw-icon"></label>
+          </p>
+          <p class="description">Business</p>
+        </div>
+        <div class="bw-amenity-item">
+          <p class="image-checkbox" data-bw-category="amenity-dine-in">
+            <input type="checkbox" id="amenity-dine-in" name="amenity-dine-in" />
+            <label for="amenity-dine-in" class="bw-icon"></label>
+          </p>
+          <p class="description">Dine In</p>
+        </div>
+        <div class="bw-amenity-item">
+          <p class="image-checkbox" data-bw-category="amenity-internet">
+            <input type="checkbox" id="amenity-internet" name="amenity-internet" />
+            <label for="amenity-internet" class="bw-icon"></label>
+          </p>
+          <p class="description">Internet</p>
+        </div>
+        <div class="bw-amenity-item">
+          <p class="image-checkbox" data-bw-category="amenity-fitness">
+            <input type="checkbox" id="amenity-fitness" name="amenity-fitness" />
+            <label for="amenity-fitness" class="bw-icon"></label>
+          </p>
+          <p class="description">Fitness</p>
+        </div>
+        <div class="bw-amenity-item">
+          <p class="image-checkbox" data-bw-category="amenity-pet">
+            <input type="checkbox" id="amenity-pet" name="amenity-pet" />
+            <label for="amenity-pet" class="bw-icon"></label>
+          </p>
+          <p class="description">Pet Friendly</p>
+        </div>
+        <div class="bw-amenity-item">
+          <p class="image-checkbox" data-bw-category="amenity-non-smoking">
+            <input type="checkbox" id="amenity-non-smoking" name="amenity-non-smoking" />
+            <label for="amenity-non-smoking" class="bw-icon"></label>
+          </p>
+          <p class="description">Non-<wbr>Smoking</p>
+        </div>
+        <div class="bw-amenity-item">
+          <p class="image-checkbox" data-bw-category="amenity-oversized">
+            <input type="checkbox" id="amenity-oversized" name="amenity-oversized" />
+            <label for="amenity-oversized" class="bw-icon"></label>
+          </p>
+          <p class="description">Oversized</p>
+        </div>
+        <div class="bw-amenity-item">
+          <p class="image-checkbox" data-bw-category="amenity-parking">
+            <input type="checkbox" id="amenity-parking" name="amenity-parking" />
+            <label for="amenity-parking" class="bw-icon"></label>
+          </p>
+          <p class="description">Parking</p>
+        </div>
+        <div class="bw-amenity-item">
+          <p class="image-checkbox" data-bw-category="amenity-pool">
+            <input type="checkbox" id="amenity-pool" name="amenity-pool" />
+            <label for="amenity-pool" class="bw-icon"></label>
+          </p>
+          <p class="description">Pool</p>
+        </div>
+        <div class="bw-amenity-item">
+          <p class="image-checkbox" data-bw-category="amenity-shuttle">
+            <input type="checkbox" id="amenity-shuttle" name="amenity-shuttle" />
+            <label for="amenity-shuttle" class="bw-icon"></label>
+          </p>
+          <p class="description">Shuttle</p>
+        </div>
+      </div>
+      <small>&ast; Fees may apply to pet friendly rooms based on weight and number of pets</small>
+      <p class="buffer-top bw-text-link">Clear All Filters</p>
+    </div>
+    <div class="popover-footer full-width-buttons">
+      <div class="row">
+        <div class="col-xs-6">
+          <button class="btn bw-btn-cancel" data-dismiss="modal">CANCEL</button>
+        </div>
+        <div class="col-xs-6">
+          <button class="btn bw-btn-accept">APPLY</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal bw-filter-modal" id="bw-filter">
+    <div class="modal-dialog modal-static">
+      <div class="bw-modal-content">
+        <div class="bw-modal-header">
+          Sort &amp; Filter
+        </div>
+        <div class="bw-modal-subheader failure">
+          You have <strong>0 results</strong> available
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="bw-separator">
+                <label> Only show available hotels</label>
+                <span class="image-checkbox" data-bw-category="available-hotels">
+                <input type="checkbox" id="modal-available-hotels" name="modal-available-hotels" />
+                <label for="modal-available-hotels" class="bw-icon pull-right"></label>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="row top-buffer">
+            <div class="col-xs-12">
+              <div class="form-group">
+                SORT BY
+                <select class="form-control">
+                  <option>Distance</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                MAXIMUM DAILY RATE
+                <input type="text" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <label>TRIPADVISOR RATING</label>
+                <div class="row no-pad full-width">
+                  <div class="col-xs-2-5">
+                    <div class="image-checkbox" data-bw-category="tripadvisor-1">
+                      <input type="checkbox" id="modal-tripadvisor-1" name="tripadvisor-1" />
+                      <label for="modal-tripadvisor-1" class="bw-icon"></label>
+                    </div>
+                  </div>
+                  <div class="col-xs-2-5">
+                    <div class="image-checkbox" data-bw-category="tripadvisor-2">
+                      <input type="checkbox" id="modal-tripadvisor-2" name="tripadvisor-2" />
+                      <label for="modal-tripadvisor-2" class="bw-icon"></label>
+                    </div>
+                  </div>
+                  <div class="col-xs-2-5">
+                    <div class="image-checkbox" data-bw-category="tripadvisor-3">
+                      <input type="checkbox" id="modal-tripadvisor-3" name="tripadvisor-3" />
+                      <label for="modal-tripadvisor-3" class="bw-icon"></label>
+                    </div>
+                  </div>
+                  <div class="col-xs-2-5">
+                    <div class="image-checkbox" data-bw-category="tripadvisor-4">
+                      <input type="checkbox" id="modal-tripadvisor-4" name="tripadvisor-4" />
+                      <label for="modal-tripadvisor-4" class="bw-icon"></label>
+                    </div>
+                  </div>
+                  <div class="col-xs-2-5">
+                    <div class="image-checkbox" data-bw-category="tripadvisor-5">
+                      <input type="checkbox" id="modal-tripadvisor-5" name="tripadvisor-5" />
+                      <label for="modal-tripadvisor-5" class="bw-icon"></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="bw-accordion bw-accordion-primary" data-toggle="collapse" data-target="#modal-bw-hotel-type">
+                HOTEL TYPE
+                <span class="glyphicon glyphicon-menu-up pull-right"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row collapse in" id="modal-bw-hotel-type">
+            <div class="col-xs-12">
+              <div class="row">
+                <div class="col-xs-4">
+                  <img id="bw-standard-hotel-modal-img" class="bw-icon-logo-blue" src="icons/Best Western@3x.png" alt="Best Western Logo Blue"/>
+                </div>
+                <div class="col-xs-4">
+                  <img id="bw-plus-hotel-modal-img" class="bw-icon-plus-logo-brown" src="icons/Plus Brown@3x.png" alt="Best Western Plus Logo"/>
+                </div>
+                <div class="col-xs-4">
+                  <img id="bw-premier-hotel-modal-img" class="bw-icon-premier-logo-brown" src="icons/Premier Brown@3x.png" alt="Best Western Premier Logo"/>
+                </div>
+              </div>
+              <div class="row text-center">
+                <div class="col-xs-4">
+                  <span class="image-checkbox" data-bw-category="hotel-type-standard">
+                  <input type="checkbox" id="modal-hotel-type-standard" name="modal-hotel-type-standard" />
+                  <label for="modal-hotel-type-standard" class="bw-icon"></label>
+                  </span>
+                </div>
+                <div class="col-xs-4">
+                  <span class="image-checkbox" data-bw-category="hotel-type-plus">
+                  <input type="checkbox" id="modal-hotel-type-plus" name="modal-hotel-type-plus" />
+                  <label for="modal-hotel-type-plus" class="bw-icon"></label>
+                  </span>
+                </div>
+                <div class="col-xs-4">
+                  <span class="image-checkbox" data-bw-category="hotel-type-premier">
+                  <input type="checkbox" id="modal-hotel-type-premier" name="modal-hotel-type-premier" />
+                  <label for="modal-hotel-type-premier" class="bw-icon"></label>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row top-buffer">
+            <div class="col-xs-12">
+              <div class="bw-accordion bw-accordion-primary" data-toggle="collapse" data-target="#modal-bw-amenities">
+                AMENITIES
+                <span class="glyphicon glyphicon-menu-up pull-right"></span>
+              </div>
+            </div>
+          </div>
+          <div class="collapse in bw-amenities-container" id="modal-bw-amenities">
+            <div class="bw-amenity-item">
+              <p class="image-checkbox" data-bw-category="amenity-breakfast">
+                <input type="checkbox" id="modal-amenity-breakfast" name="modal-amenity-breakfast" />
+                <label for="modal-amenity-breakfast" class="bw-icon"></label>
+              </p>
+              <p class="description">Breakfast</p>
+            </div>
+            <div class="bw-amenity-item">
+              <p class="image-checkbox" data-bw-category="amenity-business">
+                <input type="checkbox" id="modal-amenity-business" name="modal-amenity-business" />
+                <label for="modal-amenity-business" class="bw-icon"></label>
+              </p>
+              <p class="description">Business</p>
+            </div>
+            <div class="bw-amenity-item">
+              <p class="image-checkbox" data-bw-category="amenity-dine-in">
+                <input type="checkbox" id="modal-amenity-dine-in" name="modal-amenity-dine-in" />
+                <label for="modal-amenity-dine-in" class="bw-icon"></label>
+              </p>
+              <p class="description">Dine In</p>
+            </div>
+            <div class="bw-amenity-item">
+              <p class="image-checkbox" data-bw-category="amenity-internet">
+                <input type="checkbox" id="modal-amenity-internet" name="modal-amenity-internet" />
+                <label for="modal-amenity-internet" class="bw-icon"></label>
+              </p>
+              <p class="description">Internet</p>
+            </div>
+            <div class="bw-amenity-item">
+              <p class="image-checkbox" data-bw-category="amenity-fitness">
+                <input type="checkbox" id="modal-amenity-fitness" name="modal-amenity-fitness" />
+                <label for="modal-amenity-fitness" class="bw-icon"></label>
+              </p>
+              <p class="description">Fitness</p>
+            </div>
+            <div class="bw-amenity-item">
+              <p class="image-checkbox" data-bw-category="amenity-pet">
+                <input type="checkbox" id="modal-amenity-pet" name="modal-amenity-pet" />
+                <label for="modal-amenity-pet" class="bw-icon"></label>
+              </p>
+              <p class="description">Pet Friendly</p>
+            </div>
+            <div class="bw-amenity-item">
+              <p class="image-checkbox" data-bw-category="amenity-non-smoking">
+                <input type="checkbox" id="modal-amenity-non-smoking" name="modal-amenity-non-smoking" />
+                <label for="modal-amenity-non-smoking" class="bw-icon"></label>
+              </p>
+              <p class="description">Non-<wbr>Smoking</p>
+            </div>
+            <div class="bw-amenity-item">
+              <p class="image-checkbox" data-bw-category="amenity-oversized">
+                <input type="checkbox" id="modal-amenity-oversized" name="modal-amenity-oversized" />
+                <label for="modal-amenity-oversized" class="bw-icon"></label>
+              </p>
+              <p class="description">Oversized</p>
+            </div>
+            <div class="bw-amenity-item">
+              <p class="image-checkbox" data-bw-category="amenity-parking">
+                <input type="checkbox" id="modal-amenity-parking" name="modal-amenity-parking" />
+                <label for="modal-amenity-parking" class="bw-icon"></label>
+              </p>
+              <p class="description">Parking</p>
+            </div>
+            <div class="bw-amenity-item">
+              <p class="image-checkbox" data-bw-category="amenity-pool">
+                <input type="checkbox" id="modal-amenity-pool" name="modal-amenity-pool" />
+                <label for="modal-amenity-pool" class="bw-icon"></label>
+              </p>
+              <p class="description">Pool</p>
+            </div>
+            <div class="bw-amenity-item">
+              <p class="image-checkbox" data-bw-category="amenity-shuttle">
+                <input type="checkbox" id="modal-amenity-shuttle" name="modal-amenity-shuttle" />
+                <label for="modal-amenity-shuttle" class="bw-icon"></label>
+              </p>
+              <p class="description">Shuttle</p>
+            </div>
+          </div>
+          <small>&ast; Fees may apply to pet friendly rooms based on weight and number of pets</small>
+          <p class="buffer-top bw-text-link">Clear All Filters</p>
+        </div>
+        <div class="modal-footer bw-modal-footer">
+          <div class="row">
+            <div class="col-xs-6">
+              <button class="btn bw-btn-cancel" data-dismiss="modal">CANCEL</button>
+            </div>
+            <div class="col-xs-6">
+              <button class="btn bw-btn-accept">APPLY</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="popover popover-md popover-static popover-primary" id="bw-discounts-popover">
+    <div class="arrow"></div>
+    <div class="popover-title"><span class="close" data-dismiss="popover-x">&times;</span>DISCOUNTS</div>
+    <div class="popover-content">
+      <div class="col-xs-12">
+        <div class="row bw-separator">
+          <div class="radio">
+            <label>
+            <input type="radio" name="discount"/>AAA/CAA Discount
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+            <input type="radio" name="discount"/>AARP/Senior Discount
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+            <input type="radio" name="discount"/>Best Western Rewards Points
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+            <input type="radio" name="discount"/>Corporate Discount Code
+            </label><br>
+            <input class="discounts-code-input" type="text" name="discount-code" placeholder="code"/>
+          </div>
+          <div class="radio">
+            <label>
+            <input type="radio" name="discount"/>Government/Military Discount
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+            <input type="radio" name="discount"/>Promotion Code
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <p class="top-buffer discounts-text">
+            * This rate is available to Best Western Rewards Members who have earned enough points to redeem.
+          </p>
+          <p class="bw-text-link">Remove Discount</p>
+        </div>
+      </div>
+    </div>
+    <div class="popover-footer full-width-buttons">
+      <div class="row">
+        <div class="col-xs-6">
+          <button class="btn bw-btn-cancel" data-dismiss="modal">CANCEL</button>
+        </div>
+        <div class="col-xs-6">
+          <button class="btn bw-btn-accept">APPLY</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="bw-discounts-modal">
+    <div class="modal-dialog modal-static">
+      <div class="bw-modal-content">
+        <div class="bw-modal-header">
+          DISCOUNTS
+        </div>
+        <div class="modal-body">
+          <div class="col-xs-12">
+            <div class="row bw-separator">
+              <div class="radio">
+                <label>
+                <input type="radio" name="discount"/>AAA/CAA Discount
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                <input type="radio" name="discount"/>AARP/Senior Discount
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                <input type="radio" name="discount"/>Best Western Rewards Points
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                <input type="radio" name="discount"/>Corporate Discount Code
+                </label><br>
+                <input class="discounts-code-input" type="text" name="discount-code" placeholder="code"/>
+              </div>
+              <div class="radio">
+                <label>
+                <input type="radio" name="discount"/>Government/Military Discount
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                <input type="radio" name="discount"/>Promotion Code
+                </label>
+              </div>
+            </div>
+            <div class="row">
+              <p class="top-buffer discounts-text">
+                * This rate is available to Best Western Rewards Members who have earned enough points to redeem.
+              </p>
+              <p class="bw-text-link">Remove Discount</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer bw-modal-footer">
+          <div class="row">
+            <div class="col-xs-6">
+              <button class="btn bw-btn-cancel" data-dismiss="modal">CANCEL</button>
+            </div>
+            <div class="col-xs-6">
+              <button class="btn bw-btn-accept">DONE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="popover popover-md popover-static popover-primary" id="bw-currency-popover">
+    <div class="arrow"></div>
+    <div class="popover-title"><span class="close" data-dismiss="popover-x">&times;</span>CURRENCY</div>
+    <div class="popover-content">
+      <div class="bw-currency">
+        <div class="row">
+          <div class="col-xs-12 currency-item currency-search">
+            <span class="bw-icon bw-icon-search"></span>
+            <input type="text"/>
+          </div>
+          <div class="col-xs-12 currency-item">
+            US Dollars
+          </div>
+          <div class="col-xs-12 currency-item">
+            Euro
+          </div>
+          <div class="col-xs-12 bw-currency-header">
+            OTHER CURRENCIES
+          </div>
+          <div class="col-xs-12 currency-item">
+            Albanian Yek
+          </div>
+          <div class="col-xs-12 currency-item">
+            Algerian Dinar
+          </div>
+          <div class="col-xs-12 currency-item">
+            Argentinian Pesos
+          </div>
+          <div class="col-xs-12 currency-item">
+            Armenian Dram
+          </div>
+          <div class="col-xs-12 currency-item">
+            Arubin Florin
+          </div>
+          <div class="col-xs-12 currency-item">
+            Australia Dollars
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popover-footer full-width-buttons">
+      <div class="row">
+        <div class="col-xs-6">
+          <button class="btn bw-btn-cancel" data-dismiss="modal">CANCEL</button>
+        </div>
+        <div class="col-xs-6">
+          <button class="btn bw-btn-accept">APPLY</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="bw-currency-modal">
+    <div class="modal-dialog modal-static">
+      <div class="bw-modal-content">
+        <div class="bw-modal-header">
+          CURRENCY
+        </div>
+        <div class="modal-body">
+          <div class="bw-currency">
+            <div class="row">
+              <div class="col-xs-12 currency-item currency-search">
+                <span class="bw-icon bw-icon-search"></span>
+                <input type="text"/>
+              </div>
+              <div class="col-xs-12 currency-item">
+                US Dollars
+              </div>
+              <div class="col-xs-12 currency-item">
+                Euro
+              </div>
+              <div class="col-xs-12 bw-currency-header">
+                OTHER CURRENCIES
+              </div>
+              <div class="col-xs-12 currency-item">
+                Albanian Yek
+              </div>
+              <div class="col-xs-12 currency-item">
+                Algerian Dinar
+              </div>
+              <div class="col-xs-12 currency-item">
+                Argentinian Pesos
+              </div>
+              <div class="col-xs-12 currency-item">
+                Armenian Dram
+              </div>
+              <div class="col-xs-12 currency-item">
+                Arubin Florin
+              </div>
+              <div class="col-xs-12 currency-item">
+                Australia Dollars
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer bw-modal-footer">
+          <div class="row">
+            <div class="col-xs-6">
+              <button class="btn bw-btn-cancel" data-dismiss="modal">CANCEL</button>
+            </div>
+            <div class="col-xs-6">
+              <button class="btn bw-btn-accept">DONE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="loading-wrapper">
+    <div id="ball"></div>
+    <div id="ground"></div>
+    <div id="shadow"></div>
+    <p id="loading-message">We're gathering a great collection<br>of Best Western Hotels for you.</p>
+  </div>
+  <div id="footer"></div>
+  <script src="../scripts/jquery.js"></script>
+  <script src="../scripts/bootstrap.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+        $('#header').load('ResultsHeader.html');
+        $('#footer').load('ResultsFooterBar.html');
+    });
+  </script>
+</body>
+</html>

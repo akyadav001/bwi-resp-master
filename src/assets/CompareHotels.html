@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html class="full-height">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Compare Hotels</title>
+    <link rel="stylesheet" href="../styles/bootstrap.css">
+    <link rel="stylesheet" href="../styles/main.css">
+  </head>
+  <body class="has-results-nav has-fixed-footer" data-view="compare-view">
+    <span id="bw-detector">
+    <span data-breakpoint = "xs" class="visible-xs"></span>
+    <span data-breakpoint="sm" class="visible-sm"></span>
+    <span data-breakpoint="md" class="visible-md visible-lg"></span>
+    </span>
+
+  <header class="site-header">
+     @@include('./partials/ResultsHeader.html')
+    </header>
+    @@include('./partials/ResultsOverlays.html')
+    @@include('./partials/ResultsNav.html')
+      <div class="slider">
+        <div class="js-top slider__top">
+          <img src="../assets/icons/window_shade.png" class="js-handle slider-handle slider-handle--vertical slider-handle--under" alt="slide control" />
+          <div class="row js-compare-controls compare-control-bar">
+            <div class="col-xs-4 invisible">
+              <a href="roomrates.html" class="btn bw-btn-accept">SELECT A ROOM</a>
+              <span class="close close-primary js-close" data-column="1">&times;</span>
+            </div>
+            <div class="col-xs-4 invisible">
+              <a href="roomrates.html" class="btn bw-btn-accept">SELECT A ROOM</a>
+              <span class="close close-primary js-close" data-column="2">&times;</span>
+            </div>
+            <div class="col-xs-4 invisible">
+              <a href="roomrates.html" class="btn bw-btn-accept">SELECT A ROOM</a>
+              <span class="close close-primary js-close" data-column="3">&times;</span>
+            </div>
+          </div>
+          <div class="row compare-row js-hotel-columns">
+            <div class="col-xs-4"  data-compare-column="1">
+              <div class="js-instructions instructions active">
+                <p>Tap and hold the hotel you wish to compare <span class="instructions--large">1</span>
+                </p>
+              </div>
+              <div class="js-hotel-column hidden">
+                <div class="card card--compare">
+                  <div class="card-body">
+                    <p class="card-name">BEST WESTERN PREMIER <br />
+                      <span class="card-location u-ellipsis">Franklin Square Inn Troy/New Albany</span>
+                    </p>
+                    <div>
+                      <span>2.7mi/4.7km</span>
+                    </div>
+                    <div>
+                      <span>USD</span>
+                      <span class="card-currency--compare">$89.99</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel js-carousel slide full-height-carousel" id="room-1-details-carousel" data-interval="false" data-ride="carousel" >
+                  <!-- Indicators -->
+                  <ol class="carousel-indicators">
+                    <li data-target="#room-1-details-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#room-1-details-carousel" data-slide-to="1"></li>
+                    <li data-target="#room-1-details-carousel" data-slide-to="2"></li>
+                  </ol>
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                      <div style="background:url(http://images.bestwestern.com/bwi/brochures/05268/photos/1024/4097329.jpg) center center;">
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div style="background:url(http://images.bestwestern.com/bwi/brochures/05268/photos/1024/4097343.jpg) center center;">
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div style="background:url(http://images.bestwestern.com/bwi/brochures/05268/photos/1024/4097331.jpg) center center;">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row compare-tripadvisor">
+                  <div class="col-xs-12">
+                    <p>TripAdvisor Traveller Rating</p>
+                    <span class="bw-icon bw-icon-tripadvisor-logo card-tripadvisor-logo"></span>
+                    <span class="bw-icon bw-icon-tripadvisor-rating-full card-tripadvisor-rating"></span>
+                    <span class="bw-icon bw-icon-tripadvisor-rating-full card-tripadvisor-rating"></span>
+                    <span class="bw-icon bw-icon-tripadvisor-rating-full card-tripadvisor-rating"></span>
+                    <span class="bw-icon bw-icon-tripadvisor-rating-full card-tripadvisor-rating"></span>
+                    <span class="bw-icon bw-icon-tripadvisor-rating-half card-tripadvisor-rating"></span>
+                    <label>(134)</label>
+                  </div>
+                </div>
+                <div class="amenities amenities--dark amenities--no-gutter js-amenities row">
+                  <div class="col-xs-12">
+                    <h2 class="amenities-title">Amenities</h2>
+                    <div class="amenities-scroll-container col-xs-12">
+                      <div class="amenities-scroll-bar js-amenity-scrollbar"></div>
+                    </div>
+                    <div class="col-xs-6 amenity-header amenity-header--left js-amenity-header--left">HOTEL</div>
+                    <div class="col-xs-6 amenity-header amenity-header--right js-amenity-header--right">ROOM</div>
+                    <div class="clearfix"></div>
+                    <div class="carousel slide js-amenities-carousel" data-ride="carousel" data-interval="false" data-wrap="false">
+                      <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                          <div class="amenity-hotel-list">
+                            <div class="col-xs-12 amenity-item">
+                              <object class="amnty-icon" type="image/svg+xml" data="icons/svg/amnty-parking.svg"></object>
+                              <span class="amenity-text">Free Parking</span>
+                            </div>
+                            <div class="col-xs-12 amenity-item">
+                              <object class="amnty-icon" type="image/svg+xml" data="icons/svg/amnty-onsite-dining.svg"></object>
+                              <span class="amenity-text">Dining Included</span>
+                            </div>
+                            <div class="col-xs-12 amenity-item">
+                              <object class="amnty-icon" type="image/svg+xml" data="icons/svg/amnty-shuttle.svg"></object>
+                              <span class="amenity-text">Shuttle Bus</span>
+                            </div>
+                            <div class="col-xs-12 amenity-item">
+                              <object class="amnty-icon" type="image/svg+xml" data="icons/svg/amnty-non-smoking.svg"></object>
+                              <span class="amenity-text">Non-Smoking</span>
+                            </div>
+                            <div class="col-xs-12 amenity-item">
+                              <object class="amnty-icon" type="image/svg+xml" data="icons/svg/amnty-fitness.svg"></object>
+                              <span class="amenity-text">Fitness Facilities</span>
+                            </div>
+                            <div class="col-xs-12 amenity-item">
+                              <object class="amnty-icon" type="image/svg+xml" data="icons/svg/amnty-breakfast.svg"></object>
+                              <span class="amenity-text">Complimentary Breakfast</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="item">
+                          <div class="col-xs-12 amenity-room-list">
+                            <ul>
+                              <li>Cable or satellite television, 32 inch flatscreen HD with HBO*</li>
+                              <li>Free local calls under 30 minutes with long distance access</li>
+                              <li>Dataports</li>
+                              <li>Wakeup calls</li>
+                              <li>AM/FM alarm clock</li>
+                              <li>Coffee/tea maker</li>
+                              <li>Hairdryer</li>
+                              <li>Iron, ironing board full size</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <a class="col-xs-12 amenities--footer amenities--footer-link" href="HotelDetails.html">
+                  VIEW FULL HOTEL DETAILS
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-4"  data-compare-column="2">
+              <div class="js-instructions instructions">
+                <p>Tap and hold the hotel you wish to compare <span class="instructions--large">2</span>
+                </p>
+              </div>
+              <div class="js-hotel-column hidden">
+                <div class="card card--compare">
+                  <div class=" card-body">
+                    <p class="card-name">BEST WESTERN PREMIER <br />
+                      <span class="card-location u-ellipsis">Franklin Square Inn Troy/New Albany</span>
+                    </p>
+                    <div>
+                      <span>2.7mi/4.7km</span>
+                    </div>
+                    <div>
+                      <span>USD</span>
+                      <span class="card-currency--compare">$89.99</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel js-carousel slide full-height-carousel" id="room-2-details-carousel" data-interval="false" data-ride="carousel" >
+                  <!-- Indicators -->
+                  <ol class="carousel-indicators">
+                    <li data-target="#room-2-details-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#room-2-details-carousel" data-slide-to="1"></li>
+                    <li data-target="#room-2-details-carousel" data-slide-to="2"></li>
+                  </ol>
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                      <div style="background:url(http://images.bestwestern.com/bwi/brochures/05268/photos/1024/4097329.jpg) center center;">
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div style="background:url(http://images.bestwestern.com/bwi/brochures/05268/photos/1024/4097343.jpg) center center;">
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div style="background:url(http://images.bestwestern.com/bwi/brochures/05268/photos/1024/4097331.jpg) center center;">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row compare-tripadvisor">
+                  <div class="col-xs-12">
+                    <p>TripAdvisor Traveller Rating</p>
+                    <span class="bw-icon bw-icon-tripadvisor-logo card-tripadvisor-logo"></span>
+                    <span class="bw-icon bw-icon-tripadvisor-rating-full card-tripadvisor-rating"></span>
+                    <span class="bw-icon bw-icon-tripadvisor-rating-full card-tripadvisor-rating"></span>
+                    <span class="bw-icon bw-icon-tripadvisor-rating-full card-tripadvisor-rating"></span>
+                    <span class="bw-icon bw-icon-tripadvisor-rating-full card-tripadvisor-rating"></span>
+                    <span class="bw-icon bw-icon-tripadvisor-rating-half card-tripadvisor-rating"></span>
+                    <label>(134)</label>
+                  </div>
+                </div>
+                <div class="amenities amenities--dark amenities--no-gutter js-amenities row">
+                  <div class="col-xs-12">
+                    <h2 class="amenities-title">Amenities</h2>
+                    <div class="amenities-scroll-container col-xs-12">
+                      <div class="amenities-scroll-bar js-amenity-scrollbar"></div>
+                    </div>
+                    <div class="col-xs-6 amenity-header amenity-header--left js-amenity-header--left">HOTEL</div>
+                    <div class="col-xs-6 amenity-header amenity-header--right js-amenity-header--right">ROOM</div>
+                    <div class="clearfix"></div>
+                    <div class="carousel slide js-amenities-carousel" data-ride="carousel" data-interval="false" data-wrap="false">
+                      <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                          <div class="amenity-hotel-list">
+                            <div class="col-xs-12 amenity-item">
+                              <object class="amnty-icon" type="image/svg+xml" data="icons/svg/amnty-parking.svg"></object>
+                              <span class="amenity-text">Free Parking</span>
+                            </div>
+                            <div class="col-xs-12 amenity-item">
+                              <object class="amnty-icon" type="image/svg+xml" data="icons/svg/amnty-onsite-dining.svg"></object>
+                              <span class="amenity-text">Dining Included</span>
+                            </div>
+                            <div class="col-xs-12 amenity-item">
+                              <object class="amnty-icon" type="image/svg+xml" data="icons/svg/amnty-shuttle.svg"></object>
+                              <span class="amenity-text">Shuttle Bus</span>
+                            </div>
+                            <div class="col-xs-12 amenity-item">
+                              <object class="amnty-icon" type="image/svg+xml" data="icons/svg/amnty-non-smoking.svg"></object>
+                              <span class="amenity-text">Non-Smoking</span>
+                            </div>
+                            <div class="col-xs-12 amenity-item">
+                              <object class="amnty-icon" type="image/svg+xml" data="icons/svg/amnty-fitness.svg"></object>
+                              <span class="amenity-text">Fitness Facilities</span>
+                            </div>
+                            <div class="col-xs-12 amenity-item">
+                              <object class="amnty-icon" type="image/svg+xml" data="icons/svg/amnty-breakfast.svg"></object>
+                              <span class="amenity-text">Complimentary Breakfast</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="item">
+                          <div class="col-xs-12 amenity-room-list">
+                            <ul>
+                              <li>Cable or satellite television, 32 inch flatscreen HD with HBO*</li>
+                              <li>Free local calls under 30 minutes with long distance access</li>
+                              <li>Dataports</li>
+                              <li>Wakeup calls</li>
+                              <li>AM/FM alarm clock</li>
+                              <li>Coffee/tea maker</li>
+                              <li>Hairdryer</li>
+                              <li>Iron, ironing board full size</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <a class="col-xs-12 amenities--footer amenities--footer-link" href="HotelDetails.html">
+                  VIEW FULL HOTEL DETAILS
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-4"  data-compare-column="3">
+              <div class="js-instructions instructions">
+                <p>Tap and hold the hotel you wish to compare <span class="instructions--large">3</span>
+                </p>
+              </div>
+              <div class="js-hotel-column hidden">
+                <div class="card card--compare">
+                  <div class=" card-body">
+                    <p class="card-name">BEST WESTERN PREMIER <br />
+                      <span class="card-location u-ellipsis">Franklin Square Inn Troy/New Albany</span>
+                    </p>
+                    <div>
+                      <span>2.7mi/4.7km</span>
+                    </div>
+                    <div>
+                      <span>USD</span>
+                      <span class="card-currency--compare">$89.99</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel js-carousel slide full-height-carousel" id="room-3-details-carousel" data-interval="false" data-ride="carousel" >
+                  <!-- Indicators -->
+                  <ol class="carousel-indicators">
+                    <li data-target="#room-3-details-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#room-3-details-carousel" data-slide-to="1"></li>
+                    <li data-target="#room-3-details-carousel" data-slide-to="2"></li>
+                  </ol>
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                      <div style="background:url(http://images.bestwestern.com/bwi/brochures/05268/photos/1024/4097329.jpg) center center;">
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div style="background:url(http://images.bestwestern.com/bwi/brochures/05268/photos/1024/4097343.jpg) center center;">
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div style="background:url(http://images.bestwestern.com/bwi/brochures/05268/photos/1024/4097331.jpg) center center;">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row compare-tripadvisor">
+                  <div class="col-xs-12">
+                    <p>TripAdvisor Traveller Rating</p>
+                    <span class="bw-icon bw-icon-tripadvisor-logo card-tripadvisor-logo"></span>
+                    <span class="bw-icon bw-icon-tripadvisor-rating-full card-tripadvisor-rating"></span>
+                    <span class="bw-icon bw-icon-tripadvisor-rating-full card-tripadvisor-rating"></span>
+                    <span class="bw-icon bw-icon-tripadvisor-rating-full card-tripadvisor-rating"></span>
+                    <span class="bw-icon bw-icon-tripadvisor-rating-full card-tripadvisor-rating"></span>
+                    <span class="bw-icon bw-icon-tripadvisor-rating-half card-tripadvisor-rating"></span>
+                    <label>(134)</label>
+                  </div>
+                </div>
+                <div class="amenities amenities--dark amenities--no-gutter js-amenities row">
+                  <div class="col-xs-12">
+                    <h2 class="amenities-title">Amenities</h2>
+                    <div class="amenities-scroll-container col-xs-12">
+                      <div class="amenities-scroll-bar js-amenity-scrollbar"></div>
+                    </div>
+                    <div class="col-xs-6 amenity-header amenity-header--left js-amenity-header--left">HOTEL</div>
+                    <div class="col-xs-6 amenity-header amenity-header--right js-amenity-header--right">ROOM</div>
+                    <div class="clearfix"></div>
+                    <div class="carousel slide js-amenities-carousel" data-ride="carousel" data-interval="false" data-wrap="false">
+                      <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                          <div class="amenity-hotel-list">
+                            <div class="col-xs-12 amenity-item">
+                              <object class="amnty-icon" type="image/svg+xml" data="icons/svg/amnty-parking.svg"></object>
+                              <span class="amenity-text">Free Parking</span>
+                            </div>
+                            <div class="col-xs-12 amenity-item">
+                              <object class="amnty-icon" type="image/svg+xml" data="icons/svg/amnty-onsite-dining.svg"></object>
+                              <span class="amenity-text">Dining Included</span>
+                            </div>
+                            <div class="col-xs-12 amenity-item">
+                              <object class="amnty-icon" type="image/svg+xml" data="icons/svg/amnty-shuttle.svg"></object>
+                              <span class="amenity-text">Shuttle Bus</span>
+                            </div>
+                            <div class="col-xs-12 amenity-item">
+                              <object class="amnty-icon" type="image/svg+xml" data="icons/svg/amnty-non-smoking.svg"></object>
+                              <span class="amenity-text">Non-Smoking</span>
+                            </div>
+                            <div class="col-xs-12 amenity-item">
+                              <object class="amnty-icon" type="image/svg+xml" data="icons/svg/amnty-fitness.svg"></object>
+                              <span class="amenity-text">Fitness Facilities</span>
+                            </div>
+                            <div class="col-xs-12 amenity-item">
+                              <object class="amnty-icon" type="image/svg+xml" data="icons/svg/amnty-breakfast.svg"></object>
+                              <span class="amenity-text">Complimentary Breakfast</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="item">
+                          <div class="col-xs-12 amenity-room-list">
+                            <ul>
+                              <li>Cable or satellite television, 32 inch flatscreen HD with HBO*</li>
+                              <li>Free local calls under 30 minutes with long distance access</li>
+                              <li>Dataports</li>
+                              <li>Wakeup calls</li>
+                              <li>AM/FM alarm clock</li>
+                              <li>Coffee/tea maker</li>
+                              <li>Hairdryer</li>
+                              <li>Iron, ironing board full size</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <a class="col-xs-12 amenities--footer amenities--footer-link" href="HotelDetails.html">
+                  VIEW FULL HOTEL DETAILS
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="js-bottom slider__bottom">
+          <div class="row image-list--with-backdrop" id="image-list">
+            <div class="col-xs-6 bw-image-bg image-list-img image-list-img-bw3 ratio ratio--16-9">
+              <div class="bw-image-text">
+                <div class="bw-hotel-type">
+                  BEST WESTERN
+                </div>
+                <div class="bw-name-currency">
+                  <p class="bw-hotel-name">
+                  Albany Airport Inn
+                  </p>
+                  <span class="bw-hotel-currency">USD</span>
+                </div>
+                <div class="bw-miles-price">
+                  <span class= "bw-hotel-miles">
+                  5.1mi / 9.4km
+                  </span>
+                  <span class="bw-hotel-price">$98.99</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 bw-image-bg image-list-img image-list-img-bw1 ratio ratio--16-9">
+              <div class="bw-image-text">
+                <div class="bw-hotel-type">
+                  BEST WESTERN
+                </div>
+                <div class="bw-name-currency">
+                  <p class="bw-hotel-name">
+                  Franklin Square Inn
+                  </p>
+                  <span class="bw-hotel-currency">USD</span>
+                </div>
+                <div class="bw-miles-price">
+                  <span class= "bw-hotel-miles">
+                  5.1mi / 9.4km
+                  </span>
+                  <span class="bw-hotel-price">$107.99</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 bw-image-bg image-list-img image-list-img-bw4 ratio ratio--16-9">
+              <div class="bw-image-text">
+                <div class="bw-hotel-type">
+                  BEST WESTERN PLUS
+                </div>
+                <div class="bw-name-currency">
+                  <p class="bw-hotel-name">
+                  Clifton Park
+                  </p>
+                  <span class="bw-hotel-currency">USD</span>
+                </div>
+                <div class="bw-miles-price">
+                  <span class= "bw-hotel-miles">
+                  7.4mi / 13.4km
+                  </span>
+                  <span class="bw-hotel-price">$101.99</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 bw-image-bg image-list-img image-list-img-bw5 ratio ratio--16-9">
+              <div class="bw-image-text">
+                <div class="bw-hotel-type">
+                  BEST WESTERN
+                </div>
+                <div class="bw-name-currency">
+                  <p class="bw-hotel-name">
+                  Park Inn
+                  </p>
+                  <span class="bw-hotel-currency">USD</span>
+                </div>
+                <div class="bw-miles-price">
+                  <span class= "bw-hotel-miles">
+                  6.3mi / 11.5km
+                  </span>
+                  <span class="bw-hotel-price">$89.99</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 bw-image-bg image-list-img image-list-img-bw6 ratio ratio--16-9">
+              <div class="bw-image-text">
+                <div class="bw-hotel-type">
+                  BEST WESTERN PREMIER
+                </div>
+                <div class="bw-name-currency">
+                  <p class="bw-hotel-name">
+                  Hariston Square
+                  </p>
+                  <span class="bw-hotel-currency">USD</span>
+                </div>
+                <div class="bw-miles-price">
+                  <span class= "bw-hotel-miles">
+                  9.1mi / 11.4km
+                  </span>
+                  <span class="bw-hotel-price">$94.99</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 bw-image-bg image-list-img image-list-img-bw1 ratio ratio--16-9">
+              <div class="bw-image-text">
+                <div class="bw-hotel-type">
+                  BEST WESTERN
+                </div>
+                <div class="bw-name-currency">
+                  <p class="bw-hotel-name">
+                  Best Western Suites
+                  </p>
+                  <span class="bw-hotel-currency">USD</span>
+                </div>
+                <div class="bw-miles-price">
+                  <span class= "bw-hotel-miles">
+                  5.1mi / 9.4km
+                  </span>
+                  <span class="bw-hotel-price">$98.99</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 bw-image-bg image-list-img image-list-img-bw3 ratio ratio--16-9">
+              <div class="bw-image-text">
+                <div class="bw-hotel-type">
+                  BEST WESTERN
+                </div>
+                <div class="bw-name-currency">
+                  <p class="bw-hotel-name">
+                  Albany Airport Inn
+                  </p>
+                  <span class="bw-hotel-currency">USD</span>
+                </div>
+                <div class="bw-miles-price">
+                  <span class= "bw-hotel-miles">
+                  5.1mi / 9.4km
+                  </span>
+                  <span class="bw-hotel-price">$98.99</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 bw-image-bg image-list-img image-list-img-bw4 ratio ratio--16-9">
+              <div class="bw-image-text">
+                <div class="bw-hotel-type">
+                  BEST WESTERN
+                </div>
+                <div class="bw-name-currency">
+                  <p class="bw-hotel-name">
+                  Franklin Square Inn
+                  </p>
+                  <span class="bw-hotel-currency">USD</span>
+                </div>
+                <div class="bw-miles-price">
+                  <span class= "bw-hotel-miles">
+                  5.1mi / 9.4km
+                  </span>
+                  <span class="bw-hotel-price">$107.99</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 bw-image-bg image-list-img image-list-img-bw5 ratio ratio--16-9">
+              <div class="bw-image-text">
+                <div class="bw-hotel-type">
+                  BEST WESTERN PLUS
+                </div>
+                <div class="bw-name-currency">
+                  <p class="bw-hotel-name">
+                  Clifton Park
+                  </p>
+                  <span class="bw-hotel-currency">USD</span>
+                </div>
+                <div class="bw-miles-price">
+                  <span class= "bw-hotel-miles">
+                  7.4mi / 13.4km
+                  </span>
+                  <span class="bw-hotel-price">$101.99</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 bw-image-bg image-list-img image-list-img-bw6 ratio ratio--16-9">
+              <div class="bw-image-text">
+                <div class="bw-hotel-type">
+                  BEST WESTERN
+                </div>
+                <div class="bw-name-currency">
+                  <p class="bw-hotel-name">
+                  Park Inn
+                  </p>
+                  <span class="bw-hotel-currency">USD</span>
+                </div>
+                <div class="bw-miles-price">
+                  <span class= "bw-hotel-miles">
+                  6.3mi / 11.5km
+                  </span>
+                  <span class="bw-hotel-price">$89.99</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 bw-image-bg image-list-img image-list-img-bw1 ratio ratio--16-9">
+              <div class="bw-image-text">
+                <div class="bw-hotel-type">
+                  BEST WESTERN PREMIER
+                </div>
+                <div class="bw-name-currency">
+                  <p class="bw-hotel-name">
+                  Hariston Square
+                  </p>
+                  <span class="bw-hotel-currency">USD</span>
+                </div>
+                <div class="bw-miles-price">
+                  <span class= "bw-hotel-miles">
+                  9.1mi / 11.4km
+                  </span>
+                  <span class="bw-hotel-price">$94.99</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 bw-image-bg image-list-img image-list-img-bw3 ratio ratio--16-9">
+              <div class="bw-image-text">
+                <div class="bw-hotel-type">
+                  BEST WESTERN
+                </div>
+                <div class="bw-name-currency">
+                  <p class="bw-hotel-name">
+                  Best Western Suites
+                  </p>
+                  <span class="bw-hotel-currency">USD</span>
+                </div>
+                <div class="bw-miles-price">
+                  <span class= "bw-hotel-miles">
+                  5.1mi / 9.4km
+                  </span>
+                  <span class="bw-hotel-price">$98.99</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyB-45CSiwx_TrwsIQ7oWY-7UpKGTgNs4xA"></script>
+    <script src="../scripts/jquery.js"></script>
+    <script src="../scripts/jquery.mobile.custom.js"></script>
+    <script src="../scripts/bootstrap-popover-x.js"></script>
+    <script src="../scripts/hammer.js"></script>
+    <script src="../scripts/jquery-hammer.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/module-map.js"></script>
+    <script src="../scripts/moment-with-locales.min.js"></script>
+    <script src="../scripts/module-calendar.js"></script>
+    <script src="../scripts/reserve-room.js"></script>
+    <script src="../scripts/compare-hotels.js"></script>
+    <script src="../scripts/jquery.mobile.custom.js"></script>
+    <script src="../scripts/hotel-details.js"></script>
+  </body>
+</html>

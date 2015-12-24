@@ -1,0 +1,139 @@
+body {
+  font-size: 1em;
+}
+a {
+  color: inherit;
+  cursor: pointer;
+}
+.countdown-points{
+font-weight: @font-light;
+  font-size: unit(36 / @base-font-size, em);
+  
+  @media (min-width: @desktopMin) {
+    font-size: unit(50 / @base-font-size, em);
+  }
+}
+.eyebrow-header {
+  font-weight: @font-bold;
+  font-size: unit(11 / @base-font-size, em);
+  
+  @media (min-width: @desktopMin) {
+    font-size: unit(13 / @base-font-size, em);
+  }
+}
+.tile-title-1 {
+  font-size: unit(17 / @base-font-size, em);
+  font-weight: @font-light;
+  
+  @media (min-width: @desktopMin) {
+    font-size: unit(22 / @base-font-size, em);
+  }
+}
+.total-points{
+	font-weight: @font-light;
+	font-size: unit(50 / @base-font-size, em);
+	@media (min-width: @desktopMin) {
+    font-size: unit(100 / @base-font-size, em);
+  }
+}
+.subsection-title {
+  font-weight: @font-light;
+  font-size: unit(22 / @base-font-size, em);
+  
+  @media (min-width: @desktopMin) {
+    font-size: unit(29 / @base-font-size, em);
+  }
+}
+.large-promo {
+  font-weight: @font-light;
+  font-size: unit(29 / @base-font-size, em);
+  
+  @media (min-width: @desktopMin) {
+	font-size: unit(40 / @base-font-size, em);
+  }
+}
+.link {
+  font-size: unit(13/@base-font-size, em);
+  font-weight: @font-bold;
+}
+
+.little-label {
+  font-size: unit(11/@base-font-size, em);
+  font-weight: @font-regular;
+  
+  @media (min-width: @desktopMin) {
+    font-size: unit(13/@base-font-size, em);
+  }
+}
+.legal {
+  font-weight: @font-regular;
+  font-size: unit(13 / @base-font-size, em);
+  
+  @media (min-width: @desktopMin) {
+    font-size: unit(15 / @base-font-size, em);
+  }
+}
+.hero-title {
+  font-size: 50px;
+}
+
+.section-title {
+  font-size: 22px;
+}
+
+.big-title {
+  font-size: 29px;
+}
+
+.large-tile-title {
+  font-size: unit(20 / @base-font-size, em);
+  font-weight: @font-bold;
+  
+  @media (min-width: @desktopMin) {
+    font-size: unit(28 / @base-font-size, em);
+  }
+}
+
+.body-title,
+.body-subtitle,
+.body-link {
+  font-size: 15px;
+}
+
+.hero-title,
+.section-title,
+.tile-title,
+.big-title {
+  font-weight: @font-light;
+}
+
+a,
+.link,
+.body-subtitle,
+.eyebrow-header,
+.tile-title--bold {
+  font-weight: @font-bold;
+}
+
+.text-faded {
+  color: @bw-medium-gray;
+}
+.text-faded--light {
+  color: @bw-light-gray;
+}
+.text-faded--dark {
+  color: @bw-dark-gray;
+}
+.text-primary--light {
+  color: @bw-light-blue;
+}
+
+@media (min-width: @desktopMin) {
+  .link {
+    font-size: unit(15/@base-font-size, em);
+  }
+}
+
+.disclaimer:extend(.little-label all) {
+  color: @bw-dark-gray;
+}

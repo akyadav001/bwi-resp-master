@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="76" height="76" viewBox="0 0 76 76">
+  <defs>
+    <style>
+
+      .cls-3 {
+        fill: #ffffff;
+        stroke: #16a850;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+
+      .cls-4 {
+        fill: #ffffff;
+        filter: url(#color-overlay-1);
+      }
+
+      .cls-5 {
+        font-size: 83.237px;
+      }
+
+      .cls-6 {
+        fill: #ffffff;
+        text-anchor: middle;
+        font-size: 83.237px;
+        font-family: "Proxima Nova";
+      }
+    </style>
+
+    <filter id="color-overlay-1" filterUnits="userSpaceOnUse">
+      <feFlood flood-color="#16a850" flood-opacity="1"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+      <feBlend mode="normal" in2="SourceGraphic" result="colorOverlay"/>
+    </filter>
+  </defs>
+  <g id="rating2-selectedsvg">
+    <path d="M37.724,1.000 C58.007,1.000 74.450,17.361 74.450,37.544 C74.450,57.726 58.007,74.087 37.724,74.087 C17.440,74.087 0.997,57.726 0.997,37.544 C0.997,17.361 17.440,1.000 37.724,1.000 Z" id="path-1" class="cls-3" fill-rule="evenodd"/>
+    <circle id="circle-1" class="cls-4" cx="37" cy="38" r="24"/>
+    <text class="cls-5" transform="translate(18 50) scale(0.5 0.5)"><tspan x="37px" class="cls-6">2</tspan></text>
+  </g>
+</svg>

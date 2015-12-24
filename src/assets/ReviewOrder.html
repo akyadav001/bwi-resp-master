@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Review Reward Order</title>
+  <link rel="stylesheet" href="../styles/bootstrap.css">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+  <header class="site-header">
+    @@include('./BaseHeader.html')
+  </header>
+  <!-- Content -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="page-label">Rewards Order</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <h2 class="special-offers-heading">Reward Details</h2>
+        <p class="offer-item-desc">FREE NIGHT VOUCHER 12,000 POINTS</p>
+        <p>12,000 points <span class="pull-right">x1</span></p>
+        <p class="offer-item-total">Total <span class="pull-right">12,000 points</span></p>
+      </div>
+    </div>
+    <form>
+      <div class="row">
+        <div class="col-xs-12">
+          <h2 class="special-offers-heading">Delivery</h2>
+          <p>Delivery method:<span class="pull-right">Ship</span></p>
+          <div class="row box-card">
+            <div class="col-sm-6 col-md-4">
+              <div class="box">
+                <div class="box-content">
+                  <input class="pull-right" type="radio" name="address">
+                  <div class="address-title">Home (Default)
+                  </div>
+                  <div class="address-name">
+                    &nbsp;
+                  </div>
+                  <div class="street">
+                    100 Main St.
+                  </div>
+                  <div class="city">
+                    Woods Hold, MA 02543
+                  </div>
+                  <div class="country">
+                    United States
+                  </div>
+                </div>
+                <button type="button" class="bw-btn bw-btn-lighter-blue">
+                EDIT
+                </button>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <div class="box">
+                <div class="box-content">
+                  <input class="pull-right" type="radio" name="address">
+                  <div class="address-title">Business
+                  </div>
+                  <div class="address-name">
+                    My Company Name
+                  </div>
+                  <div class="street">
+                    100 Main St.
+                  </div>
+                  <div class="city">
+                    Woods Hold, MA 02543
+                  </div>
+                  <div class="country">
+                    United States
+                  </div>
+                </div>
+                <button type="button" class="bw-btn bw-btn-lighter-blue">
+                EDIT
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row ribbon full-width-buttons">
+        <div class="col-sm-12 form-group">
+          <input type="checkbox" class="check_box" id="terms"><label for="terms">I agree to the <a href="#">terms and conditions.</a></label>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <button class="btn bw-btn-accept" type="button">GET REWARD</button>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <button class="btn bw-btn-cancel" type="button">CANCEL</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="row copyright-disclaimer">
+      <div class="col-xs-12">
+        <p>Each Best Western&reg; branded hotel is independently owned and operated.<br>
+          &copy; 2002-2015 Best Western International, Inc. All rights reserved.
+        </p>
+        <p>&copy; 2015 TripAdvisor LLC. All rights reserved</p>
+        <p><sup>&dagger;</sup>Numbers are approximate and can fluctuate.</p>
+      </div>
+    </div>
+  </div>
+  <script src="../scripts/jquery.js"></script>
+  <script src="../scripts/bootstrap.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/navigation.js"></script>
+</body>
+</html>

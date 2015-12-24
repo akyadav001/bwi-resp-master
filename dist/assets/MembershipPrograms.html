@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Membership Programs</title>
+  <link rel="stylesheet" href="../styles/bootstrap.css">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body data-view="membership-program-view">
+  <header class="site-header">
+    <nav class="bw-navbar navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="nav-left">
+      <a href="findahotel.html"><span class="bw-icon bw-icon-logo"></span></a>
+    </div>
+    <div class="nav-left">
+      <button type="button" class="burger" id="menu-burger">
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      </button>
+    </div>
+    <div class="nav-right icon hidden" data-toggle="modal" data-target="#bw-login">
+      <a href="#" class="svg">
+        <object type="image/svg+xml" data="icons/svg/global-fav-inactive.svg"></object>
+      </a>
+    </div>
+    <div class="nav-right icon hidden">
+      <a href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4b3318882e3274bf" class="svg">
+      <object type="image/svg+xml" data="icons/svg/global-share.svg"></object>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div id="left-menu" class="hide-me">
+  <div id="menu-overlay">
+    <button type="button" id="menu-close-button">&times;</button>
+  </div>
+  <div id="menu-list">
+    <div id="menu-user" class="menu-logged-in hidden">
+      <div id="menu-user-profile" class="user-profile">
+        <img src="icons/profile.png">
+        <h1>Hello, Catherine!</h1>
+        <p>#600563-1234-456-892</p>
+      </div>
+      <a href="#" id="upcoming-reservation">
+        <h2>View Upcoming Reservation</h2>
+        <p>Columbus, OH</p>
+      </a>
+    </div>
+    <div id="login-button">
+      <!-- <button type="button">REWARDS LOGIN</button> -->
+      <a href="Login.html" class="bw-btn">REWARDS LOGIN</a>
+    </div>
+    <div id="main-menu" class="menu-items">
+      <a href="#" class="account-menu-forward hidden">My Account<span class="glyphicon glyphicon-chevron-right"></span></a>
+      <a href="Home.html">Home</a>
+      <a href="FindAHotel.html">Find a Hotel</a>
+      <a href="CheckReservation.html">Check Reservations</a>
+      <a href="#" class="rewards-menu-forward">Rewards<span class="glyphicon glyphicon-chevron-right"></span></a>
+      <a href="#" >Customer Care</a>
+      <a href="#" class="settings-menu-forward">Settings<span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+    <div id="rewards-menu" class="menu-items hide-me">
+      <a href="#" class="main-menu-back"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Main Menu</a>
+      <h4>Rewards</h4>
+      <a href="RewardsLandingPage.html" >Learn About Rewards</a>
+      <a href="JoinRewards.html" >Join</a>
+      <a href="EarnRewards.html" >Earn</a>
+      <a href="Redeem.html" >Redeem</a>
+    </div>
+    <div id="settings-menu" class="menu-items hide-me">
+      <a href="#" class="main-menu-back"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Main Menu</a>
+      <h4>Settings</h4>
+      <a href="#" class="opens-modal" data-toggle="modal" data-target="#bw-language-modal">Language</a>
+      <a href="#" class="opens-modal" data-toggle="modal" data-target="#bw-currency-modal">Currency</a>
+    </div>
+    <div id="account-menu" class="menu-items hide-me hidden">
+      <a href="#" class="main-menu-back"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Main Menu</a>
+      <h4>My Account</h4>
+      <a href="Dashboard.html" >Dashboard</a>
+      <a href="Preferences.html" >Profile &amp; Preferences</a>
+      <a href="MyRewards.html" >Rewards Activity</a>
+      <a href="Favorites.html" >Favorites</a>
+      <a href="#" >Rewards Service Center</a>
+      <a id="logout" href="#" >Logout</a>
+    </div>
+  </div>
+
+</div>
+<div id="blur" class="invisible"></div>
+<div class="modal" id="bw-currency-modal">
+  <div class="modal-dialog modal-static">
+    <div class="bw-modal-content">
+      <div class="bw-modal-header">
+        CURRENCY
+      </div>
+      <div class="modal-body">
+        <div class="bw-currency">
+          <div class="row">
+            <div class="col-xs-12 currency-item currency-search">
+              <span class="bw-icon bw-icon-search"></span>
+              <input type="text"/>
+            </div>
+            <div class="col-xs-12 currency-item">
+              US Dollars
+            </div>
+            <div class="col-xs-12 currency-item">
+              Euro
+            </div>
+            <div class="col-xs-12 bw-currency-header">
+              OTHER CURRENCIES
+            </div>
+            <div class="col-xs-12 currency-item">
+              Albanian Yek
+            </div>
+            <div class="col-xs-12 currency-item">
+              Algerian Dinar
+            </div>
+            <div class="col-xs-12 currency-item">
+              Argentinian Pesos
+            </div>
+            <div class="col-xs-12 currency-item">
+              Armenian Dram
+            </div>
+            <div class="col-xs-12 currency-item">
+              Arubin Florin
+            </div>
+            <div class="col-xs-12 currency-item">
+              Australia Dollars
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer bw-modal-footer">
+        <div class="row">
+          <div class="col-xs-6">
+            <button class="btn bw-btn-cancel closes-modal-from-nav" data-dismiss="modal">CANCEL</button>
+          </div>
+          <div class="col-xs-6">
+            <button class="btn bw-btn-accept closes-modal-from-nav">DONE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="bw-language-modal">
+  <div class="modal-dialog modal-static">
+    <div class="bw-modal-content">
+      <div class="bw-modal-header">
+        LANGUAGE
+      </div>
+      <div class="modal-body">
+        <div class="bw-language">
+          <div class="row">
+            <div class="col-xs-12 language-item">
+              English
+            </div>
+            <div class="col-xs-12 language-item">
+              Spanish
+            </div>
+            <div class="col-xs-12 language-item">
+              French
+            </div>
+            <div class="col-xs-12 language-item">
+              Italian
+            </div>
+            <div class="col-xs-12 language-item">
+              German
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer bw-modal-footer"  tabindex="0">
+        <div class="row">
+          <div class="col-xs-6">
+            <button class="btn bw-btn-cancel closes-modal-from-nav" data-dismiss="modal">CANCEL</button>
+          </div>
+          <div class="col-xs-6">
+            <button class="btn bw-btn-accept closes-modal-from-nav">DONE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4b3318882e3274bf" tabindex="1000"></script>
+  </header>
+  <div class="container-fluid membership-program-view">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="page-label">Membership Programs</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <h2 class="big-title">Customize Your Membership</h2>
+        <p class="text-faded">As a Best Western Rewards Member, you can add special rewards programs from our partners to your account.</p>
+        <ul class="list--no-bullets list--with-separators accordion-list">
+          <li class="row" id="topic-1-container">
+            <div class="col-xs-12">
+              <div class="accordion-item bw-accordion collapsed" data-toggle="collapse" data-target="#topic-1" data-active="#topic-1-container">
+                <div class="accordion-item-image">
+                  <img class="graphic graphic--backdrop img-responsive" src="../images/aaa.svg" alt="membership program logo">
+                </div>
+                <h3 class="section-title">AAA Program</h3>
+                <span class="pull-right glyphicon glyphicon-menu-up"></span>
+              </div>
+              <div class="collapse" id="topic-1">
+                <p>The AAA program includes all Best Western Rewards Program benefits* based on membership level. In addition you'll receive:</p>
+                <ul>
+                  <li>A discount of 10% or more on room rates at Best Western hotels with the AAA member discount.</li>
+                  <li>An automatic upgrade to Gold Elite status as an AAA program member.</li>
+                </ul>
+                <p class="text-center"><a class="body-link" href="#">LEARN MORE</a></p>
+                <button type="button" class="bw-btn bw-btn-primary">Add Program to Profile</button>
+                <div class="gray-break"></div>
+                <p class="small">* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac augue aliquet, tempus lectus eget, elementum odio. Sed lorem felis, dapibus a dolor vitae, laoreet ultrices odio. Duis non luctus nunc. Sed justo diam, rhoncus vitae euismod at, iaculis sed ante. Praesent sit amet lacus sit amet nulla mattis auctor. Donec sit amet porttitor massa. Sed efficitur sollicitudin libero quis auctor. Morbi et magna vitae tortor molestie malesuada. Fusce arcu eros, luctus eget gravida nec, sodales at nunc. Phasellus in sodales ligula. Morbi a bibendum neque. Pellentesque fringilla, neque et placerat ultricies, odio mauris mollis metus, vitae pulvinar leo ipsum ut dolor. Curabitur quis tempus metus. Mauris est magna, convallis non tellus id, pharetra molestie ipsum. Nam vel lacus sit amet nibh consectetur maximus quis ut felis.</p>
+                <div class="text-center" data-toggle="collapse" data-target="#topic-1">
+                  <span class="text">HIDE DETAILS <span class="glyphicon glyphicon-chevron-up"></span></span>
+                </div>
+              </div>
+              </div>
+          </li>
+          <li class="row" id="topic-2-container">
+            <div class="col-xs-12">
+              <div class="accordion-item bw-accordion collapsed" data-toggle="collapse" data-target="#topic-2" data-active="#topic-2-container">
+                <div class="accordion-item-image">
+                  <img class="graphic graphic--backdrop img-responsive" src="../images/aarp.png" alt="membership program logo">
+                </div>
+                <h3 class="section-title">AARP Program</h3>
+                <span class="pull-right glyphicon glyphicon-menu-up"></span>
+              </div>
+              <div class="collapse" id="topic-2">
+                <p>The AARP program includes all Best Western Rewards Program benefits* based on membership level. In addition you'll receive:</p>
+                <ul>
+                  <li>A discount of 10% or more on room rates at Best Western hotels with the AARP member discount.</li>
+                  <li>An automatic upgrade to Gold Elite status as an AARP program member.</li>
+                </ul>
+                <p class="text-center"><a class="body-link" href="#">LEARN MORE</a></p>
+                <button type="button" class="bw-btn bw-btn-primary">Add Program to Profile</button>
+                <div class="gray-break"></div>
+                <p class="small">* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac augue aliquet, tempus lectus eget, elementum odio. Sed lorem felis, dapibus a dolor vitae, laoreet ultrices odio. Duis non luctus nunc. Sed justo diam, rhoncus vitae euismod at, iaculis sed ante. Praesent sit amet lacus sit amet nulla mattis auctor. Donec sit amet porttitor massa. Sed efficitur sollicitudin libero quis auctor. Morbi et magna vitae tortor molestie malesuada. Fusce arcu eros, luctus eget gravida nec, sodales at nunc. Phasellus in sodales ligula. Morbi a bibendum neque. Pellentesque fringilla, neque et placerat ultricies, odio mauris mollis metus, vitae pulvinar leo ipsum ut dolor. Curabitur quis tempus metus. Mauris est magna, convallis non tellus id, pharetra molestie ipsum. Nam vel lacus sit amet nibh consectetur maximus quis ut felis.</p>
+                <div class="text-center" data-toggle="collapse" data-target="#topic-2">
+                  <span class="text">HIDE DETAILS <span class="glyphicon glyphicon-chevron-up"></span></span>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="row" id="topic-3-container">
+            <div class="col-xs-12">
+              <div class="accordion-item bw-accordion collapsed" data-toggle="collapse" data-target="#topic-3" data-active="#topic-3-container">
+                <div class="accordion-item-image">
+                  <img class="graphic graphic--backdrop img-responsive" src="../images/caa.svg" alt="membership program logo">
+                </div>
+                <h3 class="section-title">CAA Program</h3>
+                <span class="pull-right glyphicon glyphicon-menu-up"></span>
+              </div>
+              <div class="collapse" id="topic-3">
+                <p>The CAA program includes all Best Western Rewards Program benefits* based on membership level. In addition you'll receive:</p>
+                <ul>
+                  <li>A discount of 10% or more on room rates at Best Western hotels with the CAA member discount.</li>
+                  <li>An automatic upgrade to Gold Elite status as an CAA program member.</li>
+                </ul>
+                <p class="text-center"><a class="body-link" href="#">LEARN MORE</a></p>
+                <button type="button" class="bw-btn bw-btn-primary">Add Program to Profile</button>
+                <div class="gray-break"></div>
+                <p class="small">* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac augue aliquet, tempus lectus eget, elementum odio. Sed lorem felis, dapibus a dolor vitae, laoreet ultrices odio. Duis non luctus nunc. Sed justo diam, rhoncus vitae euismod at, iaculis sed ante. Praesent sit amet lacus sit amet nulla mattis auctor. Donec sit amet porttitor massa. Sed efficitur sollicitudin libero quis auctor. Morbi et magna vitae tortor molestie malesuada. Fusce arcu eros, luctus eget gravida nec, sodales at nunc. Phasellus in sodales ligula. Morbi a bibendum neque. Pellentesque fringilla, neque et placerat ultricies, odio mauris mollis metus, vitae pulvinar leo ipsum ut dolor. Curabitur quis tempus metus. Mauris est magna, convallis non tellus id, pharetra molestie ipsum. Nam vel lacus sit amet nibh consectetur maximus quis ut felis.</p>
+                <div class="text-center" data-toggle="collapse" data-target="#topic-3">
+                  <span class="text">HIDE DETAILS <span class="glyphicon glyphicon-chevron-up"></span></span>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="row" id="topic-4-container">
+            <div class="col-xs-12">
+              <div class="accordion-item bw-accordion collapsed" data-toggle="collapse" data-target="#topic-4" data-active="#topic-4-container">
+                <div class="accordion-item-image">
+                  <img class="graphic graphic--backdrop img-responsive" src="../images/Harley-Davidson.svg" alt="membership program logo">
+                </div>
+                <h3 class="section-title">Ride Program</h3>
+                <span class="pull-right glyphicon glyphicon-menu-up"></span>
+              </div>
+              <div class="collapse" id="topic-4">
+                <p>The Ride program includes all Best Western Rewards Program benefits* based on membership level. In addition you'll receive:</p>
+                <ul>
+                  <li>A discount of 10% or more on room rates at Best Western hotels with the Ride member discount.</li>
+                  <li>An automatic upgrade to Gold Elite status as an Ride program member.</li>
+                </ul>
+                <p class="text-center"><a class="body-link" href="#">LEARN MORE</a></p>
+                <button type="button" class="bw-btn bw-btn-primary">Add Program to Profile</button>
+                <div class="gray-break"></div>
+                <p class="small">* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac augue aliquet, tempus lectus eget, elementum odio. Sed lorem felis, dapibus a dolor vitae, laoreet ultrices odio. Duis non luctus nunc. Sed justo diam, rhoncus vitae euismod at, iaculis sed ante. Praesent sit amet lacus sit amet nulla mattis auctor. Donec sit amet porttitor massa. Sed efficitur sollicitudin libero quis auctor. Morbi et magna vitae tortor molestie malesuada. Fusce arcu eros, luctus eget gravida nec, sodales at nunc. Phasellus in sodales ligula. Morbi a bibendum neque. Pellentesque fringilla, neque et placerat ultricies, odio mauris mollis metus, vitae pulvinar leo ipsum ut dolor. Curabitur quis tempus metus. Mauris est magna, convallis non tellus id, pharetra molestie ipsum. Nam vel lacus sit amet nibh consectetur maximus quis ut felis.</p>
+                <div class="text-center" data-toggle="collapse" data-target="#topic-4">
+                  <span class="text">HIDE DETAILS <span class="glyphicon glyphicon-chevron-up"></span></span>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="row" id="topic-5-container">
+            <div class="col-xs-12">
+              <div class="accordion-item bw-accordion collapsed" data-toggle="collapse" data-target="#topic-5" data-active="#topic-5-container">
+                <div class="accordion-item-image">
+                  <img class="graphic graphic--backdrop img-responsive" src="../images/armed-forces.svg" alt="membership program logo">
+                </div>
+                <h3 class="section-title">Service Program</h3>
+                <span class="pull-right glyphicon glyphicon-menu-up"></span>
+              </div>
+              <div class="collapse" id="topic-5">
+                <p>The Service program includes all Best Western Rewards Program benefits* based on membership level. In addition you'll receive:</p>
+                <ul>
+                  <li>A discount of 10% or more on room rates at Best Western hotels with the Service member discount.</li>
+                  <li>An automatic upgrade to Gold Elite status as an Service program member.</li>
+                </ul>
+                <p class="text-center"><a class="body-link" href="#">LEARN MORE</a></p>
+                <button type="button" class="bw-btn bw-btn-primary">Add Program to Profile</button>
+                <div class="gray-break"></div>
+                <p class="small">* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac augue aliquet, tempus lectus eget, elementum odio. Sed lorem felis, dapibus a dolor vitae, laoreet ultrices odio. Duis non luctus nunc. Sed justo diam, rhoncus vitae euismod at, iaculis sed ante. Praesent sit amet lacus sit amet nulla mattis auctor. Donec sit amet porttitor massa. Sed efficitur sollicitudin libero quis auctor. Morbi et magna vitae tortor molestie malesuada. Fusce arcu eros, luctus eget gravida nec, sodales at nunc. Phasellus in sodales ligula. Morbi a bibendum neque. Pellentesque fringilla, neque et placerat ultricies, odio mauris mollis metus, vitae pulvinar leo ipsum ut dolor. Curabitur quis tempus metus. Mauris est magna, convallis non tellus id, pharetra molestie ipsum. Nam vel lacus sit amet nibh consectetur maximus quis ut felis.</p>
+                <div class="text-center" data-toggle="collapse" data-target="#topic-5">
+                  <span class="text">HIDE DETAILS <span class="glyphicon glyphicon-chevron-up"></span></span>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="row" id="topic-6-container">
+            <div class="col-xs-12">
+              <div class="accordion-item bw-accordion collapsed" data-toggle="collapse" data-target="#topic-6" data-active="#topic-6-container">
+                <div class="accordion-item-image">
+                  <img class="graphic graphic--backdrop img-responsive" src="../images/sm-business.svg" alt="membership program logo">
+                </div>
+                <h3 class="section-title">Small Business Program</h3>
+                <span class="pull-right glyphicon glyphicon-menu-up"></span>
+              </div>
+              <div class="collapse" id="topic-6">
+                <p>The Small Business program includes all Best Western Rewards Program benefits* based on membership level. In addition you'll receive:</p>
+                <ul>
+                  <li>A discount of 10% or more on room rates at Best Western hotels with the Small Business member discount.</li>
+                  <li>An automatic upgrade to Gold Elite status as an Small Business program member.</li>
+                </ul>
+                <p class="text-center"><a class="body-link" href="#">LEARN MORE</a></p>
+                <button type="button" class="bw-btn bw-btn-primary">Add Program to Profile</button>
+                <div class="gray-break"></div>
+                <p class="small">* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac augue aliquet, tempus lectus eget, elementum odio. Sed lorem felis, dapibus a dolor vitae, laoreet ultrices odio. Duis non luctus nunc. Sed justo diam, rhoncus vitae euismod at, iaculis sed ante. Praesent sit amet lacus sit amet nulla mattis auctor. Donec sit amet porttitor massa. Sed efficitur sollicitudin libero quis auctor. Morbi et magna vitae tortor molestie malesuada. Fusce arcu eros, luctus eget gravida nec, sodales at nunc. Phasellus in sodales ligula. Morbi a bibendum neque. Pellentesque fringilla, neque et placerat ultricies, odio mauris mollis metus, vitae pulvinar leo ipsum ut dolor. Curabitur quis tempus metus. Mauris est magna, convallis non tellus id, pharetra molestie ipsum. Nam vel lacus sit amet nibh consectetur maximus quis ut felis.</p>
+                <div class="text-center" data-toggle="collapse" data-target="#topic-6">
+                  <span class="text">HIDE DETAILS <span class="glyphicon glyphicon-chevron-up"></span></span>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row copyright-disclaimer">
+      <div class="col-xs-12">
+        <p>Each Best Western&reg; branded hotel is independently owned and operated.<br>
+          &copy; 2002-2015 Best Western International, Inc. All rights reserved.
+        </p>
+        <p>&copy; 2015 TripAdvisor LLC. All rights reserved</p>
+        <p><sup>&dagger;</sup>Numbers are approximate and can fluctuate</p>
+      </div>
+    </div>
+  </div>
+  <!-- end container-fluid -->
+  <script src="../scripts/jquery.js"></script>
+  <script src="../scripts/bootstrap.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/navigation.js"></script>
+  <script src="../scripts/preferences.js"></script>
+</body>
+</html>

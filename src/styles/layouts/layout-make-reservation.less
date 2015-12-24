@@ -1,0 +1,747 @@
+.best-value-info {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  float: right;
+  cursor: pointer;
+svg {
+  width: 100%;
+  height: 100%;
+  }
+}
+
+#content .bw-icon, 
+#content object {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+#hotel-info {
+  background-color: @bw-light-gray;
+  position: relative;
+  padding: 10px 0;
+
+  .card-name {
+    padding: 10px 0;
+    border-bottom: 1px solid @bw-medium-gray;
+  }
+  .currency {
+    text-transform: uppercase;
+    font-weight: @font-light;
+    padding: 10px 0;
+  }
+  .price {
+    float: right;
+    font-size: 18px;
+    font-weight: @font-bold;
+  }
+}
+//TODO: Split out the font-sizing from the element styling.
+.page-label {
+  .section-title;
+  border-bottom: 1px solid @bw-light-blue;
+  color: @bw-light-blue;
+  margin-bottom: 40px;
+}
+#check-in-out {
+
+  #check-in-out-boxes {
+    width: 100%;
+    #check-in-box, 
+    #check-out-box {
+      background-color: @bw-light-gray;
+    }
+    #nights-box {
+      background-color: @bw-light-blue;
+      color: #FFFFFF;
+      text-align: center;
+      #nights-number {
+        font-size: 25px;
+        font-weight: @font-bold;
+      }
+    }
+    label {
+      font-weight: @font-bold;
+      display: block;
+    }
+  }
+  table, th, td {
+  border: 1px solid @bw-light-blue;
+  border-collapse: collapse;
+  }
+  th,td {
+      padding: 15px;
+  }
+}
+
+#rooms {
+  position: relative;
+
+  #rooms-guests {
+    position: absolute;
+    top: 35px;
+    right: 15px;
+    font-weight: @font-bold;
+  }
+
+  .room-box {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+    width: 100%;
+    border: 1px solid @bw-lighter-blue;
+    .room-box-header {
+      background-color: @primary-color;
+      color: #FFFFFF;
+      padding: 15px;
+      .room-box-type {
+        font-size: 22px;
+        font-weight: @font-light;
+        .room-box-guests {
+          font-size: 13px;
+        }
+      }
+      a.svg {
+        position: relative;
+        float: right;
+        svg {
+          width: 14px;
+          height: 14px;
+        }
+      }
+      a.svg:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+      }
+    }
+    .room-box-body {
+      padding: 10px 15px;
+      .cancellation-policy {
+        margin-top: 10px;
+        .cancel-label {
+          font-weight: @font-bold;
+        }
+      }
+      .room-details {
+        position: relative;
+        .room-icon-bar {
+          display: inline-block;
+          svg {
+            width: 25px;
+            height: 25px;
+          }
+        }
+        .details-dropdown {
+          position: absolute;
+          padding: 20px 0 0;
+          cursor: pointer;
+          right: 0;
+          top: 0;
+        }
+
+        .room-amenities {
+          font-weight: @font-light;
+          min-height: 100px;
+          padding: 10px;
+          position: relative;
+          border: 0;
+
+          > div {
+            height: auto;
+          }
+
+          & h3 {
+             color: @bw-dark-blue;
+             font-weight: @font-bold;
+             margin-bottom: 0;
+          }
+          @media screen and (min-width: @screen-sm-min) {
+             overflow: hidden;
+             & > div {
+                overflow-y: auto;
+                & h3:first-child {
+                   margin: 0;
+                }
+             }
+          }
+          ul {
+             list-style-position: inside;
+             padding-left: 0;
+             li {
+                font-weight: @font-light;
+             }
+          }
+        }
+      }
+      .best-value {
+        background-color: @bw-light-gray;
+        color: @primary-color;
+        clear: both;
+        > div {
+          padding-top: 15px;
+          padding-bottom: 15px;
+          font-weight: @font-bold;
+        }
+      }
+      .rates {
+        color: @bw-dark-gray;
+        padding: 15px 0;
+        .rates-header {
+          font-weight: @font-bold;
+          margin-bottom: 10px;
+        }
+        .rates-row {
+          .daily-rate {
+            text-align: right;
+            .rates-x {
+              font-weight: @font-bold;
+              margin-right: 10px;
+            }
+          }
+          &:last-child {
+            margin-top: 10px;
+          }
+        }
+      }
+      .subtotal {
+        position: relative;
+        border-top: 1px solid @bw-lighter-blue;
+        padding: 10px 0;
+        .empty-div {
+          height: 35px;
+        }
+        .subtotal-currency {
+          position: absolute;
+          top: 10px;
+          right: 0;
+          text-transform: uppercase;
+        }
+        .subtotal-price {
+          position: absolute;
+          top: 25px;
+          right: 0;
+          font-size: 18px;
+          font-weight: @font-bold;
+        }
+      }
+    }
+    .room-box-taxes {
+      .taxes-header {
+        position: relative;
+        cursor: pointer;
+        padding: 10px 15px;
+        background-color: @bw-lighter-blue;
+        font-weight: @font-bold;
+        .bw-icon {
+          width: 15px;
+          height: 15px;
+          position: absolute;
+          top: 15px;
+          right: 15px;
+        }
+      }
+      .taxes-expandables {
+        padding: 15px;
+        color: @bw-medium-gray;
+        h4 {
+          font-weight: @font-bold;
+          font-size: 13px;
+          margin: 0;
+        }
+        p {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+
+#reservation-amount, 
+#billing-reservation-amount {
+  position: relative;
+  color: @bw-dark-gray;
+  #totals-and-taxes {
+    position: relative;
+    padding-bottom: 20px;
+    border-bottom: 1px solid @bw-lighter-blue;
+  }
+  #final-totals {
+    position: relative;
+    padding: 20px 0;
+    height: 100px;
+    .currency {
+      font-size: 13px;
+      position: absolute;
+      left: 0;
+      top: 25px;
+    }
+    .amount {
+      font-size: 25px;
+      font-weight: @font-bold;
+    }
+    a {
+      position: absolute;
+      right: 0;
+      top: 60px;
+      color: @bw-dark-gray;
+      text-decoration: underline;
+      font-size: 13px;
+    }
+  }
+  .amount {
+    position: absolute;
+    right: 0;
+  }
+}
+
+#billing-reservation-amount {
+  background-color: @bw-light-gray;
+  color: @primary-color;
+  #totals-and-taxes {
+    border-color: @bw-medium-gray;
+  }
+}
+
+//Billing.html styles
+
+#guest-information, 
+#billing-information {
+  h4 {
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+}
+.with-float-labels {
+  .form-group {
+    position: relative;
+    [class^="col-"], 
+    [class*=" col-"] {
+      margin-bottom: 15px;
+    }
+  }
+}
+label.float {
+  font-size: 11px;
+  color: @bw-medium-gray;
+  position:absolute;
+  top:-13px;
+  transition: all 0.1s linear;
+  opacity:0;
+}
+label.float.on {
+  color: @bw-dark-gray;
+}
+label.float.show {
+  top:-15px;
+  opacity:1;
+}
+
+
+.form-control.bg-danger:not(:focus) {
+  background-color: #f2dede;
+  border: 1px solid #D00;
+}
+
+.form-control.rewards {
+  display: inline-block;
+  width: ~"calc(100% - 54px)";
+}
+.blue {
+  color: @primary-color;
+}
+.dropdown {
+  .form-control {
+    width: 100%;
+    font-size: 16px;
+    padding: 5px 10px;
+    color: @bw-dark-gray;
+    font-weight: @font-light;
+    .caret {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+    }
+  }
+  .dropdown-menu {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    a {
+      color: @bw-medium-gray;
+    }
+  }
+}
+
+.break {
+  border-top: 1px solid @bw-medium-gray;
+  margin: 30px 0;
+}
+
+.break-blue {
+  border-top: 1px solid @bw-lighter-blue;
+  margin: 30px 0;
+}
+
+.break-white {
+  border-top: 1px solid #FFF;
+  margin: 30px 0;
+}
+
+#billing-information {
+
+  #creditcard.selected {
+    background-color: transparent;
+    .img-responsive {
+      border: 5px solid @secondary-color;
+    }
+  }
+
+  #creditcard, 
+  #masterpass, 
+  #googlewallet {
+    .img-responsive {
+      width: 100%;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    box-shadow: none;
+    outline: none;
+  }
+
+  a.svg {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    object {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  a.svg:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  p {
+    color: @bw-medium-gray;
+    font-size: 11px;
+    line-height: 2;
+  }
+}
+
+#special-requests {
+  p {
+    color: @bw-medium-gray;
+    line-height: 2;
+  }
+  .room-request {
+    .requests-header {
+      font-weight: @font-bold;
+      position: relative;
+      padding: 10px 0;
+      cursor: pointer;
+      .bw-icon, object {
+        width: 15px;
+        height: 15px;
+        margin-bottom: 2px;
+      }
+      .requests-icon {
+        position: absolute;
+        right: 0;
+        text-transform: uppercase;
+        font-weight: @font-bold;
+      }
+      .requests-icon:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+      }
+    }
+  }
+  .room-request:last-child {
+    margin-bottom: 30px;
+  }
+}
+
+#special-offers {
+  color: @bw-medium-gray;
+}
+
+#acknowledgement {
+  background-color: @primary-color;
+  padding: 20px 0;
+  .form-group {
+    margin: 0;
+  }
+  .svg_check_box {
+      display: none;
+  }
+
+  .svg_check_box + label {
+      display:inline-block;
+      top: 0;
+      color: #FFFFFF;
+      svg {
+        vertical-align: top;
+      }
+  }
+  .svg_check_box:not(:checked) + label {
+    .checked-svg {
+        display: none;
+      }
+  }
+  .svg_check_box:checked + label {
+    .unchecked-svg {
+      display: none;
+    }
+  }
+
+  .outer-circle {
+    stroke: #FFF;
+    stroke-width: 4px;
+    fill: none;
+  }
+
+  .inner-circle {
+    fill: transparent;
+  }
+
+  .svg_check_box_text {
+    margin-left: 10px;
+  }
+}
+
+// RewardsLogin and CheckReservation styles
+
+#check-reservation {
+    background-color: @bw-light-gray;
+    h4 {
+      margin-bottom: 20px;
+    }
+}
+
+#rewards-info, 
+#confirmation-info {
+  background-color: @bw-light-gray;
+  padding-bottom: 30px;
+  > div {
+    background-color: #FFF;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .form-group {
+    position: relative;
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+  a.forgot-password {
+    color: @bw-medium-gray;
+    &:hover {
+      color: @bw-dark-gray;
+    }
+  }
+}
+
+#rewards-member {
+  h4 {
+    text-align: center;
+  }
+  .row {
+    margin: 30px 0;
+  }
+  .form-group {
+    margin-bottom: 0;
+  }
+  .col-xs-6:first-child {
+    border-right: 1px solid @bw-medium-gray;
+  }
+}
+
+#guest-login {
+  background-color: @bw-light-gray;
+  padding: 30px 0;
+  h4 {
+    margin-bottom: 20px;
+  }
+}
+
+a.forgot-password {
+  color: @bw-medium-gray;
+  text-decoration: underline;
+  &:hover {
+    color: @bw-dark-gray;
+  }
+}
+.g-recaptcha {
+  > div > div {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+  }
+
+  &.login-recaptcha {
+    > div > div {
+      width: 100%;
+    }
+  }
+}
+
+#guest-login {
+  svg {
+    position: absolute;
+    left: 15px;
+  }
+  .radio_button + label {
+    .radio-label-text {
+      padding-left: 40px;
+    }
+  }
+}
+
+#thank-you {
+  background-color: @bw-light-gray;
+  padding-top: 10px;
+  h1, h3 {
+    text-align: center;
+  }
+  .btn-container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+#confirmation-box {
+  background-color: @bw-lighter-blue;
+  #confirmation-number {
+    font-size: 22px;
+    font-weight: @font-bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .reservation-actions {
+    padding-bottom: 10px;
+    .cancel-link {
+      font-weight: @font-bold;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    .print-email {
+      position: absolute;
+      right: 0;
+      bottom: 10px;
+    }
+    a.svg {
+      position: relative;
+      padding-right: 15px;
+    }
+    a.svg:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+    }
+    svg {
+      fill: @primary-color;
+    }
+  }
+}
+
+#canceled-reservation, .canceled-room {
+  background-color: @bw-red;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  p {
+    text-align: center;
+    margin: 0;
+  }
+  svg {
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+  span {
+    color: #FFF;
+    text-transform: uppercase;
+  }
+}
+
+.modification-warning {
+  border: 1px solid currentColor;
+  color: @bw-red;
+  svg {
+    position: absolute;
+    left: 25px;
+    top: 10px;
+    fill: currentColor;
+  }
+  p {
+    padding: 5px 5px 5px 50px;
+    margin: 0;
+  }
+  margin-bottom: 30px;
+}
+
+#deposit-no-refund, 
+#deposit-required {
+  background-color: @bw-lighter-blue;
+
+  .deposit-amount {
+    position: relative;
+    padding: 15px 0;
+    padding-right: 25px;
+    margin: 0 20px;
+    svg {
+      position: absolute;
+      right: 0;
+      top: 15px;
+    }
+  }
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#deposit-no-refund {
+  border: 1px solid @primary-color;
+  > div {
+    margin: 0 20px;
+    padding: 15px 0;
+  }
+  .deposit-amount {
+    border-bottom: 2px solid #FFF;
+  }
+}
+
+@media screen and (min-width: @screen-sm-min) {
+  #content .ribbon, 
+  .container--with-space .ribbon {
+    > [class^="col-"], 
+    > [class*=" col-"] {
+      max-width: @screen-sm;
+      margin-left: ~"calc((100vw - @{screen-sm}) / 2)";
+      margin-right: ~"calc((100vw - @{screen-sm}) / 2)";
+    }
+  }
+}

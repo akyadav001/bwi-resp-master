@@ -1,0 +1,80 @@
+@controlFontSize: 20px;
+
+//Default bootstrap's implementation of pagination is with square containers that resize horizontally. Since the design
+//is displaying with a rounded shape, when the container has more than 1 digit, the shape becomes elliptical. To fix this,
+//we apply an explicit width to maintain the shape of the container.
+
+.pagination {
+  li > a {
+    border-radius: 50% !important;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+    width: 32px;
+  }
+}
+
+.pagination {
+  & .active a,
+  & .active a:focus {
+  background-color: @bw-orange;
+  color: @bw-white;
+  }
+}
+
+.pagination--blue {
+  li > a {
+    color: #FFF;
+    border-color: #FFF;
+    background-color: transparent;
+  }
+}
+
+.pagination-container {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.pagination {
+  white-space: nowrap;
+  overflow-x: auto;
+  flex: 1 1 auto;
+}
+
+.pagination li {
+  display: inline-block;
+}
+
+.pagination-control {
+  cursor: pointer;
+  color: inherit;
+  display: inline-block;
+  position: relative;
+  font-size: @controlFontSize;
+  flex: 1 0 auto;
+  width: 40px;
+
+  &:hover,
+  &:focus {
+    color: @bw-white;
+  }
+}
+
+.pagination-control.disabled {
+  cursor: default;
+  opacity: .4;
+}
+
+.pagination-control--right {
+  margin-left: auto;
+  padding-left: 20px;
+}
+
+.pagination-control--left {
+  padding-right: 10px;
+  margin-right: auto;
+}
+

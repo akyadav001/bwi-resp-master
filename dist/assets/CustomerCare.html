@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Customer Care</title>
+  <link rel="stylesheet" href="../styles/bootstrap.css">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="bw-navbar navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="nav-left">
+      <a href="findahotel.html"><span class="bw-icon bw-icon-logo"></span></a>
+    </div>
+    <div class="nav-left">
+      <button type="button" class="burger" id="menu-burger">
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      </button>
+    </div>
+    <div class="nav-right icon hidden" data-toggle="modal" data-target="#bw-login">
+      <a href="#" class="svg">
+        <object type="image/svg+xml" data="icons/svg/global-fav-inactive.svg"></object>
+      </a>
+    </div>
+    <div class="nav-right icon hidden">
+      <a href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4b3318882e3274bf" class="svg">
+      <object type="image/svg+xml" data="icons/svg/global-share.svg"></object>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div id="left-menu" class="hide-me">
+  <div id="menu-overlay">
+    <button type="button" id="menu-close-button">&times;</button>
+  </div>
+  <div id="menu-list">
+    <div id="menu-user" class="menu-logged-in hidden">
+      <div id="menu-user-profile" class="user-profile">
+        <img src="icons/profile.png">
+        <h1>Hello, Catherine!</h1>
+        <p>#600563-1234-456-892</p>
+      </div>
+      <a href="#" id="upcoming-reservation">
+        <h2>View Upcoming Reservation</h2>
+        <p>Columbus, OH</p>
+      </a>
+    </div>
+    <div id="login-button">
+      <!-- <button type="button">REWARDS LOGIN</button> -->
+      <a href="Login.html" class="bw-btn">REWARDS LOGIN</a>
+    </div>
+    <div id="main-menu" class="menu-items">
+      <a href="#" class="account-menu-forward hidden">My Account<span class="glyphicon glyphicon-chevron-right"></span></a>
+      <a href="Home.html">Home</a>
+      <a href="FindAHotel.html">Find a Hotel</a>
+      <a href="CheckReservation.html">Check Reservations</a>
+      <a href="#" class="rewards-menu-forward">Rewards<span class="glyphicon glyphicon-chevron-right"></span></a>
+      <a href="#" >Customer Care</a>
+      <a href="#" class="settings-menu-forward">Settings<span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+    <div id="rewards-menu" class="menu-items hide-me">
+      <a href="#" class="main-menu-back"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Main Menu</a>
+      <h4>Rewards</h4>
+      <a href="RewardsLandingPage.html" >Learn About Rewards</a>
+      <a href="JoinRewards.html" >Join</a>
+      <a href="EarnRewards.html" >Earn</a>
+      <a href="Redeem.html" >Redeem</a>
+    </div>
+    <div id="settings-menu" class="menu-items hide-me">
+      <a href="#" class="main-menu-back"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Main Menu</a>
+      <h4>Settings</h4>
+      <a href="#" class="opens-modal" data-toggle="modal" data-target="#bw-language-modal">Language</a>
+      <a href="#" class="opens-modal" data-toggle="modal" data-target="#bw-currency-modal">Currency</a>
+    </div>
+    <div id="account-menu" class="menu-items hide-me hidden">
+      <a href="#" class="main-menu-back"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Main Menu</a>
+      <h4>My Account</h4>
+      <a href="Dashboard.html" >Dashboard</a>
+      <a href="Preferences.html" >Profile &amp; Preferences</a>
+      <a href="MyRewards.html" >Rewards Activity</a>
+      <a href="Favorites.html" >Favorites</a>
+      <a href="#" >Rewards Service Center</a>
+      <a id="logout" href="#" >Logout</a>
+    </div>
+  </div>
+
+</div>
+<div id="blur" class="invisible"></div>
+<div class="modal" id="bw-currency-modal">
+  <div class="modal-dialog modal-static">
+    <div class="bw-modal-content">
+      <div class="bw-modal-header">
+        CURRENCY
+      </div>
+      <div class="modal-body">
+        <div class="bw-currency">
+          <div class="row">
+            <div class="col-xs-12 currency-item currency-search">
+              <span class="bw-icon bw-icon-search"></span>
+              <input type="text"/>
+            </div>
+            <div class="col-xs-12 currency-item">
+              US Dollars
+            </div>
+            <div class="col-xs-12 currency-item">
+              Euro
+            </div>
+            <div class="col-xs-12 bw-currency-header">
+              OTHER CURRENCIES
+            </div>
+            <div class="col-xs-12 currency-item">
+              Albanian Yek
+            </div>
+            <div class="col-xs-12 currency-item">
+              Algerian Dinar
+            </div>
+            <div class="col-xs-12 currency-item">
+              Argentinian Pesos
+            </div>
+            <div class="col-xs-12 currency-item">
+              Armenian Dram
+            </div>
+            <div class="col-xs-12 currency-item">
+              Arubin Florin
+            </div>
+            <div class="col-xs-12 currency-item">
+              Australia Dollars
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer bw-modal-footer">
+        <div class="row">
+          <div class="col-xs-6">
+            <button class="btn bw-btn-cancel closes-modal-from-nav" data-dismiss="modal">CANCEL</button>
+          </div>
+          <div class="col-xs-6">
+            <button class="btn bw-btn-accept closes-modal-from-nav">DONE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="bw-language-modal">
+  <div class="modal-dialog modal-static">
+    <div class="bw-modal-content">
+      <div class="bw-modal-header">
+        LANGUAGE
+      </div>
+      <div class="modal-body">
+        <div class="bw-language">
+          <div class="row">
+            <div class="col-xs-12 language-item">
+              English
+            </div>
+            <div class="col-xs-12 language-item">
+              Spanish
+            </div>
+            <div class="col-xs-12 language-item">
+              French
+            </div>
+            <div class="col-xs-12 language-item">
+              Italian
+            </div>
+            <div class="col-xs-12 language-item">
+              German
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer bw-modal-footer"  tabindex="0">
+        <div class="row">
+          <div class="col-xs-6">
+            <button class="btn bw-btn-cancel closes-modal-from-nav" data-dismiss="modal">CANCEL</button>
+          </div>
+          <div class="col-xs-6">
+            <button class="btn bw-btn-accept closes-modal-from-nav">DONE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4b3318882e3274bf" tabindex="1000"></script>
+  </header>
+  <!-- Content -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="page-label">Customer Care</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 promo">
+        <p>If you want to comment on your recent stay or simply want answers to your questions about the Best Western International
+          hotel chain, please don't hesitate to contact us. For changes or cancellations, please call 1-800-780-7234 or visit the Check
+          Reservations page to retrieve your reservation. Changes/cancellations cannot be processed via email requests.</p>
+      </div>
+      <div class="col-xs-12 promo-image promo-image--summer">
+        <div class="promo-gradient gradient-light--top row"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <h2 class="section-title">Our Most Frequently Asked Questions</h2>
+        <ul class="list--no-bullets list--with-separators accordion-list">
+          <li class="row" id="topic-1-container">
+            <div class="col-xs-12">
+              <div class="accordion-item bw-accordion collapsed" data-toggle="collapse" data-target="#topic-1" data-active="#topic-1-container">
+                <h3 class="section-title">Change or Cancel a Reservation</h3>
+                <span class="pull-right glyphicon glyphicon-menu-up"></span>
+              </div>
+              <div class="collapse" id="topic-1">To change or cancel a reservation that is within the cancellation time frame, please visit the Check Reservations page.</div>
+            </div>
+          </li>
+          <li class="row" id="topic-2-container">
+            <div class="col-xs-12">
+              <div class="accordion-item bw-accordion collapsed" data-toggle="collapse" data-target="#topic-2" data-active="#topic-2-container">
+                <h3 class="section-title">Contact Reservations Office</h3>
+                <span class="pull-right glyphicon glyphicon-menu-up"></span>
+              </div>
+              <div class="collapse" id="topic-2">
+                <p>Here is a list of our
+                  <a href="http://www.bestwestern.com/reservations/hotels/worldwide-phone-numbers.asp?m=1" class="loadDialog">worldwide reservations offices</a>. You can make reservations and request further assistance through these numbers.</p>
+                <p>We are available to assist you 24 hours a day, 7 days a week.</p>
+                <p>If you prefer, you may provide us your information here and we will document your feedback and forward to the property.</p>
+                <p>They will reply to you by e-mail, telephone or mail as soon as possible.</p>
+              </div>
+            </div>
+          </li>
+          <li class="row" id="topic-3-container">
+            <div class="col-xs-12">
+              <div class="accordion-item bw-accordion collapsed" data-toggle="collapse" data-target="#topic-3" data-active="#topic-3-container">
+                <h3 class="section-title">Billing Problem or Question</h3>
+                <span class="pull-right glyphicon glyphicon-menu-up"></span>
+              </div>
+              <div class="collapse" id="topic-3">
+                <p>Billing is processed by the property. Contacting the hotel directly may expedite resolution of your issue. Please
+                  <a href="FindaHotel.html">start your search here</a>for the property's contact information.</p>
+                <p>If you prefer, you may provide us your information
+                  <a href="#">here</a>and we will document your feedback and forward to the property.</p>
+                <p>They will reply to you by e-mail, telephone or mail as soon as possible.</p>
+              </div>
+            </div>
+          </li>
+          <li class="row" id="topic-4-container">
+            <div class="col-xs-12">
+              <div class="accordion-item bw-accordion collapsed" data-toggle="collapse" data-target="#topic-4" data-active="#topic-4-container">
+                <h3 class="section-title">Best Western Rewards® question</h3>
+                <span class="pull-right glyphicon glyphicon-menu-up"></span>
+              </div>
+              <div class="collapse" id="topic-4">
+                <p>Please visit the
+                  <a href="RewardServiceCenter.html">Best Western Rewards® Service Center</a>.</p>
+              </div>
+            </div>
+          </li>
+          <li class="row" id="topic-5-container">
+            <div class="col-xs-12">
+              <div class="accordion-item bw-accordion collapsed" data-toggle="collapse" data-target="#topic-5" data-active="#topic-5-container">
+                <h3 class="section-title">Travel (Gift) Card Problem/Question</h3>
+                <span class="pull-right glyphicon glyphicon-menu-up"></span>
+              </div>
+              <div class="collapse" id="topic-5">
+                <p>Please visit the
+                  <a href="#">FAQ page</a>for Best Western Travel Card. You can check the balance of your card and get information on using the card at any of Best
+                  Western hotels.</p>
+              </div>
+            </div>
+          </li>
+          <li class="row" id="topic-6-container">
+            <div class="col-xs-12">
+              <div class="accordion-item bw-accordion collapsed" data-toggle="collapse" data-target="#topic-6" data-active="#topic-6-container">
+                <h3 class="section-title">Sponsorship Request</h3>
+                <span class="pull-right glyphicon glyphicon-menu-up"></span>
+              </div>
+              <div class="collapse" id="topic-6">
+                <p>Please visit our
+                  <a href="#">Best Western for a Better World section</a>where we have detailed information on sponsorship requests.</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <p>
+          <a href="#">VIEW ALL FREQUENTLY ASKED QUESTIONS</a>
+        </p>
+      </div>
+    </div>
+    <div class="row copyright-disclaimer">
+      <div class="col-xs-12">
+        <p>Each Best Western branded hotel is independently owned and operated.
+          <br>© 2002-2015 Best Western International, Inc. All rights reserved.</p>
+        <p>© 2015 TripAdvisor LLC. All rights reserved</p>
+        <p>
+          <sup>&dagger;</sup>Numbers are approximate and can fluctuate.</p>
+      </div>
+    </div>
+  </div>
+  <!-- end container-fluid -->
+  <script src="../scripts/jquery.js"></script>
+  <script src="../scripts/bootstrap.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/navigation.js"></script>
+</body>
+
+</html>

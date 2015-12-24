@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Promo Rate Template</title>
+  <link rel="stylesheet" href="../styles/bootstrap.css">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body class="has-fixed-footer" data-view="hotel-details-view">
+  <div id="header"></div>
+  <section class="promo promo--single-section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+        <h1 class="promo-heading">Summer Promotion</h1>
+        <p>This is a very engaging promotion! Erat errem iudico no vix. His et illud ridens, 
+			  efficiantur comprehensam ne mel. Ea cum putant delectus corrumpit, ea argumentum dissentias appellantur vix, 
+			  ex pro posse solet tation. An malis atqui etiam quo.
+		  </p>
+        </div>
+        <div class="promo-image promo-image--summer col-xs-12">
+          <div class="promo-gradient gradient-light--top row">
+            <button class="btn bw-btn-clear" type="button">BOOK FOR SUMMER</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <script src="../scripts/jquery.js"></script>
+  <script src="../scripts/bootstrap.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/navigation.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+        $('#header').load('BaseHeader.html', function() {
+            if($('body').attr('data-view') == "hotel-details-view") {
+                $('#header .bw-navbar .nav-right.icon').removeClass('hidden');
+            }
+        });
+    });
+  </script>
+  <script src="../scripts/jquery.mobile.custom.js"></script>
+</body>
+</html>

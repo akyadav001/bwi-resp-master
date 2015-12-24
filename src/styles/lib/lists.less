@@ -1,0 +1,39 @@
+.list--numbered {
+  list-style-type: decimal;
+}
+.list--numbered ul {
+  list-style-type: disc;
+}
+.list--no-indent {
+  list-style-position: inside;
+  padding-left: 0;
+}
+.list--with-spacing {
+ & > li {
+    margin-bottom: 10px;
+  }
+}
+.list--with-separators {
+  > li {
+    border-top: 1px solid @bw-lighter-blue;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+  > li:last-child {
+    border-bottom: 1px solid @bw-lighter-blue;
+  }
+}
+.info-tile {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  padding-top: 56.25%;
+}
+.info-tile img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}

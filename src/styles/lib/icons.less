@@ -1,0 +1,32 @@
+@import (reference) "variables";
+@import (reference) "mixins";
+
+@font-face {
+	font-family: 'bwi-icons';
+	src:url('@{font-file-location}/bwi-icons.eot?9jpjtb');
+	src:url('@{font-file-location}/bwi-icons.eot?#iefix9jpjtb') format('embedded-opentype'),
+		url('@{font-file-location}/bwi-icons.ttf?9jpjtb') format('truetype'),
+		url('@{font-file-location}/bwi-icons.woff?9jpjtb') format('woff'),
+		url('@{font-file-location}/bwi-icons.svg?9jpjtb#bwi-icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.text-icons,
+.amenity-category .amenity-category__text:after,
+.ui-control .ui-control__indicator:after,
+.ui-select:after,
+.results-nav__link:before,
+.filter-link:before {
+	font-family: 'bwi-icons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

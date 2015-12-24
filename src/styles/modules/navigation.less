@@ -1,0 +1,508 @@
+@import (reference) "lib/variables";
+
+.site-logo {
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: middle;
+  width: unit(82 / @base-font-size, em);
+  color: @bw-light-blue;
+
+  @media (min-width: @desktopMin) {
+	width: unit(130 / @base-font-size, em);
+	color: @bw-white;
+  }
+  
+  &__logo {
+	display: inline-block;
+  }
+  
+  &__logo:before:extend(.text-icons) {
+    content: "\e640";
+	font-size: unit(53 / @base-font-size, em);
+
+	@media (min-width: @desktopMin) {
+      font-size: unit(85 / @base-font-size, em);
+	}
+  }
+  
+  &__text {
+    text-transform: uppercase;
+	border-left: 1px solid currentColor;
+	padding: unit(15 / @base-font-size, em) unit(20 / @base-font-size, em);
+	font-weight: @font-light;
+	max-width: unit(155 / @base-font-size, em);
+	display: inline-block;
+	vertical-align: middle;
+	display: none;
+	
+	@media (min-width: @desktopMin) {
+      display: inline-block;
+	}
+  }
+}
+.menu-toggle {
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: middle;
+  
+  &:before:extend(.text-icons) {
+	  content: "\e617";
+	  
+  }
+}
+.site-header {
+  height: @header-mobile-results-height;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: @zIndex-0--site-header;
+  background-color: @bw-light-gray;
+  padding: unit(15 / @base-font-size, em);
+  
+  @media (min-width: @desktopMin) {
+  	height: @header-desktop-results-height;
+	background-color: @bw-light-blue;
+	color: #FFF;
+  }
+}
+
+//Offset the page content equal to the height of the navbar to ensure the content appears below the nav. The general sibling selector is used here because
+//a script is dynamically injecting a div between the header and the page-wrap. 
+.site-header ~ .page-wrap {
+  padding-top: @navbar-height-mobile;
+  
+  @media screen and (min-width: @screen-sm-min) { 
+    padding-top: @body-margin-top-tablet;
+  }
+}
+
+.search-details {
+  position: absolute;
+  left:0;
+  right: 0;
+  bottom:0;
+  background-color: @bw-dark-blue;
+  color: #FFF;
+  padding: unit(7 / 11, em) unit(15 / 11, em);
+  font-size: unit(11/@font-size-base, em);
+  line-height: 1.2;
+}
+.search-details__room:before {
+	content: '\2014';
+	padding: 0 unit(11/@base-font-size, em);
+	display: inline;
+}
+
+@media (min-width: @tabletMin) {
+  .search-details {
+  	font-size: unit(13 / @font-size-base, em );
+	padding: unit(15/13, em) unit(20/13, em);  
+  }
+  .search-details__detail {
+  	display: inline-block;
+  }
+  .search-details__detail + .search-details__detail,
+  .search-details__room {
+    margin-left: 1em;
+  }
+  .search-details__detail.-locale {
+  	font-weight: @font-bold;
+  }
+  .search-details__room:before {
+    display: none;
+  }
+}
+@media (min-width: @desktopMin) {
+  .search-details {
+    padding-left: unit(30 / @base-font-size, em);
+    padding-right: unit(30 / @base-font-size, em);
+  }
+  .search-details__detail + .search-details__detail,
+  .search-details__room {
+    margin-left: unit(40 / @base-font-size, em);
+  }
+}
+
+.search-details__edit {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-right: inherit;
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    color: #FFF; 
+	text-decoration: none;
+  }
+}
+
+.navbar {
+  height: @navbar-height-mobile;
+}
+
+@media screen and (min-width: @screen-sm) {
+  .navbar {
+    height: @navbar-height-tablet;
+  }
+}
+
+.bw-navbar {
+  //Overwrite bootstraps default application of a border on the .navbar-fixed-top
+  border: 0;
+  white-space: nowrap;
+  
+  .nav-left {
+		float: left;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		cursor: pointer;
+		@media screen and (min-width: @screen-sm) {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+
+		.burger {
+			border: 0;
+			background-color: transparent;
+			vertical-align: middle;
+			padding: 5px;
+			margin-left: 5px;
+			@media screen and (min-width: @screen-sm){
+				margin-left: 10px;
+			}
+			margin-top: 7px;
+
+			.burger-bar {
+				display: block;
+				width: 24px;
+				height: 2px;
+				border-radius: 1px;
+				background-color: @primary-color;
+			}
+
+			.burger-bar:not(:first-child) {
+				margin-top: 6px;
+			}
+		}
+	}
+
+	.nav-right {
+		float: right;
+		margin-left: 7px;
+		cursor: pointer;
+	  vertical-align: middle;
+	  padding-top: 12px;
+	  padding-bottom: 10px;
+
+		@media screen and (min-width: @screen-sm){
+			margin-left: 15px;
+			padding-top: 17px;
+		}
+
+		a {
+			font-size: 11px;
+			text-decoration: none;
+			color: @primary-color;
+			white-space: nowrap;
+			padding: 5px;
+			position: relative;
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+
+		&.icon {
+			margin-top: 5px;
+			padding: 0;
+
+			@media screen and (min-width: @screen-sm) {
+				margin-top: 10px;
+			}
+
+			object {
+				width: 25px;
+				height: 25px;
+				margin-top: 3px;
+			}
+
+			.bw-icon {
+				width: 25px;
+				height: 25px;
+				margin-top: 5px;
+			}
+
+			a.svg:after {
+		    content: "";
+		    position: absolute;
+		    top: 0;
+		    right: 0;
+		    bottom: 0;
+		    left: 0;
+			}
+		}
+	}
+
+	.bw-icon-filter {
+		margin-top: -5px;
+	}
+
+	.bw-icon {
+		vertical-align: middle;
+	}
+
+	.bw-city-tab{
+		height: @results-navbar-height;
+		background-color: @bw-dark-blue;
+		color: #FFFFFF;
+		font-size: 11px;
+
+		.room-guest {
+			white-space: nowrap;
+		}
+
+		a:hover, a:focus {
+			text-decoration: none;
+			outline: none;
+		}
+
+		.bw-edit-font {
+			float: right;
+			color: #FFFFFF;
+			margin-top: 5px;
+		}
+
+		div {
+			padding-top: 5px;
+		}
+	}
+}
+
+.discounts-code-input {
+	margin-left: 20px;
+}
+
+.menu-open {
+	overflow: hidden;
+}
+
+.user-profile {
+	padding: 20px 20px 20px 80px;
+	position: relative;
+
+	img {
+		position: absolute;
+		left: 15px;
+		top: 20px;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+	}
+}
+
+#left-menu {
+	z-index: @zIndex-3--left-menu;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	max-width: @screen-sm;
+	height: 100%;
+	transition: left 1s ease;
+
+	#menu-list {
+		position: relative;
+		background-color: #FFFFFF;
+		color: @primary-color;
+		width: auto;
+		height: 100%;
+		overflow-y: auto;
+		overflow-x: hidden;
+
+		.menu-logged-in {
+			font-weight: @font-light;
+			h1 {
+				font-size: 25px;
+				margin: 0;
+				font-weight: @font-light;
+			}
+
+			h2 {
+				font-size: 18px;
+				margin: 0;
+			}
+
+			p {
+				margin-bottom: 0;
+			}
+		}
+
+		#menu-user-profile {
+			background-color: @bw-light-blue;
+			color: #FFFFFF;
+		}
+
+		#upcoming-reservation {
+			display: block;
+			background-color: @bw-lighter-blue;
+			color: @bw-light-blue;
+			padding: 10px 15px;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
+		#login-button {
+			a {
+				outline: none;
+				padding: 20px 0;
+			}
+		}
+
+		.menu-items {
+			padding: 15px;
+			width: 100%;
+			position: absolute;
+			a {
+				display: block;
+				padding: 10px 0;
+				font-size: 18px;
+				font-weight: @font-regular;
+
+				&:hover, &:focus {
+					color: @primary-color;
+					text-decoration: none;
+				}
+
+				.glyphicon {
+					float: right;
+					vertical-align: middle;
+				}
+			}
+			h4 {
+				margin: 10px 0 0 0;
+				color: @bw-medium-gray;
+				text-transform: uppercase;
+				text-align: center;
+			}
+			.main-menu-back, .main-menu-back:hover {
+				color: @bw-medium-gray;
+				border-bottom: 1px solid @bw-medium-gray;
+				margin-bottom: 10px;
+			}
+			.main-menu-back .glyphicon {
+				float: none;
+			}
+			margin-bottom: 10px;
+		}
+
+		#main-menu {
+			transition: left 1s ease;
+			left: 0;
+			&.hide-me {
+				left: -100%;
+			}
+		}
+		#rewards-menu, 
+		#settings-menu, 
+		#account-menu {
+			transition: right 1s ease;
+			right: 0;
+			&.hide-me {
+				right: -100%;
+			}
+		}
+	}
+	#menu-overlay {
+		background-color: rgba(3,16,84,0.9);
+		color: #FFFFFF;
+		width: 30px;
+		height: 100%;
+		float: right;
+		position: relative;
+
+		#menu-close-button {
+			position: absolute;
+			top: 5px;
+			left: 0;
+			font-size: 25px;
+			height: 30px;
+			width: 30px;
+			line-height: 1;
+			border: none;
+			background: transparent;
+			padding: 0;
+			outline: none;
+		}
+	}
+
+	&.hide-me {
+		left: -100%;
+	}
+}
+
+#blur {
+	position: fixed;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	z-index: @zIndex-2--left-menu-background-blur;
+	background-color: fade(@bw-dark-blue, 80);
+	transition: opacity 1s linear;
+}
+
+#blur.invisible {
+	opacity: 0;
+	transition: visibility 0s 1s, opacity 1s linear;
+}
+.bw-bottom-bar {
+	position: fixed;
+	bottom: 0;
+  left: 0;
+  right: 0;
+	background-color: fade(@bw-darker-blue, 95);
+	border-top: 1px solid fade(@bw-white, 30);
+	padding-bottom: 25px;
+	padding-top: 10px;
+	text-align: center;
+  	height: @footer-height;
+  	z-index: @zIndex-0--bottom-bar;
+
+  &.single-button {
+	  padding-left: 25px;
+	  padding-right: 25px;
+      button {
+		border: 0;
+        width: 100%;
+        height: 100%;
+		font-weight: @font-bold;
+		background-color: @bw-gold;
+      }
+    }
+	
+	a {
+	  background-color: @bw-gold;
+	  display: block;
+	  height: 100%;
+	  padding-top: 18px;
+	  text-decoration: none;
+
+	  .bw-icon {
+	    vertical-align: middle;
+	  }
+	}
+
+	a:not(:last-child) {
+      border-right: thin solid @maplist-bottom-navbar-separator-color;
+	}
+
+	//apply to active <a> in footer based on page
+	//also remember to swap out blue icon for white
+	.active {
+		background-color: @bottom-bar-selected;
+		color: #FFFFFF;
+	}
+}

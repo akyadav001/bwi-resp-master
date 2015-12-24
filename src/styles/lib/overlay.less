@@ -1,0 +1,155 @@
+.overlay-panel {
+  position: fixed;
+	top: .4375em;
+	right: 100%;
+	bottom: .4375em;
+	left: -100%;
+	z-index: 9999;
+  opacity: 0;
+  transition: opacity .5s ease;
+  
+
+    .-filter&:target {
+      @media (min-width: @tabletMin) {
+        width: 350/16em;
+	      left: auto;
+        top: @header-mobile-results-height / 2em;
+      }
+    }
+      .-rates&:target {
+        @media (min-width: @tabletMin) {
+        width: 350/16em;
+	      left: auto;
+        top: @header-mobile-results-height / 2em;
+        }
+        @media (min-width: @desktopMin) {
+          top: @header-desktop-results-height + 5em;
+        }
+      }   
+  }
+
+.overlay-panel:target {
+	opacity: 1;
+  right: .4375em;
+  left: .4375em;
+}
+
+.overlay-panel-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+	background-color: @bw-light-blue;
+	z-index: 2;
+}
+
+.overlay-panel-header__title {
+  color: #FFF;
+  padding: 20/16em 30/16em;
+  text-transform: uppercase;
+}
+
+.overlay-panel-header__status {
+  padding: 10/16em 30/16em;
+  
+  &.-no-results {
+    background-color: #DB291D;
+	  color: white;
+  }
+  
+  &.-has-results {
+    background-color: @bw-lighter-blue;
+  }
+}
+
+.overlay-panel-content {
+  position: absolute; 
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #FFF;
+  overflow: auto;
+  border-radius: .625em .625em 0 0;  // 10/16
+  padding-top: 92/16em;
+  padding-bottom: 50/16em;
+  padding-left: 15/16em;
+  padding-right: 15/16em;
+  z-index: 1;
+}
+
+.overlay-panel-footer {
+  background-color: #FFF;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 34/16em/2 30/16em;
+  border-top: 1px solid @bw-light-gray;
+  z-index: 2;
+  display: table;
+  width: 100%;
+}
+.overlay-panel-footer__control {
+  display: table-cell;
+  
+  &:first-child {
+    padding-right: unit( 10 / @base-font-size, em);
+  }
+  &:last-child {
+    padding-left:  unit( 10 / @base-font-size, em);
+  }
+}
+
+
+@media (min-width: @tabletMin) {
+  .overlay-panel-header {
+  	border-radius: 10/16em 10/16em 0 0;
+  }
+}
+
+.overlay-panel.-filter:before {
+    content: '';
+	  display: none;
+	  width: 40/16em;
+	  height: 40/16em;
+	  border-radius: 5/16em;
+	  background-color: @bw-light-blue;
+	  position: absolute;
+	  top: -15/16em;
+	  right: 10/16em;
+	  transform: rotate(-45deg);
+}
+
+.overlay-panel.-filter {
+
+    //On desktop, the header and footer sections of the filter overlay disappear per design
+@media (min-width: @desktopMin) {
+  position: static;
+  opacity: 1;
+  .overlay-panel-header,
+  .overlay-panel-footer {
+    display: none;
+  }
+    
+  .overlay-panel-content {
+    position: fixed;
+    top: @header-desktop-results-height;
+    left: 0;
+    width: 400/16em;
+    bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-radius: 0;
+    box-shadow: 0 unit(2 / @base-font-size, em) unit(2 / @base-font-size, em) 0 fade(#000, 25);
+  }
+}
+}
+
+.panel-controls {
+  display: table;
+  table-layout: fixed;
+}
+.panel-controls__control {
+  display: table-cell;
+}

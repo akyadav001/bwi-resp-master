@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Promo - Registration</title>
+  <link rel="stylesheet" href="../styles/bootstrap.css">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body class="has-fixed-footer" data-view="hotel-details-view">
+  <div id="header"></div>
+  <section class="promo">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1 class="promo-heading">Summer Promotion</h1>
+          <p>Book 3 or more nights in advance and you'll receive 1 night free</p>
+        </div>
+        <div class="promo-image promo-image--summer col-xs-12">
+          <div class="promo-gradient gradient-light--top row">
+            <button class="btn bw-btn-clear" type="button">BOOK FOR SUMMER</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container-fluid">
+      <div class="row ribbon">
+        <div class="col-xs-12 full-width-buttons">
+          <p class="body-subtitle">Register Now</p>
+          <form>
+            <div class="form-group">
+              <label for="register">Best Western Rewards® Membership Number or Email Address:</label>
+              <input type="text" id="register" class="form-control">
+            </div>
+            <button type="submit" class="btn bw-btn-cancel">REGISTER</button>
+          </form>
+        </div>
+      </div>
+      <div class="row ribbon--huge ribbon--dark-blue">
+        <div class="col-xs-12 full-width-buttons text-center">
+          <img src="../images/rewards-usnews.png" alt="US News Award">
+          <p>Best Western Rewards has been named one of the top hotel loyalty programs for 2014!</p>
+          <p>
+            <a class="link--accent link--light" href="#">Explore Membership Benefits</a>
+          </p>
+          <a href="JoinRewards.html" class="btn bw-btn-primary">JOIN NOW</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="../scripts/jquery.js"></script>
+  <script src="../scripts/bootstrap.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/navigation.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+        $('#header').load('BaseHeader.html', function() {
+            if($('body').attr('data-view') == "hotel-details-view") {
+                $('#header .bw-navbar .nav-right.icon').removeClass('hidden');
+            }
+        });
+    });
+  </script>
+  <script src="../scripts/jquery.mobile.custom.js"></script>
+</body>
+</html>

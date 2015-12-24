@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Print Thank You</title>
+  <link rel="stylesheet" href="../styles/bootstrap.css">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body data-view="thank-you-view">
+  <header class="site-header">
+    @@include('./BaseHeader.html')
+  </header>
+  <div id="content" class="container-fluid">
+    <div id="thank-you" class="row ribbon">
+      <div class="col-xs-12">
+        <h1>Thank You</h1>
+        <h3>for your order</h3>
+        <div class="btn-container row full-width-buttons">
+          <div class="col-xs-12">
+            <a class="btn bw-btn-accept" href="PrintVoucher.html">Print Voucher</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row ribbon">
+      <div class="col-xs-12 text-faded--dark">
+        <p>The following Global Free Room Night Vouchers have been ordered. A confirmation e-mail summerizing this transaction has been sent to your resgistered e-mail address.</p>
+        <table class="table chart">
+          <tr>
+            <td>Voucher No</td>
+            <td>7478930993</td>
+          </tr>
+          <tr>
+            <td>Sequence No</td>
+            <td>0001</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 text-center ribbon ribbon--light-blue">
+        You have <span class="tile-title--bold">952,000</span> Points remaining
+      </div>
+    </div>
+    <div class="row ribbon">
+      <div class="col-xs-12">
+        <div class="alert alert-note">
+          <h2 class="alert-title">
+            <svg class="bw-icon" id="svg2" xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 16 16" width="30" version="1.1" preserveAspectRatio="xMidYMid">
+              <path fill-rule="evenodd" d="m8 16c-4.4113 0-8-3.589-8-8 0-4.4113 3.5887-8 8-8s8 3.5887 8 8-3.5887 8-8 8zm0-15.296c-4.023 0-7.2961 3.2731-7.2961 7.2961 0.00003 4.023 3.2731 7.296 7.2961 7.296s7.296-3.273 7.296-7.296-3.273-7.2961-7.296-7.2961zm0 10.275c-0.26456 0-0.48513-0.22879-0.48513-0.48402 0-0.26389 0.22057-0.48402 0.48513-0.48402s0.48513 0.22013 0.48513 0.48402c0 0.25523-0.22057 0.48402-0.48513 0.48402zm-0.2734-1.7337l-0.14127-4.224h0.82921l-0.14105 4.224h-0.54688z"></path>
+            </svg>
+            <span class="body-text">PLEASE NOTE</span>
+          </h2>
+          <p>Please print this page or make note of your voucher and sequence numbers, as well as the issue date (the date you ordered the certificates). Both numbers and the issue date are required upon check-in.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../scripts/jquery.js"></script>
+  <script src="../scripts/bootstrap.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/navigation.js"></script>
+</body>
+</html>

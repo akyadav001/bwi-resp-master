@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Hotel Details</title>
+  <link rel="stylesheet" href="../styles/bootstrap.css">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body class="has-fixed-footer" data-view="hotel-details-view">
+  <div id="header"></div>
+  <!-- edit modal -->
+  <div class="modal" id="bw-calendar">
+    <div class="modal-dialog modal-lg modal-static">
+      <div class="bw-modal-content">
+        <div class="bw-modal-header">
+          Only tap the first and last day of your stay.
+        </div>
+        <div class="modal-body">
+          <div class="bw-calendar-container">
+          </div>
+        </div>
+        <div class="modal-footer bw-modal-footer">
+          <div class="bw-stay-nights-mobile visible-xs">
+            <span class="bw-stay-nights"></span>
+          </div>
+          <div class="row">
+            <div class="hidden-xs col-sm-4">
+              <span class="pull-left bw-stay-nights"></span>
+            </div>
+            <div class="col-xs-6 col-sm-4">
+              <button class="btn bw-btn-cancel" id="bw-calendar-cancel" data-dismiss="modal">CANCEL</button>
+            </div>
+            <div class="col-xs-6 col-sm-4">
+              <button class="btn bw-btn-accept" id="bw-calendar-done">APPLY</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="bw-login" aria-hidden="false">
+    <div class="modal-dialog">
+      <div class="bw-modal-content">
+        <div class="bw-modal-header">
+          BWR LOGON
+        </div>
+        <div class="modal-body">
+          <form class="form-horizontal">
+            <div class="form-group">
+              <div class="col-sm-2"> <label for="username">Username:</label></div>
+              <div class="col-sm-10"><input id="username" type="text" class="form-control"/></div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-2"> <label for="password">Password:</label></div>
+              <div class="col-sm-10"><input id="password" type="text" class="form-control"/></div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer bw-modal-footer">
+          <div class="row">
+            <div class="col-xs-6">
+              <button class="btn bw-btn-cancel" data-dismiss="modal">CANCEL</button>
+            </div>
+            <div class="col-xs-6">
+              <button class="btn bw-btn-accept">Login</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="bw-edit">
+    <div class="modal-dialog modal-static">
+      <div class="bw-modal-content">
+        <div class="modal-body bw-find-hotel-dark">
+          <div class="row">
+      <div class="col-xs-12">
+        <label class="bw-label">DESTINATION</label>
+        <div class="favorites-search js-autocomplete">
+          <div class="dropdown js-dropdown">
+            <div class="dropdown-toggle js-dropdown-toggle" id="dropdownMenuFavorites" data-toggle="dropdown" aria-expanded="false">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Current Location" id="places-search" />
+                <div class="input-group-addon">
+                  <div class="fav-icon fav-remove js-remove hidden">
+                    <button type="button" class="js-clear" id="destination-clear-button">&times;</button>
+                  </div>
+                  <div class="fav-icon fav-icon-unfilled js-logged-out">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" viewBox="0 0 41 37">
+                      <path d="M19.940,37.137 C19.940,37.137 18.889,36.103 18.889,36.103 C17.187,34.427 15.377,32.785 13.626,31.197 C10.319,28.197 6.897,25.095 3.954,21.545 C1.435,18.510 0.106,15.117 0.004,11.461 C-0.118,7.187 3.067,2.510 7.251,0.815 C11.409,-0.874 16.415,0.318 19.617,3.746 C19.779,3.921 19.938,4.098 20.093,4.280 C20.413,3.915 20.750,3.553 21.121,3.210 C23.344,1.149 26.112,0.014 28.914,0.014 C33.368,0.014 37.341,2.770 39.284,7.207 C40.871,10.833 40.468,14.654 38.054,18.888 C36.186,22.170 33.493,24.705 30.890,27.156 C28.666,29.250 26.472,31.271 24.280,33.290 C24.280,33.290 21.494,35.859 21.494,35.859 C21.408,35.938 21.323,36.007 21.213,36.095 C21.213,36.095 19.940,37.137 19.940,37.137 ZM11.288,3.251 C10.327,3.251 9.384,3.435 8.486,3.799 C5.522,5.000 3.180,8.397 3.264,11.372 C3.347,14.337 4.396,16.996 6.475,19.500 C9.271,22.873 12.605,25.897 15.830,28.821 C17.233,30.094 18.676,31.401 20.081,32.745 C20.081,32.745 22.057,30.931 22.057,30.931 C24.241,28.919 26.426,26.907 28.588,24.872 C31.183,22.428 33.584,20.167 35.214,17.305 C37.120,13.963 37.461,11.161 36.290,8.489 C34.874,5.250 32.047,3.238 28.914,3.238 C26.915,3.238 24.992,4.042 23.350,5.562 C22.887,5.992 22.454,6.504 21.995,7.047 C21.764,7.321 21.532,7.596 21.290,7.868 C21.290,7.868 20.026,9.293 20.026,9.293 C20.026,9.293 18.286,7.191 18.286,7.191 C17.940,6.763 17.596,6.335 17.222,5.934 C15.606,4.204 13.498,3.251 11.288,3.251 Z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="fav-icon fav-icon-filled js-logged-in hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" viewBox="0 0 41 37">
+                      <path d="M39.268,7.202 C37.327,2.765 33.353,0.008 28.899,0.008 C26.096,0.008 23.328,1.143 21.104,3.205 C20.734,3.548 20.397,3.910 20.077,4.274 C19.922,4.093 19.765,3.915 19.602,3.741 C16.401,0.314 11.396,-0.878 7.234,0.809 C3.050,2.505 -0.133,7.182 -0.013,11.457 C0.089,15.112 1.418,18.504 3.937,21.542 C6.881,25.091 10.301,28.194 13.608,31.193 C15.360,32.782 17.171,34.424 18.874,36.101 C18.874,36.101 19.920,37.133 19.920,37.133 C19.920,37.133 21.189,36.101 21.189,36.101 C21.306,36.007 21.395,35.934 21.478,35.857 C21.478,35.857 24.258,33.294 24.258,33.294 C26.453,31.272 28.648,29.249 30.866,27.162 C33.472,24.707 36.167,22.170 38.040,18.884 C40.453,14.650 40.855,10.830 39.268,7.202 Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <ul class="dropdown-menu hidden js-favorites" role="menu" aria-labelledby="dropdownMenuFavorites">
+              <li role="presentation" class="dropdown-header">FAVORITES</li>
+              <li role="presentation">
+                <a class="u-ellipsis" role="menuitem" tabindex="-1" href="#">Columbus, OH</a>
+              </li>
+              <li role="presentation">
+                <a class="u-ellipsis" role="menuitem" tabindex="-1" href="#">Saratoga Springs, NY</a>
+              </li>
+              <li role="presentation">
+                <a class="u-ellipsis" role="menuitem" tabindex="-1" href="#">Fresno-Yosemite International (FAT)</a>
+              </li>
+              <li role="presentation">
+                <a class="u-ellipsis" role="menuitem" tabindex="-1" href="#">Minneapolis, MN</a>
+              </li>
+            </ul>
+            <ul class="dropdown-menu js-recent" role="menu" aria-labelledby="dropdownMenuFavorites">
+              <li role="presentation">
+                <a class="u-ellipsis" role="menuitem" tabindex="-1" href="#">Current Location</a>
+              </li>
+              <li role="presentation" class="dropdown-header">RECENT SEARCHES</li>
+              <li role="presentation">
+                <a class="u-ellipsis" role="menuitem" tabindex="-1" href="#">Phoenix, AZ</a>
+              </li>
+              <li role="presentation">
+                <a class="u-ellipsis" role="menuitem" tabindex="-1" href="#">Austin, TX</a>
+              </li>
+              <li role="presentation">
+                <a class="u-ellipsis" role="menuitem" tabindex="-1" href="#">Minneapolis, MN</a>
+              </li>
+            </ul>
+            <ul class="dropdown-menu places-results js-places-results hidden" role="menu"></ul>
+          </div>
+        </div>
+      </div>
+          </div>
+          <div class="row top-buffer bw-date-range-container">
+            <div class="col-xs-12">
+              <div class="row">
+                <div class="col-sm-6 col-xs-12">
+                  <label class="bw-label visible-xs">
+                  CHECK-IN &amp; CHECK-OUT
+                  </label>
+                  <label class="bw-label hidden-xs">CHECK-IN</label>
+                </div>
+                <div class="col-sm-6 hidden-xs">
+                  <label class="bw-label">
+                  CHECK-OUT
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 bw-stay-dates-container" data-toggle="modal" data-target="#bw-calendar">
+                  <div class="bw-stay-dates"  id="bw-stay-start-date">
+                    <span class="bw-day-label">TUESDAY</span> <br />
+                    <span class="bw-date-label">March 24, 2015</span>
+                  </div>
+                  <div class="bw-stay-dates" id="bw-stay-end-date">
+                    <span class="bw-day-label">WEDNESDAY</span> <br />
+                    <span class="bw-date-label">March 25, 2015</span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <p class="bw-date-range-footer" id="bw-stay-nights">
+                    1 Night
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row top-buffer">
+            <div class="form-group col-xs-12">
+              <label class="bw-label">
+              ROOMS
+              </label>
+              <div class="outer-padding-top">
+                <div class="row">
+                  <div id="room-1" class="col-sm-4">
+                    <div class="room-box">
+                      <div class="room-header">
+                        <div class="header-text">ROOM 1</div>
+                      </div>
+                      <div class="container room-body">
+                        <div class="row room-adult">
+                          <div class="col-xs-3 body-icon-minus">
+                            <button class="room-button" type="button">
+                              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="32" height="32" viewBox="0 0 32 32">
+                                <path d="M8.392,17.589 C8.392,17.589 23.607,17.589 23.607,17.589 C23.607,17.589 23.607,14.411 23.607,14.411 C23.607,14.411 8.392,14.411 8.392,14.411 C8.392,14.411 8.392,17.589 8.392,17.589 ZM16.000,0.000 C7.177,0.000 -0.000,7.177 -0.000,16.000 C-0.000,24.822 7.177,32.000 16.000,32.000 C24.823,32.000 32.000,24.822 32.000,16.000 C32.000,7.177 24.823,0.000 16.000,0.000 ZM16.000,28.822 C8.930,28.822 3.178,23.070 3.178,16.000 C3.178,8.930 8.930,3.178 16.000,3.178 C23.070,3.178 28.822,8.930 28.822,16.000 C28.822,23.070 23.070,28.822 16.000,28.822 Z" fill-rule="evenodd"/>
+                              </svg>
+                            </button>
+                          </div>
+                          <div class="col-xs-6 body-text">1 Adult</div>
+                          <div class="col-xs-3 body-icon-plus">
+                            <button type="button" class="room-button">
+                              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="32" height="32" viewBox="0 0 32 32">
+                                <path d="M16.000,32.000 C7.177,32.000 0.000,24.822 0.000,16.000 C0.000,7.177 7.177,0.000 16.000,0.000 C24.823,0.000 32.000,7.177 32.000,16.000 C32.000,24.822 24.823,32.000 16.000,32.000 ZM16.000,3.178 C8.930,3.178 3.178,8.930 3.178,16.000 C3.178,23.070 8.930,28.822 16.000,28.822 C23.070,28.822 28.822,23.070 28.822,16.000 C28.822,8.930 23.070,3.178 16.000,3.178 ZM17.589,23.607 C17.589,23.607 14.411,23.607 14.411,23.607 C14.411,23.607 14.411,17.589 14.411,17.589 C14.411,17.589 8.393,17.589 8.393,17.589 C8.393,17.589 8.393,14.411 8.393,14.411 C8.393,14.411 14.411,14.411 14.411,14.411 C14.411,14.411 14.411,8.393 14.411,8.393 C14.411,8.393 17.589,8.393 17.589,8.393 C17.589,8.393 17.589,14.411 17.589,14.411 C17.589,14.411 23.606,14.411 23.606,14.411 C23.606,14.411 23.606,17.589 23.606,17.589 C23.606,17.589 17.589,17.589 17.589,17.589 C17.589,17.589 17.589,23.607 17.589,23.607 Z" fill-rule="evenodd"/>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="row room-child">
+                          <div class="col-xs-3 body-icon-minus">
+                            <button class="room-button" type="button">
+                              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="32" height="32" viewBox="0 0 32 32">
+                                <path d="M8.392,17.589 C8.392,17.589 23.607,17.589 23.607,17.589 C23.607,17.589 23.607,14.411 23.607,14.411 C23.607,14.411 8.392,14.411 8.392,14.411 C8.392,14.411 8.392,17.589 8.392,17.589 ZM16.000,0.000 C7.177,0.000 -0.000,7.177 -0.000,16.000 C-0.000,24.822 7.177,32.000 16.000,32.000 C24.823,32.000 32.000,24.822 32.000,16.000 C32.000,7.177 24.823,0.000 16.000,0.000 ZM16.000,28.822 C8.930,28.822 3.178,23.070 3.178,16.000 C3.178,8.930 8.930,3.178 16.000,3.178 C23.070,3.178 28.822,8.930 28.822,16.000 C28.822,23.070 23.070,28.822 16.000,28.822 Z" fill-rule="evenodd"/>
+                              </svg>
+                            </button>
+                          </div>
+                          <div class="col-xs-6 body-text">0 Children</div>
+                          <div class="col-xs-3 body-icon-plus">
+                            <button type="button" class="room-button">
+                              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="32" height="32" viewBox="0 0 32 32">
+                                <path d="M16.000,32.000 C7.177,32.000 0.000,24.822 0.000,16.000 C0.000,7.177 7.177,0.000 16.000,0.000 C24.823,0.000 32.000,7.177 32.000,16.000 C32.000,24.822 24.823,32.000 16.000,32.000 ZM16.000,3.178 C8.930,3.178 3.178,8.930 3.178,16.000 C3.178,23.070 8.930,28.822 16.000,28.822 C23.070,28.822 28.822,23.070 28.822,16.000 C28.822,8.930 23.070,3.178 16.000,3.178 ZM17.589,23.607 C17.589,23.607 14.411,23.607 14.411,23.607 C14.411,23.607 14.411,17.589 14.411,17.589 C14.411,17.589 8.393,17.589 8.393,17.589 C8.393,17.589 8.393,14.411 8.393,14.411 C8.393,14.411 14.411,14.411 14.411,14.411 C14.411,14.411 14.411,8.393 14.411,8.393 C14.411,8.393 17.589,8.393 17.589,8.393 C17.589,8.393 17.589,14.411 17.589,14.411 C17.589,14.411 23.606,14.411 23.606,14.411 C23.606,14.411 23.606,17.589 23.606,17.589 C23.606,17.589 17.589,17.589 17.589,17.589 C17.589,17.589 17.589,23.607 17.589,23.607 Z" fill-rule="evenodd"/>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="age-selectors">
+                          <div class="row ages-header">
+                            <div class=" col-xs-12">SELECT AGES</div>
+                          </div>
+                          <div class="dropdown">
+                            <div class="row child dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="false" role="menu">
+                              <div class="child-header col-xs-12">CHILD 1<span class="bw-icon bw-icon-gray-carrot"></span></div>
+                              <div class="child-age col-xs-12">5 Years Old</div>
+                            </div>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">&lt;1 Year Old</a></li>
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">1 Year Old</a></li>
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2 Years Old</a></li>
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">3 Years Old</a></li>
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">4 Years Old</a></li>
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">5 Years Old</a></li>
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">6 Years Old</a></li>
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">7 Years Old</a></li>
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">8 Years Old</a></li>
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">9 Year Old</a></li>
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">10 Year Old</a></li>
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">11 Year Old</a></li>
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">12 Years Old</a></li>
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">13 Years Old</a></li>
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">14 Years Old</a></li>
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">15 Years Old</a></li>
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">16 Years Old</a></li>
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">17 Years Old</a></li>
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">18 Years Old</a></li>
+                            </ul>
+                          </div>
+                          <div class="row child dropdown-toggle">
+                            <div class="child-header col-xs-12">CHILD 2<span class="bw-icon bw-icon-gray-carrot"></span></div>
+                            <div class="child-age col-xs-12">5 Years Old</div>
+                          </div>
+                          <div class="row child dropdown-toggle">
+                            <div class="child-header col-xs-12">CHILD 3<span class="bw-icon bw-icon-gray-carrot"></span></div>
+                            <div class="child-age col-xs-12">5 Years Old</div>
+                          </div>
+                          <div class="row child dropdown-toggle">
+                            <div class="child-header col-xs-12">CHILD 4<span class="bw-icon bw-icon-gray-carrot"></span></div>
+                            <div class="child-age col-xs-12">5 Years Old</div>
+                          </div>
+                          <div class="row child dropdown-toggle">
+                            <div class="child-header col-xs-12">CHILD 5<span class="bw-icon bw-icon-gray-carrot"></span></div>
+                            <div class="child-age col-xs-12">5 Years Old</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="add-a-room-2" class="col-sm-4">
+                    <div class="room-box">
+                      <div class="add-a-room">
+                        <div class="row">
+                          <div class="col-xs-3 visible-xs"></div>
+                          <div class="col-xs-6 add-a-room-text">ADD A ROOM</div>
+                          <div class="col-xs-3 add-a-room-plus">
+                            <span class="visible-xs-inline-block bw-icon bw-icon-small-plus-blue"></span>
+                            <span class="hidden-xs bw-icon bw-icon-big-plus-blue"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="room-2" class="col-sm-4 hidden">
+                    <div class="room-box">
+                      <div class="room-header">
+                        <div class="header-text"><span id="close-room-2" class="close-box">X</span>ROOM 2</div>
+                      </div>
+                      <div class="container room-body">
+                        <div class="row room-adult">
+                          <div class="col-xs-3 body-icon-minus">
+                            <button class="room-button" type="button">
+                              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="32" height="32" viewBox="0 0 32 32">
+                                <path d="M8.392,17.589 C8.392,17.589 23.607,17.589 23.607,17.589 C23.607,17.589 23.607,14.411 23.607,14.411 C23.607,14.411 8.392,14.411 8.392,14.411 C8.392,14.411 8.392,17.589 8.392,17.589 ZM16.000,0.000 C7.177,0.000 -0.000,7.177 -0.000,16.000 C-0.000,24.822 7.177,32.000 16.000,32.000 C24.823,32.000 32.000,24.822 32.000,16.000 C32.000,7.177 24.823,0.000 16.000,0.000 ZM16.000,28.822 C8.930,28.822 3.178,23.070 3.178,16.000 C3.178,8.930 8.930,3.178 16.000,3.178 C23.070,3.178 28.822,8.930 28.822,16.000 C28.822,23.070 23.070,28.822 16.000,28.822 Z" fill-rule="evenodd"/>
+                              </svg>
+                            </button>
+                          </div>
+                          <div class="col-xs-6 body-text">1 Adult</div>
+                          <div class="col-xs-3 body-icon-plus">
+                            <button type="button" class="room-button">
+                              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="32" height="32" viewBox="0 0 32 32">
+                                <path d="M16.000,32.000 C7.177,32.000 0.000,24.822 0.000,16.000 C0.000,7.177 7.177,0.000 16.000,0.000 C24.823,0.000 32.000,7.177 32.000,16.000 C32.000,24.822 24.823,32.000 16.000,32.000 ZM16.000,3.178 C8.930,3.178 3.178,8.930 3.178,16.000 C3.178,23.070 8.930,28.822 16.000,28.822 C23.070,28.822 28.822,23.070 28.822,16.000 C28.822,8.930 23.070,3.178 16.000,3.178 ZM17.589,23.607 C17.589,23.607 14.411,23.607 14.411,23.607 C14.411,23.607 14.411,17.589 14.411,17.589 C14.411,17.589 8.393,17.589 8.393,17.589 C8.393,17.589 8.393,14.411 8.393,14.411 C8.393,14.411 14.411,14.411 14.411,14.411 C14.411,14.411 14.411,8.393 14.411,8.393 C14.411,8.393 17.589,8.393 17.589,8.393 C17.589,8.393 17.589,14.411 17.589,14.411 C17.589,14.411 23.606,14.411 23.606,14.411 C23.606,14.411 23.606,17.589 23.606,17.589 C23.606,17.589 17.589,17.589 17.589,17.589 C17.589,17.589 17.589,23.607 17.589,23.607 Z" fill-rule="evenodd"/>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="row room-child">
+                          <div class="col-xs-3 body-icon-minus">
+                            <button class="room-button" type="button">
+                              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="32" height="32" viewBox="0 0 32 32">
+                                <path d="M8.392,17.589 C8.392,17.589 23.607,17.589 23.607,17.589 C23.607,17.589 23.607,14.411 23.607,14.411 C23.607,14.411 8.392,14.411 8.392,14.411 C8.392,14.411 8.392,17.589 8.392,17.589 ZM16.000,0.000 C7.177,0.000 -0.000,7.177 -0.000,16.000 C-0.000,24.822 7.177,32.000 16.000,32.000 C24.823,32.000 32.000,24.822 32.000,16.000 C32.000,7.177 24.823,0.000 16.000,0.000 ZM16.000,28.822 C8.930,28.822 3.178,23.070 3.178,16.000 C3.178,8.930 8.930,3.178 16.000,3.178 C23.070,3.178 28.822,8.930 28.822,16.000 C28.822,23.070 23.070,28.822 16.000,28.822 Z" fill-rule="evenodd"/>
+                              </svg>
+                            </button>
+                          </div>
+                          <div class="col-xs-6 body-text">0 Children</div>
+                          <div class="col-xs-3 body-icon-plus">
+                            <button type="button" class="room-button">
+                              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="32" height="32" viewBox="0 0 32 32">
+                                <path d="M16.000,32.000 C7.177,32.000 0.000,24.822 0.000,16.000 C0.000,7.177 7.177,0.000 16.000,0.000 C24.823,0.000 32.000,7.177 32.000,16.000 C32.000,24.822 24.823,32.000 16.000,32.000 ZM16.000,3.178 C8.930,3.178 3.178,8.930 3.178,16.000 C3.178,23.070 8.930,28.822 16.000,28.822 C23.070,28.822 28.822,23.070 28.822,16.000 C28.822,8.930 23.070,3.178 16.000,3.178 ZM17.589,23.607 C17.589,23.607 14.411,23.607 14.411,23.607 C14.411,23.607 14.411,17.589 14.411,17.589 C14.411,17.589 8.393,17.589 8.393,17.589 C8.393,17.589 8.393,14.411 8.393,14.411 C8.393,14.411 14.411,14.411 14.411,14.411 C14.411,14.411 14.411,8.393 14.411,8.393 C14.411,8.393 17.589,8.393 17.589,8.393 C17.589,8.393 17.589,14.411 17.589,14.411 C17.589,14.411 23.606,14.411 23.606,14.411 C23.606,14.411 23.606,17.589 23.606,17.589 C23.606,17.589 17.589,17.589 17.589,17.589 C17.589,17.589 17.589,23.607 17.589,23.607 Z" fill-rule="evenodd"/>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="age-selectors">
+                          <div class="row ages-header">
+                            <div class=" col-xs-12">SELECT AGES</div>
+                          </div>
+                          <div class="row child dropdown-toggle">
+                            <div class="child-header col-xs-12">CHILD 1<span class="bw-icon bw-icon-gray-carrot"></span></div>
+                            <div class="child-age col-xs-12">5 Years Old</div>
+                          </div>
+                          <div class="row child dropdown-toggle">
+                            <div class="child-header col-xs-12">CHILD 2<span class="bw-icon bw-icon-gray-carrot"></span></div>
+                            <div class="child-age col-xs-12">5 Years Old</div>
+                          </div>
+                          <div class="row child dropdown-toggle">
+                            <div class="child-header col-xs-12">CHILD 3<span class="bw-icon bw-icon-gray-carrot"></span></div>
+                            <div class="child-age col-xs-12">5 Years Old</div>
+                          </div>
+                          <div class="row child dropdown-toggle">
+                            <div class="child-header col-xs-12">CHILD 4<span class="bw-icon bw-icon-gray-carrot"></span></div>
+                            <div class="child-age col-xs-12">5 Years Old</div>
+                          </div>
+                          <div class="row child dropdown-toggle">
+                            <div class="child-header col-xs-12">CHILD 5<span class="bw-icon bw-icon-gray-carrot"></span></div>
+                            <div class="child-age col-xs-12">5 Years Old</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="add-a-room-3" class="col-sm-4">
+                    <div class="room-box">
+                      <div class="add-a-room">
+                        <div class="row">
+                          <div class="col-xs-3 visible-xs"></div>
+                          <div class="col-xs-6 add-a-room-text">ADD A ROOM</div>
+                          <div class="col-xs-3 add-a-room-plus">
+                            <span class="visible-xs-inline-block bw-icon bw-icon-small-plus-blue"></span>
+                            <span class="hidden-xs bw-icon bw-icon-big-plus-blue"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="room-3" class="col-sm-4 hidden">
+                    <div class="room-box">
+                      <div class="room-header">
+                        <div class="header-text"><span id="close-room-3" class="close-box">X</span>ROOM 3</div>
+                      </div>
+                      <div class="container room-body">
+                        <div class="row room-adult">
+                          <div class="col-xs-3 body-icon-minus">
+                            <button class="room-button" type="button" disabled>
+                              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="32" height="32" viewBox="0 0 32 32">
+                                <path d="M8.392,17.589 C8.392,17.589 23.607,17.589 23.607,17.589 C23.607,17.589 23.607,14.411 23.607,14.411 C23.607,14.411 8.392,14.411 8.392,14.411 C8.392,14.411 8.392,17.589 8.392,17.589 ZM16.000,0.000 C7.177,0.000 -0.000,7.177 -0.000,16.000 C-0.000,24.822 7.177,32.000 16.000,32.000 C24.823,32.000 32.000,24.822 32.000,16.000 C32.000,7.177 24.823,0.000 16.000,0.000 ZM16.000,28.822 C8.930,28.822 3.178,23.070 3.178,16.000 C3.178,8.930 8.930,3.178 16.000,3.178 C23.070,3.178 28.822,8.930 28.822,16.000 C28.822,23.070 23.070,28.822 16.000,28.822 Z" fill-rule="evenodd"/>
+                              </svg>
+                            </button>
+                          </div>
+                          <div class="col-xs-6 body-text">1 Adult</div>
+                          <div class="col-xs-3 body-icon-plus">
+                            <button type="button" class="room-button">
+                              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="32" height="32" viewBox="0 0 32 32">
+                                <path d="M16.000,32.000 C7.177,32.000 0.000,24.822 0.000,16.000 C0.000,7.177 7.177,0.000 16.000,0.000 C24.823,0.000 32.000,7.177 32.000,16.000 C32.000,24.822 24.823,32.000 16.000,32.000 ZM16.000,3.178 C8.930,3.178 3.178,8.930 3.178,16.000 C3.178,23.070 8.930,28.822 16.000,28.822 C23.070,28.822 28.822,23.070 28.822,16.000 C28.822,8.930 23.070,3.178 16.000,3.178 ZM17.589,23.607 C17.589,23.607 14.411,23.607 14.411,23.607 C14.411,23.607 14.411,17.589 14.411,17.589 C14.411,17.589 8.393,17.589 8.393,17.589 C8.393,17.589 8.393,14.411 8.393,14.411 C8.393,14.411 14.411,14.411 14.411,14.411 C14.411,14.411 14.411,8.393 14.411,8.393 C14.411,8.393 17.589,8.393 17.589,8.393 C17.589,8.393 17.589,14.411 17.589,14.411 C17.589,14.411 23.606,14.411 23.606,14.411 C23.606,14.411 23.606,17.589 23.606,17.589 C23.606,17.589 17.589,17.589 17.589,17.589 C17.589,17.589 17.589,23.607 17.589,23.607 Z" fill-rule="evenodd"/>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="row room-child">
+                          <div class="col-xs-3 body-icon-minus">
+                            <button class="room-button" type="button">
+                              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="32" height="32" viewBox="0 0 32 32">
+                                <path d="M8.392,17.589 C8.392,17.589 23.607,17.589 23.607,17.589 C23.607,17.589 23.607,14.411 23.607,14.411 C23.607,14.411 8.392,14.411 8.392,14.411 C8.392,14.411 8.392,17.589 8.392,17.589 ZM16.000,0.000 C7.177,0.000 -0.000,7.177 -0.000,16.000 C-0.000,24.822 7.177,32.000 16.000,32.000 C24.823,32.000 32.000,24.822 32.000,16.000 C32.000,7.177 24.823,0.000 16.000,0.000 ZM16.000,28.822 C8.930,28.822 3.178,23.070 3.178,16.000 C3.178,8.930 8.930,3.178 16.000,3.178 C23.070,3.178 28.822,8.930 28.822,16.000 C28.822,23.070 23.070,28.822 16.000,28.822 Z" fill-rule="evenodd"/>
+                              </svg>
+                            </button>
+                          </div>
+                          <div class="col-xs-6 body-text">0 Children</div>
+                          <div class="col-xs-3 body-icon-plus">
+                            <button type="button" class="room-button" disabled>
+                              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="32" height="32" viewBox="0 0 32 32">
+                                <path d="M16.000,32.000 C7.177,32.000 0.000,24.822 0.000,16.000 C0.000,7.177 7.177,0.000 16.000,0.000 C24.823,0.000 32.000,7.177 32.000,16.000 C32.000,24.822 24.823,32.000 16.000,32.000 ZM16.000,3.178 C8.930,3.178 3.178,8.930 3.178,16.000 C3.178,23.070 8.930,28.822 16.000,28.822 C23.070,28.822 28.822,23.070 28.822,16.000 C28.822,8.930 23.070,3.178 16.000,3.178 ZM17.589,23.607 C17.589,23.607 14.411,23.607 14.411,23.607 C14.411,23.607 14.411,17.589 14.411,17.589 C14.411,17.589 8.393,17.589 8.393,17.589 C8.393,17.589 8.393,14.411 8.393,14.411 C8.393,14.411 14.411,14.411 14.411,14.411 C14.411,14.411 14.411,8.393 14.411,8.393 C14.411,8.393 17.589,8.393 17.589,8.393 C17.589,8.393 17.589,14.411 17.589,14.411 C17.589,14.411 23.606,14.411 23.606,14.411 C23.606,14.411 23.606,17.589 23.606,17.589 C23.606,17.589 17.589,17.589 17.589,17.589 C17.589,17.589 17.589,23.607 17.589,23.607 Z" fill-rule="evenodd"/>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="age-selectors">
+                          <div class="row ages-header">
+                            <div class=" col-xs-12">SELECT AGES</div>
+                          </div>
+                          <div class="row child dropdown-toggle">
+                            <div class="child-header col-xs-12">CHILD 1<span class="bw-icon bw-icon-gray-carrot"></span></div>
+                            <div class="child-age col-xs-12">5 Years Old</div>
+                          </div>
+                          <div class="row child dropdown-toggle">
+                            <div class="child-header col-xs-12">CHILD 2<span class="bw-icon bw-icon-gray-carrot"></span></div>
+                            <div class="child-age col-xs-12">5 Years Old</div>
+                          </div>
+                          <div class="row child dropdown-toggle">
+                            <div class="child-header col-xs-12">CHILD 3<span class="bw-icon bw-icon-gray-carrot"></span></div>
+                            <div class="child-age col-xs-12">5 Years Old</div>
+                          </div>
+                          <div class="row child dropdown-toggle">
+                            <div class="child-header col-xs-12">CHILD 4<span class="bw-icon bw-icon-gray-carrot"></span></div>
+                            <div class="child-age col-xs-12">5 Years Old</div>
+                          </div>
+                          <div class="row child dropdown-toggle">
+                            <div class="child-header col-xs-12">CHILD 5<span class="bw-icon bw-icon-gray-carrot"></span></div>
+                            <div class="child-age col-xs-12">5 Years Old</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <a href="#" class="booking-4-plus col-xs-12">
+                  <span class="bw-icon bw-icon-four-plus-blue"></span>&nbsp;
+                  <span class="">BOOKING 4&#43; ROOMS?</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer bw-modal-footer">
+          <div class="row">
+            <div class="col-xs-6">
+              <button class="btn bw-btn-cancel" data-dismiss="modal">CANCEL</button>
+            </div>
+            <div class="col-xs-6">
+              <button class="btn bw-btn-accept">UPDATE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- room details carousel modal -->
+  <div class="modal" id="room-carousel-modal" tabindex="-1" role="dialog" aria-labelledby="room-carousel-modal" aria-hidden="true">
+    <div class="modal-dialog modal-static">
+      <div class="bw-modal-content">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <div id="room-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <div class="carousel-img" style="background-image: url('http://images.bestwestern.com/bwi/brochures/05268/photos/1024/4097329.jpg')">
+                  <div class="gradient gradient-dark--bottom carousel-indicator">
+                    <span class="current-indicator">1</span>&nbsp;&nbsp;&nbsp;of&nbsp;&nbsp;&nbsp;<span class="total-indicator">3</span>
+                  </div>
+                </div>
+                <div class="carousel-text">
+                  <h3>Lobby</h3>
+                  <p>Lobby and Breakfast Area</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="carousel-img" style="background-image: url('http://images.bestwestern.com/bwi/brochures/05268/photos/1024/4097343.jpg')">
+                  <div class="gradient gradient-dark--bottom carousel-indicator">
+                    <span class="current-indicator">2</span>&nbsp;&nbsp;&nbsp;of&nbsp;&nbsp;&nbsp;<span class="total-indicator">3</span>
+                  </div>
+                </div>
+                <div class="carousel-text">
+                  <h3>Guest Room</h3>
+                  <p>Our king guest room includes a pillowtop mattress fridge microwave in-room safe HD TV with over 50 cable channels complimentary Wi-Fi and more!</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="carousel-img" style="background-image: url('http://images.bestwestern.com/bwi/brochures/05268/photos/1024/4097331.jpg')">
+                  <div class="gradient gradient-dark--bottom carousel-indicator">
+                    <span class="current-indicator">3</span>&nbsp;&nbsp;&nbsp;of&nbsp;&nbsp;&nbsp;<span class="total-indicator">3</span>
+                  </div>
+                </div>
+                <div class="carousel-text">
+                  <h3>Pool</h3>
+                  <p>Outdoor Pool</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 360 virtual tour modal -->
+  <div class="modal" id="virtual-tour-modal" tabindex="-1" role="dialog" aria-labelledby="virtual-tour-modal" aria-hidden="true">
+    <div class="modal-dialog modal-static">
+      <div class="bw-modal-content">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <div id="virtual-tour-frame">
+            <iframe src=""></iframe>
+          </div>
+          <div id="virtual-tour-list">
+            <a class="virtual-tour-list-item" data-frame-src="http://previewimages.bestwestern.com/bwi/360ViewerTest.html?xmlPath=brochures/22025/propertyInfo_1024_en.XML&amp;index=0">Vista Exterior<object type="image/svg+xml" data="icons/svg/icn-360-blue.svg"></object></a>
+            <a class="virtual-tour-list-item" data-frame-src="http://www.iceportal.com/brochures/Media/Show/virtualReality.aspx?did=8309&amp;brochureid=05268&amp;mtype=10693&amp;publicid=3220995&amp;instanceid=17">Lobby<object type="image/svg+xml" data="icons/svg/icn-360-blue.svg"></object></a>
+            <a class="virtual-tour-list-item" data-frame-src="http://www.iceportal.com/brochures/Media/Show/virtualReality.aspx?did=8309&amp;brochureid=05268&amp;mtype=10693&amp;publicid=3220997&amp;instanceid=17">Suite with Two Queen Beds<object type="image/svg+xml" data="icons/svg/icn-360-blue.svg"></object></a>
+            <a class="virtual-tour-list-item" data-frame-src="http://www.iceportal.com/brochures/Media/Show/virtualReality.aspx?did=8309&amp;brochureid=05268&amp;mtype=10693&amp;publicid=3220999&amp;instanceid=17">Standard Room King Bed<object type="image/svg+xml" data="icons/svg/icn-360-blue.svg"></object></a>
+            <a class="virtual-tour-list-item" data-frame-src="http://www.iceportal.com/brochures/Media/Show/virtualReality.aspx?did=8309&amp;brochureid=05268&amp;mtype=10693&amp;publicid=3221001&amp;instanceid=17">Pool and Hot Tub<object type="image/svg+xml" data="icons/svg/icn-360-blue.svg"></object></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="hd-content" class="container-fluid container--with-space">
+    <!-- background image -->
+    <div id="room-carousel-background" class="carousel slide" data-ride="carousel" data-interval="false">
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <div class="carousel-img" style="background-image: url('../images/bw7.png')">
+          </div>
+        </div>
+        <div class="item">
+          <div class="carousel-img" style="background-image: url('http://images.bestwestern.com/bwi/brochures/05268/photos/1024/4097329.jpg')">
+          </div>
+        </div>
+        <div class="item">
+          <div class="carousel-img" style="background-image: url('http://images.bestwestern.com/bwi/brochures/05268/photos/1024/4097343.jpg')">
+          </div>
+        </div>
+        <div class="item">
+          <div class="carousel-img" style="background-image: url('http://images.bestwestern.com/bwi/brochures/05268/photos/1024/4097331.jpg')">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- edit selection bar -->
+    <div class="bw-navbar">
+      <div class="row bw-city-tab">
+        <div class="col-xs-9"><span class="location u-ellipsis">Columbus, OH</span><span class="room-guest">April 9-12, 2015&nbsp; &nbsp;1 Room, 2 Guests</span></div>
+        <div class= "col-xs-3"><a href="#" data-toggle="modal" data-target="#bw-edit" class="bw-edit-font">EDIT</a></div>
+      </div>
+    </div>
+    <!-- transparent div to reveal hotel image/launch virtual tour -->
+    <section class="hotel-briefing">
+    <div id="virtual-tour" class="row">
+      <a href="#" class="tour-link" data-toggle="modal" data-target="#virtual-tour-modal">VIRTUAL TOUR&nbsp;
+        <object type="image/svg+xml" data="icons/svg/icn-360-white.svg"></object></a>
+      <div class="arrow right"><span class="glyphicon glyphicon-menu-right"></span></div>
+      <div class="arrow left"><span class="glyphicon glyphicon-menu-left"></span></div>
+      <div class="transparent" data-toggle="modal" data-target="#room-carousel-modal">
+      </div>
+      <div class="gradient gradient-dark--bottom">
+      </div>
+    </div>
+    
+    <!-- hotel info and phone number -->
+    <div id="hotel-name" class="row card--large">
+      <div class="card-body">
+        <div class="card-indicator card-indicator--premier"></div>
+        <div class="nav-right icon" data-toggle="modal" data-target="#bw-login">
+            <a href="#" class="svg">
+            <object type="image/svg+xml" data="icons/svg/global-fav-inactive.svg"></object>
+            </a>
+            <a href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4b3318882e3274bf" class="svg">
+              <object type="image/svg+xml" data="icons/svg/global-share.svg"></object>
+            </a>
+          </div>
+        <p class="card-name">BEST WESTERN PREMIER<br />
+          <span class="card-location">Executive Suites Columbus East</span>
+        </p>
+        <div class="bw-list-item-phone-price">
+          <a href="tel:" class="call-hotel">
+          <object type="image/svg+xml" data="icons/svg/icn-call-blue.svg"></object>
+          <span class="phone-number">(614) 860-9804</span>
+          </a>
+          <span class="docking-wrapper">
+            <span class="sr-only">Rates Starting At</span>
+            <span class="card-price">$99.99</span>
+            <span class="card-currency">USD</span>
+          </span>
+        </div>
+        <div class="group-booking-alert">*Special rates available as part of XYZ Corp Quarterly Meeting. (These rates are available from 8/16/2015-8/19/2015)
+        </div>
+      </div>
+    </div>
+    <div id="address-directions" class="fluid-container">
+      <div class="cool-thing">
+        <div id="map" class="row">
+          <div id="map-canvas" data-draggable="false"></div>
+          <a class="btn bw-btn-clear--blue" href="#nearby-attractions">EXPLORE WHAT'S NEARBY</a>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <span class="address">1899 Winderley Lane<br>
+        Pickering, OH 43147</span>
+        <a href="http://maps.google.com" class="pull-right distance svg">
+        <div class="directions-text">GET DIRECTIONS</div><object type="image/svg+xml" data="icons/svg/icn-directions-white.svg"></object><br>
+        <div class="distance-text">35.2mi/42.6km</div>
+        </a>
+      </div>
+    </div>
+    <!-- map -->
+    
+    </section>
+    <!-- hotel details -->
+    <section id="hotel-details" class="row collapsed">
+      <div class="gradient gradient-light--bottom"></div>
+      <div class="col-xs-12">
+        <h2 id="hotel-overview">Hotel Overview</h2>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <p><label>Check-In:</label> <span id="check-in">3:00 PM EST</span></p>
+        <p><label>Check-Out:</label> <span id="check-out">11:59 AM EST</span></p>
+        <p><label>Currency:</label> <span id="details-currency">U.S. Dollars (USD)</span></p>
+        <p><label>Hotel Rating:</label> <span id="details-rating">AAA-3 Diamond</span></p>
+      </div>
+      <div class="col-xs-12 col-sm-8 details-text">
+        <p id="details-intro">
+          Select this affordable Columbus hotel and enjoy its many amenities, helpful staff and being near Ohio Expo Center, Sears, Chase Bank and the Arena District.
+        </p>
+        <h4>Traveling on business?</h4>
+        <p class="additional-details">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+        <h4>Section Heading</h4>
+        <p class="additional-details">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.</p>
+        <p class="additional-details">Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+        <h4>Section Heading</h4>
+        <p class="additional-details">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.</p>
+        <p class="additional-details">Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+        <h4>Section Heading</h4>
+        <p class="additional-details">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.</p>
+        <p class="additional-details">Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+      </div>
+      <div id="accolades" class="col-xs-12">
+        <div class="col-xs-3 ribbon">
+          <object type="image/svg+xml" data="icons/svg/monogram-accolades.svg"></object>
+        </div>
+        <div class="col-xs-9 text">
+          <h2>Hotel Accolades</h2>
+        </div>
+        <ul class="certificates">
+          <li class="col-xs-12 col-sm-9">
+            Rider Friendly Hotel<object type="image/svg+xml" data="icons/svg/icn-info-blue.svg"></object>
+          </li>
+          <li class="col-xs-12 col-sm-9">
+            TripAdvisor Certificate of Excellence<object type="image/svg+xml" data="icons/svg/icn-info-blue.svg"></object>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <div class="row">
+      <a id="details-collapse-toggle" class="col-xs-12">
+        <span id="details-toggle-expand">ADDITIONAL HOTEL DETAILS&nbsp;<object type="image/svg+xml" data="icons/svg/arrow-md-gray.svg"></object></span>
+        <!-- TODO: I put the glyphicon here because the approach was utilizing the object tag. SVG's cannot be targeted via css in this manner so we will need to either convert this from using object tags to importing or inline svg, or create a new svg with the styling-->
+        <span id="details-toggle-collapse" class="hidden">HIDE ADDITIONAL DETAILS <span class="glyphicon glyphicon-menu-up"></span></span>
+      </a>
+    </div>
+    <!-- tripadvisor -->
+    <div id="tripadvisor-rating" class="row">
+      <div class="col-xs-12"><label>TripAdvisor Traveler Rating</label></div>
+      <div class="col-xs-7">
+        <div class="bw-trip-advisor">
+          <span class="bw-icon bw-icon-tripadvisor-logo"></span>
+          <span class="bw-icon bw-icon-tripadvisor-rating-full"></span>
+          <span class="bw-icon bw-icon-tripadvisor-rating-full"></span>
+          <span class="bw-icon bw-icon-tripadvisor-rating-full"></span>
+          <span class="bw-icon bw-icon-tripadvisor-rating-full"></span>
+          <span class="bw-icon bw-icon-tripadvisor-rating-half"></span>
+          <label>(134)</label>
+        </div>
+      </div>
+      <a href="#" class="col-xs-5">
+      <span class="pull-right reviews">READ REVIEWS &gt;</span>
+      </a>
+    </div>
+    <!-- amenities -->
+    <section class="amenities js-amenities row collapsed">
+      <div class="col-xs-12 --limit-width">
+        <h2>Amenities</h2>
+        <div class="amenities-scroll-container col-xs-12 visible-xs">
+          <div class="amenities-scroll-bar js-amenity-scrollbar"></div>
+        </div>
+        <div class="col-xs-6 amenity-header amenity-header--left js-amenity-header--left">HOTEL</div>
+        <div class="col-xs-6 amenity-header amenity-header--right js-amenity-header--right">ROOM</div>
+        <div class="clearfix"></div>
+        <div id="amenities-carousel" class="carousel slide visible-xs js-amenities-carousel" data-ride="carousel" data-interval="false" data-wrap="false">
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <div class="amenity-hotel-list">
+                <div class="col-xs-12 amenity-item">
+                  <object class="amnty-icon" type="image/svg+xml" data="icons/svg/amnty-parking.svg"></object>
+                  <span class="amenity-text">Free Parking</span>
+                  <object class="info-icon" type="image/svg+xml" data="icons/svg/icn-info-yellow.svg"></object>
+                </div>
+                <div class="col-xs-12 amenity-item">
+                  <object class="amnty-icon" type="image/svg+xml" data="icons/svg/amnty-onsite-dining.svg"></object>
+                  <span class="amenity-text">Dining Included</span>
+                  <object class="info-icon" type="image/svg+xml" data="icons/svg/icn-info-yellow.svg"></object>
+                </div>
+                <div class="col-xs-12 amenity-item">
+                  <object class="amnty-icon" type="image/svg+xml" data="icons/svg/amnty-shuttle.svg"></object>
+                  <span class="amenity-text">Shuttle Bus</span>
+                  <object class="info-icon" type="image/svg+xml" data="icons/svg/icn-info-yellow.svg"></object>
+                </div>
+                <div class="col-xs-12 amenity-item">
+                  <object class="amnty-icon" type="image/svg+xml" data="icons/svg/amnty-non-smoking.svg"></object>
+                  <span class="amenity-text">Non-Smoking</span>
+                  <object class="info-icon" type="image/svg+xml" data="icons/svg/icn-info-yellow.svg"></object>
+                </div>
+                <div class="col-xs-12 amenity-item">
+                  <object class="amnty-icon" type="image/svg+xml" data="icons/svg/amnty-fitness.svg"></object>
+                  <span class="amenity-text">Fitness Facilities</span>
+                  <object class="info-icon" type="image/svg+xml" data="icons/svg/icn-info-yellow.svg"></object>
+                </div>
+                <div class="col-xs-12 amenity-item">
+                  <object class="amnty-icon" type="image/svg+xml" data="icons/svg/amnty-breakfast.svg"></object>
+                  <span class="amenity-text">Complimentary Breakfast</span>
+                  <object class="info-icon" type="image/svg+xml" data="icons/svg/icn-info-yellow.svg"></object>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="col-xs-12 amenity-room-list">
+                <ul>
+                  <li>Cable or satellite television, 32 inch flatscreen HD with HBO*</li>
+                  <li>Free local calls under 30 minutes with long distance access</li>
+                  <li>Dataports</li>
+                  <li>Wakeup calls</li>
+                  <li>AM/FM alarm clock</li>
+                  <li>Coffee/tea maker</li>
+                  <li>Hairdryer</li>
+                  <li>Iron, ironing board full size</li>
+                  <li>Iron, ironing board full sizeasdfasdf</li>
+                  <li>Iron, ironing board full size</li>
+                  <li>Iron, ironing board full size</li>
+                  <li>Iron, ironing board full size</li>
+                  <li>Iron, ironing board full size</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="amenities-panel" class="row hidden-xs">
+          <div id="amenity-col-1" class="col-xs-6">
+            <div class="amenity-hotel-list">
+              <div class="col-xs-12 amenity-item">
+                <object class="amnty-icon" type="image/svg+xml" data="icons/svg/amnty-parking.svg"></object>
+                <span class="amenity-text">Free Parking</span>
+                <object class="info-icon" type="image/svg+xml" data="icons/svg/icn-info-yellow.svg"></object>
+              </div>
+              <div class="col-xs-12 amenity-item">
+                <object class="amnty-icon" type="image/svg+xml" data="icons/svg/amnty-onsite-dining.svg"></object>
+                <span class="amenity-text">Dining Included</span>
+                <object class="info-icon" type="image/svg+xml" data="icons/svg/icn-info-yellow.svg"></object>
+              </div>
+              <div class="col-xs-12 amenity-item">
+                <object class="amnty-icon" type="image/svg+xml" data="icons/svg/amnty-shuttle.svg"></object>
+                <span class="amenity-text">Shuttle Bus</span>
+                <object class="info-icon" type="image/svg+xml" data="icons/svg/icn-info-yellow.svg"></object>
+              </div>
+              <div class="col-xs-12 amenity-item">
+                <object class="amnty-icon" type="image/svg+xml" data="icons/svg/amnty-non-smoking.svg"></object>
+                <span class="amenity-text">Non-Smoking</span>
+                <object class="info-icon" type="image/svg+xml" data="icons/svg/icn-info-yellow.svg"></object>
+              </div>
+              <div class="col-xs-12 amenity-item">
+                <object class="amnty-icon" type="image/svg+xml" data="icons/svg/amnty-fitness.svg"></object>
+                <span class="amenity-text">Fitness Facilities</span>
+                <object class="info-icon" type="image/svg+xml" data="icons/svg/icn-info-yellow.svg"></object>
+              </div>
+              <div class="col-xs-12 amenity-item">
+                <object class="amnty-icon" type="image/svg+xml" data="icons/svg/amnty-breakfast.svg"></object>
+                <span class="amenity-text">Complimentary Breakfast</span>
+                <object class="info-icon" type="image/svg+xml" data="icons/svg/icn-info-yellow.svg"></object>
+              </div>
+            </div>
+          </div>
+          <div id="amenity-col-2" class="col-xs-6">
+            <div class="col-xs-12 amenity-room-list">
+              <ul>
+                <li>Cable or satellite television, 32 inch flatscreen HD with HBO*</li>
+                <li>Free local calls under 30 minutes with long distance access</li>
+                <li>Dataports</li>
+                <li>Wakeup calls</li>
+                <li>AM/FM alarm clock</li>
+                <li>Coffee/tea maker</li>
+                <li>Hairdryer</li>
+                <li>Iron, ironing board full size</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gradient gradient-primary--bottom"></div>
+      <!-- the one below-->
+    </section>
+    <div class="row amenities--footer">
+      <a id="amenities-collapse-toggle" class="col-xs-12 js-amenities-collapse-container">
+      <span id="amenities-toggle-expand" class="js-amenities-expand">MORE AMENITIES&nbsp;<object type="image/svg+xml" data="icons/svg/arrow-md-gray.svg"></object></span>
+      <span id="amenities-toggle-collapse" class="js-amenities-collapse hidden">BACK TO TOP&nbsp;<object type="image/svg+xml" data="icons/svg/arrow-md-gray-up.svg"></object></span>
+      </a>
+    </div>
+    <!-- nearby attractions -->
+    <div class="row">
+      <div id="nearby-attractions" class="col-xs-12">
+        <h2>Nearby Attractions</h2>
+        <div id="attractions-map" class="row">
+          <div id="attractions-map-canvas" data-draggable="false"></div>
+          <ul class="attractions-category-list list-unstyled js-category-list">
+            <li class="col-xs-12">
+              <span class="category-text">Recreation</span>        
+            </li>
+            <li class="col-xs-12">
+              <span class="category-text">Restaurants</span>
+            </li>
+            <li class="col-xs-12">
+              <span class="category-text">Shopping</span>
+            </li>
+            <li class="col-xs-12">
+              <span class="category-text">Transportation</span>
+            </li>
+            <li class="col-xs-12">
+              <span class="category-text">Corporations</span>
+            </li>
+            <li class="col-xs-12">
+              <span class="category-text">Education</span>
+            </li>
+          </ul>
+          <div class="attractions-location">
+            <div class="col-xs-12">
+              <div class="circle"><object type="image/svg+xml" data="icons/svg/nearby-recreation.svg"></object></div>
+              <div class="attractions-location-details">
+              <span class="category-text">Southwestern Park Inn</span>
+              <div class="attractions-location-distance">7.2mi / 13.4km</div>   
+              </div>      
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end nearby attractions -->
+    <!-- promo -->
+    <div class="row">
+      <div class="col-xs-12 promo">
+        <div class="promo-logo">
+          <span class="bw-icon bw-icon-logo-brown"></span>
+        </div>
+        <h2 class="promo-heading">Summer Promotion</h2>
+        <p>Book 3 or more nights in advance and you'll receive 1 night free</p>
+      </div>
+      <div class="col-xs-12 promo-image promo-image--summer">
+        <div class="promo-gradient gradient-light--top row">
+          <button class="btn bw-btn-clear--blue--wide" type="button">REGISTER TO START EARNING</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <footer class="site-footer">
+    <section class="content-section visible-lg">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <h2 class="site-footer__header">Company</h2>
+            <ul class="list list-unstyled -links">
+              <li><a>About Us</a></li>
+              <li><a>Leadership Team</a></li>
+              <li><a>Press & Media</a></li>
+              <li><a>History of Best Western</a></li>
+              <li><a>Careers</a></li>
+              <li><a>Best Western for a Better World</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h2 class="site-footer__header">Discover</h2>
+            <ul class="list list-unstyled -links">
+              <li><a>Hotel Developers</a></li>
+              <li><a>Travel Professionals</a></li>
+              <li><a>Affiliate Program</a></li>
+              <li><a>Privacy Policy</a></li>
+              <li><a>Site Map</a></li>
+              <li><a>Terms of Use</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h2 class="site-footer__header">Special Offers</h2>
+            <p>Sign-up for special offers.</p>
+            <div class="form-group">
+              <input type="text" id="email" placeholder="Email Address" class="form-control"></input>
+            </div>
+            <button class="btn bw-btn-clear--blue">SIGN UP</button>
+          </div>
+          <div class="col-md-3">
+            <h2 class="site-footer__header">Follow Us</h2>
+              <ul class="list list-unstyled social-list">
+                <li><a href=""><span class="glyphicon glyphicon-question-sign"></span></a></li>
+                <li><a href=""><span class="glyphicon glyphicon-apple"></span></a></li>
+                <li><a href=""><span class="glyphicon glyphicon-knight"></span></a></li>
+                <li><a href=""><span class="glyphicon glyphicon-flash"></span></a></li>
+                <li><a href=""><span class="glyphicon glyphicon-plane"></span></a></li>
+                <li><a href=""><span class="glyphicon glyphicon-camera"></span></a></li>
+              </ul>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="content-section">
+      <div class="container">
+        <div class="row copyright text-center">
+          <div class="col-xs-12">
+            Each Best Western<sup>®</sup> branded hotel is independently owned and operated. © 2002–2015 Best Western International, Inc. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </section>
+  </footer>
+  <!-- end container-fluid -->
+  <nav class="bw-bottom-bar single-button hotel-details">
+    <a href="RoomRates.html" class="col-xs-12">
+      <span class="select-a-room">
+    SELECT A ROOM
+    </span>
+    </a>
+  </nav>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyB-45CSiwx_TrwsIQ7oWY-7UpKGTgNs4xA"></script>
+  <script src="../scripts/jquery.js"></script>
+  <script src="../scripts/autocomplete.js"></script>
+  <script src="../scripts/bootstrap.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/navigation.js"></script>
+  <script src="../scripts/module-map.js"></script>
+  <script src="../scripts/moment-with-locales.min.js"></script>
+  <script src="../scripts/module-calendar.js"></script>
+  <script src="../scripts/reserve-room.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+        $('#header').load('BaseHeaderWithoutIcons.html')
+        });
+  
+  </script>
+  <script src="../scripts/google-map.js"></script>
+  <script src="../scripts/jquery.mobile.custom.js"></script>
+  <script src="../scripts/hotel-details.js"></script>
+</body>
+</html>

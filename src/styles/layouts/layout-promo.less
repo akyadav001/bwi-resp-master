@@ -1,0 +1,52 @@
+.promo {
+  background-color: #FFFFFF;
+  text-align: center;
+  font-size: 13px;
+}
+
+//If the promo is the main content in the page (is at the top of the page with no other content), give it some top margin so it does not press up against
+//the static navbar.
+.promo--single-section {
+  margin-top: 50px;
+}
+
+//Give the promo section a defined height so that the background image can be displayed properly. Define the background properties that will 
+//center the image in the container.
+.promo-image {
+  height: 350px;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+//Promo heading per design. Margin is defined explicitly to override any default stylings on a h* element.
+.promo-heading {
+  font-weight: @font-light;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 32px;
+}
+
+//Promo images have a white fade effect positioned on the top of the image. Center the text to match the heading text.
+.promo-gradient {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+}
+
+//This is an example of a class that applies the image separate from the positioning.
+.promo-image--summer {
+  background-image: url('../images/2015.03.20.1500_BWI_Promotion Image.jpeg');
+}
+
+.promo-logo {
+  height: 100px;
+  margin-top: 30px;
+}
+
+//Important overrides for issues arising from cascading issues from hotel details. Once that is resolved, the importants can be removed.
+.promo-logo span {
+  width: 100px !important;
+  height: 100px !important;
+}

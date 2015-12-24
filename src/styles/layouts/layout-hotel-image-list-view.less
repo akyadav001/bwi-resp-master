@@ -1,0 +1,504 @@
+@import (reference) "lib/variables";
+
+.image-list--with-backdrop {
+  background-color: @bw-dark-blue;
+}
+
+.bw-image-bg {
+  background-size: cover;
+  background-position: 0% 50%;
+  background-repeat: no-repeat;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  color: @bw-white;
+  .bw-image-text {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.8));
+
+    .bw-hotel-type {
+      font-size: 11px;
+      font-weight: @font-bold;
+    }
+
+    .bw-name-currency {
+      position: relative;
+
+      .bw-hotel-name {
+        font-size: 25px;
+        margin-bottom: 0;
+        margin-right: 35px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .bw-hotel-currency {
+        position: absolute;
+        right: 0;
+        bottom: 5px;
+        font-size: 11px;
+      }
+    }
+
+    .bw-miles-price {
+      position: relative;
+
+      .bw-hotel-miles {
+        font-size: 13px;
+      }
+
+      .bw-hotel-price {
+        position: absolute;
+        right: 0;
+        top: -10px;
+        font-size: 25px;
+        font-weight: @font-bold;
+      }
+    }
+  }
+}
+
+
+//====Filter Specific Stylings====
+.filter-list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 0;
+  margin-bottom: 0;
+}
+.filter-list li {
+  display: inline-block;
+  font-size: 1rem;
+}
+
+.filter-list.-tripadvisor li {
+  width: 20%;
+}
+
+
+.filter-list.-amenities li {
+  vertical-align: top;
+  text-align: center;
+  width: 100%/3;
+  font-size: 1rem;
+}
+
+.amenity-category {
+  position: relative;
+  padding: unit(60/@base-font-size, em) unit(10/@base-font-size, em) 0;
+  margin-top: unit(10/@base-font-size, em);
+  width: 4.0625em;
+  display: inline-block;
+}
+.amenity-category input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.amenity-category__text {
+  font-size: .6875em;
+}
+
+.amenity-category .amenity-category__text:after {
+  position: absolute;
+  top: 10/(16 * 3em);
+  left: 0;
+  right: 0;
+  font-size: 3em;
+}
+.amenity-category input:checked ~ .amenity-category__text:after {
+  color: #FFF;
+}
+
+.hotel-filter {
+  @media (min-width: @desktopMin) {
+    padding-right: unit(30 / @base-font-size, em);
+  }
+}
+
+.hotel-filter-section {
+  display: block;
+  padding: unit(15 / @base-font-size, em) 0;
+  
+  @media (min-width: @desktopMin) {
+    border-top: 1px solid @bw-light-gray;
+    padding: unit(30 / @base-font-size, em) 0 unit(30 / @base-font-size, em) unit(30 / @base-font-size, em);
+  }
+  
+  &.-hotel-type {
+    label + label {
+      margin-top: unit(5 / @base-font-size, em);
+    }
+  }
+}
+.hotel-filter-section.-no-padding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.hotel-filter-section__title {
+  font-size: unit(13 / @base-font-size, em);
+  margin-bottom: 15/13em;
+  display: inline-block;
+  font-weight: @font-bold;
+  text-transform: uppercase;
+}
+
+legend.hotel-filter-section__title {
+  float: left;
+}
+
+legend.hotel-filter-section__title + * {
+  clear: both;
+}
+
+.clear-filters {
+  font-size: unit(15/@font-size-base, em);
+  font-weight: @font-bold;
+  margin: 1em 0;
+  position: relative;
+  padding: 0;
+}
+.clear-filters:after {
+  content: '';
+  border-bottom: 1px solid @bw-dark-blue;
+  display: block;
+}
+.search-option-controls {
+  position: fixed;
+  z-index: 123123;
+  right: unit(15 / @base-font-size, em);
+  top: (@header-mobile-results-height - ((40/@base-font-size))) / 2;
+  transform: translateY(-50%);
+}
+.search-option-controls li {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: unit(13/@base-font-size, em);
+  padding-left: unit(15/13, em);
+}
+.search-option-controls li a {
+  text-decoration: none;
+}
+
+.search-option-controls .filter-link:before {
+  font-size: 1.75em;
+  content: '\e615';
+}
+
+.search-option-controls .filter-link__label {
+  .u-sr-only();
+}
+
+@media (min-width: @desktopMin) {
+  .search-option-controls {
+    top: @header-desktop-results-height + (5/2);
+    right: unit(30 / @base-font-size, em);
+    color: @bw-dark-blue;
+    transform: translateY(-50%);
+  }
+  .search-option-controls li {
+    font-size: unit(15/@base-font-size, em);
+    padding-left: unit(15/15, em);
+  }
+}
+
+.search-results-panel {
+  position: fixed;
+  top: 7.8125em; //site-header height
+  bottom: 5.375em; //footer links height
+  overflow-y: auto;
+  
+  @media (min-width: @desktopMin) {
+    left: 25em;
+    padding: 0;
+    position: fixed;
+    top: @header-desktop-results-height + 5em;
+    bottom: 0;
+    right: 0;
+  }
+  &.-map {
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    
+    @media (min-width: @desktopMin) {
+      left: 25em;
+    }
+  }
+}
+//====Search Results Stylings====
+.search-results-list {
+  @media (min-width: @desktopMin) {
+    background-color: @bw-pale-gray;
+    overflow: hidden;
+  }
+  &.-list {
+    @media (min-width: @desktopMin) {
+      padding-top: unit(30 / @base-font-size, em);
+      padding-left: unit(30 / @base-font-size, em);
+    }
+    
+    li {
+      border-top: 1px solid @bw-light-gray;
+      @media (min-width: @desktopMin) {
+        margin-right: unit(30 / @base-font-size, em);
+        border-top: none;
+        box-shadow: 0 unit(2 / @base-font-size, em) unit(5 / @base-font-size, em)  0 fade(#000, 25);
+        
+        & + li {
+          margin-top: unit(10 / @base-font-size, em);
+        }
+      }
+  }
+}
+    
+    &.-image {
+      font-size: 0;
+      
+      li {
+        font-size: 1rem;
+        @media (min-width: @tabletMin) {
+          display: inline-block;
+          width: 50%;
+        }
+        
+        @media (min-width: @desktopMin) {
+          width: 100% / 3;
+        }
+      }
+    }
+    &.-map {
+    .search-results-list li {
+      display: block;
+    }
+  }
+}
+
+.search-results-list li {
+  background-color: @bw-white;
+}
+
+
+.tripadvisor-rating {
+  border: 1px solid @tripadvisor-color;
+  position: relative;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  text-align: center;
+  display: inline-block;
+}
+.tripadvisor-rating input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1; 
+}
+
+.tripadvisor-rating__text {
+  line-height: 2.5em;
+  color: @tripadvisor-color;
+  transition: .25s ease;
+}
+.tripadvisor-rating input:checked ~ .tripadvisor-rating__text {
+  color: #FFF;
+}
+.tripadvisor-rating .tripadvisor-rating__text:before {
+  transition: .25s ease;
+}
+.tripadvisor-rating input:checked ~ .tripadvisor-rating__text:before {
+  opacity: 1;
+  transform: scale(1.0);
+}
+.tripadvisor-rating__text:before {
+  opacity: 0;
+  transform: scale(0.1);
+  content: '';
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  left: 10%;
+  right:10%;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: @tripadvisor-color;
+}
+
+.filter-toolbar {
+  box-shadow: 0 unit(2 / @base-font-size, em) unit(5 / @base-font-size, em)  0 fade(#000, 25);
+  z-index: 1;
+  @media (min-width: @desktopMin) {
+    position: fixed;
+    top: @header-desktop-results-height;
+    height: 5em;
+    left: 25em;
+    right: 0;
+  }
+}
+
+
+.results-nav {
+  display: table;
+  table-layout: fixed;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: fade(@bw-dark-blue, 80);
+  padding-top: unit(10 / @base-font-size, em);
+  padding-bottom: unit(25 / @base-font-size, em);
+  border-top: 1px solid fade(@bw-lighter-blue, 95);
+  
+  @media (min-width: @desktopMin) {
+    border: none;
+    width: auto;
+    left: unit(30/@base-font-size, em);
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0;
+  }
+}
+
+.results-nav li {
+  display: table-cell;
+  text-align: center;
+}
+.results-nav li + li .results-nav__link {
+  border-left: 1px solid @bw-orange;
+}
+
+.results-nav__link {
+  background-color: @bw-yellow;
+  height: unit(50 / @base-font-size, em);
+  display: block;
+  line-height: unit(50 / @base-font-size, em);
+  text-decoration: none;
+  overflow: hidden;
+  
+  @media (min-width: @desktopMin) {
+    position: relative;
+    width: unit(40 / @base-font-size, em);
+    height: unit(40 / @base-font-size, em);
+    line-height: unit(40 / @base-font-size, em);
+    background-color: @bw-light-gray;
+    color: @bw-medium-gray;
+  }
+  
+  &.-selected {
+    color: #FFF;
+    background-color: @bw-orange;
+  }
+  
+  &:before {
+    font-size: 1.5em;
+    vertical-align: middle;
+    transition: color .25s ease;
+  }
+  
+  &:not(.-selected):hover {
+    color: @bw-dark-blue;
+  }
+  
+  &.-image:before {
+    content: '\e625';  
+  }
+  &.-map:before {
+    content: '\e629';
+  }
+  &.-list:before {
+    content: '\e628';
+  }
+  &.-compare:before {
+    content: '\e612';
+  }
+}
+@media (min-width: @desktopMin) {
+  .results-nav li {
+    padding-left: unit(3/@base-font-size, em);
+  }
+  .results-nav li + li .results-nav__link {
+    border-left: none;
+  }
+}
+
+
+.results-nav__label {
+  font-size: unit(13 / @base-font-size, em);
+  text-transform: uppercase;
+  position: absolute;
+  left: 100%;
+  
+  @media (min-width: @tabletMin) {
+    position: static;
+  }
+  @media (min-width: @desktopMin) {
+    position: absolute;
+  }
+}
+
+
+.results-nav-item {
+  text-decoration: none;
+  height: unit(55 / @base-font-size, em);
+  line-height: unit(55 / @base-font-size, em);
+  display: block;
+}
+@media (min-width: @desktopMin) {
+  .results-nav {
+    position: absolute;
+    background-color: transparent;
+  }
+}
+
+.amenity-category .amenity-category__text:before {
+  width: 48/11em;
+  height: 48/11em;
+  content: '';
+  background-color: @bw-orange;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-radius: 50%;
+  transform: translateX(-50%) scale(.01);
+  display: block;
+  transition: .25s ease;
+}
+
+.amenity-category input:checked ~ .amenity-category__text:before {
+  transform: translateX(-50%) scale(1.0);
+}
+.amenity-category .amenity-category__text:after {
+  .-dining& {
+    content: "\e602";
+  }
+  .-business& {
+    content: "\e61c";
+  }
+  .-breakfast& {
+    content: "\e603";
+  }
+  .-fitness& {
+    content: "\e606";    
+  }
+  .-pet& {
+    content: "\e60b";    
+  }
+  .-non-smoking& {
+    content: "\e608";
+  }
+  .-oversized-parking& {
+    content: "\e609";
+  }
+  .-parking& {
+    content: "\e60a";
+  }
+  .-shuttle& {
+    content: "\e60e";
+  }
+}

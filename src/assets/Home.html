@@ -1,0 +1,670 @@
+﻿<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Home</title>
+  <link rel="stylesheet" href="../styles/bootstrap.css">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+  <div class="modal js-warning-modal">
+    <div class="modal-dialog modal-lg">
+      <div class="bw-modal-content">
+        <div class="modal-body full-width-buttons">
+          <svg class="warning-modal-icon center-block" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            preserveAspectRatio="xMidYMid" viewBox="0 0 162 162">
+            <path d="M81.000,162.000 C36.265,162.000 -0.000,125.735 -0.000,81.000 C-0.000,36.265 36.265,0.000 81.000,0.000 C125.735,0.000 162.000,36.265 162.000,81.000 C162.000,125.735 125.735,162.000 81.000,162.000 ZM81.000,4.000 C38.542,4.000 4.000,38.542 4.000,81.000 C4.000,123.458 38.542,158.000 81.000,158.000 C123.458,158.000 158.000,123.458 158.000,81.000 C158.000,38.542 123.458,4.000 81.000,4.000 ZM80.831,113.042 C77.824,113.042 75.318,110.442 75.318,107.542 C75.318,104.542 77.824,102.042 80.831,102.042 C83.837,102.042 86.343,104.542 86.343,107.542 C86.343,110.442 83.837,113.042 80.831,113.042 ZM77.724,93.343 C77.724,93.343 76.120,45.345 76.120,45.345 C76.120,45.345 85.541,45.345 85.541,45.345 C85.541,45.345 83.938,93.343 83.938,93.343 C83.938,93.343 77.724,93.343 77.724,93.343 Z"
+              id="path-1" class="cls-2" fill-rule="evenodd" />
+          </svg>
+          <p class="js-warning-modal-text"></p>
+          <button class="btn bw-btn-primary js-warning-button" data-dismiss="modal">Continue</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <header class="site-header">
+    @@include('./BaseHeader.html')
+  </header>
+  <div class="page-wrap">
+    <section class="content-section -no-padding">
+      <div class="promo">
+        <h2 class="promo-heading">Summer Promotion</h2>
+        <p>Book 3 or more nights in advance and you'll receive 1 night free</p>
+      </div>
+      <div class="promo-image promo-image--summer">
+        <div class="promo-gradient gradient-light--top row">
+          <button class="btn bw-btn-clear" type="button">BOOK FOR SUMMER</button>
+        </div>
+      </div>
+    </section>
+    <section class="content-section hotel-search">
+      <div class="container bw-find-hotel-container bw-find-hotel-light">
+        <div class="row">
+          <div class="col-xs-12">
+            <label class="bw-label">DESTINATION</label>
+            <div class="favorites-search js-autocomplete">
+              <div class="dropdown js-dropdown">
+                <div class="dropdown-toggle js-dropdown-toggle" id="dropdownMenuFavorites" data-toggle="dropdown" aria-expanded="false">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Current Location" id="places-search" />
+                    <div class="input-group-addon">
+                      <div class="fav-icon fav-remove js-remove hidden">
+                        <button type="button" class="js-clear" id="destination-clear-button">&times;</button>
+                      </div>
+                      <div class="fav-icon fav-icon-unfilled js-logged-out">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" viewBox="0 0 41 37">
+                          <path d="M19.940,37.137 C19.940,37.137 18.889,36.103 18.889,36.103 C17.187,34.427 15.377,32.785 13.626,31.197 C10.319,28.197 6.897,25.095 3.954,21.545 C1.435,18.510 0.106,15.117 0.004,11.461 C-0.118,7.187 3.067,2.510 7.251,0.815 C11.409,-0.874 16.415,0.318 19.617,3.746 C19.779,3.921 19.938,4.098 20.093,4.280 C20.413,3.915 20.750,3.553 21.121,3.210 C23.344,1.149 26.112,0.014 28.914,0.014 C33.368,0.014 37.341,2.770 39.284,7.207 C40.871,10.833 40.468,14.654 38.054,18.888 C36.186,22.170 33.493,24.705 30.890,27.156 C28.666,29.250 26.472,31.271 24.280,33.290 C24.280,33.290 21.494,35.859 21.494,35.859 C21.408,35.938 21.323,36.007 21.213,36.095 C21.213,36.095 19.940,37.137 19.940,37.137 ZM11.288,3.251 C10.327,3.251 9.384,3.435 8.486,3.799 C5.522,5.000 3.180,8.397 3.264,11.372 C3.347,14.337 4.396,16.996 6.475,19.500 C9.271,22.873 12.605,25.897 15.830,28.821 C17.233,30.094 18.676,31.401 20.081,32.745 C20.081,32.745 22.057,30.931 22.057,30.931 C24.241,28.919 26.426,26.907 28.588,24.872 C31.183,22.428 33.584,20.167 35.214,17.305 C37.120,13.963 37.461,11.161 36.290,8.489 C34.874,5.250 32.047,3.238 28.914,3.238 C26.915,3.238 24.992,4.042 23.350,5.562 C22.887,5.992 22.454,6.504 21.995,7.047 C21.764,7.321 21.532,7.596 21.290,7.868 C21.290,7.868 20.026,9.293 20.026,9.293 C20.026,9.293 18.286,7.191 18.286,7.191 C17.940,6.763 17.596,6.335 17.222,5.934 C15.606,4.204 13.498,3.251 11.288,3.251 Z"
+                            />
+                        </svg>
+                      </div>
+                      <div class="fav-icon fav-icon-filled js-logged-in hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" viewBox="0 0 41 37">
+                          <path d="M39.268,7.202 C37.327,2.765 33.353,0.008 28.899,0.008 C26.096,0.008 23.328,1.143 21.104,3.205 C20.734,3.548 20.397,3.910 20.077,4.274 C19.922,4.093 19.765,3.915 19.602,3.741 C16.401,0.314 11.396,-0.878 7.234,0.809 C3.050,2.505 -0.133,7.182 -0.013,11.457 C0.089,15.112 1.418,18.504 3.937,21.542 C6.881,25.091 10.301,28.194 13.608,31.193 C15.360,32.782 17.171,34.424 18.874,36.101 C18.874,36.101 19.920,37.133 19.920,37.133 C19.920,37.133 21.189,36.101 21.189,36.101 C21.306,36.007 21.395,35.934 21.478,35.857 C21.478,35.857 24.258,33.294 24.258,33.294 C26.453,31.272 28.648,29.249 30.866,27.162 C33.472,24.707 36.167,22.170 38.040,18.884 C40.453,14.650 40.855,10.830 39.268,7.202 Z"
+                            />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <ul class="dropdown-menu hidden js-favorites" role="menu" aria-labelledby="dropdownMenuFavorites">
+                  <li role="presentation" class="dropdown-header">FAVORITES</li>
+                  <li role="presentation">
+                    <a class="u-ellipsis" role="menuitem" tabindex="-1" href="#">Columbus, OH</a>
+                  </li>
+                  <li role="presentation">
+                    <a class="u-ellipsis" role="menuitem" tabindex="-1" href="#">Saratoga Springs, NY</a>
+                  </li>
+                  <li role="presentation">
+                    <a class="u-ellipsis" role="menuitem" tabindex="-1" href="#">Fresno-Yosemite International (FAT)</a>
+                  </li>
+                  <li role="presentation">
+                    <a class="u-ellipsis" role="menuitem" tabindex="-1" href="#">Minneapolis, MN</a>
+                  </li>
+                </ul>
+                <ul class="dropdown-menu js-recent" role="menu" aria-labelledby="dropdownMenuFavorites">
+                  <li role="presentation">
+                    <a class="u-ellipsis" role="menuitem" tabindex="-1" href="#">Current Location</a>
+                  </li>
+                  <li role="presentation" class="dropdown-header">RECENT SEARCHES</li>
+                  <li role="presentation">
+                    <a class="u-ellipsis" role="menuitem" tabindex="-1" href="#">Phoenix, AZ</a>
+                  </li>
+                  <li role="presentation">
+                    <a class="u-ellipsis" role="menuitem" tabindex="-1" href="#">Austin, TX</a>
+                  </li>
+                  <li role="presentation">
+                    <a class="u-ellipsis" role="menuitem" tabindex="-1" href="#">Minneapolis, MN</a>
+                  </li>
+                </ul>
+                <ul class="dropdown-menu places-results js-places-results hidden" role="menu"></ul>
+              </div>
+            </div>
+          </div>
+          <div class="top-buffer bw-date-range-container col-xs-12">
+            <div class="row">
+              <div class="col-xs-6">
+                <label class="bw-label">CHECK-IN</label>
+              </div>
+              <div class="col-xs-6 p0-left">
+                <label class="bw-label">CHECK-OUT</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 bw-stay-dates-container outer-padding-top" data-toggle="modal" data-backdrop="static" data-target="#bw-calendar">
+                <div class="bw-stay-dates" id="bw-stay-start-date">
+                  <span class="bw-day-label">TUESDAY</span>
+                  <br />
+                  <span class="bw-date-label">March 24, 2015</span>
+                </div>
+                <div class="bw-stay-dates" id="bw-stay-end-date">
+                  <span class="bw-day-label">WEDNESDAY</span>
+                  <br />
+                  <span class="bw-date-label">March 25, 2015</span>
+                </div>
+              </div>
+              <div class="modal" id="bw-calendar">
+                <div class="modal-dialog modal-lg modal-static">
+                  <div class="bw-modal-content">
+                    <div class="bw-modal-header">Only tap the first and last day of your stay.</div>
+                    <div class="modal-body">
+                      <div class="bw-calendar-container"></div>
+                    </div>
+                    <div class="modal-footer bw-modal-footer">
+                      <div class="bw-stay-nights-mobile visible-xs">
+                        <span class="bw-stay-nights"></span>
+                      </div>
+                      <div class="row">
+                        <div class="hidden-xs col-sm-4">
+                          <span class="pull-left bw-stay-nights"></span>
+                        </div>
+                        <div class="col-xs-6 col-sm-4">
+                          <button class="btn bw-btn-cancel" id="bw-calendar-cancel" data-dismiss="modal">CANCEL</button>
+                        </div>
+                        <div class="col-xs-6 col-sm-4">
+                          <button class="btn bw-btn-accept" id="bw-calendar-done">APPLY</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <p class="bw-date-range-footer" id="bw-stay-nights">1 Night</p>
+              </div>
+            </div>
+          </div>
+          <div class="top-buffer form-group col-xs-12">
+            <label class="bw-label">ROOMS</label>
+            <div class="outer-padding-top">
+              <div class="row">
+                <div id="room-1" class="col-sm-4">
+                  <div class="room-box">
+                    <div class="room-header">
+                      <div class="header-text">ROOM 1</div>
+                    </div>
+                    <div class="container room-body">
+                      <div class="row room-adult">
+                        <div class="col-xs-3 body-icon-minus">
+                          <button class="room-button" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="32"
+                              height="32" viewBox="0 0 32 32">
+                              <path d="M8.392,17.589 C8.392,17.589 23.607,17.589 23.607,17.589 C23.607,17.589 23.607,14.411 23.607,14.411 C23.607,14.411 8.392,14.411 8.392,14.411 C8.392,14.411 8.392,17.589 8.392,17.589 ZM16.000,0.000 C7.177,0.000 -0.000,7.177 -0.000,16.000 C-0.000,24.822 7.177,32.000 16.000,32.000 C24.823,32.000 32.000,24.822 32.000,16.000 C32.000,7.177 24.823,0.000 16.000,0.000 ZM16.000,28.822 C8.930,28.822 3.178,23.070 3.178,16.000 C3.178,8.930 8.930,3.178 16.000,3.178 C23.070,3.178 28.822,8.930 28.822,16.000 C28.822,23.070 23.070,28.822 16.000,28.822 Z"
+                                fill-rule="evenodd" />
+                            </svg>
+                          </button>
+                        </div>
+                        <div class="col-xs-6 body-text">1 Adult</div>
+                        <div class="col-xs-3 body-icon-plus">
+                          <button type="button" class="room-button" disabled>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="32"
+                              height="32" viewBox="0 0 32 32">
+                              <path d="M16.000,32.000 C7.177,32.000 0.000,24.822 0.000,16.000 C0.000,7.177 7.177,0.000 16.000,0.000 C24.823,0.000 32.000,7.177 32.000,16.000 C32.000,24.822 24.823,32.000 16.000,32.000 ZM16.000,3.178 C8.930,3.178 3.178,8.930 3.178,16.000 C3.178,23.070 8.930,28.822 16.000,28.822 C23.070,28.822 28.822,23.070 28.822,16.000 C28.822,8.930 23.070,3.178 16.000,3.178 ZM17.589,23.607 C17.589,23.607 14.411,23.607 14.411,23.607 C14.411,23.607 14.411,17.589 14.411,17.589 C14.411,17.589 8.393,17.589 8.393,17.589 C8.393,17.589 8.393,14.411 8.393,14.411 C8.393,14.411 14.411,14.411 14.411,14.411 C14.411,14.411 14.411,8.393 14.411,8.393 C14.411,8.393 17.589,8.393 17.589,8.393 C17.589,8.393 17.589,14.411 17.589,14.411 C17.589,14.411 23.606,14.411 23.606,14.411 C23.606,14.411 23.606,17.589 23.606,17.589 C23.606,17.589 17.589,17.589 17.589,17.589 C17.589,17.589 17.589,23.607 17.589,23.607 Z"
+                                fill-rule="evenodd" />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="row room-child">
+                        <div class="col-xs-3 body-icon-minus">
+                          <button class="room-button" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="32"
+                              height="32" viewBox="0 0 32 32">
+                              <path d="M8.392,17.589 C8.392,17.589 23.607,17.589 23.607,17.589 C23.607,17.589 23.607,14.411 23.607,14.411 C23.607,14.411 8.392,14.411 8.392,14.411 C8.392,14.411 8.392,17.589 8.392,17.589 ZM16.000,0.000 C7.177,0.000 -0.000,7.177 -0.000,16.000 C-0.000,24.822 7.177,32.000 16.000,32.000 C24.823,32.000 32.000,24.822 32.000,16.000 C32.000,7.177 24.823,0.000 16.000,0.000 ZM16.000,28.822 C8.930,28.822 3.178,23.070 3.178,16.000 C3.178,8.930 8.930,3.178 16.000,3.178 C23.070,3.178 28.822,8.930 28.822,16.000 C28.822,23.070 23.070,28.822 16.000,28.822 Z"
+                                fill-rule="evenodd" />
+                            </svg>
+                          </button>
+                        </div>
+                        <div class="col-xs-6 body-text">0 Children</div>
+                        <div class="col-xs-3 body-icon-plus">
+                          <button type="button" class="room-button" disabled>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="32"
+                              height="32" viewBox="0 0 32 32">
+                              <path d="M16.000,32.000 C7.177,32.000 0.000,24.822 0.000,16.000 C0.000,7.177 7.177,0.000 16.000,0.000 C24.823,0.000 32.000,7.177 32.000,16.000 C32.000,24.822 24.823,32.000 16.000,32.000 ZM16.000,3.178 C8.930,3.178 3.178,8.930 3.178,16.000 C3.178,23.070 8.930,28.822 16.000,28.822 C23.070,28.822 28.822,23.070 28.822,16.000 C28.822,8.930 23.070,3.178 16.000,3.178 ZM17.589,23.607 C17.589,23.607 14.411,23.607 14.411,23.607 C14.411,23.607 14.411,17.589 14.411,17.589 C14.411,17.589 8.393,17.589 8.393,17.589 C8.393,17.589 8.393,14.411 8.393,14.411 C8.393,14.411 14.411,14.411 14.411,14.411 C14.411,14.411 14.411,8.393 14.411,8.393 C14.411,8.393 17.589,8.393 17.589,8.393 C17.589,8.393 17.589,14.411 17.589,14.411 C17.589,14.411 23.606,14.411 23.606,14.411 C23.606,14.411 23.606,17.589 23.606,17.589 C23.606,17.589 17.589,17.589 17.589,17.589 C17.589,17.589 17.589,23.607 17.589,23.607 Z"
+                                fill-rule="evenodd" />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="age-selectors">
+                        <div class="row ages-header">
+                          <div class=" col-xs-12">SELECT AGES</div>
+                        </div>
+                        <div class="dropdown">
+                          <div class="row child dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="false">
+                            <div class="child-header col-xs-12">CHILD 1
+                              <span class="bw-icon bw-icon-white-carrot"></span>
+                            </div>
+                            <div class="child-age col-xs-12">5 Years Old</div>
+                          </div>
+                          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                            <li role="presentation">
+                              <a role="menuitem" tabindex="-1" href="#">&lt;1 Year Old</a>
+                            </li>
+                            <li role="presentation">
+                              <a role="menuitem" tabindex="-1" href="#">1 Year Old</a>
+                            </li>
+                            <li role="presentation">
+                              <a role="menuitem" tabindex="-1" href="#">2 Years Old</a>
+                            </li>
+                            <li role="presentation">
+                              <a role="menuitem" tabindex="-1" href="#">3 Years Old</a>
+                            </li>
+                            <li role="presentation">
+                              <a role="menuitem" tabindex="-1" href="#">4 Years Old</a>
+                            </li>
+                            <li role="presentation">
+                              <a role="menuitem" tabindex="-1" href="#">5 Years Old</a>
+                            </li>
+                            <li role="presentation">
+                              <a role="menuitem" tabindex="-1" href="#">6 Years Old</a>
+                            </li>
+                            <li role="presentation">
+                              <a role="menuitem" tabindex="-1" href="#">7 Years Old</a>
+                            </li>
+                            <li role="presentation">
+                              <a role="menuitem" tabindex="-1" href="#">8 Years Old</a>
+                            </li>
+                            <li role="presentation">
+                              <a role="menuitem" tabindex="-1" href="#">9 Year Old</a>
+                            </li>
+                            <li role="presentation">
+                              <a role="menuitem" tabindex="-1" href="#">10 Year Old</a>
+                            </li>
+                            <li role="presentation">
+                              <a role="menuitem" tabindex="-1" href="#">11 Year Old</a>
+                            </li>
+                            <li role="presentation">
+                              <a role="menuitem" tabindex="-1" href="#">12 Years Old</a>
+                            </li>
+                            <li role="presentation">
+                              <a role="menuitem" tabindex="-1" href="#">13 Years Old</a>
+                            </li>
+                            <li role="presentation">
+                              <a role="menuitem" tabindex="-1" href="#">14 Years Old</a>
+                            </li>
+                            <li role="presentation">
+                              <a role="menuitem" tabindex="-1" href="#">15 Years Old</a>
+                            </li>
+                            <li role="presentation">
+                              <a role="menuitem" tabindex="-1" href="#">16 Years Old</a>
+                            </li>
+                            <li role="presentation">
+                              <a role="menuitem" tabindex="-1" href="#">17 Years Old</a>
+                            </li>
+                            <li role="presentation">
+                              <a role="menuitem" tabindex="-1" href="#">18 Years Old</a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="row child dropdown-toggle">
+                          <div class="child-header col-xs-12">CHILD 2
+                            <span class="bw-icon bw-icon-white-carrot"></span>
+                          </div>
+                          <div class="child-age col-xs-12">5 Years Old</div>
+                        </div>
+                        <div class="row child dropdown-toggle">
+                          <div class="child-header col-xs-12">CHILD 3
+                            <span class="bw-icon bw-icon-white-carrot"></span>
+                          </div>
+                          <div class="child-age col-xs-12">5 Years Old</div>
+                        </div>
+                        <div class="row child dropdown-toggle">
+                          <div class="child-header col-xs-12">CHILD 4
+                            <span class="bw-icon bw-icon-white-carrot"></span>
+                          </div>
+                          <div class="child-age col-xs-12">5 Years Old</div>
+                        </div>
+                        <div class="row child dropdown-toggle">
+                          <div class="child-header col-xs-12">CHILD 5
+                            <span class="bw-icon bw-icon-white-carrot"></span>
+                          </div>
+                          <div class="child-age col-xs-12">5 Years Old</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="add-a-room-2" class="col-sm-4">
+                  <div class="room-box">
+                    <div class="add-a-room">
+                      <div class="row">
+                        <div class="col-xs-3 visible-xs"></div>
+                        <div class="col-xs-6 add-a-room-text">ADD A ROOM</div>
+                        <div class="col-xs-3 add-a-room-plus">
+                          <span class="visible-xs-inline-block bw-icon bw-icon-small-plus"></span>
+                          <span class="hidden-xs bw-icon bw-icon-big-plus"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="room-2" class="col-sm-4 hidden">
+                  <div class="room-box">
+                    <div class="room-header">
+                      <div class="header-text">
+                        <span id="close-room-2" class="close-box">X</span>ROOM 2
+                      </div>
+                    </div>
+                    <div class="container room-body">
+                      <div class="row room-adult">
+                        <div class="col-xs-3 body-icon-minus">
+                          <button class="room-button" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="32"
+                              height="32" viewBox="0 0 32 32">
+                              <path d="M8.392,17.589 C8.392,17.589 23.607,17.589 23.607,17.589 C23.607,17.589 23.607,14.411 23.607,14.411 C23.607,14.411 8.392,14.411 8.392,14.411 C8.392,14.411 8.392,17.589 8.392,17.589 ZM16.000,0.000 C7.177,0.000 -0.000,7.177 -0.000,16.000 C-0.000,24.822 7.177,32.000 16.000,32.000 C24.823,32.000 32.000,24.822 32.000,16.000 C32.000,7.177 24.823,0.000 16.000,0.000 ZM16.000,28.822 C8.930,28.822 3.178,23.070 3.178,16.000 C3.178,8.930 8.930,3.178 16.000,3.178 C23.070,3.178 28.822,8.930 28.822,16.000 C28.822,23.070 23.070,28.822 16.000,28.822 Z"
+                                fill-rule="evenodd" />
+                            </svg>
+                          </button>
+                        </div>
+                        <div class="col-xs-6 body-text">1 Adult</div>
+                        <div class="col-xs-3 body-icon-plus">
+                          <button type="button" class="room-button" disabled>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="32"
+                              height="32" viewBox="0 0 32 32">
+                              <path d="M16.000,32.000 C7.177,32.000 0.000,24.822 0.000,16.000 C0.000,7.177 7.177,0.000 16.000,0.000 C24.823,0.000 32.000,7.177 32.000,16.000 C32.000,24.822 24.823,32.000 16.000,32.000 ZM16.000,3.178 C8.930,3.178 3.178,8.930 3.178,16.000 C3.178,23.070 8.930,28.822 16.000,28.822 C23.070,28.822 28.822,23.070 28.822,16.000 C28.822,8.930 23.070,3.178 16.000,3.178 ZM17.589,23.607 C17.589,23.607 14.411,23.607 14.411,23.607 C14.411,23.607 14.411,17.589 14.411,17.589 C14.411,17.589 8.393,17.589 8.393,17.589 C8.393,17.589 8.393,14.411 8.393,14.411 C8.393,14.411 14.411,14.411 14.411,14.411 C14.411,14.411 14.411,8.393 14.411,8.393 C14.411,8.393 17.589,8.393 17.589,8.393 C17.589,8.393 17.589,14.411 17.589,14.411 C17.589,14.411 23.606,14.411 23.606,14.411 C23.606,14.411 23.606,17.589 23.606,17.589 C23.606,17.589 17.589,17.589 17.589,17.589 C17.589,17.589 17.589,23.607 17.589,23.607 Z"
+                                fill-rule="evenodd" />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="row room-child">
+                        <div class="col-xs-3 body-icon-minus">
+                          <button class="room-button" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="32"
+                              height="32" viewBox="0 0 32 32">
+                              <path d="M8.392,17.589 C8.392,17.589 23.607,17.589 23.607,17.589 C23.607,17.589 23.607,14.411 23.607,14.411 C23.607,14.411 8.392,14.411 8.392,14.411 C8.392,14.411 8.392,17.589 8.392,17.589 ZM16.000,0.000 C7.177,0.000 -0.000,7.177 -0.000,16.000 C-0.000,24.822 7.177,32.000 16.000,32.000 C24.823,32.000 32.000,24.822 32.000,16.000 C32.000,7.177 24.823,0.000 16.000,0.000 ZM16.000,28.822 C8.930,28.822 3.178,23.070 3.178,16.000 C3.178,8.930 8.930,3.178 16.000,3.178 C23.070,3.178 28.822,8.930 28.822,16.000 C28.822,23.070 23.070,28.822 16.000,28.822 Z"
+                                fill-rule="evenodd" />
+                            </svg>
+                          </button>
+                        </div>
+                        <div class="col-xs-6 body-text">0 Children</div>
+                        <div class="col-xs-3 body-icon-plus">
+                          <button type="button" class="room-button" disabled>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="32"
+                              height="32" viewBox="0 0 32 32">
+                              <path d="M16.000,32.000 C7.177,32.000 0.000,24.822 0.000,16.000 C0.000,7.177 7.177,0.000 16.000,0.000 C24.823,0.000 32.000,7.177 32.000,16.000 C32.000,24.822 24.823,32.000 16.000,32.000 ZM16.000,3.178 C8.930,3.178 3.178,8.930 3.178,16.000 C3.178,23.070 8.930,28.822 16.000,28.822 C23.070,28.822 28.822,23.070 28.822,16.000 C28.822,8.930 23.070,3.178 16.000,3.178 ZM17.589,23.607 C17.589,23.607 14.411,23.607 14.411,23.607 C14.411,23.607 14.411,17.589 14.411,17.589 C14.411,17.589 8.393,17.589 8.393,17.589 C8.393,17.589 8.393,14.411 8.393,14.411 C8.393,14.411 14.411,14.411 14.411,14.411 C14.411,14.411 14.411,8.393 14.411,8.393 C14.411,8.393 17.589,8.393 17.589,8.393 C17.589,8.393 17.589,14.411 17.589,14.411 C17.589,14.411 23.606,14.411 23.606,14.411 C23.606,14.411 23.606,17.589 23.606,17.589 C23.606,17.589 17.589,17.589 17.589,17.589 C17.589,17.589 17.589,23.607 17.589,23.607 Z"
+                                fill-rule="evenodd" />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="age-selectors">
+                        <div class="row ages-header">
+                          <div class=" col-xs-12">SELECT AGES</div>
+                        </div>
+                        <div class="row child dropdown-toggle">
+                          <div class="child-header col-xs-12">CHILD 1
+                            <span class="bw-icon bw-icon-white-carrot"></span>
+                          </div>
+                          <div class="child-age col-xs-12">5 Years Old</div>
+                        </div>
+                        <div class="row child dropdown-toggle">
+                          <div class="child-header col-xs-12">CHILD 2
+                            <span class="bw-icon bw-icon-white-carrot"></span>
+                          </div>
+                          <div class="child-age col-xs-12">5 Years Old</div>
+                        </div>
+                        <div class="row child dropdown-toggle">
+                          <div class="child-header col-xs-12">CHILD 3
+                            <span class="bw-icon bw-icon-white-carrot"></span>
+                          </div>
+                          <div class="child-age col-xs-12">5 Years Old</div>
+                        </div>
+                        <div class="row child dropdown-toggle">
+                          <div class="child-header col-xs-12">CHILD 4
+                            <span class="bw-icon bw-icon-white-carrot"></span>
+                          </div>
+                          <div class="child-age col-xs-12">5 Years Old</div>
+                        </div>
+                        <div class="row child dropdown-toggle">
+                          <div class="child-header col-xs-12">CHILD 5
+                            <span class="bw-icon bw-icon-white-carrot"></span>
+                          </div>
+                          <div class="child-age col-xs-12">5 Years Old</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="add-a-room-3" class="col-sm-4">
+                  <div class="room-box">
+                    <div class="add-a-room">
+                      <div class="row">
+                        <div class="col-xs-3 visible-xs"></div>
+                        <div class="col-xs-6 add-a-room-text">ADD A ROOM</div>
+                        <div class="col-xs-3 add-a-room-plus">
+                          <span class="visible-xs-inline-block bw-icon bw-icon-small-plus"></span>
+                          <span class="hidden-xs bw-icon bw-icon-big-plus"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="room-3" class="col-sm-4 hidden">
+                  <div class="room-box">
+                    <div class="room-header">
+                      <div class="header-text">
+                        <span id="close-room-3" class="close-box">X</span>ROOM 3
+                      </div>
+                    </div>
+                    <div class="container room-body">
+                      <div class="row room-adult">
+                        <div class="col-xs-3 body-icon-minus">
+                          <button class="room-button" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="32"
+                              height="32" viewBox="0 0 32 32">
+                              <path d="M8.392,17.589 C8.392,17.589 23.607,17.589 23.607,17.589 C23.607,17.589 23.607,14.411 23.607,14.411 C23.607,14.411 8.392,14.411 8.392,14.411 C8.392,14.411 8.392,17.589 8.392,17.589 ZM16.000,0.000 C7.177,0.000 -0.000,7.177 -0.000,16.000 C-0.000,24.822 7.177,32.000 16.000,32.000 C24.823,32.000 32.000,24.822 32.000,16.000 C32.000,7.177 24.823,0.000 16.000,0.000 ZM16.000,28.822 C8.930,28.822 3.178,23.070 3.178,16.000 C3.178,8.930 8.930,3.178 16.000,3.178 C23.070,3.178 28.822,8.930 28.822,16.000 C28.822,23.070 23.070,28.822 16.000,28.822 Z"
+                                fill-rule="evenodd" />
+                            </svg>
+                          </button>
+                        </div>
+                        <div class="col-xs-6 body-text">1 Adult</div>
+                        <div class="col-xs-3 body-icon-plus">
+                          <button type="button" class="room-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="32"
+                              height="32" viewBox="0 0 32 32">
+                              <path d="M16.000,32.000 C7.177,32.000 0.000,24.822 0.000,16.000 C0.000,7.177 7.177,0.000 16.000,0.000 C24.823,0.000 32.000,7.177 32.000,16.000 C32.000,24.822 24.823,32.000 16.000,32.000 ZM16.000,3.178 C8.930,3.178 3.178,8.930 3.178,16.000 C3.178,23.070 8.930,28.822 16.000,28.822 C23.070,28.822 28.822,23.070 28.822,16.000 C28.822,8.930 23.070,3.178 16.000,3.178 ZM17.589,23.607 C17.589,23.607 14.411,23.607 14.411,23.607 C14.411,23.607 14.411,17.589 14.411,17.589 C14.411,17.589 8.393,17.589 8.393,17.589 C8.393,17.589 8.393,14.411 8.393,14.411 C8.393,14.411 14.411,14.411 14.411,14.411 C14.411,14.411 14.411,8.393 14.411,8.393 C14.411,8.393 17.589,8.393 17.589,8.393 C17.589,8.393 17.589,14.411 17.589,14.411 C17.589,14.411 23.606,14.411 23.606,14.411 C23.606,14.411 23.606,17.589 23.606,17.589 C23.606,17.589 17.589,17.589 17.589,17.589 C17.589,17.589 17.589,23.607 17.589,23.607 Z"
+                                fill-rule="evenodd" />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="row room-child">
+                        <div class="col-xs-3 body-icon-minus">
+                          <button class="room-button" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="32"
+                              height="32" viewBox="0 0 32 32">
+                              <path d="M8.392,17.589 C8.392,17.589 23.607,17.589 23.607,17.589 C23.607,17.589 23.607,14.411 23.607,14.411 C23.607,14.411 8.392,14.411 8.392,14.411 C8.392,14.411 8.392,17.589 8.392,17.589 ZM16.000,0.000 C7.177,0.000 -0.000,7.177 -0.000,16.000 C-0.000,24.822 7.177,32.000 16.000,32.000 C24.823,32.000 32.000,24.822 32.000,16.000 C32.000,7.177 24.823,0.000 16.000,0.000 ZM16.000,28.822 C8.930,28.822 3.178,23.070 3.178,16.000 C3.178,8.930 8.930,3.178 16.000,3.178 C23.070,3.178 28.822,8.930 28.822,16.000 C28.822,23.070 23.070,28.822 16.000,28.822 Z"
+                                fill-rule="evenodd" />
+                            </svg>
+                          </button>
+                        </div>
+                        <div class="col-xs-6 body-text">0 Children</div>
+                        <div class="col-xs-3 body-icon-plus">
+                          <button type="button" class="room-button" disabled>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="32"
+                              height="32" viewBox="0 0 32 32">
+                              <path d="M16.000,32.000 C7.177,32.000 0.000,24.822 0.000,16.000 C0.000,7.177 7.177,0.000 16.000,0.000 C24.823,0.000 32.000,7.177 32.000,16.000 C32.000,24.822 24.823,32.000 16.000,32.000 ZM16.000,3.178 C8.930,3.178 3.178,8.930 3.178,16.000 C3.178,23.070 8.930,28.822 16.000,28.822 C23.070,28.822 28.822,23.070 28.822,16.000 C28.822,8.930 23.070,3.178 16.000,3.178 ZM17.589,23.607 C17.589,23.607 14.411,23.607 14.411,23.607 C14.411,23.607 14.411,17.589 14.411,17.589 C14.411,17.589 8.393,17.589 8.393,17.589 C8.393,17.589 8.393,14.411 8.393,14.411 C8.393,14.411 14.411,14.411 14.411,14.411 C14.411,14.411 14.411,8.393 14.411,8.393 C14.411,8.393 17.589,8.393 17.589,8.393 C17.589,8.393 17.589,14.411 17.589,14.411 C17.589,14.411 23.606,14.411 23.606,14.411 C23.606,14.411 23.606,17.589 23.606,17.589 C23.606,17.589 17.589,17.589 17.589,17.589 C17.589,17.589 17.589,23.607 17.589,23.607 Z"
+                                fill-rule="evenodd" />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="age-selectors">
+                        <div class="row ages-header">
+                          <div class=" col-xs-12">SELECT AGES</div>
+                        </div>
+                        <div class="row child dropdown-toggle">
+                          <div class="child-header col-xs-12">CHILD 1
+                            <span class="bw-icon bw-icon-white-carrot"></span>
+                          </div>
+                          <div class="child-age col-xs-12">5 Years Old</div>
+                        </div>
+                        <div class="row child dropdown-toggle">
+                          <div class="child-header col-xs-12">CHILD 2
+                            <span class="bw-icon bw-icon-white-carrot"></span>
+                          </div>
+                          <div class="child-age col-xs-12">5 Years Old</div>
+                        </div>
+                        <div class="row child dropdown-toggle">
+                          <div class="child-header col-xs-12">CHILD 3
+                            <span class="bw-icon bw-icon-white-carrot"></span>
+                          </div>
+                          <div class="child-age col-xs-12">5 Years Old</div>
+                        </div>
+                        <div class="row child dropdown-toggle">
+                          <div class="child-header col-xs-12">CHILD 4
+                            <span class="bw-icon bw-icon-white-carrot"></span>
+                          </div>
+                          <div class="child-age col-xs-12">5 Years Old</div>
+                        </div>
+                        <div class="row child dropdown-toggle">
+                          <div class="child-header col-xs-12">CHILD 5
+                            <span class="bw-icon bw-icon-white-carrot"></span>
+                          </div>
+                          <div class="child-age col-xs-12">5 Years Old</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="booking-4-plus col-xs-12">
+          <span class="bw-icon bw-icon-four-plus"></span>&nbsp;
+          <span class="">BOOKING 4&#43; ROOMS?</span>
+          </a>
+          <div class="col-xs-12 full-width-buttons">
+            <button class="btn bw-btn-accept">SEARCH</button>
+          </div>
+        </div>
+      </div>
+    </section>
+	<section class="content-section radial-background">
+	<div class="destination-header header">
+		Today's top travel destinations.
+	</div>
+      <div class="destination-list">
+	  <div class="destination">
+	  <div class="destination-overlay -box-shadow--bot-right">
+		  <div class="destination-pic"></div>
+		  <div class="destination-card">
+			  <div class="destination-name header">
+				San Francisco
+			  </div>
+			  <div class="destination-rate">
+			  RATES FROM
+			  </div>
+			  <div class="destination-price">
+			  $89.99
+			  </div>
+			  <div class="destination-currency">
+			  USD
+			  </div>
+			  <a href="#" class="find-destination">FIND A HOTEL HERE ></a>
+		  </div>
+	  </div>
+	  </div>
+	  <div class="destination">
+	  <div class="destination-overlay -box-shadow--bot-right">
+		  <div class="destination-pic"></div>
+		  <div class="destination-card">
+			  <div class="destination-name header">
+				Rome
+			  </div>
+			  <div class="destination-rate">
+			  RATES FROM
+			  </div>
+			  <div class="destination-price">
+			  $139.99
+			  </div>
+			  <div class="destination-currency">
+			  USD
+			  </div>
+			  <a href="#" class="find-destination">FIND A HOTEL HERE ></a>
+		  </div>
+	  </div>
+	  </div>
+	  <div class="destination">
+	  <div class="destination-overlay -box-shadow--bot-right">
+		  <div class="destination-pic"></div>
+		  <div class="destination-card">
+			  <div class="destination-name header">
+				Paris
+			  </div>
+			  <div class="destination-rate">
+			  RATES FROM
+			  </div>
+			  <div class="destination-price">
+			  $179.99
+			  </div>
+			  <div class="destination-currency">
+			  USD
+			  </div>
+			  <a href="#" class="find-destination">FIND A HOTEL HERE ></a>
+		  </div>
+	  </div>
+	  </div>
+	  </div>
+    </section>
+    <section class="content-section classroom-background">
+      <div class="container-fluid text-center">
+        <div class="rewards-heading--blue">Best Western for a Better World</div>
+        <div class="rewards-subheading--blue">Michael Blethers talks about his staff gives back to the community.</div>
+        <div class='media-player -overlay'>
+         <video class='media-video'>
+            <source src='videos/sample.mp4' type='video/mp4'>
+         </video>
+        </div>     
+        <div>
+		<button class="btn -primary">GIVE TO THE BETTER WORLD FUND</button>
+        <button class="btn bw-btn-clear--blue">HEAR MORE STORIES</button>
+        </div>
+      </div>
+    </section>
+    <section class="content-section hotel-search">
+      <h2 class="rewards-heading--white">Best Western Rewards</h2>
+      <h2 class="rewards-subheading--white">Recognized as one of the Top 3 hotel loyalty programs!</h2>
+      <section class="container bubble-wrap">
+        <div class="bubble">
+         <div class="bubble-text-container">
+          <h2 class="bubble-text--md">earn</h2>
+          <h2 class="bubble-text--lg">2x</h2>
+          <h2 class="bubble-text--sm">reward points</h2>
+        </div>
+        </div>  
+        <div class="bubble-lg">
+          
+          </div>  
+          <div class="bubble">
+          <div class="bubble-text-container">
+          <h2 class="bubble-text--md">earn</h2>
+          <h2 class="bubble-text--lg">$25</h2>
+          <h2 class="bubble-text--sm">Amazon gift cards</h2>
+        </div>
+          </div> 
+      </section>
+      <div class="row">
+          <button class="btn bw-btn-clear--white">JOIN REWARDS</button>
+          </div>
+      
+      
+      <!--<div class="circle">
+        <div class="circle-text">
+          <h2 class="circle-text--md">earn</h2>
+          <h2 class="circle-text--lg">2x</h2>
+          <h2 class="circle-text--sm">reward points</h2>
+        </div>
+      </div>
+      <div class="circle--img"></div>
+      <div class="circle">
+        <div class="circle-text">
+          <h2 class="circle-text--md">earn</h2>
+          <h2 class="circle-text--lg">$25</h2>
+          <h2 class="circle-text--sm">Amazon gift cards</h2>
+        </div>
+      </div>-->
+    </section>
+  </div>
+  </div>
+  <footer class="site-footer">
+    @@include('./partials/Footer.html')
+  </footer>
+  <script src="../scripts/jquery.js"></script>
+  <script src="../scripts/js.cookie.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyB-45CSiwx_TrwsIQ7oWY-7UpKGTgNs4xA"></script>
+  <script src="../scripts/autocomplete.js"></script>
+  <script src="../scripts/bootstrap.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/moment-with-locales.min.js"></script>
+  <script src="../scripts/module-calendar.js"></script>
+  <script src="../scripts/reserve-room.js"></script>
+  <script src="../scripts/navigation.js"></script>
+  <script src="../scripts/make-reservation.js"></script>
+  <script src="../scripts/video.js"></script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Groups &amp; Meetings FAQ</title>
+  <link rel="stylesheet" href="../styles/bootstrap.css">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="bw-navbar navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="nav-left">
+      <a href="findahotel.html"><span class="bw-icon bw-icon-logo"></span></a>
+    </div>
+    <div class="nav-left">
+      <button type="button" class="burger" id="menu-burger">
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      </button>
+    </div>
+    <div class="nav-right icon hidden" data-toggle="modal" data-target="#bw-login">
+      <a href="#" class="svg">
+        <object type="image/svg+xml" data="icons/svg/global-fav-inactive.svg"></object>
+      </a>
+    </div>
+    <div class="nav-right icon hidden">
+      <a href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4b3318882e3274bf" class="svg">
+      <object type="image/svg+xml" data="icons/svg/global-share.svg"></object>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div id="left-menu" class="hide-me">
+  <div id="menu-overlay">
+    <button type="button" id="menu-close-button">&times;</button>
+  </div>
+  <div id="menu-list">
+    <div id="menu-user" class="menu-logged-in hidden">
+      <div id="menu-user-profile" class="user-profile">
+        <img src="icons/profile.png">
+        <h1>Hello, Catherine!</h1>
+        <p>#600563-1234-456-892</p>
+      </div>
+      <a href="#" id="upcoming-reservation">
+        <h2>View Upcoming Reservation</h2>
+        <p>Columbus, OH</p>
+      </a>
+    </div>
+    <div id="login-button">
+      <!-- <button type="button">REWARDS LOGIN</button> -->
+      <a href="Login.html" class="bw-btn">REWARDS LOGIN</a>
+    </div>
+    <div id="main-menu" class="menu-items">
+      <a href="#" class="account-menu-forward hidden">My Account<span class="glyphicon glyphicon-chevron-right"></span></a>
+      <a href="Home.html">Home</a>
+      <a href="FindAHotel.html">Find a Hotel</a>
+      <a href="CheckReservation.html">Check Reservations</a>
+      <a href="#" class="rewards-menu-forward">Rewards<span class="glyphicon glyphicon-chevron-right"></span></a>
+      <a href="#" >Customer Care</a>
+      <a href="#" class="settings-menu-forward">Settings<span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+    <div id="rewards-menu" class="menu-items hide-me">
+      <a href="#" class="main-menu-back"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Main Menu</a>
+      <h4>Rewards</h4>
+      <a href="RewardsLandingPage.html" >Learn About Rewards</a>
+      <a href="JoinRewards.html" >Join</a>
+      <a href="EarnRewards.html" >Earn</a>
+      <a href="Redeem.html" >Redeem</a>
+    </div>
+    <div id="settings-menu" class="menu-items hide-me">
+      <a href="#" class="main-menu-back"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Main Menu</a>
+      <h4>Settings</h4>
+      <a href="#" class="opens-modal" data-toggle="modal" data-target="#bw-language-modal">Language</a>
+      <a href="#" class="opens-modal" data-toggle="modal" data-target="#bw-currency-modal">Currency</a>
+    </div>
+    <div id="account-menu" class="menu-items hide-me hidden">
+      <a href="#" class="main-menu-back"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Main Menu</a>
+      <h4>My Account</h4>
+      <a href="Dashboard.html" >Dashboard</a>
+      <a href="Preferences.html" >Profile &amp; Preferences</a>
+      <a href="MyRewards.html" >Rewards Activity</a>
+      <a href="Favorites.html" >Favorites</a>
+      <a href="#" >Rewards Service Center</a>
+      <a id="logout" href="#" >Logout</a>
+    </div>
+  </div>
+
+</div>
+<div id="blur" class="invisible"></div>
+<div class="modal" id="bw-currency-modal">
+  <div class="modal-dialog modal-static">
+    <div class="bw-modal-content">
+      <div class="bw-modal-header">
+        CURRENCY
+      </div>
+      <div class="modal-body">
+        <div class="bw-currency">
+          <div class="row">
+            <div class="col-xs-12 currency-item currency-search">
+              <span class="bw-icon bw-icon-search"></span>
+              <input type="text"/>
+            </div>
+            <div class="col-xs-12 currency-item">
+              US Dollars
+            </div>
+            <div class="col-xs-12 currency-item">
+              Euro
+            </div>
+            <div class="col-xs-12 bw-currency-header">
+              OTHER CURRENCIES
+            </div>
+            <div class="col-xs-12 currency-item">
+              Albanian Yek
+            </div>
+            <div class="col-xs-12 currency-item">
+              Algerian Dinar
+            </div>
+            <div class="col-xs-12 currency-item">
+              Argentinian Pesos
+            </div>
+            <div class="col-xs-12 currency-item">
+              Armenian Dram
+            </div>
+            <div class="col-xs-12 currency-item">
+              Arubin Florin
+            </div>
+            <div class="col-xs-12 currency-item">
+              Australia Dollars
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer bw-modal-footer">
+        <div class="row">
+          <div class="col-xs-6">
+            <button class="btn bw-btn-cancel closes-modal-from-nav" data-dismiss="modal">CANCEL</button>
+          </div>
+          <div class="col-xs-6">
+            <button class="btn bw-btn-accept closes-modal-from-nav">DONE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="bw-language-modal">
+  <div class="modal-dialog modal-static">
+    <div class="bw-modal-content">
+      <div class="bw-modal-header">
+        LANGUAGE
+      </div>
+      <div class="modal-body">
+        <div class="bw-language">
+          <div class="row">
+            <div class="col-xs-12 language-item">
+              English
+            </div>
+            <div class="col-xs-12 language-item">
+              Spanish
+            </div>
+            <div class="col-xs-12 language-item">
+              French
+            </div>
+            <div class="col-xs-12 language-item">
+              Italian
+            </div>
+            <div class="col-xs-12 language-item">
+              German
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer bw-modal-footer"  tabindex="0">
+        <div class="row">
+          <div class="col-xs-6">
+            <button class="btn bw-btn-cancel closes-modal-from-nav" data-dismiss="modal">CANCEL</button>
+          </div>
+          <div class="col-xs-6">
+            <button class="btn bw-btn-accept closes-modal-from-nav">DONE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4b3318882e3274bf" tabindex="1000"></script>
+  </header>
+  <!-- Content -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="page-label">Groups Frequently Asked Questions</h1>
+        <p>Find answers to the most commonly asked questions about Best Western International's groups programs. If you do not find the answers you're looking for, please contact us for further assistance.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <ul class="list--no-bullets list--with-separators accordion-list">
+          <li class="row" id="faq-1-container">
+            <div class="col-xs-12">
+              <div class="accordion-item bw-accordion collapsed" data-toggle="collapse" data-target="#faq-1" data-active="#faq-1-container">
+                <h3 class="section-title">
+                  Submitting a Group Request
+                </h3>
+                <span class="pull-right glyphicon glyphicon-menu-up"></span>
+              </div>
+              <div class="collapse" id="faq-1">
+                <h4 class="body-subtitle">How do I request a group reservation?</h4>
+                <p>The Group RFP (Request for Proposal) is a convenient electronic form allowing you to customize your request for group rates for 4 or more rooms. The RFP form will allow you to specify exactly what your group needs and receive competitive rates based on those requirements. Our Group RFP allows you to customize the elements specific to each group. Our easy step by step procedure will guide you through the process of selecting a hotel for your group booking, entering in your requirements such as contact information and date and then linking you to our online electronic form to <a href="#">submit your RFP</a>.</p>
+                <h4 class="body-subtitle">Which RFP (Request for Proposal) option should I use to request a meeting room with guest rooms?</h4>
+                <p>To request meeting space with guest rooms for 4 or more hotel rooms (with an alternate hotel choice), select the <a href="#">Book Groups & Meetings</a> page to begin our easy step by step process.</p>
+          </li>
+          <li class="row" id="faq-2-container">
+            <div class="col-xs-12">
+              <div class="accordion-item bw-accordion collapsed" data-toggle="collapse" data-target="#faq-2" data-active="#faq-2-container">
+                <h3 class="section-title">
+                  Book Meeting Space Only
+                </h3>
+                <span class="pull-right glyphicon glyphicon-menu-up"></span>
+              </div>
+              <div class="collapse" id="faq-2">
+                <h4 class="body-subtitle">How do I request meeting space only?</h4>
+                <p>To request meeting space click Groups & Meeting from the <a href="#">Group Travel Home</a> page.</p>
+              </div>
+            </div>
+          </li>
+          <li class="row" id="faq-3-container">
+            <div class="col-xs-12">
+              <div class="accordion-item bw-accordion collapsed" data-toggle="collapse" data-target="#faq-3" data-active="#faq-3-container">
+                <h3 class="section-title">
+                  Book Group Sports Travel
+                </h3>
+                <span class="pull-right glyphicon glyphicon-menu-up"></span>
+              </div>
+              <div class="collapse" id="faq-3">
+                <h4 class="body-subtitle">How do I submit a group request for Sports Travel?</h4>
+                <p>Click the Home Team Advantage link from the <a href="#">Group Travel Home</a> page.</p>
+              </div>
+            </div>
+          </li>
+          <li class="row" id="faq-4-container">
+            <div class="col-xs-12">
+              <div class="accordion-item bw-accordion collapsed" data-toggle="collapse" data-target="#faq-4" data-active="#faq-4-container">
+                <h3 class="section-title">
+                  1-3 Rooms - Submitting a Group Request(s)
+                </h3>
+                <span class="pull-right glyphicon glyphicon-menu-up"></span>
+              </div>
+              <div class="collapse" id="faq-4">
+                <h4 class="body-subtitle">How do I submit a request to book 1-3 rooms without meeting space?</h4>
+                <p>Select the Book 1-3 rooms link from the Groups Home page.</p>
+                <h4 class="body-subtitle">How do I submit a request to book 1-3 rooms with meeting space?</h4>
+                <p>To request meeting space with guest rooms click Groups & Meeting from the Group Travel Home page.</p>
+              </div>
+            </div>
+          </li>
+          <li class="row" id="faq-5-container">
+            <div class="col-xs-12">
+              <div class="accordion-item bw-accordion collapsed" data-toggle="collapse" data-target="#faq-5" data-active="#faq-5-container">
+                <h3 class="section-title">
+                  Response Time
+                </h3>
+                <span class="pull-right glyphicon glyphicon-menu-up"></span>
+              </div>
+              <div class="collapse" id="faq-5">
+                <h4 class="body-subtitle">How long will it take to receive an answer to my Group Request(s)?</h4>
+                <p>Best Western understands that all groups are not alike and because of this, each group will require different elements to make their hotel stay comfortable. Your group request will sent to all requested hotels. Hotels will respond directly to you via email within 1-2 business days.</p>
+              </div>
+            </div>
+          </li>
+          <li class="row" id="faq-6-container">
+            <div class="col-xs-12">
+              <div class="accordion-item bw-accordion collapsed" data-toggle="collapse" data-target="#faq-6" data-active="#faq-6-container">
+                <h3 class="section-title">
+                  Canceling/Change a Group Reservation(s)
+                </h3>
+                <span class="pull-right glyphicon glyphicon-menu-up"></span>
+              </div>
+              <div class="collapse" id="faq-6">
+                <h4 class="body-subtitle">How do I cancel or change a group reservation?</h4>
+                <p>Any modifications or cancellations of your group reservations must be communicated directly to the hotel before or on the date stated on your booking confirmation. Refer to your booking confirmation for the phone number and sales contact.</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row copyright-disclaimer">
+      <div class="col-xs-12">
+        <p>Each Best Western   branded hotel is independently owned and operated.<br>
+          © 2002-2015 Best Western International, Inc. All rights reserved.
+        </p>
+        <p>© 2015 TripAdvisor LLC. All rights reserved</p>
+        <p><sup>&dagger;</sup>Numbers are approximate and can fluctuate.</p>
+      </div>
+    </div>
+  </div>
+  <!-- end container-fluid -->
+  <script src="../scripts/jquery.js"></script>
+  <script src="../scripts/bootstrap.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/navigation.js"></script>
+</body>
+</html>

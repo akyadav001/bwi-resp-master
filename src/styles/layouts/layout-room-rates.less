@@ -1,0 +1,315 @@
+@import (reference) "lib/variables";
+
+#bw-rooms-bar-container {
+  min-height: 53px;
+}
+#bw-selected-rooms-bar {
+  border-bottom: 3px solid #fff;
+  font-size: 13px;
+
+  &.fixed {
+    position: fixed;
+    width: 100%;
+    z-index: 16;
+    top: @navbar-height-mobile;
+    @media screen and (min-width: @screen-sm) {
+      top: @navbar-height-tablet;
+    }
+  }
+}
+
+.room-information-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+//Each subsection will be on its own row with 100% width. 
+.room-information-container > div {
+  flex: 1 100%;
+}
+
+//Give some space between the top and bottom halves. 
+.room-information-top {
+  margin-bottom: 10px;
+}
+
+//Since all of the columns are equal height, align the icon bar to the bottom of the column 
+//in case one of the colums is longer than the other.
+.room-information-bottom {
+  align-self: flex-end;
+}
+
+.rate-header {
+  fill: currentColor;
+  @media screen and (max-width: @screen-xs-max) {
+    padding-left:  (@grid-gutter-width / 2);
+    padding-right: (@grid-gutter-width / 2);
+  }
+}
+.rate-header .info-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+.bw-room-selections > div:nth-last-child(n + 2) {
+  border-right: 2px solid @bw-medium-gray;
+  border-top: 3px solid transparent;
+}
+
+.bw-room-selections,
+.under {
+  display: flex;
+  & > div {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    background-color: @bw-light-gray;
+  }
+  & > div:nth-last-child(n + 2) {
+    flex: 1;
+    padding-left: 5px;
+  }
+  & > div:last-child {
+    padding: 0;
+    justify-content: center;
+    color: @bw-white;
+    width: 40px;
+    background-color: @bw-light-blue;
+  }
+}
+
+.bw-hotel-information {
+  padding-top: 10px;
+}
+
+.bw-room-selections {
+  & > div {
+    display: flex;
+    align-items: center;
+    border-color: @bw-light-gray;
+  }
+
+  & > div:nth-last-child(2){
+    border-right-color: transparent;
+  }
+
+  div.active {
+    background-color: @bw-white;
+    border-right-color: transparent;
+    font-weight: @font-bold;
+    border-top-color: @bw-dark-blue;
+
+      //Bootstraps reset is overwriting the value for font-weight from the parent element. We set this element to
+      //explicitly inherit from the parent;
+    span {
+      font-weight: inherit;
+    }
+    path {
+      fill: @bw-dark-blue;
+    }
+  }
+  .room-indicator {
+    display: none;
+    width: 20px;
+    height: 20px;
+    margin-left: auto;
+    fill: @bw-dark-gray;
+    &.completed {
+      display: inline-block;
+    }
+  }
+}
+
+.under {
+  color: @bw-white;
+  & > div {
+    border-color: @bw-dark-blue;
+    background-color: @bw-light-blue;
+    padding-bottom: 10px;
+  }
+  & > div:nth-last-child(n + 2) {
+    border-right: 2px solid @bw-dark-blue;
+  }
+    hr {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  .icon-bar {
+    display: flex;
+    float: none;
+    @media screen and (min-width: @screen-sm) {
+      display: inline-flex;
+      float: left;
+    }
+    span {
+      @media screen and (min-width: @screen-sm) {
+        width: 35px;
+      }
+      max-width: 35px;
+      width: 100% / 3;
+      display: inline-block;
+      height: 25px;
+    }
+    span:nth-child(n + 2) {
+      margin-left: 5px;
+    }
+    path {
+      fill: #fff;
+    }
+  }
+  .remove-room {
+    text-align: center;
+    font-size: 30px;
+    opacity: 0.5;
+    font-weight: @font-light;
+    @media screen and (min-width: @screen-sm) {
+      display: inline-block;
+      float: right;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.room-amenities {
+  background-color: @bw-light-gray;
+  display: none;
+  font-weight: @font-light;
+  flex: 1 0 auto;
+  flex-direction: column;
+  padding: 10px 15px;
+  color: @bw-dark-gray;
+
+  @media screen and (min-width: @screen-sm) {
+    flex: 1 0 100%;
+    max-height: 50vh;
+    overflow-y: auto;
+    border: 1px solid @bw-lighter-blue;
+    border-top: 0;
+    flex-direction: row;
+    & > div {
+      & h3:first-child {
+        margin: 0;
+      }
+    }
+  }
+  .body-subtitle {
+    margin-bottom: 0;
+  }
+  ul {
+    list-style-position: inside;
+    padding-left: 0;
+    li {
+      font-weight: @font-light;
+    }
+  }
+}
+
+.room-amenities.active {
+  display: flex;
+}
+
+.room-amenities > div {
+  @media screen and (min-width: @screen-sm) {
+    padding: 23px;
+    flex: 1;
+  }
+}
+
+.no-detail {
+  background: url("@{icon-file-location}/svg/bw-logo-gray.svg") no-repeat center;
+}
+.select-room {
+  margin-left: auto;
+  display: inline-block;
+  flex: 0 0 30px;
+  label {
+    width: 30px;
+    height: 30px;
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+  & input[type="radio"]:checked + label {
+    .inner-circle {
+      fill: #df9e02;
+    }
+  }
+  .outer-circle {
+    stroke: #df9e02;
+    stroke-width: 4px;
+    fill: none;
+  }
+  .inner-circle {
+    fill: transparent;
+  }
+}
+
+.more-details {
+  border-top: 2px solid @bw-lighter-blue;
+  cursor: pointer;
+  display: inline-block;
+
+  //This element did not follow the standard font-sizes set in universal elements.
+  //I used a combination of styles to achieve the look per design.
+  font-weight: @font-bold;
+  .legal;
+}
+
+.room-icon-bar {
+  height: 25px;
+  position: absolute;
+  bottom: 0;
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+  & > * {
+    height: 100%;
+    width: 25px;
+    display: inline-block;
+  }
+}
+.room-tile-category {
+  font-size:25px;
+  line-height: 1;
+  height: 50px;
+  overflow: hidden;
+  font-weight: @font-light;
+}
+.room-tile-price {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  line-height: 1;
+}
+.room-tile-amount {
+  font-weight: @font-bold;
+  font-size: 20px;
+  clear: both;
+}
+
+.redeem-input-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.redeem-input-row > div:first-child {
+  @media screen and (max-width: @screen-xs-max) {
+    flex: 100%;
+    margin-bottom: 10px;
+  }
+}
+.redeem-input-row > div {
+  flex: 1 0 auto;
+}
+.redeem-quantity {
+  width: 40px;
+}

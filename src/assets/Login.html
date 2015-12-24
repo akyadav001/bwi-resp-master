@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Login</title>
+  <link rel="stylesheet" href="../styles/bootstrap.css">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body data-view="rewards-login-view">
+  <header class="site-header">
+    @@include('./BaseHeader.html')
+  </header>
+  <div id="content" class="container-fluid">
+    <div class="row ribbon">
+      <div class="col-xs-12">
+        <h1 class="big-title">Login</h1>
+      </div>
+    </div>
+    <div class="row ribbon">
+      <div class="col-xs-12">
+        <form class="with-float-labels">
+          <div class="form-group">
+            <label class="float" for="rewards-username">Username</label>
+            <input type="text" class="form-control" id="rewards-username" placeholder="Username">
+          </div>
+          <div class="form-group">
+            <label class="float" for="rewards-password">Password</label>
+            <input type="password" class="form-control" id="rewards-password" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <input type="checkbox" id="stay-logged-in" class="check_box" />
+            <label for="stay-logged-in">Stay logged in</label>
+            <a class="forgot-password pull-right" href="PasswordHelp.html">I forgot my password</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row ribbon">
+      <div class="col-xs-12">
+        <div class="g-recaptcha login-recaptcha" data-sitekey="6LfoKgUTAAAAAG4BFkI4asJDWuWWVIvnpKwBPHuF"></div>
+      </div>
+    </div>
+    <div class="row ribbon ribbon--large">
+      <div class="col-xs-12 full-width-buttons">
+        <a id="login-page-login-btn" href="#" class="btn bw-btn-accept">
+        Log In
+        </a>
+      </div>
+    </div>
+    <div class="row ribbon ribbon--large full-width-buttons">
+      <div class="col-xs-12">
+        <h2 class="big-title text-center">Join Our Top-Ranked Rewards Program</h2>
+        <div class="row">
+          <div class="col-xs-6">
+            <a href="RewardsLandingPage.html" class="btn bw-btn-clear--blue">LEARN MORE</a>
+          </div>
+          <div class="col-xs-6">
+            <a href="JoinRewards.html" class="btn bw-btn-cancel">JOIN NOW</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end container-fluid -->
+  <script src="../scripts/jquery.js"></script>
+  <script src="../scripts/bootstrap.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/navigation.js"></script>
+  <script src="../scripts/make-reservation.js"></script>
+  <script src="../scripts/login.js"></script>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+</body>
+
+</html>

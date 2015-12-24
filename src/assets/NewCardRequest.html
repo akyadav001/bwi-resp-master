@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>New Card Request</title>
+  <link rel="stylesheet" href="../styles/bootstrap.css">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body class="has-fixed-footer">
+  <header class="site-header">
+    @@include('./BaseHeader.html')
+  </header>
+  <div id="content" class="container-fluid">
+    <!-- check reservation -->
+    <div id="new-card" class="row ribbon ribbon--light-gray">
+      <div class="col-xs-12">
+        <h1>Request a New Card</h1>
+        <div class="form-group">
+          <input type="radio" class="radio_button" name="cardrequestradios" value="new-member" id="new-member-radio" checked>
+          <label for="new-member-radio">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="82" height="82" viewBox="0 0 82 82">
+              <g>
+                <circle  class="outer-circle" cx="41" cy="41" r="39"/>
+                <circle  class="inner-circle" cx="41" cy="41" r="29"/>
+              </g>
+            </svg>
+            <div class="radio-label-text">New Member Card Kit</div>
+          </label>
+          <br>
+          <input type="radio" class="radio_button" name="cardrequestradios" value="replacement-card" id="replacement-card-radio">
+          <label for="replacement-card-radio">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="82" height="82" viewBox="0 0 82 82">
+              <g>
+                <circle  class="outer-circle" cx="41" cy="41" r="39"/>
+                <circle  class="inner-circle" cx="41" cy="41" r="29"/>
+              </g>
+            </svg>
+            <div class="radio-label-text">Replacement Card Kit</div>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end container-fluid -->
+  <nav class="bw-bottom-bar">
+    <a href="NewCardRequestedThankYou.html" class="col-xs-12 new-member">
+      Submit
+    </a>
+    <a href="NewCardAlreadyRequestedThankYou.html" class="col-xs-12 new-card hidden">
+      Submit
+    </a>
+  </nav>
+  <script src="../scripts/jquery.js"></script>
+  <script src="../scripts/bootstrap.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/navigation.js"></script>
+  <script src="../scripts/make-reservation.js"></script>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+</body>
+</html>

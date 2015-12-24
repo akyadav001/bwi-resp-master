@@ -1,0 +1,462 @@
+@import (reference) "lib/variables";
+@import (reference) "lib/mixins";
+
+.bodyBG {
+  .background-with-color-filter('../images/BW-Hariston_768x480.jpg', @bw-dark-blue, '90');
+  
+  @media screen and (min-width: @screen-sm) {
+    .background-with-color-filter('../images/BW-Hariston_1024x640.jpg', @bw-dark-blue, '90');
+  }
+  @media screen and (min-width: @screen-md) {
+	.background-with-color-filter('../images/BW-Hariston_1229x768.jpg', @bw-dark-blue, '90');
+  }
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#places-search::-ms-clear {
+   display: none;
+}
+.hotel-search{
+  background-color: @bw-dark-blue;
+  text-align: center;
+}
+.bw-find-hotel-light {
+  .bw-label {
+    color: @label-color;
+  }
+  .bw-date-range-container {
+    color: @bw-dark-blue;
+  }
+  .room-box {
+    border-color: fade(@bw-lighter-blue, 50);
+    color: @room-color-white;
+    .room-header {
+      background-color: fade(@room-header-background-border-color, 25);
+    }
+    .room-body {
+      .ages-header {
+        border-color: fade(@bw-lighter-blue, 25);
+      }
+      .child {
+        border-color: fade(@bw-lighter-blue, 25);
+        .child-header {
+          color: @bw-lighter-blue;
+        }
+      }
+    }
+  }
+  a.booking-4-plus {
+    color: @bw-orange;
+  }
+  .add-a-room {
+    color: @room-color-yellow;
+  }
+  .room-button svg {
+    fill: @bw-gold;
+  }
+}
+
+.bw-find-hotel-dark {
+   .bw-label {
+      color: @room-light-label-color;
+   }
+   .favorites-search {
+      input {
+         border: thin solid @bw-light-gray;
+         border-right: none;
+      }
+      .input-group-addon {
+      border: thin solid @bw-light-gray;
+      border-left: none;
+   }
+   }
+   .bw-date-range-footer {
+      background-color: @bw-light-blue;
+      color: #fff;
+   }
+   .bw-stay-dates {
+      border: 1px solid @bw-light-gray;
+   }
+   .room-header {
+      background-color: @bw-light-gray;
+      .header-text {
+         color: @bw-dark-gray;
+      }
+   }
+   .room-box {
+      border-color: fade(@bw-dark-gray, 25);
+      color: @bw-medium-gray;
+      .room-body {
+         .ages-header {
+           border-color: fade(@bw-dark-gray, 25);
+         }
+
+         .child {
+            border-color: fade(@bw-dark-gray, 25);
+      }
+   }
+}
+   .booking-4-plus  {
+      color: @bw-light-blue;
+   }
+
+   .age-selectors .dropdown-menu li {
+   	  border-bottom: 1px solid @bw-medium-gray !important;
+   }
+   .room-button svg {
+     fill: @bw-dark-blue;
+   }
+}
+
+.bw-find-hotel-container {
+	width: 95%;
+	opacity: 1;
+}
+.bw-stay-dates-container {
+   display: flex;
+   cursor: pointer;
+}
+
+.bw-stay-dates {
+   text-align: center;
+   font-weight: @font-light;
+   width: 50%;
+   padding-top: 15px;
+   padding-bottom: 15px;
+   background-color: #fff;
+
+   &:first-of-type {
+      border-right: 1px solid @bw-light-gray;
+   }
+}
+.bw-date-range-footer {
+   background-color: @bw-lighter-blue;
+   padding: 10px 10px;
+   margin-bottom: 0;
+   text-align: center;
+}
+
+.bw-label {
+	font-size: 17px;
+}
+
+.outer-padding-top {
+	margin-top:5px;
+}
+.outer-padding-left {
+	margin-left:18px;
+	margin-right:18px;
+}
+
+.favorites-search {
+  input {
+    border: 0;
+    padding-right: 35px;
+  }
+  #destination-clear-button {
+    color: @bw-medium-gray;
+	padding: 0;
+	border-radius: 100%;
+	background-color: @bw-light-gray;
+    border: none;
+	font-size: 17px;
+	outline: none;
+  }
+  .input-group-addon {
+    border-radius: 0;
+    border: 0;
+    background-color: #fff;
+    font-size: 18px;
+  }
+  .fav-icon {
+    width: 17px;
+    height: 17px;
+    & > * {
+      fill: #df9e02;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .dropdown-menu {
+  overflow-x: hidden;
+	left: 0;
+	width: 100%;
+	font-size: 13px;
+	height: auto;
+	max-height: 225px;
+	overflow-y: auto;
+	border-radius: 0;
+	padding: 0;
+	border: 0;
+	margin-top: 0;
+
+    .dropdown-header {
+	  background-color: @bw-dark-gray;
+	  color: @room-color-white;
+	  font-size: 11px;
+	  font-weight: @font-bold;
+	}
+
+	li {
+	  border-bottom: 1px solid #AAAAAA;
+	  margin-left: auto;
+	  margin-right: auto;
+	  background-color: @bw-light-gray;
+	  color: @bw-dark-gray;
+	  font-weight: @font-regular;
+
+      a {
+        padding-top: 10px;
+	    padding-bottom: 10px;
+	  }
+
+	  a:active, a:focus {
+	    outline: 0 !important;
+	    -webkit-appearance: none;
+	  }
+    }
+
+	li:last-child {
+	  border-bottom: 0;
+	}
+  }
+}
+
+.bw-day-label {
+  font-size: 14px;
+  font-weight: inherit;
+}
+
+.bw-date-label {
+  font-size: 18px;
+  font-weight: inherit;
+}
+
+.divider {
+  border-right: solid 1px #999999;
+}
+//Remove bootstraps default padding on buttons as this is a special image button. Give the button width and height matching 
+//the icon size from the design.
+.room-button {
+	padding: 0;
+	width: 16px;
+	height: 16px;
+  background-color: transparent;
+  border: none;
+}
+
+//Have the icon fill up the width and height of the button.
+.room-button svg {
+  width: 100%;
+  height: 100%;
+}
+
+.room-button:disabled {
+  opacity: 0.6;
+}
+.room-box {
+	border: solid 1px;
+	font-size: 13px;
+	font-weight: @font-regular;
+
+	.room-header {
+	  padding: 5px;
+      padding-right: 10px;
+
+		.close-box {
+			float: right;
+			padding-right: 5px;
+		}
+	}
+
+	.room-body {
+		width:100%;
+		text-align: center;
+		padding-top: 0;
+		padding-bottom: 10px;
+
+		.room-adult {
+			> div {
+				padding-top:15px;
+				padding-bottom:15px;
+			}
+		}
+
+		.room-child {
+			> div {
+				padding-top:15px;
+				padding-bottom:15px;
+			}
+		}
+
+		.age-selectors {
+			max-width: 90%;
+			margin-left: auto;
+			margin-right: auto;
+
+			.dropdown-menu {
+				left: auto;
+				right: -15px;
+				font-size: 13px;
+				height: auto;
+				max-height: 225px;
+				overflow-y: scroll;
+
+				li {
+					border-bottom: 1px solid #000;
+					width: 80%;
+					margin-left: auto;
+					margin-right: auto;
+					text-align: left;
+
+					a {
+						padding-left: 0;
+						padding-top: 10px;
+						padding-bottom: 10px;
+					}
+
+					a:active, a:focus {
+						outline: 0 !important;
+						-webkit-appearance: none;
+					}
+				}
+
+				li:last-child {
+					border-bottom: 0;
+				}
+			}
+		}
+
+		.body-text {
+			padding: 0;
+		}
+
+		.body-icon-minus {
+			padding-right: 0;
+			button {
+				vertical-align: middle;
+			}
+		}
+
+		.body-icon-plus {
+			padding-left: 0;
+			button {
+				vertical-align: middle;
+			}
+		}
+
+		.ages-header {
+         border-bottom: 1px solid;
+			text-align: left;
+			overflow: auto;
+		}
+
+		.child {
+      		border-bottom: 1px solid;
+      		cursor: pointer;
+			overflow: hidden;
+			padding-top: 5px;
+			padding-bottom: 5px;
+
+			.child-header {
+				font-weight: @font-bold;
+
+				.bw-icon-white-carrot, 
+				.bw-icon-gray-carrot {
+					position: absolute;
+					top: 0;
+					right: 10px;
+				}
+			}
+
+			.bw-icon {
+				margin-top: 15px;
+				float: right;
+			}
+		}
+	}
+}
+
+@media (max-width: @screen-sm-min) {
+  .room-box {
+    margin-bottom: 20px;
+  }
+}
+
+.add-a-room {
+   padding: 25px 0;
+	div {
+		font-size: 13px;
+		font-weight: @font-bold;
+		text-align: center;
+
+	}
+
+	.add-a-room-plus {
+		padding-left: 0;
+	}
+
+
+	@media (min-width: @screen-sm-min) {
+		.add-a-room-text {
+			width: 100%;
+			text-align: center;
+			margin-bottom: 15px;
+		}
+		.add-a-room-plus {
+			width: 100%;
+			padding-left: 15px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+}
+
+a.booking-4-plus {
+  font-size: 13px;
+  text-decoration: none;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  
+  & > span {
+    font-weight: @font-bold;
+  }
+  & > .bw-icon {
+    vertical-align: middle;
+  }
+}
+
+@media (min-width: @screen-sm-min) {
+  .bw-find-hotel-container {
+    width: 80%;
+  }
+  
+  .bw-day-label {
+    font-size: 16px;
+  }
+  
+  .bw-date-label {
+    font-size: 24px;
+  }
+}
+
+//Branding requirements per google. Adapted from Google's implementation of their autocomplete module.
+
+.places-results:after {
+  content: "";
+  padding: 1px 1px 1px 0;
+  height: 16px;
+  text-align: right;
+  display: block;
+  background-image: url("../images/google-autocomplete-non-white.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 104px 16px;
+  background-color: @bw-dark-gray;
+}

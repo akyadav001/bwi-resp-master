@@ -1,0 +1,23 @@
+.content-container {
+  padding-left: @container-gutter-size;
+  padding-right: @container-gutter-size;
+  margin-left: auto;
+  margin-right: auto;
+  
+  @media (min-width: @desktopMin) {
+    max-width: unit(1368 / @base-font-size, em);
+  }
+}
+
+//Give each section some spacing between the container and the content.
+.content-section {
+  padding: unit(40 / @base-font-size, em) 0;
+  
+  &.-no-padding {
+    padding: 0;
+  }
+  &.-copyright {
+    background-color: @bw-pale-gray;
+    padding: unit(20 / @base-font-size, em) 0;
+  }
+}

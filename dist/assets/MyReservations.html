@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My Reservations</title>
+  <link rel="stylesheet" href="../styles/bootstrap.css">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="bw-navbar navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="nav-left">
+      <a href="findahotel.html"><span class="bw-icon bw-icon-logo"></span></a>
+    </div>
+    <div class="nav-left">
+      <button type="button" class="burger" id="menu-burger">
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      </button>
+    </div>
+    <div class="nav-right icon hidden" data-toggle="modal" data-target="#bw-login">
+      <a href="#" class="svg">
+        <object type="image/svg+xml" data="icons/svg/global-fav-inactive.svg"></object>
+      </a>
+    </div>
+    <div class="nav-right icon hidden">
+      <a href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4b3318882e3274bf" class="svg">
+      <object type="image/svg+xml" data="icons/svg/global-share.svg"></object>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div id="left-menu" class="hide-me">
+  <div id="menu-overlay">
+    <button type="button" id="menu-close-button">&times;</button>
+  </div>
+  <div id="menu-list">
+    <div id="menu-user" class="menu-logged-in hidden">
+      <div id="menu-user-profile" class="user-profile">
+        <img src="icons/profile.png">
+        <h1>Hello, Catherine!</h1>
+        <p>#600563-1234-456-892</p>
+      </div>
+      <a href="#" id="upcoming-reservation">
+        <h2>View Upcoming Reservation</h2>
+        <p>Columbus, OH</p>
+      </a>
+    </div>
+    <div id="login-button">
+      <!-- <button type="button">REWARDS LOGIN</button> -->
+      <a href="Login.html" class="bw-btn">REWARDS LOGIN</a>
+    </div>
+    <div id="main-menu" class="menu-items">
+      <a href="#" class="account-menu-forward hidden">My Account<span class="glyphicon glyphicon-chevron-right"></span></a>
+      <a href="Home.html">Home</a>
+      <a href="FindAHotel.html">Find a Hotel</a>
+      <a href="CheckReservation.html">Check Reservations</a>
+      <a href="#" class="rewards-menu-forward">Rewards<span class="glyphicon glyphicon-chevron-right"></span></a>
+      <a href="#" >Customer Care</a>
+      <a href="#" class="settings-menu-forward">Settings<span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+    <div id="rewards-menu" class="menu-items hide-me">
+      <a href="#" class="main-menu-back"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Main Menu</a>
+      <h4>Rewards</h4>
+      <a href="RewardsLandingPage.html" >Learn About Rewards</a>
+      <a href="JoinRewards.html" >Join</a>
+      <a href="EarnRewards.html" >Earn</a>
+      <a href="Redeem.html" >Redeem</a>
+    </div>
+    <div id="settings-menu" class="menu-items hide-me">
+      <a href="#" class="main-menu-back"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Main Menu</a>
+      <h4>Settings</h4>
+      <a href="#" class="opens-modal" data-toggle="modal" data-target="#bw-language-modal">Language</a>
+      <a href="#" class="opens-modal" data-toggle="modal" data-target="#bw-currency-modal">Currency</a>
+    </div>
+    <div id="account-menu" class="menu-items hide-me hidden">
+      <a href="#" class="main-menu-back"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Main Menu</a>
+      <h4>My Account</h4>
+      <a href="Dashboard.html" >Dashboard</a>
+      <a href="Preferences.html" >Profile &amp; Preferences</a>
+      <a href="MyRewards.html" >Rewards Activity</a>
+      <a href="Favorites.html" >Favorites</a>
+      <a href="#" >Rewards Service Center</a>
+      <a id="logout" href="#" >Logout</a>
+    </div>
+  </div>
+
+</div>
+<div id="blur" class="invisible"></div>
+<div class="modal" id="bw-currency-modal">
+  <div class="modal-dialog modal-static">
+    <div class="bw-modal-content">
+      <div class="bw-modal-header">
+        CURRENCY
+      </div>
+      <div class="modal-body">
+        <div class="bw-currency">
+          <div class="row">
+            <div class="col-xs-12 currency-item currency-search">
+              <span class="bw-icon bw-icon-search"></span>
+              <input type="text"/>
+            </div>
+            <div class="col-xs-12 currency-item">
+              US Dollars
+            </div>
+            <div class="col-xs-12 currency-item">
+              Euro
+            </div>
+            <div class="col-xs-12 bw-currency-header">
+              OTHER CURRENCIES
+            </div>
+            <div class="col-xs-12 currency-item">
+              Albanian Yek
+            </div>
+            <div class="col-xs-12 currency-item">
+              Algerian Dinar
+            </div>
+            <div class="col-xs-12 currency-item">
+              Argentinian Pesos
+            </div>
+            <div class="col-xs-12 currency-item">
+              Armenian Dram
+            </div>
+            <div class="col-xs-12 currency-item">
+              Arubin Florin
+            </div>
+            <div class="col-xs-12 currency-item">
+              Australia Dollars
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer bw-modal-footer">
+        <div class="row">
+          <div class="col-xs-6">
+            <button class="btn bw-btn-cancel closes-modal-from-nav" data-dismiss="modal">CANCEL</button>
+          </div>
+          <div class="col-xs-6">
+            <button class="btn bw-btn-accept closes-modal-from-nav">DONE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="bw-language-modal">
+  <div class="modal-dialog modal-static">
+    <div class="bw-modal-content">
+      <div class="bw-modal-header">
+        LANGUAGE
+      </div>
+      <div class="modal-body">
+        <div class="bw-language">
+          <div class="row">
+            <div class="col-xs-12 language-item">
+              English
+            </div>
+            <div class="col-xs-12 language-item">
+              Spanish
+            </div>
+            <div class="col-xs-12 language-item">
+              French
+            </div>
+            <div class="col-xs-12 language-item">
+              Italian
+            </div>
+            <div class="col-xs-12 language-item">
+              German
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer bw-modal-footer"  tabindex="0">
+        <div class="row">
+          <div class="col-xs-6">
+            <button class="btn bw-btn-cancel closes-modal-from-nav" data-dismiss="modal">CANCEL</button>
+          </div>
+          <div class="col-xs-6">
+            <button class="btn bw-btn-accept closes-modal-from-nav">DONE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4b3318882e3274bf" tabindex="1000"></script>
+  </header>
+  <!-- Content -->
+  <div class="container-fluid my-reservations-view">
+    <ul class="nav nav-tabs nav-justified" data-tabs="tabs">
+      <li role="presentation" class="active">
+        <a href="#upcoming" data-toggle="tab">Upcoming</a>
+      </li>
+      <li role="presentation">
+        <a href="#past" data-toggle="tab">Past</a>
+      </li>
+      <li role="presentation">
+        <a href="#cancelled" data-toggle="tab">Cancelled</a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="upcoming">
+        <div class="row ribbon--white box-card upcoming-reservations">
+          <div class="col-xs-12 ribbon tab-content">
+            <ul id="upcoming-1" class="row tab-pane list--no-bullets active">
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <span class="glyphicon glyphicon-repeat spinning"></span>
+                    <a href="#" class="cancel-link svg hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 22 22">
+                        <path d="M11.000,9.059 C11.000,9.059 1.941,-0.000 1.941,-0.000 C1.941,-0.000 -0.000,1.941 -0.000,1.941 C-0.000,1.941 9.059,11.000 9.059,11.000 C9.059,11.000 -0.000,20.059 -0.000,20.059 C-0.000,20.059 1.941,22.000 1.941,22.000 C1.941,22.000 11.000,12.941 11.000,12.941 C11.000,12.941 20.059,22.000 20.059,22.000 C20.059,22.000 22.000,20.059 22.000,20.059 C22.000,20.059 12.941,11.000 12.941,11.000 C12.941,11.000 22.000,1.941 22.000,1.941 C22.000,1.941 20.059,-0.000 20.059,-0.000 C20.059,-0.000 11.000,9.059 11.000,9.059 Z" fill-rule="evenodd"/>
+                      </svg>
+                    </a>
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098611</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <a href="https://www.google.com/maps" class="svg" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="35" height="35" viewBox="0 0 54 54">
+                          <path d="M31.893,19.455 C31.893,19.455 29.652,21.697 29.652,21.697 C29.652,21.697 32.015,24.060 32.015,24.060 C32.015,24.060 20.076,24.060 20.076,24.060 C20.076,24.060 20.076,34.084 20.076,34.084 C20.076,34.084 23.246,34.084 23.246,34.084 C23.246,34.084 23.246,27.230 23.246,27.230 C23.246,27.230 32.014,27.230 32.014,27.230 C32.014,27.230 29.652,29.592 29.652,29.592 C29.652,29.592 31.893,31.834 31.893,31.834 C31.893,31.834 38.083,25.645 38.083,25.645 C38.083,25.645 31.893,19.455 31.893,19.455 ZM27.000,-0.000 C27.000,-0.000 0.000,27.000 0.000,27.000 C0.000,27.000 27.000,54.000 27.000,54.000 C27.000,54.000 54.000,27.000 54.000,27.000 C54.000,27.000 27.000,-0.000 27.000,-0.000 ZM4.483,27.000 C4.483,27.000 27.000,4.483 27.000,4.483 C27.000,4.483 49.517,27.000 49.517,27.000 C49.517,27.000 27.000,49.517 27.000,49.517 C27.000,49.517 4.483,27.000 4.483,27.000 Z" fill="#031054" fill-rule="evenodd"/>
+                        </svg>
+                      </a>
+                      <div class="section-title">Columbus, OH</div>
+                      <div>35.2mi/42.6km</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <span class="glyphicon glyphicon-repeat spinning"></span>
+                    <a href="#" class="cancel-link svg hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 22 22">
+                        <path d="M11.000,9.059 C11.000,9.059 1.941,-0.000 1.941,-0.000 C1.941,-0.000 -0.000,1.941 -0.000,1.941 C-0.000,1.941 9.059,11.000 9.059,11.000 C9.059,11.000 -0.000,20.059 -0.000,20.059 C-0.000,20.059 1.941,22.000 1.941,22.000 C1.941,22.000 11.000,12.941 11.000,12.941 C11.000,12.941 20.059,22.000 20.059,22.000 C20.059,22.000 22.000,20.059 22.000,20.059 C22.000,20.059 12.941,11.000 12.941,11.000 C12.941,11.000 22.000,1.941 22.000,1.941 C22.000,1.941 20.059,-0.000 20.059,-0.000 C20.059,-0.000 11.000,9.059 11.000,9.059 Z" fill-rule="evenodd"/>
+                      </svg>
+                    </a>
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098611</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <a href="https://www.google.com/maps" class="svg" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="35" height="35" viewBox="0 0 54 54">
+                          <path d="M31.893,19.455 C31.893,19.455 29.652,21.697 29.652,21.697 C29.652,21.697 32.015,24.060 32.015,24.060 C32.015,24.060 20.076,24.060 20.076,24.060 C20.076,24.060 20.076,34.084 20.076,34.084 C20.076,34.084 23.246,34.084 23.246,34.084 C23.246,34.084 23.246,27.230 23.246,27.230 C23.246,27.230 32.014,27.230 32.014,27.230 C32.014,27.230 29.652,29.592 29.652,29.592 C29.652,29.592 31.893,31.834 31.893,31.834 C31.893,31.834 38.083,25.645 38.083,25.645 C38.083,25.645 31.893,19.455 31.893,19.455 ZM27.000,-0.000 C27.000,-0.000 0.000,27.000 0.000,27.000 C0.000,27.000 27.000,54.000 27.000,54.000 C27.000,54.000 54.000,27.000 54.000,27.000 C54.000,27.000 27.000,-0.000 27.000,-0.000 ZM4.483,27.000 C4.483,27.000 27.000,4.483 27.000,4.483 C27.000,4.483 49.517,27.000 49.517,27.000 C49.517,27.000 27.000,49.517 27.000,49.517 C27.000,49.517 4.483,27.000 4.483,27.000 Z" fill="#031054" fill-rule="evenodd"/>
+                        </svg>
+                      </a>
+                      <div class="section-title">Atlanta, GA</div>
+                      <div>35.2mi/42.6km</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <span class="glyphicon glyphicon-repeat spinning"></span>
+                    <a href="#" class="cancel-link svg hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 22 22">
+                        <path d="M11.000,9.059 C11.000,9.059 1.941,-0.000 1.941,-0.000 C1.941,-0.000 -0.000,1.941 -0.000,1.941 C-0.000,1.941 9.059,11.000 9.059,11.000 C9.059,11.000 -0.000,20.059 -0.000,20.059 C-0.000,20.059 1.941,22.000 1.941,22.000 C1.941,22.000 11.000,12.941 11.000,12.941 C11.000,12.941 20.059,22.000 20.059,22.000 C20.059,22.000 22.000,20.059 22.000,20.059 C22.000,20.059 12.941,11.000 12.941,11.000 C12.941,11.000 22.000,1.941 22.000,1.941 C22.000,1.941 20.059,-0.000 20.059,-0.000 C20.059,-0.000 11.000,9.059 11.000,9.059 Z" fill-rule="evenodd"/>
+                      </svg>
+                    </a>
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098611</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <a href="https://www.google.com/maps" class="svg" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="35" height="35" viewBox="0 0 54 54">
+                          <path d="M31.893,19.455 C31.893,19.455 29.652,21.697 29.652,21.697 C29.652,21.697 32.015,24.060 32.015,24.060 C32.015,24.060 20.076,24.060 20.076,24.060 C20.076,24.060 20.076,34.084 20.076,34.084 C20.076,34.084 23.246,34.084 23.246,34.084 C23.246,34.084 23.246,27.230 23.246,27.230 C23.246,27.230 32.014,27.230 32.014,27.230 C32.014,27.230 29.652,29.592 29.652,29.592 C29.652,29.592 31.893,31.834 31.893,31.834 C31.893,31.834 38.083,25.645 38.083,25.645 C38.083,25.645 31.893,19.455 31.893,19.455 ZM27.000,-0.000 C27.000,-0.000 0.000,27.000 0.000,27.000 C0.000,27.000 27.000,54.000 27.000,54.000 C27.000,54.000 54.000,27.000 54.000,27.000 C54.000,27.000 27.000,-0.000 27.000,-0.000 ZM4.483,27.000 C4.483,27.000 27.000,4.483 27.000,4.483 C27.000,4.483 49.517,27.000 49.517,27.000 C49.517,27.000 27.000,49.517 27.000,49.517 C27.000,49.517 4.483,27.000 4.483,27.000 Z" fill="#031054" fill-rule="evenodd"/>
+                        </svg>
+                      </a>
+                      <div class="section-title">Phoenix, AZ</div>
+                      <div>35.2mi/42.6km</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <span class="glyphicon glyphicon-repeat spinning"></span>
+                    <a href="#" class="cancel-link svg hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 22 22">
+                        <path d="M11.000,9.059 C11.000,9.059 1.941,-0.000 1.941,-0.000 C1.941,-0.000 -0.000,1.941 -0.000,1.941 C-0.000,1.941 9.059,11.000 9.059,11.000 C9.059,11.000 -0.000,20.059 -0.000,20.059 C-0.000,20.059 1.941,22.000 1.941,22.000 C1.941,22.000 11.000,12.941 11.000,12.941 C11.000,12.941 20.059,22.000 20.059,22.000 C20.059,22.000 22.000,20.059 22.000,20.059 C22.000,20.059 12.941,11.000 12.941,11.000 C12.941,11.000 22.000,1.941 22.000,1.941 C22.000,1.941 20.059,-0.000 20.059,-0.000 C20.059,-0.000 11.000,9.059 11.000,9.059 Z" fill-rule="evenodd"/>
+                      </svg>
+                    </a>
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098611</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <a href="https://www.google.com/maps" class="svg" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="35" height="35" viewBox="0 0 54 54">
+                          <path d="M31.893,19.455 C31.893,19.455 29.652,21.697 29.652,21.697 C29.652,21.697 32.015,24.060 32.015,24.060 C32.015,24.060 20.076,24.060 20.076,24.060 C20.076,24.060 20.076,34.084 20.076,34.084 C20.076,34.084 23.246,34.084 23.246,34.084 C23.246,34.084 23.246,27.230 23.246,27.230 C23.246,27.230 32.014,27.230 32.014,27.230 C32.014,27.230 29.652,29.592 29.652,29.592 C29.652,29.592 31.893,31.834 31.893,31.834 C31.893,31.834 38.083,25.645 38.083,25.645 C38.083,25.645 31.893,19.455 31.893,19.455 ZM27.000,-0.000 C27.000,-0.000 0.000,27.000 0.000,27.000 C0.000,27.000 27.000,54.000 27.000,54.000 C27.000,54.000 54.000,27.000 54.000,27.000 C54.000,27.000 27.000,-0.000 27.000,-0.000 ZM4.483,27.000 C4.483,27.000 27.000,4.483 27.000,4.483 C27.000,4.483 49.517,27.000 49.517,27.000 C49.517,27.000 27.000,49.517 27.000,49.517 C27.000,49.517 4.483,27.000 4.483,27.000 Z" fill="#031054" fill-rule="evenodd"/>
+                        </svg>
+                      </a>
+                      <div class="section-title">Columbus, OH</div>
+                      <div>35.2mi/42.6km</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <span class="glyphicon glyphicon-repeat spinning"></span>
+                    <a href="#" class="cancel-link svg hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 22 22">
+                        <path d="M11.000,9.059 C11.000,9.059 1.941,-0.000 1.941,-0.000 C1.941,-0.000 -0.000,1.941 -0.000,1.941 C-0.000,1.941 9.059,11.000 9.059,11.000 C9.059,11.000 -0.000,20.059 -0.000,20.059 C-0.000,20.059 1.941,22.000 1.941,22.000 C1.941,22.000 11.000,12.941 11.000,12.941 C11.000,12.941 20.059,22.000 20.059,22.000 C20.059,22.000 22.000,20.059 22.000,20.059 C22.000,20.059 12.941,11.000 12.941,11.000 C12.941,11.000 22.000,1.941 22.000,1.941 C22.000,1.941 20.059,-0.000 20.059,-0.000 C20.059,-0.000 11.000,9.059 11.000,9.059 Z" fill-rule="evenodd"/>
+                      </svg>
+                    </a>
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098611</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <a href="https://www.google.com/maps" class="svg" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="35" height="35" viewBox="0 0 54 54">
+                          <path d="M31.893,19.455 C31.893,19.455 29.652,21.697 29.652,21.697 C29.652,21.697 32.015,24.060 32.015,24.060 C32.015,24.060 20.076,24.060 20.076,24.060 C20.076,24.060 20.076,34.084 20.076,34.084 C20.076,34.084 23.246,34.084 23.246,34.084 C23.246,34.084 23.246,27.230 23.246,27.230 C23.246,27.230 32.014,27.230 32.014,27.230 C32.014,27.230 29.652,29.592 29.652,29.592 C29.652,29.592 31.893,31.834 31.893,31.834 C31.893,31.834 38.083,25.645 38.083,25.645 C38.083,25.645 31.893,19.455 31.893,19.455 ZM27.000,-0.000 C27.000,-0.000 0.000,27.000 0.000,27.000 C0.000,27.000 27.000,54.000 27.000,54.000 C27.000,54.000 54.000,27.000 54.000,27.000 C54.000,27.000 27.000,-0.000 27.000,-0.000 ZM4.483,27.000 C4.483,27.000 27.000,4.483 27.000,4.483 C27.000,4.483 49.517,27.000 49.517,27.000 C49.517,27.000 27.000,49.517 27.000,49.517 C27.000,49.517 4.483,27.000 4.483,27.000 Z" fill="#031054" fill-rule="evenodd"/>
+                        </svg>
+                      </a>
+                      <div class="section-title">Atlanta, GA</div>
+                      <div>35.2mi/42.6km</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <span class="glyphicon glyphicon-repeat spinning"></span>
+                    <a href="#" class="cancel-link svg hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 22 22">
+                        <path d="M11.000,9.059 C11.000,9.059 1.941,-0.000 1.941,-0.000 C1.941,-0.000 -0.000,1.941 -0.000,1.941 C-0.000,1.941 9.059,11.000 9.059,11.000 C9.059,11.000 -0.000,20.059 -0.000,20.059 C-0.000,20.059 1.941,22.000 1.941,22.000 C1.941,22.000 11.000,12.941 11.000,12.941 C11.000,12.941 20.059,22.000 20.059,22.000 C20.059,22.000 22.000,20.059 22.000,20.059 C22.000,20.059 12.941,11.000 12.941,11.000 C12.941,11.000 22.000,1.941 22.000,1.941 C22.000,1.941 20.059,-0.000 20.059,-0.000 C20.059,-0.000 11.000,9.059 11.000,9.059 Z" fill-rule="evenodd"/>
+                      </svg>
+                    </a>
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098611</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <a href="https://www.google.com/maps" class="svg" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="35" height="35" viewBox="0 0 54 54">
+                          <path d="M31.893,19.455 C31.893,19.455 29.652,21.697 29.652,21.697 C29.652,21.697 32.015,24.060 32.015,24.060 C32.015,24.060 20.076,24.060 20.076,24.060 C20.076,24.060 20.076,34.084 20.076,34.084 C20.076,34.084 23.246,34.084 23.246,34.084 C23.246,34.084 23.246,27.230 23.246,27.230 C23.246,27.230 32.014,27.230 32.014,27.230 C32.014,27.230 29.652,29.592 29.652,29.592 C29.652,29.592 31.893,31.834 31.893,31.834 C31.893,31.834 38.083,25.645 38.083,25.645 C38.083,25.645 31.893,19.455 31.893,19.455 ZM27.000,-0.000 C27.000,-0.000 0.000,27.000 0.000,27.000 C0.000,27.000 27.000,54.000 27.000,54.000 C27.000,54.000 54.000,27.000 54.000,27.000 C54.000,27.000 27.000,-0.000 27.000,-0.000 ZM4.483,27.000 C4.483,27.000 27.000,4.483 27.000,4.483 C27.000,4.483 49.517,27.000 49.517,27.000 C49.517,27.000 27.000,49.517 27.000,49.517 C27.000,49.517 4.483,27.000 4.483,27.000 Z" fill="#031054" fill-rule="evenodd"/>
+                        </svg>
+                      </a>
+                      <div class="section-title">Phoenix, AZ</div>
+                      <div>35.2mi/42.6km</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+            </ul>
+            <ul id="upcoming-2" class="row tab-pane list--no-bullets">
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <span class="glyphicon glyphicon-repeat spinning"></span>
+                    <a href="#" class="cancel-link svg hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 22 22">
+                        <path d="M11.000,9.059 C11.000,9.059 1.941,-0.000 1.941,-0.000 C1.941,-0.000 -0.000,1.941 -0.000,1.941 C-0.000,1.941 9.059,11.000 9.059,11.000 C9.059,11.000 -0.000,20.059 -0.000,20.059 C-0.000,20.059 1.941,22.000 1.941,22.000 C1.941,22.000 11.000,12.941 11.000,12.941 C11.000,12.941 20.059,22.000 20.059,22.000 C20.059,22.000 22.000,20.059 22.000,20.059 C22.000,20.059 12.941,11.000 12.941,11.000 C12.941,11.000 22.000,1.941 22.000,1.941 C22.000,1.941 20.059,-0.000 20.059,-0.000 C20.059,-0.000 11.000,9.059 11.000,9.059 Z" fill-rule="evenodd"/>
+                      </svg>
+                    </a>
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098612</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <a href="https://www.google.com/maps" class="svg" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="35" height="35" viewBox="0 0 54 54">
+                          <path d="M31.893,19.455 C31.893,19.455 29.652,21.697 29.652,21.697 C29.652,21.697 32.015,24.060 32.015,24.060 C32.015,24.060 20.076,24.060 20.076,24.060 C20.076,24.060 20.076,34.084 20.076,34.084 C20.076,34.084 23.246,34.084 23.246,34.084 C23.246,34.084 23.246,27.230 23.246,27.230 C23.246,27.230 32.014,27.230 32.014,27.230 C32.014,27.230 29.652,29.592 29.652,29.592 C29.652,29.592 31.893,31.834 31.893,31.834 C31.893,31.834 38.083,25.645 38.083,25.645 C38.083,25.645 31.893,19.455 31.893,19.455 ZM27.000,-0.000 C27.000,-0.000 0.000,27.000 0.000,27.000 C0.000,27.000 27.000,54.000 27.000,54.000 C27.000,54.000 54.000,27.000 54.000,27.000 C54.000,27.000 27.000,-0.000 27.000,-0.000 ZM4.483,27.000 C4.483,27.000 27.000,4.483 27.000,4.483 C27.000,4.483 49.517,27.000 49.517,27.000 C49.517,27.000 27.000,49.517 27.000,49.517 C27.000,49.517 4.483,27.000 4.483,27.000 Z" fill="#031054" fill-rule="evenodd"/>
+                        </svg>
+                      </a>
+                      <div class="section-title">Columbus, OH</div>
+                      <div>35.2mi/42.6km</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <span class="glyphicon glyphicon-repeat spinning"></span>
+                    <a href="#" class="cancel-link svg hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 22 22">
+                        <path d="M11.000,9.059 C11.000,9.059 1.941,-0.000 1.941,-0.000 C1.941,-0.000 -0.000,1.941 -0.000,1.941 C-0.000,1.941 9.059,11.000 9.059,11.000 C9.059,11.000 -0.000,20.059 -0.000,20.059 C-0.000,20.059 1.941,22.000 1.941,22.000 C1.941,22.000 11.000,12.941 11.000,12.941 C11.000,12.941 20.059,22.000 20.059,22.000 C20.059,22.000 22.000,20.059 22.000,20.059 C22.000,20.059 12.941,11.000 12.941,11.000 C12.941,11.000 22.000,1.941 22.000,1.941 C22.000,1.941 20.059,-0.000 20.059,-0.000 C20.059,-0.000 11.000,9.059 11.000,9.059 Z" fill-rule="evenodd"/>
+                      </svg>
+                    </a>
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098612</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <a href="https://www.google.com/maps" class="svg" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="35" height="35" viewBox="0 0 54 54">
+                          <path d="M31.893,19.455 C31.893,19.455 29.652,21.697 29.652,21.697 C29.652,21.697 32.015,24.060 32.015,24.060 C32.015,24.060 20.076,24.060 20.076,24.060 C20.076,24.060 20.076,34.084 20.076,34.084 C20.076,34.084 23.246,34.084 23.246,34.084 C23.246,34.084 23.246,27.230 23.246,27.230 C23.246,27.230 32.014,27.230 32.014,27.230 C32.014,27.230 29.652,29.592 29.652,29.592 C29.652,29.592 31.893,31.834 31.893,31.834 C31.893,31.834 38.083,25.645 38.083,25.645 C38.083,25.645 31.893,19.455 31.893,19.455 ZM27.000,-0.000 C27.000,-0.000 0.000,27.000 0.000,27.000 C0.000,27.000 27.000,54.000 27.000,54.000 C27.000,54.000 54.000,27.000 54.000,27.000 C54.000,27.000 27.000,-0.000 27.000,-0.000 ZM4.483,27.000 C4.483,27.000 27.000,4.483 27.000,4.483 C27.000,4.483 49.517,27.000 49.517,27.000 C49.517,27.000 27.000,49.517 27.000,49.517 C27.000,49.517 4.483,27.000 4.483,27.000 Z" fill="#031054" fill-rule="evenodd"/>
+                        </svg>
+                      </a>
+                      <div class="section-title">Atlanta, GA</div>
+                      <div>35.2mi/42.6km</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <span class="glyphicon glyphicon-repeat spinning"></span>
+                    <a href="#" class="cancel-link svg hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 22 22">
+                        <path d="M11.000,9.059 C11.000,9.059 1.941,-0.000 1.941,-0.000 C1.941,-0.000 -0.000,1.941 -0.000,1.941 C-0.000,1.941 9.059,11.000 9.059,11.000 C9.059,11.000 -0.000,20.059 -0.000,20.059 C-0.000,20.059 1.941,22.000 1.941,22.000 C1.941,22.000 11.000,12.941 11.000,12.941 C11.000,12.941 20.059,22.000 20.059,22.000 C20.059,22.000 22.000,20.059 22.000,20.059 C22.000,20.059 12.941,11.000 12.941,11.000 C12.941,11.000 22.000,1.941 22.000,1.941 C22.000,1.941 20.059,-0.000 20.059,-0.000 C20.059,-0.000 11.000,9.059 11.000,9.059 Z" fill-rule="evenodd"/>
+                      </svg>
+                    </a>
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098612</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <a href="https://www.google.com/maps" class="svg" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="35" height="35" viewBox="0 0 54 54">
+                          <path d="M31.893,19.455 C31.893,19.455 29.652,21.697 29.652,21.697 C29.652,21.697 32.015,24.060 32.015,24.060 C32.015,24.060 20.076,24.060 20.076,24.060 C20.076,24.060 20.076,34.084 20.076,34.084 C20.076,34.084 23.246,34.084 23.246,34.084 C23.246,34.084 23.246,27.230 23.246,27.230 C23.246,27.230 32.014,27.230 32.014,27.230 C32.014,27.230 29.652,29.592 29.652,29.592 C29.652,29.592 31.893,31.834 31.893,31.834 C31.893,31.834 38.083,25.645 38.083,25.645 C38.083,25.645 31.893,19.455 31.893,19.455 ZM27.000,-0.000 C27.000,-0.000 0.000,27.000 0.000,27.000 C0.000,27.000 27.000,54.000 27.000,54.000 C27.000,54.000 54.000,27.000 54.000,27.000 C54.000,27.000 27.000,-0.000 27.000,-0.000 ZM4.483,27.000 C4.483,27.000 27.000,4.483 27.000,4.483 C27.000,4.483 49.517,27.000 49.517,27.000 C49.517,27.000 27.000,49.517 27.000,49.517 C27.000,49.517 4.483,27.000 4.483,27.000 Z" fill="#031054" fill-rule="evenodd"/>
+                        </svg>
+                      </a>
+                      <div class="section-title">Phoenix, AZ</div>
+                      <div>35.2mi/42.6km</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <span class="glyphicon glyphicon-repeat spinning"></span>
+                    <a href="#" class="cancel-link svg hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 22 22">
+                        <path d="M11.000,9.059 C11.000,9.059 1.941,-0.000 1.941,-0.000 C1.941,-0.000 -0.000,1.941 -0.000,1.941 C-0.000,1.941 9.059,11.000 9.059,11.000 C9.059,11.000 -0.000,20.059 -0.000,20.059 C-0.000,20.059 1.941,22.000 1.941,22.000 C1.941,22.000 11.000,12.941 11.000,12.941 C11.000,12.941 20.059,22.000 20.059,22.000 C20.059,22.000 22.000,20.059 22.000,20.059 C22.000,20.059 12.941,11.000 12.941,11.000 C12.941,11.000 22.000,1.941 22.000,1.941 C22.000,1.941 20.059,-0.000 20.059,-0.000 C20.059,-0.000 11.000,9.059 11.000,9.059 Z" fill-rule="evenodd"/>
+                      </svg>
+                    </a>
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098612</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <a href="https://www.google.com/maps" class="svg" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="35" height="35" viewBox="0 0 54 54">
+                          <path d="M31.893,19.455 C31.893,19.455 29.652,21.697 29.652,21.697 C29.652,21.697 32.015,24.060 32.015,24.060 C32.015,24.060 20.076,24.060 20.076,24.060 C20.076,24.060 20.076,34.084 20.076,34.084 C20.076,34.084 23.246,34.084 23.246,34.084 C23.246,34.084 23.246,27.230 23.246,27.230 C23.246,27.230 32.014,27.230 32.014,27.230 C32.014,27.230 29.652,29.592 29.652,29.592 C29.652,29.592 31.893,31.834 31.893,31.834 C31.893,31.834 38.083,25.645 38.083,25.645 C38.083,25.645 31.893,19.455 31.893,19.455 ZM27.000,-0.000 C27.000,-0.000 0.000,27.000 0.000,27.000 C0.000,27.000 27.000,54.000 27.000,54.000 C27.000,54.000 54.000,27.000 54.000,27.000 C54.000,27.000 27.000,-0.000 27.000,-0.000 ZM4.483,27.000 C4.483,27.000 27.000,4.483 27.000,4.483 C27.000,4.483 49.517,27.000 49.517,27.000 C49.517,27.000 27.000,49.517 27.000,49.517 C27.000,49.517 4.483,27.000 4.483,27.000 Z" fill="#031054" fill-rule="evenodd"/>
+                        </svg>
+                      </a>
+                      <div class="section-title">Columbus, OH</div>
+                      <div>35.2mi/42.6km</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <span class="glyphicon glyphicon-repeat spinning"></span>
+                    <a href="#" class="cancel-link svg hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 22 22">
+                        <path d="M11.000,9.059 C11.000,9.059 1.941,-0.000 1.941,-0.000 C1.941,-0.000 -0.000,1.941 -0.000,1.941 C-0.000,1.941 9.059,11.000 9.059,11.000 C9.059,11.000 -0.000,20.059 -0.000,20.059 C-0.000,20.059 1.941,22.000 1.941,22.000 C1.941,22.000 11.000,12.941 11.000,12.941 C11.000,12.941 20.059,22.000 20.059,22.000 C20.059,22.000 22.000,20.059 22.000,20.059 C22.000,20.059 12.941,11.000 12.941,11.000 C12.941,11.000 22.000,1.941 22.000,1.941 C22.000,1.941 20.059,-0.000 20.059,-0.000 C20.059,-0.000 11.000,9.059 11.000,9.059 Z" fill-rule="evenodd"/>
+                      </svg>
+                    </a>
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098612</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <a href="https://www.google.com/maps" class="svg" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="35" height="35" viewBox="0 0 54 54">
+                          <path d="M31.893,19.455 C31.893,19.455 29.652,21.697 29.652,21.697 C29.652,21.697 32.015,24.060 32.015,24.060 C32.015,24.060 20.076,24.060 20.076,24.060 C20.076,24.060 20.076,34.084 20.076,34.084 C20.076,34.084 23.246,34.084 23.246,34.084 C23.246,34.084 23.246,27.230 23.246,27.230 C23.246,27.230 32.014,27.230 32.014,27.230 C32.014,27.230 29.652,29.592 29.652,29.592 C29.652,29.592 31.893,31.834 31.893,31.834 C31.893,31.834 38.083,25.645 38.083,25.645 C38.083,25.645 31.893,19.455 31.893,19.455 ZM27.000,-0.000 C27.000,-0.000 0.000,27.000 0.000,27.000 C0.000,27.000 27.000,54.000 27.000,54.000 C27.000,54.000 54.000,27.000 54.000,27.000 C54.000,27.000 27.000,-0.000 27.000,-0.000 ZM4.483,27.000 C4.483,27.000 27.000,4.483 27.000,4.483 C27.000,4.483 49.517,27.000 49.517,27.000 C49.517,27.000 27.000,49.517 27.000,49.517 C27.000,49.517 4.483,27.000 4.483,27.000 Z" fill="#031054" fill-rule="evenodd"/>
+                        </svg>
+                      </a>
+                      <div class="section-title">Atlanta, GA</div>
+                      <div>35.2mi/42.6km</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <span class="glyphicon glyphicon-repeat spinning"></span>
+                    <a href="#" class="cancel-link svg hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 22 22">
+                        <path d="M11.000,9.059 C11.000,9.059 1.941,-0.000 1.941,-0.000 C1.941,-0.000 -0.000,1.941 -0.000,1.941 C-0.000,1.941 9.059,11.000 9.059,11.000 C9.059,11.000 -0.000,20.059 -0.000,20.059 C-0.000,20.059 1.941,22.000 1.941,22.000 C1.941,22.000 11.000,12.941 11.000,12.941 C11.000,12.941 20.059,22.000 20.059,22.000 C20.059,22.000 22.000,20.059 22.000,20.059 C22.000,20.059 12.941,11.000 12.941,11.000 C12.941,11.000 22.000,1.941 22.000,1.941 C22.000,1.941 20.059,-0.000 20.059,-0.000 C20.059,-0.000 11.000,9.059 11.000,9.059 Z" fill-rule="evenodd"/>
+                      </svg>
+                    </a>
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098612</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <a href="https://www.google.com/maps" class="svg" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="35" height="35" viewBox="0 0 54 54">
+                          <path d="M31.893,19.455 C31.893,19.455 29.652,21.697 29.652,21.697 C29.652,21.697 32.015,24.060 32.015,24.060 C32.015,24.060 20.076,24.060 20.076,24.060 C20.076,24.060 20.076,34.084 20.076,34.084 C20.076,34.084 23.246,34.084 23.246,34.084 C23.246,34.084 23.246,27.230 23.246,27.230 C23.246,27.230 32.014,27.230 32.014,27.230 C32.014,27.230 29.652,29.592 29.652,29.592 C29.652,29.592 31.893,31.834 31.893,31.834 C31.893,31.834 38.083,25.645 38.083,25.645 C38.083,25.645 31.893,19.455 31.893,19.455 ZM27.000,-0.000 C27.000,-0.000 0.000,27.000 0.000,27.000 C0.000,27.000 27.000,54.000 27.000,54.000 C27.000,54.000 54.000,27.000 54.000,27.000 C54.000,27.000 27.000,-0.000 27.000,-0.000 ZM4.483,27.000 C4.483,27.000 27.000,4.483 27.000,4.483 C27.000,4.483 49.517,27.000 49.517,27.000 C49.517,27.000 27.000,49.517 27.000,49.517 C27.000,49.517 4.483,27.000 4.483,27.000 Z" fill="#031054" fill-rule="evenodd"/>
+                        </svg>
+                      </a>
+                      <div class="section-title">Phoenix, AZ</div>
+                      <div>35.2mi/42.6km</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+            </ul>
+            <ul id="upcoming-3" class="row tab-pane list--no-bullets">
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <span class="glyphicon glyphicon-repeat spinning"></span>
+                    <a href="#" class="cancel-link svg hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 22 22">
+                        <path d="M11.000,9.059 C11.000,9.059 1.941,-0.000 1.941,-0.000 C1.941,-0.000 -0.000,1.941 -0.000,1.941 C-0.000,1.941 9.059,11.000 9.059,11.000 C9.059,11.000 -0.000,20.059 -0.000,20.059 C-0.000,20.059 1.941,22.000 1.941,22.000 C1.941,22.000 11.000,12.941 11.000,12.941 C11.000,12.941 20.059,22.000 20.059,22.000 C20.059,22.000 22.000,20.059 22.000,20.059 C22.000,20.059 12.941,11.000 12.941,11.000 C12.941,11.000 22.000,1.941 22.000,1.941 C22.000,1.941 20.059,-0.000 20.059,-0.000 C20.059,-0.000 11.000,9.059 11.000,9.059 Z" fill-rule="evenodd"/>
+                      </svg>
+                    </a>
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098613</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <a href="https://www.google.com/maps" class="svg" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="35" height="35" viewBox="0 0 54 54">
+                          <path d="M31.893,19.455 C31.893,19.455 29.652,21.697 29.652,21.697 C29.652,21.697 32.015,24.060 32.015,24.060 C32.015,24.060 20.076,24.060 20.076,24.060 C20.076,24.060 20.076,34.084 20.076,34.084 C20.076,34.084 23.246,34.084 23.246,34.084 C23.246,34.084 23.246,27.230 23.246,27.230 C23.246,27.230 32.014,27.230 32.014,27.230 C32.014,27.230 29.652,29.592 29.652,29.592 C29.652,29.592 31.893,31.834 31.893,31.834 C31.893,31.834 38.083,25.645 38.083,25.645 C38.083,25.645 31.893,19.455 31.893,19.455 ZM27.000,-0.000 C27.000,-0.000 0.000,27.000 0.000,27.000 C0.000,27.000 27.000,54.000 27.000,54.000 C27.000,54.000 54.000,27.000 54.000,27.000 C54.000,27.000 27.000,-0.000 27.000,-0.000 ZM4.483,27.000 C4.483,27.000 27.000,4.483 27.000,4.483 C27.000,4.483 49.517,27.000 49.517,27.000 C49.517,27.000 27.000,49.517 27.000,49.517 C27.000,49.517 4.483,27.000 4.483,27.000 Z" fill="#031054" fill-rule="evenodd"/>
+                        </svg>
+                      </a>
+                      <div class="section-title">Columbus, OH</div>
+                      <div>35.2mi/42.6km</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <span class="glyphicon glyphicon-repeat spinning"></span>
+                    <a href="#" class="cancel-link svg hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 22 22">
+                        <path d="M11.000,9.059 C11.000,9.059 1.941,-0.000 1.941,-0.000 C1.941,-0.000 -0.000,1.941 -0.000,1.941 C-0.000,1.941 9.059,11.000 9.059,11.000 C9.059,11.000 -0.000,20.059 -0.000,20.059 C-0.000,20.059 1.941,22.000 1.941,22.000 C1.941,22.000 11.000,12.941 11.000,12.941 C11.000,12.941 20.059,22.000 20.059,22.000 C20.059,22.000 22.000,20.059 22.000,20.059 C22.000,20.059 12.941,11.000 12.941,11.000 C12.941,11.000 22.000,1.941 22.000,1.941 C22.000,1.941 20.059,-0.000 20.059,-0.000 C20.059,-0.000 11.000,9.059 11.000,9.059 Z" fill-rule="evenodd"/>
+                      </svg>
+                    </a>
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098613</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <a href="https://www.google.com/maps" class="svg" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="35" height="35" viewBox="0 0 54 54">
+                          <path d="M31.893,19.455 C31.893,19.455 29.652,21.697 29.652,21.697 C29.652,21.697 32.015,24.060 32.015,24.060 C32.015,24.060 20.076,24.060 20.076,24.060 C20.076,24.060 20.076,34.084 20.076,34.084 C20.076,34.084 23.246,34.084 23.246,34.084 C23.246,34.084 23.246,27.230 23.246,27.230 C23.246,27.230 32.014,27.230 32.014,27.230 C32.014,27.230 29.652,29.592 29.652,29.592 C29.652,29.592 31.893,31.834 31.893,31.834 C31.893,31.834 38.083,25.645 38.083,25.645 C38.083,25.645 31.893,19.455 31.893,19.455 ZM27.000,-0.000 C27.000,-0.000 0.000,27.000 0.000,27.000 C0.000,27.000 27.000,54.000 27.000,54.000 C27.000,54.000 54.000,27.000 54.000,27.000 C54.000,27.000 27.000,-0.000 27.000,-0.000 ZM4.483,27.000 C4.483,27.000 27.000,4.483 27.000,4.483 C27.000,4.483 49.517,27.000 49.517,27.000 C49.517,27.000 27.000,49.517 27.000,49.517 C27.000,49.517 4.483,27.000 4.483,27.000 Z" fill="#031054" fill-rule="evenodd"/>
+                        </svg>
+                      </a>
+                      <div class="section-title">Atlanta, GA</div>
+                      <div>35.2mi/42.6km</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <span class="glyphicon glyphicon-repeat spinning"></span>
+                    <a href="#" class="cancel-link svg hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 22 22">
+                        <path d="M11.000,9.059 C11.000,9.059 1.941,-0.000 1.941,-0.000 C1.941,-0.000 -0.000,1.941 -0.000,1.941 C-0.000,1.941 9.059,11.000 9.059,11.000 C9.059,11.000 -0.000,20.059 -0.000,20.059 C-0.000,20.059 1.941,22.000 1.941,22.000 C1.941,22.000 11.000,12.941 11.000,12.941 C11.000,12.941 20.059,22.000 20.059,22.000 C20.059,22.000 22.000,20.059 22.000,20.059 C22.000,20.059 12.941,11.000 12.941,11.000 C12.941,11.000 22.000,1.941 22.000,1.941 C22.000,1.941 20.059,-0.000 20.059,-0.000 C20.059,-0.000 11.000,9.059 11.000,9.059 Z" fill-rule="evenodd"/>
+                      </svg>
+                    </a>
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098613</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <a href="https://www.google.com/maps" class="svg" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="35" height="35" viewBox="0 0 54 54">
+                          <path d="M31.893,19.455 C31.893,19.455 29.652,21.697 29.652,21.697 C29.652,21.697 32.015,24.060 32.015,24.060 C32.015,24.060 20.076,24.060 20.076,24.060 C20.076,24.060 20.076,34.084 20.076,34.084 C20.076,34.084 23.246,34.084 23.246,34.084 C23.246,34.084 23.246,27.230 23.246,27.230 C23.246,27.230 32.014,27.230 32.014,27.230 C32.014,27.230 29.652,29.592 29.652,29.592 C29.652,29.592 31.893,31.834 31.893,31.834 C31.893,31.834 38.083,25.645 38.083,25.645 C38.083,25.645 31.893,19.455 31.893,19.455 ZM27.000,-0.000 C27.000,-0.000 0.000,27.000 0.000,27.000 C0.000,27.000 27.000,54.000 27.000,54.000 C27.000,54.000 54.000,27.000 54.000,27.000 C54.000,27.000 27.000,-0.000 27.000,-0.000 ZM4.483,27.000 C4.483,27.000 27.000,4.483 27.000,4.483 C27.000,4.483 49.517,27.000 49.517,27.000 C49.517,27.000 27.000,49.517 27.000,49.517 C27.000,49.517 4.483,27.000 4.483,27.000 Z" fill="#031054" fill-rule="evenodd"/>
+                        </svg>
+                      </a>
+                      <div class="section-title">Phoenix, AZ</div>
+                      <div>35.2mi/42.6km</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <span class="glyphicon glyphicon-repeat spinning"></span>
+                    <a href="#" class="cancel-link svg hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 22 22">
+                        <path d="M11.000,9.059 C11.000,9.059 1.941,-0.000 1.941,-0.000 C1.941,-0.000 -0.000,1.941 -0.000,1.941 C-0.000,1.941 9.059,11.000 9.059,11.000 C9.059,11.000 -0.000,20.059 -0.000,20.059 C-0.000,20.059 1.941,22.000 1.941,22.000 C1.941,22.000 11.000,12.941 11.000,12.941 C11.000,12.941 20.059,22.000 20.059,22.000 C20.059,22.000 22.000,20.059 22.000,20.059 C22.000,20.059 12.941,11.000 12.941,11.000 C12.941,11.000 22.000,1.941 22.000,1.941 C22.000,1.941 20.059,-0.000 20.059,-0.000 C20.059,-0.000 11.000,9.059 11.000,9.059 Z" fill-rule="evenodd"/>
+                      </svg>
+                    </a>
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098613</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <a href="https://www.google.com/maps" class="svg" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="35" height="35" viewBox="0 0 54 54">
+                          <path d="M31.893,19.455 C31.893,19.455 29.652,21.697 29.652,21.697 C29.652,21.697 32.015,24.060 32.015,24.060 C32.015,24.060 20.076,24.060 20.076,24.060 C20.076,24.060 20.076,34.084 20.076,34.084 C20.076,34.084 23.246,34.084 23.246,34.084 C23.246,34.084 23.246,27.230 23.246,27.230 C23.246,27.230 32.014,27.230 32.014,27.230 C32.014,27.230 29.652,29.592 29.652,29.592 C29.652,29.592 31.893,31.834 31.893,31.834 C31.893,31.834 38.083,25.645 38.083,25.645 C38.083,25.645 31.893,19.455 31.893,19.455 ZM27.000,-0.000 C27.000,-0.000 0.000,27.000 0.000,27.000 C0.000,27.000 27.000,54.000 27.000,54.000 C27.000,54.000 54.000,27.000 54.000,27.000 C54.000,27.000 27.000,-0.000 27.000,-0.000 ZM4.483,27.000 C4.483,27.000 27.000,4.483 27.000,4.483 C27.000,4.483 49.517,27.000 49.517,27.000 C49.517,27.000 27.000,49.517 27.000,49.517 C27.000,49.517 4.483,27.000 4.483,27.000 Z" fill="#031054" fill-rule="evenodd"/>
+                        </svg>
+                      </a>
+                      <div class="section-title">Columbus, OH</div>
+                      <div>35.2mi/42.6km</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <span class="glyphicon glyphicon-repeat spinning"></span>
+                    <a href="#" class="cancel-link svg hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 22 22">
+                        <path d="M11.000,9.059 C11.000,9.059 1.941,-0.000 1.941,-0.000 C1.941,-0.000 -0.000,1.941 -0.000,1.941 C-0.000,1.941 9.059,11.000 9.059,11.000 C9.059,11.000 -0.000,20.059 -0.000,20.059 C-0.000,20.059 1.941,22.000 1.941,22.000 C1.941,22.000 11.000,12.941 11.000,12.941 C11.000,12.941 20.059,22.000 20.059,22.000 C20.059,22.000 22.000,20.059 22.000,20.059 C22.000,20.059 12.941,11.000 12.941,11.000 C12.941,11.000 22.000,1.941 22.000,1.941 C22.000,1.941 20.059,-0.000 20.059,-0.000 C20.059,-0.000 11.000,9.059 11.000,9.059 Z" fill-rule="evenodd"/>
+                      </svg>
+                    </a>
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098613</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <a href="https://www.google.com/maps" class="svg" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="35" height="35" viewBox="0 0 54 54">
+                          <path d="M31.893,19.455 C31.893,19.455 29.652,21.697 29.652,21.697 C29.652,21.697 32.015,24.060 32.015,24.060 C32.015,24.060 20.076,24.060 20.076,24.060 C20.076,24.060 20.076,34.084 20.076,34.084 C20.076,34.084 23.246,34.084 23.246,34.084 C23.246,34.084 23.246,27.230 23.246,27.230 C23.246,27.230 32.014,27.230 32.014,27.230 C32.014,27.230 29.652,29.592 29.652,29.592 C29.652,29.592 31.893,31.834 31.893,31.834 C31.893,31.834 38.083,25.645 38.083,25.645 C38.083,25.645 31.893,19.455 31.893,19.455 ZM27.000,-0.000 C27.000,-0.000 0.000,27.000 0.000,27.000 C0.000,27.000 27.000,54.000 27.000,54.000 C27.000,54.000 54.000,27.000 54.000,27.000 C54.000,27.000 27.000,-0.000 27.000,-0.000 ZM4.483,27.000 C4.483,27.000 27.000,4.483 27.000,4.483 C27.000,4.483 49.517,27.000 49.517,27.000 C49.517,27.000 27.000,49.517 27.000,49.517 C27.000,49.517 4.483,27.000 4.483,27.000 Z" fill="#031054" fill-rule="evenodd"/>
+                        </svg>
+                      </a>
+                      <div class="section-title">Atlanta, GA</div>
+                      <div>35.2mi/42.6km</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <span class="glyphicon glyphicon-repeat spinning"></span>
+                    <a href="#" class="cancel-link svg hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 22 22">
+                        <path d="M11.000,9.059 C11.000,9.059 1.941,-0.000 1.941,-0.000 C1.941,-0.000 -0.000,1.941 -0.000,1.941 C-0.000,1.941 9.059,11.000 9.059,11.000 C9.059,11.000 -0.000,20.059 -0.000,20.059 C-0.000,20.059 1.941,22.000 1.941,22.000 C1.941,22.000 11.000,12.941 11.000,12.941 C11.000,12.941 20.059,22.000 20.059,22.000 C20.059,22.000 22.000,20.059 22.000,20.059 C22.000,20.059 12.941,11.000 12.941,11.000 C12.941,11.000 22.000,1.941 22.000,1.941 C22.000,1.941 20.059,-0.000 20.059,-0.000 C20.059,-0.000 11.000,9.059 11.000,9.059 Z" fill-rule="evenodd"/>
+                      </svg>
+                    </a>
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098613</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <a href="https://www.google.com/maps" class="svg" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="35" height="35" viewBox="0 0 54 54">
+                          <path d="M31.893,19.455 C31.893,19.455 29.652,21.697 29.652,21.697 C29.652,21.697 32.015,24.060 32.015,24.060 C32.015,24.060 20.076,24.060 20.076,24.060 C20.076,24.060 20.076,34.084 20.076,34.084 C20.076,34.084 23.246,34.084 23.246,34.084 C23.246,34.084 23.246,27.230 23.246,27.230 C23.246,27.230 32.014,27.230 32.014,27.230 C32.014,27.230 29.652,29.592 29.652,29.592 C29.652,29.592 31.893,31.834 31.893,31.834 C31.893,31.834 38.083,25.645 38.083,25.645 C38.083,25.645 31.893,19.455 31.893,19.455 ZM27.000,-0.000 C27.000,-0.000 0.000,27.000 0.000,27.000 C0.000,27.000 27.000,54.000 27.000,54.000 C27.000,54.000 54.000,27.000 54.000,27.000 C54.000,27.000 27.000,-0.000 27.000,-0.000 ZM4.483,27.000 C4.483,27.000 27.000,4.483 27.000,4.483 C27.000,4.483 49.517,27.000 49.517,27.000 C49.517,27.000 27.000,49.517 27.000,49.517 C27.000,49.517 4.483,27.000 4.483,27.000 Z" fill="#031054" fill-rule="evenodd"/>
+                        </svg>
+                      </a>
+                      <div class="section-title">Phoenix, AZ</div>
+                      <div>35.2mi/42.6km</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+            </ul>
+            <div class="text-center ribbon--large ribbon--dark-blue">
+              <div id="upcoming-paginator" class="pagination-container">
+                <a class="pagination-control pagination-control--left js-page-left"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                <ul class="pagination pagination--blue js-pagination">
+                  <li class="active">
+                    <a href="#upcoming-1" data-toggle="tab">1</a>
+                  </li>
+                  <li>
+                    <a href="#upcoming-2" data-toggle="tab">2</a>
+                  </li>
+                  <li>
+                    <a href="#upcoming-3" data-toggle="tab">3</a>
+                  </li>
+                </ul>
+                <a class="pagination-control pagination-control--right js-page-right"><span class="glyphicon glyphicon-chevron-right"></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="past">
+        <div class="row ribbon--white box-card upcoming-reservations">
+          <div class="col-xs-12 ribbon tab-content">
+            <ul id="past-1" class="row tab-pane list--no-bullets active">
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098621</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Phoenix, AZ</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098621</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Phoenix, AZ</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098621</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Phoenix, AZ</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098621</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Phoenix, AZ</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098621</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Phoenix, AZ</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098621</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Phoenix, AZ</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098621</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Phoenix, AZ</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098621</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Phoenix, AZ</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098621</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Phoenix, AZ</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+            </ul>
+            <ul id="past-2" class="row tab-pane list--no-bullets">
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098622</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Columbus, OH</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098622</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Atlanta, GA</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098622</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Phoenix, AZ</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098622</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Columbus, OH</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098622</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Atlanta, GA</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098622</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Phoenix, AZ</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098622</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Columbus, OH</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098622</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Atlanta, GA</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <span class="body-subtitle">CONFIRMATION #: 86753098622</span>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Phoenix, AZ</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+            </ul>
+            <div class="text-center ribbon--large ribbon--dark-blue">
+              <div id="past-paginator" class="pagination-container">
+                <a class="pagination-control pagination-control--left js-page-left"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                <ul class="pagination pagination--blue js-pagination">
+                  <li class="active">
+                    <a href="#past-1" data-toggle="tab">1</a>
+                  </li>
+                  <li>
+                    <a href="#past-2" data-toggle="tab">2</a>
+                  </li>
+                </ul>
+                <a class="pagination-control pagination-control--right js-page-right"><span class="glyphicon glyphicon-chevron-right"></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="cancelled">
+        <div class="row ribbon--white box-card upcoming-reservations">
+          <div class="col-xs-12 ribbon tab-content">
+            <ul id="cancelled-1" class="row tab-pane list--no-bullets active">
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <div class="body-subtitle">CANCELLATION #: 25023523051</div>
+                      <div class="legal">CONFIRMATION #: 86753098631</div>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Columbus, OH</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <div class="body-subtitle">CANCELLATION #: 25023523058</div>
+                      <div class="legal">CONFIRMATION #: 86753098631</div>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Atlanta, GA</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <div class="body-subtitle">CANCELLATION #: 25023523058</div>
+                      <div class="legal">CONFIRMATION #: 86753098631</div>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Phoenix, AZ</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+            </ul>
+            <ul id="cancelled-2" class="row tab-pane list--no-bullets">
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <div class="body-subtitle">CANCELLATION #: 25023523052</div>
+                      <div class="legal">CONFIRMATION #: 86753098631</div>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Columbus, OH</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <div class="body-subtitle">CANCELLATION #: 25023523058</div>
+                      <div class="legal">CONFIRMATION #: 86753098631</div>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Atlanta, GA</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <div class="body-subtitle">CANCELLATION #: 25023523058</div>
+                      <div class="legal">CONFIRMATION #: 86753098631</div>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Phoenix, AZ</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+            </ul>
+            <ul id="cancelled-3" class="row tab-pane list--no-bullets">
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <div class="body-subtitle">CANCELLATION #: 25023523053</div>
+                      <div class="legal">CONFIRMATION #: 86753098631</div>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Columbus, OH</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <div class="body-subtitle">CANCELLATION #: 25023523058</div>
+                      <div class="legal">CONFIRMATION #: 86753098631</div>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Atlanta, GA</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <div class="body-subtitle">CANCELLATION #: 25023523058</div>
+                      <div class="legal">CONFIRMATION #: 86753098631</div>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Phoenix, AZ</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+            </ul>
+            <ul id="cancelled-4" class="row tab-pane list--no-bullets">
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <div class="body-subtitle">CANCELLATION #: 25023523054</div>
+                      <div class="legal">CONFIRMATION #: 86753098631</div>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Columbus, OH</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <div class="body-subtitle">CANCELLATION #: 25023523054</div>
+                      <div class="legal">CONFIRMATION #: 86753098631</div>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Atlanta, GA</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <div class="body-subtitle">CANCELLATION #: 25023523054</div>
+                      <div class="legal">CONFIRMATION #: 86753098631</div>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Phoenix, AZ</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+            </ul>
+            <ul id="cancelled-5" class="row tab-pane list--no-bullets">
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <div class="body-subtitle">CANCELLATION #: 25023523055</div>
+                      <div class="legal">CONFIRMATION #: 86753098631</div>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Columbus, OH</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <div class="body-subtitle">CANCELLATION #: 25023523055</div>
+                      <div class="legal">CONFIRMATION #: 86753098631</div>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Atlanta, GA</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <div class="body-subtitle">CANCELLATION #: 25023523055</div>
+                      <div class="legal">CONFIRMATION #: 86753098631</div>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Phoenix, AZ</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+            </ul>
+            <ul id="cancelled-6" class="row tab-pane list--no-bullets">
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <div class="body-subtitle">CANCELLATION #: 25023523056</div>
+                      <div class="legal">CONFIRMATION #: 86753098631</div>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Columbus, OH</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <div class="body-subtitle">CANCELLATION #: 25023523056</div>
+                      <div class="legal">CONFIRMATION #: 86753098631</div>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Atlanta, GA</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+              <li class="col-sm-6 col-md-4">
+                <div class="box">
+                  <div class="box-content">
+                    <div class="confirmation-number">
+                      <div class="body-subtitle">CANCELLATION #: 25023523056</div>
+                      <div class="legal">CONFIRMATION #: 86753098631</div>
+                    </div>
+                    <div class="box-content--section-with-padding">
+                      <div class="section-title">Phoenix, AZ</div>
+                    </div>
+                    <div class="break-blue"></div>
+                    <div>
+                      <span class="body-subtitle">Check-In:</span>
+                      <br>12/31/15 at 3:00 PM</div>
+                  </div>
+                  <a href="ReviewReservation.html" class="bw-btn bw-btn-lighter-blue">
+                  SEE DETAILS
+                  </a>
+                </div>
+              </li>
+            </ul>
+            <div class="text-center ribbon--large ribbon--dark-blue">
+              <div id="cancelled-paginator" class="pagination-container">
+                <a class="pagination-control pagination-control--left js-page-left"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                <ul class="pagination pagination--blue js-pagination">
+                  <li class="active">
+                    <a href="#cancelled-1" data-toggle="tab">1</a>
+                  </li>
+                  <li>
+                    <a href="#cancelled-2" data-toggle="tab">2</a>
+                  </li>
+                  <li>
+                    <a href="#cancelled-3" data-toggle="tab">3</a>
+                  </li>
+                  <li>
+                    <a href="#cancelled-4" data-toggle="tab">4</a>
+                  </li>
+                  <li>
+                    <a href="#cancelled-5" data-toggle="tab">5</a>
+                  </li>
+                  <li>
+                    <a href="#cancelled-6" data-toggle="tab">6</a>
+                  </li>
+                  <li>
+                    <a href="#cancelled-7" data-toggle="tab">7</a>
+                  </li>
+                  <li>
+                    <a href="#cancelled-8" data-toggle="tab">8</a>
+                  </li>
+                  <li>
+                    <a href="#cancelled-9" data-toggle="tab">9</a>
+                  </li>
+                  <li>
+                    <a href="#cancelled-10" data-toggle="tab">10</a>
+                  </li>
+                  <li>
+                    <a href="#cancelled-11" data-toggle="tab">11</a>
+                  </li>
+                  <li>
+                    <a href="#cancelled-12" data-toggle="tab">12</a>
+                  </li>
+                </ul>
+                <a class="pagination-control pagination-control--right js-page-right"><span class="glyphicon glyphicon-chevron-right"></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end container-fluid -->
+  <script src="../scripts/jquery.js"></script>
+  <script src="../scripts/bootstrap.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/navigation.js"></script>
+  <script src="../scripts/make-reservation.js"></script>
+  <script src="../scripts/pagination.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+        setTimeout(function() {
+          $('.cancel-link.svg, .glyphicon.spinning').toggleClass('hidden');
+        }, 3000);
+    });
+  </script>
+</body>
+
+</html>
